@@ -1,0 +1,613 @@
+{
+  "as_of": "2026-05-27T23:28:12+09:00",
+  "period_start": "20240425",
+  "period_end": "20260526",
+  "n_weeks": 101,
+  "initial_capital": 100000000,
+  "final_value": 275677159.0,
+  "return_24m_pct": 175.68,
+  "return_12m_pct": 156.59,
+  "kospi_24m_pct": 171.76,
+  "kospi_12m_pct": 183.45,
+  "excess_24m_pct": 3.92,
+  "excess_12m_pct": -26.85,
+  "sharpe_weekly_ann": 2.369,
+  "mdd_pct": -11.99,
+  "n_trades": 166,
+  "vol_threshold_used": 84.7669185343873,
+  "macro_regime_distribution": {
+    "VIX=Low,US10Y=High": 53,
+    "VIX=Low,US10Y=Mod": 48
+  },
+  "weekly_log_sample": [
+    {
+      "date": "20240425",
+      "vix": 17.4,
+      "us10y": 4.55,
+      "vix_bucket": "Low",
+      "us10y_bucket": "High",
+      "w_macro": 0.5,
+      "equity_target_pct": 125.0,
+      "actual_equity_pct": 19.88,
+      "cash": 79892184.0,
+      "stock_value": 19822200.0,
+      "port_value": 99714384.0,
+      "n_holdings": 5
+    },
+    {
+      "date": "20240528",
+      "vix": 17.4,
+      "us10y": 4.55,
+      "vix_bucket": "Low",
+      "us10y_bucket": "High",
+      "w_macro": 0.5,
+      "equity_target_pct": 125.0,
+      "actual_equity_pct": 49.29,
+      "cash": 53040215.0,
+      "stock_value": 51563020.0,
+      "port_value": 104603235.0,
+      "n_holdings": 10
+    },
+    {
+      "date": "20240626",
+      "vix": 17.4,
+      "us10y": 4.55,
+      "vix_bucket": "Low",
+      "us10y_bucket": "High",
+      "w_macro": 0.5,
+      "equity_target_pct": 125.0,
+      "actual_equity_pct": 46.85,
+      "cash": 54278457.0,
+      "stock_value": 47851630.0,
+      "port_value": 102130087.0,
+      "n_holdings": 8
+    },
+    {
+      "date": "20240724",
+      "vix": 17.4,
+      "us10y": 4.55,
+      "vix_bucket": "Low",
+      "us10y_bucket": "High",
+      "w_macro": 0.5,
+      "equity_target_pct": 125.0,
+      "actual_equity_pct": 59.65,
+      "cash": 42396631.0,
+      "stock_value": 62664180.0,
+      "port_value": 105060811.0,
+      "n_holdings": 9
+    },
+    {
+      "date": "20240822",
+      "vix": 17.4,
+      "us10y": 4.55,
+      "vix_bucket": "Low",
+      "us10y_bucket": "High",
+      "w_macro": 0.5,
+      "equity_target_pct": 125.0,
+      "actual_equity_pct": 36.38,
+      "cash": 63559141.0,
+      "stock_value": 36339400.0,
+      "port_value": 99898541.0,
+      "n_holdings": 6
+    },
+    {
+      "date": "20240924",
+      "vix": 17.4,
+      "us10y": 4.55,
+      "vix_bucket": "Low",
+      "us10y_bucket": "High",
+      "w_macro": 0.5,
+      "equity_target_pct": 125.0,
+      "actual_equity_pct": 38.39,
+      "cash": 62185317.0,
+      "stock_value": 38754495.0,
+      "port_value": 100939812.0,
+      "n_holdings": 6
+    },
+    {
+      "date": "20241025",
+      "vix": 17.4,
+      "us10y": 4.55,
+      "vix_bucket": "Low",
+      "us10y_bucket": "High",
+      "w_macro": 0.5,
+      "equity_target_pct": 125.0,
+      "actual_equity_pct": 49.28,
+      "cash": 52529068.0,
+      "stock_value": 51039610.0,
+      "port_value": 103568678.0,
+      "n_holdings": 7
+    },
+    {
+      "date": "20241122",
+      "vix": 17.4,
+      "us10y": 4.55,
+      "vix_bucket": "Low",
+      "us10y_bucket": "High",
+      "w_macro": 0.5,
+      "equity_target_pct": 125.0,
+      "actual_equity_pct": 34.92,
+      "cash": 66809515.0,
+      "stock_value": 35847600.0,
+      "port_value": 102657115.0,
+      "n_holdings": 5
+    },
+    {
+      "date": "20241220",
+      "vix": 17.4,
+      "us10y": 4.55,
+      "vix_bucket": "Low",
+      "us10y_bucket": "High",
+      "w_macro": 0.5,
+      "equity_target_pct": 125.0,
+      "actual_equity_pct": 12.34,
+      "cash": 85793597.0,
+      "stock_value": 12077500.0,
+      "port_value": 97871097.0,
+      "n_holdings": 3
+    },
+    {
+      "date": "20250122",
+      "vix": 14.2,
+      "us10y": 4.12,
+      "vix_bucket": "Low",
+      "us10y_bucket": "Mod",
+      "w_macro": 0.8,
+      "equity_target_pct": 140.0,
+      "actual_equity_pct": 37.38,
+      "cash": 61366442.0,
+      "stock_value": 36636400.0,
+      "port_value": 98002842.0,
+      "n_holdings": 5
+    },
+    {
+      "date": "20250225",
+      "vix": 14.2,
+      "us10y": 4.12,
+      "vix_bucket": "Low",
+      "us10y_bucket": "Mod",
+      "w_macro": 0.8,
+      "equity_target_pct": 140.0,
+      "actual_equity_pct": 62.89,
+      "cash": 39970670.0,
+      "stock_value": 67731240.0,
+      "port_value": 107701910.0,
+      "n_holdings": 10
+    },
+    {
+      "date": "20250326",
+      "vix": 14.2,
+      "us10y": 4.12,
+      "vix_bucket": "Low",
+      "us10y_bucket": "Mod",
+      "w_macro": 0.8,
+      "equity_target_pct": 140.0,
+      "actual_equity_pct": 55.55,
+      "cash": 47113424.0,
+      "stock_value": 58888500.0,
+      "port_value": 106001924.0,
+      "n_holdings": 8
+    },
+    {
+      "date": "20250423",
+      "vix": 14.2,
+      "us10y": 4.12,
+      "vix_bucket": "Low",
+      "us10y_bucket": "Mod",
+      "w_macro": 0.8,
+      "equity_target_pct": 140.0,
+      "actual_equity_pct": 35.68,
+      "cash": 68282561.0,
+      "stock_value": 37885860.0,
+      "port_value": 106168421.0,
+      "n_holdings": 4
+    },
+    {
+      "date": "20250526",
+      "vix": 14.2,
+      "us10y": 4.12,
+      "vix_bucket": "Low",
+      "us10y_bucket": "Mod",
+      "w_macro": 0.8,
+      "equity_target_pct": 140.0,
+      "actual_equity_pct": 56.26,
+      "cash": 50860080.0,
+      "stock_value": 65412200.0,
+      "port_value": 116272280.0,
+      "n_holdings": 8
+    },
+    {
+      "date": "20250625",
+      "vix": 14.2,
+      "us10y": 4.12,
+      "vix_bucket": "Low",
+      "us10y_bucket": "Mod",
+      "w_macro": 0.8,
+      "equity_target_pct": 140.0,
+      "actual_equity_pct": 69.71,
+      "cash": 40193928.0,
+      "stock_value": 92486000.0,
+      "port_value": 132679928.0,
+      "n_holdings": 10
+    },
+    {
+      "date": "20250723",
+      "vix": 14.2,
+      "us10y": 4.12,
+      "vix_bucket": "Low",
+      "us10y_bucket": "Mod",
+      "w_macro": 0.8,
+      "equity_target_pct": 140.0,
+      "actual_equity_pct": 67.76,
+      "cash": 41921214.0,
+      "stock_value": 88097100.0,
+      "port_value": 130018314.0,
+      "n_holdings": 11
+    },
+    {
+      "date": "20250821",
+      "vix": 14.2,
+      "us10y": 4.12,
+      "vix_bucket": "Low",
+      "us10y_bucket": "Mod",
+      "w_macro": 0.8,
+      "equity_target_pct": 140.0,
+      "actual_equity_pct": 39.46,
+      "cash": 77665635.0,
+      "stock_value": 50614100.0,
+      "port_value": 128279735.0,
+      "n_holdings": 4
+    },
+    {
+      "date": "20250918",
+      "vix": 14.2,
+      "us10y": 4.12,
+      "vix_bucket": "Low",
+      "us10y_bucket": "Mod",
+      "w_macro": 0.8,
+      "equity_target_pct": 140.0,
+      "actual_equity_pct": 49.0,
+      "cash": 69326629.0,
+      "stock_value": 66613850.0,
+      "port_value": 135940479.0,
+      "n_holdings": 9
+    },
+    {
+      "date": "20251023",
+      "vix": 14.2,
+      "us10y": 4.12,
+      "vix_bucket": "Low",
+      "us10y_bucket": "Mod",
+      "w_macro": 0.8,
+      "equity_target_pct": 140.0,
+      "actual_equity_pct": 58.6,
+      "cash": 60016774.0,
+      "stock_value": 84959400.0,
+      "port_value": 144976174.0,
+      "n_holdings": 9
+    },
+    {
+      "date": "20251120",
+      "vix": 14.2,
+      "us10y": 4.12,
+      "vix_bucket": "Low",
+      "us10y_bucket": "Mod",
+      "w_macro": 0.8,
+      "equity_target_pct": 140.0,
+      "actual_equity_pct": 56.89,
+      "cash": 65677353.0,
+      "stock_value": 86687200.0,
+      "port_value": 152364553.0,
+      "n_holdings": 8
+    },
+    {
+      "date": "20251218",
+      "vix": 14.2,
+      "us10y": 4.12,
+      "vix_bucket": "Low",
+      "us10y_bucket": "Mod",
+      "w_macro": 0.8,
+      "equity_target_pct": 140.0,
+      "actual_equity_pct": 61.34,
+      "cash": 62177713.0,
+      "stock_value": 98660900.0,
+      "port_value": 160838613.0,
+      "n_holdings": 9
+    },
+    {
+      "date": "20260120",
+      "vix": 17.82,
+      "us10y": 4.61,
+      "vix_bucket": "Low",
+      "us10y_bucket": "High",
+      "w_macro": 0.5,
+      "equity_target_pct": 125.0,
+      "actual_equity_pct": 76.09,
+      "cash": 45289284.0,
+      "stock_value": 144152100.0,
+      "port_value": 189441384.0,
+      "n_holdings": 11
+    },
+    {
+      "date": "20260220",
+      "vix": 17.82,
+      "us10y": 4.61,
+      "vix_bucket": "Low",
+      "us10y_bucket": "High",
+      "w_macro": 0.5,
+      "equity_target_pct": 125.0,
+      "actual_equity_pct": 73.07,
+      "cash": 58540021.0,
+      "stock_value": 158801800.0,
+      "port_value": 217341821.0,
+      "n_holdings": 10
+    },
+    {
+      "date": "20260323",
+      "vix": 17.82,
+      "us10y": 4.61,
+      "vix_bucket": "Low",
+      "us10y_bucket": "High",
+      "w_macro": 0.5,
+      "equity_target_pct": 125.0,
+      "actual_equity_pct": 68.49,
+      "cash": 69036020.0,
+      "stock_value": 150088200.0,
+      "port_value": 219124220.0,
+      "n_holdings": 9
+    },
+    {
+      "date": "20260420",
+      "vix": 17.82,
+      "us10y": 4.61,
+      "vix_bucket": "Low",
+      "us10y_bucket": "High",
+      "w_macro": 0.5,
+      "equity_target_pct": 125.0,
+      "actual_equity_pct": 71.82,
+      "cash": 70509828.0,
+      "stock_value": 179715700.0,
+      "port_value": 250225528.0,
+      "n_holdings": 8
+    },
+    {
+      "date": "20260520",
+      "vix": 17.82,
+      "us10y": 4.61,
+      "vix_bucket": "Low",
+      "us10y_bucket": "High",
+      "w_macro": 0.5,
+      "equity_target_pct": 125.0,
+      "actual_equity_pct": 74.38,
+      "cash": 70627359.0,
+      "stock_value": 205049800.0,
+      "port_value": 275677159.0,
+      "n_holdings": 8
+    }
+  ],
+  "trades_sample": [
+    {
+      "date": "20250926",
+      "ticker": "034020",
+      "action": "buy_stage1",
+      "shares": 238,
+      "price": 63100.0
+    },
+    {
+      "date": "20250926",
+      "ticker": "010120",
+      "action": "sell",
+      "shares": 15,
+      "price": 273000.0,
+      "reason": "trend_break"
+    },
+    {
+      "date": "20251010",
+      "ticker": "085910",
+      "action": "buy_stage1",
+      "shares": 1720,
+      "price": 4550.0
+    },
+    {
+      "date": "20251010",
+      "ticker": "028050",
+      "action": "sell",
+      "shares": 223,
+      "price": 27700.0,
+      "reason": "trend_break"
+    },
+    {
+      "date": "20251017",
+      "ticker": "012450",
+      "action": "sell",
+      "shares": 11,
+      "price": 912000.0,
+      "reason": "trend_break"
+    },
+    {
+      "date": "20251017",
+      "ticker": "085910",
+      "action": "buy_stage2",
+      "shares": 400,
+      "price": 4055.0
+    },
+    {
+      "date": "20251017",
+      "ticker": "010120",
+      "action": "buy_stage1",
+      "shares": 17,
+      "price": 302000.0
+    },
+    {
+      "date": "20251107",
+      "ticker": "047810",
+      "action": "sell",
+      "shares": 57,
+      "price": 97000.0,
+      "reason": "trend_break"
+    },
+    {
+      "date": "20251128",
+      "ticker": "207940",
+      "action": "buy_stage1",
+      "shares": 9,
+      "price": 1607000.0
+    },
+    {
+      "date": "20251205",
+      "ticker": "005380",
+      "action": "buy_stage1",
+      "shares": 20,
+      "price": 315000.0
+    },
+    {
+      "date": "20251219",
+      "ticker": "034020",
+      "action": "sell",
+      "shares": 238,
+      "price": 77400.0,
+      "reason": "trend_break"
+    },
+    {
+      "date": "20251219",
+      "ticker": "005380",
+      "action": "buy_stage2",
+      "shares": 4,
+      "price": 288500.0
+    },
+    {
+      "date": "20251229",
+      "ticker": "267260",
+      "action": "sell",
+      "shares": 9,
+      "price": 788000.0,
+      "reason": "trend_break"
+    },
+    {
+      "date": "20260107",
+      "ticker": "047810",
+      "action": "buy_stage1",
+      "shares": 47,
+      "price": 136100.0
+    },
+    {
+      "date": "20260107",
+      "ticker": "267260",
+      "action": "buy_stage1",
+      "shares": 6,
+      "price": 821000.0
+    },
+    {
+      "date": "20260114",
+      "ticker": "012450",
+      "action": "buy_stage1",
+      "shares": 10,
+      "price": 1269000.0
+    },
+    {
+      "date": "20260211",
+      "ticker": "012450",
+      "action": "buy_stage2",
+      "shares": 2,
+      "price": 1130000.0
+    },
+    {
+      "date": "20260223",
+      "ticker": "207940",
+      "action": "sell",
+      "shares": 9,
+      "price": 1717000.0,
+      "reason": "trend_break"
+    },
+    {
+      "date": "20260310",
+      "ticker": "028260",
+      "action": "sell",
+      "shares": 38,
+      "price": 273000.0,
+      "reason": "trend_break"
+    },
+    {
+      "date": "20260331",
+      "ticker": "005380",
+      "action": "sell",
+      "shares": 24,
+      "price": 445500.0,
+      "reason": "trend_break"
+    },
+    {
+      "date": "20260331",
+      "ticker": "267260",
+      "action": "sell",
+      "shares": 6,
+      "price": 832000.0,
+      "reason": "trend_break"
+    },
+    {
+      "date": "20260407",
+      "ticker": "028050",
+      "action": "buy_stage1",
+      "shares": 182,
+      "price": 47800.0
+    },
+    {
+      "date": "20260414",
+      "ticker": "010120",
+      "action": "sell",
+      "shares": 17,
+      "price": 185600.0,
+      "reason": "trend_break"
+    },
+    {
+      "date": "20260421",
+      "ticker": "005380",
+      "action": "buy_stage1",
+      "shares": 16,
+      "price": 546000.0
+    },
+    {
+      "date": "20260428",
+      "ticker": "047810",
+      "action": "sell",
+      "shares": 47,
+      "price": 168000.0,
+      "reason": "trend_break"
+    },
+    {
+      "date": "20260428",
+      "ticker": "267260",
+      "action": "buy_stage1",
+      "shares": 6,
+      "price": 1238000.0
+    },
+    {
+      "date": "20260514",
+      "ticker": "012450",
+      "action": "sell",
+      "shares": 12,
+      "price": 1306000.0,
+      "reason": "trend_break"
+    },
+    {
+      "date": "20260514",
+      "ticker": "028260",
+      "action": "buy_stage1",
+      "shares": 29,
+      "price": 442000.0
+    },
+    {
+      "date": "20260521",
+      "ticker": "028260",
+      "action": "buy_stage2",
+      "shares": 5,
+      "price": 418500.0
+    },
+    {
+      "date": "20260521",
+      "ticker": "267260",
+      "action": "buy_stage2",
+      "shares": 1,
+      "price": 1136000.0
+    }
+  ]
+}

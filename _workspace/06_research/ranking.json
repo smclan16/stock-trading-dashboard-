@@ -1,0 +1,246 @@
+{
+  "as_of": "2026-05-27T21:02:35+09:00",
+  "top_n": 15,
+  "ranking": [
+    {
+      "rank": 1,
+      "ticker": "062040",
+      "name": "산일전기",
+      "sector": "전기장비",
+      "total_score": 68.76,
+      "breakdown": {
+        "fundamental": 23.32,
+        "momentum": 16.68,
+        "theme": 9.76,
+        "catalyst": 9.0,
+        "risk_inv": 10.0
+      },
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "rank": 2,
+      "ticker": "402340",
+      "name": "SK스퀘어",
+      "sector": "금융",
+      "total_score": 68.75,
+      "breakdown": {
+        "fundamental": 19.22,
+        "momentum": 19.01,
+        "theme": 13.52,
+        "catalyst": 8.0,
+        "risk_inv": 9.0
+      },
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "rank": 3,
+      "ticker": "267260",
+      "name": "HD현대일렉트릭",
+      "sector": "전기장비",
+      "total_score": 68.37,
+      "breakdown": {
+        "fundamental": 22.25,
+        "momentum": 12.12,
+        "theme": 15.0,
+        "catalyst": 9.0,
+        "risk_inv": 10.0
+      },
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "rank": 4,
+      "ticker": "082740",
+      "name": "한화엔진",
+      "sector": "기계",
+      "total_score": 68.21,
+      "breakdown": {
+        "fundamental": 20.03,
+        "momentum": 16.07,
+        "theme": 13.11,
+        "catalyst": 9.0,
+        "risk_inv": 10.0
+      },
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "rank": 5,
+      "ticker": "004800",
+      "name": "효성",
+      "sector": "금융",
+      "total_score": 68.08,
+      "breakdown": {
+        "fundamental": 20.34,
+        "momentum": 20.22,
+        "theme": 9.52,
+        "catalyst": 8.0,
+        "risk_inv": 10.0
+      },
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "rank": 6,
+      "ticker": "010120",
+      "name": "LS ELECTRIC",
+      "sector": "전기장비",
+      "total_score": 67.74,
+      "breakdown": {
+        "fundamental": 19.05,
+        "momentum": 13.69,
+        "theme": 15.0,
+        "catalyst": 10.0,
+        "risk_inv": 10.0
+      },
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "rank": 7,
+      "ticker": "006260",
+      "name": "LS",
+      "sector": "금융",
+      "total_score": 67.16,
+      "breakdown": {
+        "fundamental": 13.29,
+        "momentum": 17.87,
+        "theme": 15.0,
+        "catalyst": 11.0,
+        "risk_inv": 10.0
+      },
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "rank": 8,
+      "ticker": "329180",
+      "name": "HD현대중공업",
+      "sector": "운송장비",
+      "total_score": 66.85,
+      "breakdown": {
+        "fundamental": 19.24,
+        "momentum": 19.44,
+        "theme": 7.17,
+        "catalyst": 11.0,
+        "risk_inv": 10.0
+      },
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "rank": 9,
+      "ticker": "001440",
+      "name": "대한전선",
+      "sector": "전기장비",
+      "total_score": 66.72,
+      "breakdown": {
+        "fundamental": 19.45,
+        "momentum": 19.51,
+        "theme": 9.76,
+        "catalyst": 8.0,
+        "risk_inv": 10.0
+      },
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "rank": 10,
+      "ticker": "028050",
+      "name": "삼성E&A",
+      "sector": "전문서비스",
+      "total_score": 66.65,
+      "breakdown": {
+        "fundamental": 19.67,
+        "momentum": 12.98,
+        "theme": 15.0,
+        "catalyst": 9.0,
+        "risk_inv": 10.0
+      },
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "rank": 11,
+      "ticker": "018260",
+      "name": "삼성에스디에스",
+      "sector": "IT서비스",
+      "total_score": 66.46,
+      "breakdown": {
+        "fundamental": 20.02,
+        "momentum": 16.94,
+        "theme": 11.64,
+        "catalyst": 7.86,
+        "risk_inv": 10.0
+      },
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "rank": 12,
+      "ticker": "060370",
+      "name": "LS마린솔루션",
+      "sector": "건설",
+      "total_score": 66.32,
+      "breakdown": {
+        "fundamental": 17.97,
+        "momentum": 16.85,
+        "theme": 10.5,
+        "catalyst": 11.0,
+        "risk_inv": 10.0
+      },
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "rank": 13,
+      "ticker": "034730",
+      "name": "SK",
+      "sector": "금융",
+      "total_score": 65.31,
+      "breakdown": {
+        "fundamental": 16.14,
+        "momentum": 20.65,
+        "theme": 13.52,
+        "catalyst": 8.0,
+        "risk_inv": 7.0
+      },
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "rank": 14,
+      "ticker": "237690",
+      "name": "에스티팜",
+      "sector": "제약바이오",
+      "total_score": 65.21,
+      "breakdown": {
+        "fundamental": 19.29,
+        "momentum": 16.6,
+        "theme": 11.32,
+        "catalyst": 8.0,
+        "risk_inv": 10.0
+      },
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "rank": 15,
+      "ticker": "047810",
+      "name": "한국항공우주",
+      "sector": "운송장비",
+      "total_score": 65.14,
+      "breakdown": {
+        "fundamental": 18.95,
+        "momentum": 14.24,
+        "theme": 11.15,
+        "catalyst": 10.8,
+        "risk_inv": 10.0
+      },
+      "is_uncovered": false,
+      "macro_beta": null
+    }
+  ]
+}

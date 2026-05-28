@@ -1,0 +1,2327 @@
+{
+  "as_of": "2026-05-27",
+  "version": "v5 (대형주 자동 포함 universe + 신규 23종 매칭 직접 추가)",
+  "model": "4축 매트릭스(사업의 내용·제품/서비스·시장의 인식·종속/관계 기업) — 점수화 X, 투자 대상 pool 형성",
+  "axes": [
+    "사업의 내용",
+    "제품/서비스",
+    "시장의 인식",
+    "종속/관계 기업"
+  ],
+  "intensity_labels": [
+    "direct",
+    "indirect",
+    "value_chain",
+    "perception"
+  ],
+  "data_basis": "3단계 universe.json(100종목, 5팩터) + 4단계 ideas.json(13테마: 글로벌 10 + 한국 자동 발굴 3) + company_meta.json + LLM 도메인 지식",
+  "n_ideas": 13,
+  "n_universe": 100,
+  "notes": [
+    "점수화·랭킹 없는 pool 형성. 한 축이라도 관련 있으면 포함.",
+    "evidence는 LLM 도메인 지식 기반. 6단계 company-research가 DART 사업보고서로 검증·점수화 책임.",
+    "uncovered_tickers = 어떤 아이디어에도 매칭 안 된 종목 = 매크로 변수와 무관한 개별 종목 후보 풀 = default_single_pick 후보 (6단계 선정).",
+    "v2 대비: 한국 자동 발굴 테마 #11(거버넌스/지주)·#12(내수/유통)·#13(K-방산/조선) 추가로 uncovered 종목 다수 매칭 이동."
+  ],
+  "matrix": [
+    {
+      "idea_id": 1,
+      "idea_theme": "AI 인프라 — HBM·메모리·하이퍼스케일러 Capex",
+      "matched_tickers": [
+        {
+          "ticker": "000660",
+          "name": "SK하이닉스",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "HBM 글로벌 1위, NVIDIA 향 공급"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "HBM3·HBM3E·HBM4"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "AI 인프라 1순위 수혜주"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "000990",
+          "name": "DB하이텍",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "8인치 파운드리 (PMIC·CIS 등)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "특화 공정 파운드리"
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "042700",
+          "name": "한미반도체",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "HBM TC본더 독점, SK하이닉스 메인 고객"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "HBM본더·MUF·DUAL TC본더"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "HBM 장비 1순위"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "131290",
+          "name": "티에스이",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "프로브카드·테스트 인터페이스"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "프로브카드"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "반도체 테스트 핵심"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "036930",
+          "name": "주성엔지니어링",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "반도체 ALD 장비"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "ALD 장비"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "메모리 Capex 수혜"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "420770",
+          "name": "기가비스",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "AI 가속기 PCB·기판 검사 장비"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "PCB 자동광학검사기"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "AI 인프라 PCB 검사 수혜"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "131970",
+          "name": "두산테스나",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "반도체 OSAT 테스트 서비스"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "메모리·시스템 반도체 테스트"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "OSAT 한국 대표"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "064290",
+          "name": "인텍플러스",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "반도체 외관 검사 장비"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "패키지·웨이퍼 외관 검사"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "HBM 검사 수혜"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "336370",
+          "name": "솔루스첨단소재",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "동박·OLED 소재 (AI 서버 박형 동박)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "전지 동박·반도체 박형동박"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "AI 서버 동박 수혜"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "425040",
+          "name": "티이엠씨",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "반도체 특수가스"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "Xe·Kr·Ne 등 특수가스"
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "402340",
+          "name": "SK스퀘어",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": false,
+              "evidence": null
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "SK하이닉스 모회사 → AI 메모리 수혜 대리"
+            },
+            "종속/관계 기업": {
+              "matched": true,
+              "evidence": "SK하이닉스 지분 보유"
+            }
+          }
+        },
+        {
+          "ticker": "034730",
+          "name": "SK",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": false,
+              "evidence": null
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "SK그룹 지주, SK하이닉스 간접 보유"
+            },
+            "종속/관계 기업": {
+              "matched": true,
+              "evidence": "SK스퀘어→SK하이닉스 손자회사"
+            }
+          }
+        },
+        {
+          "ticker": "018260",
+          "name": "삼성에스디에스",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "데이터센터 운영·클라우드, 삼성그룹 AI 인프라 SI"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "클라우드 서비스·SI"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "AI 클라우드 인프라 수혜 후보"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "003550",
+          "name": "LG",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "LG전자·LG디스플레이 자회사 (AI 인프라 간접)"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "403870",
+          "name": "HPSP",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "고압 어닐링 반도체 장비"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "005930",
+          "name": "삼성전자",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "HBM·DDR5·고대역폭 메모리, AI 데이터센터 핵심"
+            }
+          }
+        },
+        {
+          "ticker": "009150",
+          "name": "삼성전기",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "MLCC·AP 패키지 기판 (AI 서버용)"
+            }
+          }
+        },
+        {
+          "ticker": "035420",
+          "name": "NAVER",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "AI 인프라 자체 운영"
+            }
+          }
+        },
+        {
+          "ticker": "066570",
+          "name": "LG전자",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "AI 가전·서버용 모니터"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "idea_id": 2,
+      "idea_theme": "AI 에이전트 — Agentic AI 본격 상용화",
+      "matched_tickers": [
+        {
+          "ticker": "018260",
+          "name": "삼성에스디에스",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "기업용 AI 에이전트 플랫폼(Brity Copilot·Brity Automation)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "Brity Copilot·SI·클라우드"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "한국 기업 AI 에이전트 대표주"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "042510",
+          "name": "라온시큐어",
+          "intensity": "perception",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "보안 SW (AI 인증 시장 인접)"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "009150",
+          "name": "삼성전기",
+          "intensity": "perception",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "AI 에이전트 디바이스 부품"
+            }
+          }
+        },
+        {
+          "ticker": "035420",
+          "name": "NAVER",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "HyperClova X·AI 에이전트 (한국 대표 LLM)"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "idea_id": 3,
+      "idea_theme": "SMR·소형원전 — AI 데이터센터 전용 전력원",
+      "matched_tickers": [
+        {
+          "ticker": "077970",
+          "name": "STX엔진",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "발전 엔진·디젤엔진 (보조전원·SMR 보조설비 가능)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "디젤·LNG 발전 엔진"
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "082740",
+          "name": "한화엔진",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "선박·발전 엔진 (한화그룹 원자력 사업 협력 가능)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "엔진"
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "098070",
+          "name": "한텍",
+          "intensity": "value_chain",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "산업 보일러·압력용기·열교환기 (원전 보조 가능)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "열교환기·압력용기"
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "028050",
+          "name": "삼성E&A",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "SMR·소형원전 EPC 사업"
+            }
+          }
+        },
+        {
+          "ticker": "028260",
+          "name": "삼성물산",
+          "intensity": "perception",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "건설 부문 SMR·발전 EPC 가능성"
+            }
+          }
+        },
+        {
+          "ticker": "034020",
+          "name": "두산에너빌리티",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "SMR 주기기 (NuScale·X-energy 협력)"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "idea_id": 4,
+      "idea_theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
+      "matched_tickers": [
+        {
+          "ticker": "062040",
+          "name": "산일전기",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "변압기 (산업·전력용, 데이터센터 수혜)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "전력용 변압기"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "변압기 수출 호황"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "001440",
+          "name": "대한전선",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "초고압 케이블 (HVDC·송전), 미국 그리드 투자 수혜"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "전력 케이블·HVDC 케이블"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "데이터센터 송전 수혜"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "006260",
+          "name": "LS",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": false,
+              "evidence": null
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "LS ELECTRIC·LS전선 모회사, 데이터센터 전력 수혜 대리"
+            },
+            "종속/관계 기업": {
+              "matched": true,
+              "evidence": "LS ELECTRIC·LS전선·LS MnM 보유"
+            }
+          }
+        },
+        {
+          "ticker": "018670",
+          "name": "SK가스",
+          "intensity": "value_chain",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "LPG·LNG, 발전소·CHP 운영 (데이터센터 전력 공급 가능)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "LPG·LNG 트레이딩, 발전사업"
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "082920",
+          "name": "비츠로셀",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "특수전지·UPS 백업 전원"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "리튬일차전지·UPS"
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "098070",
+          "name": "한텍",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "산업 보일러·열교환기 (데이터센터 냉각)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "열교환기"
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "060370",
+          "name": "LS마린솔루션",
+          "intensity": "value_chain",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "해저 케이블 설치 (데이터센터 전력 인프라)"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "336260",
+          "name": "두산퓨얼셀",
+          "intensity": "perception",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "수소 연료전지 발전 (분산 전원)"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "010120",
+          "name": "LS ELECTRIC",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "전력기기·변압기·스위치기어 (AI 데이터센터 핵심)"
+            }
+          }
+        },
+        {
+          "ticker": "028050",
+          "name": "삼성E&A",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "데이터센터 EPC 인접"
+            }
+          }
+        },
+        {
+          "ticker": "034020",
+          "name": "두산에너빌리티",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "대형 가스터빈·발전 핵심 설비"
+            }
+          }
+        },
+        {
+          "ticker": "267260",
+          "name": "HD현대일렉트릭",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "변압기·전력기기 (AI 데이터센터 미국 수출 폭증)"
+            }
+          }
+        },
+        {
+          "ticker": "298040",
+          "name": "효성중공업",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "초고압 변압기 (미국 데이터센터 수출 강세)"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "idea_id": 5,
+      "idea_theme": "휴머노이드 로봇 — 양산 진입 단계",
+      "matched_tickers": [
+        {
+          "ticker": "085910",
+          "name": "네오티스",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "정밀기어·감속기 부품 (휴머노이드 핵심 부품)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "정밀기어"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "휴머노이드 부품 수혜"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "009900",
+          "name": "명신산업",
+          "intensity": "perception",
+          "axes": {
+            "사업의 내용": {
+              "matched": false,
+              "evidence": null
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "테슬라 부품주(Optimus 휴머노이드 부품 공급 가능성으로 인식)"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "idea_id": 6,
+      "idea_theme": "자율주행 — Robotaxi 본격화 (한국 신호 강함)",
+      "matched_tickers": [
+        {
+          "ticker": "005850",
+          "name": "에스엘",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "차량 램프·전장"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "헤드램프"
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "009900",
+          "name": "명신산업",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "차체 부품 (테슬라·기아 공급)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "차체부품"
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "403550",
+          "name": "쏘카",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "차량 호출·카셰어링 플랫폼 (Robotaxi 인접)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "카셰어링·호출"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "Robotaxi 패러다임 인식"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "001740",
+          "name": "SK네트웍스",
+          "intensity": "value_chain",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "렌터카·정비 사업 (자율주행 보급 시 영향)"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "000270",
+          "name": "기아",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "OEM, 자율주행 PBV·로보택시 추진"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "012330",
+          "name": "현대모비스",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "자율주행 SW·전장·ADAS"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "005380",
+          "name": "현대차",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "자율주행·로보택시·소프트웨어 정의 차량 (모셔날)"
+            }
+          }
+        },
+        {
+          "ticker": "373220",
+          "name": "LG에너지솔루션",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "전기차·자율주행용 배터리 (GM·테슬라·현대 공급)"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "idea_id": 7,
+      "idea_theme": "GLP-1 비만약 — 시장 폭증 지속",
+      "matched_tickers": [
+        {
+          "ticker": "237690",
+          "name": "에스티팜",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "올리고·펩타이드 CDMO, GLP-1 위탁생산 가능"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "펩타이드·올리고 CDMO"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "GLP-1 CDMO 후보"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "005500",
+          "name": "삼진제약",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "비만·당뇨 라이센싱/제휴 가능성"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "K-비만 라이센싱 기대주 (거래대금 +1407%)"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "039200",
+          "name": "오스코텍",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "신약 (비만 직접은 아니나 면역·대사 영역)"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "222040",
+          "name": "코스맥스엔비티",
+          "intensity": "perception",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "체중관리 시장 인접"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "068270",
+          "name": "셀트리온",
+          "intensity": "perception",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "바이오시밀러·면역 (비만약 보조)"
+            }
+          }
+        },
+        {
+          "ticker": "207940",
+          "name": "삼성바이오로직스",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "GLP-1 CDMO·삼성그룹 바이오 핵심"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "idea_id": 8,
+      "idea_theme": "유전자 치료(CRISPR) — CASGEVY 이후 상용화",
+      "matched_tickers": [
+        {
+          "ticker": "237690",
+          "name": "에스티팜",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "올리고 CDMO (siRNA·ASO 원료)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "올리고뉴클레오타이드 CDMO"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "유전자치료 CDMO 후보"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "039200",
+          "name": "오스코텍",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "신약 (Lazertinib·면역항암)"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "068270",
+          "name": "셀트리온",
+          "intensity": "perception",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "항체치료 (CRISPR 인접)"
+            }
+          }
+        },
+        {
+          "ticker": "207940",
+          "name": "삼성바이오로직스",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "유전자 치료 CDMO"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "idea_id": 9,
+      "idea_theme": "양자 컴퓨팅 — 알고리즘 우위 + 사업화 가시화",
+      "matched_tickers": [],
+      "note": "신규 universe에도 KT·SK텔레콤 등 양자암호통신 대표 부재. 매칭 0건."
+    },
+    {
+      "idea_id": 10,
+      "idea_theme": "위성통신·LEO — 글로벌 인터넷 인프라",
+      "matched_tickers": [
+        {
+          "ticker": "230240",
+          "name": "에치에프알",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "5G·통신장비 (위성통신 인접)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "5G FTTH·X-Haul"
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "050890",
+          "name": "쏠리드",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "통신 중계장비 (위성·5G)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "통신 중계기"
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "115440",
+          "name": "우리넷",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "통신 장비 (위성·5G)"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "012450",
+          "name": "한화에어로스페이스",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "발사체·위성 (위성통신 인프라)"
+            }
+          }
+        },
+        {
+          "ticker": "047810",
+          "name": "한국항공우주",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "인공위성·발사체 사업"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "idea_id": 11,
+      "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
+      "discovery_source": "kr_themes_discovered.json — 금융섹터 z+0.40 + DART 자사주 취득 +100%·처분 +14%·M&A +12%",
+      "matched_tickers": [
+        {
+          "ticker": "402340",
+          "name": "SK스퀘어",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "투자지주, SK하이닉스 보유. 자사주 처분·소각 정책 추진"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "지주사 디스카운트 해소·밸류업 핵심 종목 인식"
+            },
+            "종속/관계 기업": {
+              "matched": true,
+              "evidence": "SK하이닉스 지분 + 자회사 다수"
+            }
+          }
+        },
+        {
+          "ticker": "034730",
+          "name": "SK",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "SK그룹 지주, 사업 재편·자회사 가치 재평가"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "지주사 밸류업 + 사업 포트폴리오 재편 기대"
+            },
+            "종속/관계 기업": {
+              "matched": true,
+              "evidence": "SK이노베이션·SK텔레콤·SK스퀘어 등"
+            }
+          }
+        },
+        {
+          "ticker": "004800",
+          "name": "효성",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "효성그룹 지주, 인적분할·자사주 정책"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "거버넌스 재편 지주사 대표"
+            },
+            "종속/관계 기업": {
+              "matched": true,
+              "evidence": "효성중공업·효성첨단소재 등 분할 후 지주"
+            }
+          }
+        },
+        {
+          "ticker": "006260",
+          "name": "LS",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "LS그룹 지주, 전선·전력기기 자회사 가치 재평가"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "지주사 + 데이터센터 전력 자회사 후광"
+            },
+            "종속/관계 기업": {
+              "matched": true,
+              "evidence": "LS ELECTRIC·LS전선·LS MnM"
+            }
+          }
+        },
+        {
+          "ticker": "078930",
+          "name": "GS",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "GS그룹 지주, 자사주 매입·소각 가능성"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "저PBR 지주 밸류업 후보"
+            },
+            "종속/관계 기업": {
+              "matched": true,
+              "evidence": "GS칼텍스·GS리테일·GS건설"
+            }
+          }
+        },
+        {
+          "ticker": "383800",
+          "name": "LX홀딩스",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "LX그룹 지주 (LG에서 분할), 거버넌스 재정비"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "신생 지주 디스카운트 해소 기대"
+            },
+            "종속/관계 기업": {
+              "matched": true,
+              "evidence": "LX인터내셔널·LX세미콘·LX판토스 등"
+            }
+          }
+        },
+        {
+          "ticker": "003550",
+          "name": "LG",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "LG그룹 지주, 거버넌스 재편·자회사 가치 재평가"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "004150",
+          "name": "한솔홀딩스",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "한솔그룹 지주, 자사주 정책 가능성"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "060370",
+          "name": "LS마린솔루션",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "LS그룹 자회사"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "005930",
+          "name": "삼성전자",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "삼성그룹 지주 구조·합병 가능성 (수동적 거버넌스)"
+            }
+          }
+        },
+        {
+          "ticker": "005380",
+          "name": "현대차",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "현대차그룹 지배구조 개편 진행"
+            }
+          }
+        },
+        {
+          "ticker": "005490",
+          "name": "POSCO홀딩스",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "POSCO그룹 지주, 자사주 정책 가능성"
+            }
+          }
+        },
+        {
+          "ticker": "009540",
+          "name": "HD한국조선해양",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "HD현대그룹 지주"
+            }
+          }
+        },
+        {
+          "ticker": "010120",
+          "name": "LS ELECTRIC",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "LS그룹 자회사"
+            }
+          }
+        },
+        {
+          "ticker": "016360",
+          "name": "삼성증권",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "삼성그룹 금융, 밸류업 수혜"
+            }
+          }
+        },
+        {
+          "ticker": "028260",
+          "name": "삼성물산",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "삼성그룹 지주·합병 핵심"
+            }
+          }
+        },
+        {
+          "ticker": "032830",
+          "name": "삼성생명",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "밸류업 핵심 (PBR 낮은 보험 대표주)"
+            }
+          }
+        },
+        {
+          "ticker": "055550",
+          "name": "신한지주",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "밸류업 핵심 (자사주 소각·배당)"
+            }
+          }
+        },
+        {
+          "ticker": "066570",
+          "name": "LG전자",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "LG그룹 자회사 (LG 지주)"
+            }
+          }
+        },
+        {
+          "ticker": "105560",
+          "name": "KB금융",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "밸류업 대표주 (PBR 0.5 미만, 자사주 매입)"
+            }
+          }
+        },
+        {
+          "ticker": "267260",
+          "name": "HD현대일렉트릭",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "HD현대 자회사"
+            }
+          }
+        },
+        {
+          "ticker": "298040",
+          "name": "효성중공업",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "효성그룹 분할 후 핵심 사업회사"
+            }
+          }
+        },
+        {
+          "ticker": "373220",
+          "name": "LG에너지솔루션",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "LG그룹 자회사"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "idea_id": 12,
+      "idea_theme": "한국 내수·유통·면세·K-뷰티 회복 (자동 발굴)",
+      "discovery_source": "kr_themes_discovered.json — 유통섹터 z+0.41, 거래대금 +231%",
+      "matched_tickers": [
+        {
+          "ticker": "023530",
+          "name": "롯데쇼핑",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "백화점·마트·면세 — 내수·관광 직접 수혜"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "백화점·마트·이커머스"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "인바운드·내수 회복 대표주"
+            },
+            "종속/관계 기업": {
+              "matched": true,
+              "evidence": "롯데면세점·롯데마트 등"
+            }
+          }
+        },
+        {
+          "ticker": "031430",
+          "name": "신세계인터내셔날",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "패션·화장품·라이프스타일 (K-뷰티·인바운드)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "수입 패션·K-뷰티 브랜드"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "내수·면세·K뷰티 수혜"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "001740",
+          "name": "SK네트웍스",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "렌터카·정비·민자/B2C 사업"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "SK매직 가전·렌터카"
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "018670",
+          "name": "SK가스",
+          "intensity": "perception",
+          "axes": {
+            "사업의 내용": {
+              "matched": false,
+              "evidence": null
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "내수 에너지 (제한적)"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "483650",
+          "name": "달바글로벌",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "K-뷰티 브랜드 글로벌 수출"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "달바 화장품 (D2C 글로벌)"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "K-뷰티 신성장 대표"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "222040",
+          "name": "코스맥스엔비티",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "건강기능식품 OEM (내수·K-뷰티)"
+            },
+            "제품/서비스": {
+              "matched": false,
+              "evidence": null
+            },
+            "시장의 인식": {
+              "matched": false,
+              "evidence": null
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "idea_id": 13,
+      "idea_theme": "K-방산·K-조선 수출 사이클",
+      "discovery_source": "kr_themes_discovered.json — 운송장비 섹터(단기 모멘텀 약함) + LLM 도메인 지식 보강",
+      "matched_tickers": [
+        {
+          "ticker": "329180",
+          "name": "HD현대중공업",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "LNG선·해양플랜트·특수선(잠수함·구축함)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "LNG선·암모니아선·KDDX 차세대구축함"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "K-조선·K-방산 양면 수혜"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "010140",
+          "name": "삼성중공업",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "LNG선·해양플랜트, 카타르 LNG 2차 발주 수혜"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "LNG선·드릴십·FLNG"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "K-조선 LNG 사이클 호황"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "082740",
+          "name": "한화엔진",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "선박 엔진 (한화오션·HD중공업 향)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "MAN·WinGD 라이센스 선박 엔진"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "K-조선 엔진 핵심"
+            },
+            "종속/관계 기업": {
+              "matched": true,
+              "evidence": "한화그룹 (한화오션 시너지)"
+            }
+          }
+        },
+        {
+          "ticker": "077970",
+          "name": "STX엔진",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "특수선 엔진 (군함·디젤발전)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "선박·발전 엔진"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "K-조선·방산 인프라"
+            },
+            "종속/관계 기업": {
+              "matched": false,
+              "evidence": null
+            }
+          }
+        },
+        {
+          "ticker": "443060",
+          "name": "HD현대마린솔루션",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "선박 사후서비스·친환경 개조 (K-조선 후속)"
+            },
+            "제품/서비스": {
+              "matched": true,
+              "evidence": "AS·리트로핏·디지털 솔루션"
+            },
+            "시장의 인식": {
+              "matched": true,
+              "evidence": "조선 사이클 후방 수혜"
+            },
+            "종속/관계 기업": {
+              "matched": true,
+              "evidence": "HD현대 그룹"
+            }
+          }
+        },
+        {
+          "ticker": "005490",
+          "name": "POSCO홀딩스",
+          "intensity": "indirect",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "K-조선·방산용 후판·강재 공급"
+            }
+          }
+        },
+        {
+          "ticker": "009540",
+          "name": "HD한국조선해양",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "K-조선 메인 (LNG·메가캐리어)"
+            }
+          }
+        },
+        {
+          "ticker": "012450",
+          "name": "한화에어로스페이스",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "K-방산 메인 (자주포·LIG 합병)"
+            }
+          }
+        },
+        {
+          "ticker": "042660",
+          "name": "한화오션",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "K-조선 (한화 인수 후 방산함정 강화)"
+            }
+          }
+        },
+        {
+          "ticker": "047810",
+          "name": "한국항공우주",
+          "intensity": "direct",
+          "axes": {
+            "사업의 내용": {
+              "matched": true,
+              "evidence": "K-방산 (FA-50 수출 폭증)"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "multi_matched_tickers": {
+    "402340": [
+      1,
+      11
+    ],
+    "034730": [
+      1,
+      11
+    ],
+    "018260": [
+      1,
+      2
+    ],
+    "003550": [
+      1,
+      11
+    ],
+    "005930": [
+      1,
+      11
+    ],
+    "009150": [
+      1,
+      2
+    ],
+    "035420": [
+      1,
+      2
+    ],
+    "066570": [
+      1,
+      11
+    ],
+    "077970": [
+      3,
+      13
+    ],
+    "082740": [
+      3,
+      13
+    ],
+    "098070": [
+      3,
+      4
+    ],
+    "028050": [
+      3,
+      4
+    ],
+    "028260": [
+      3,
+      11
+    ],
+    "034020": [
+      3,
+      4
+    ],
+    "006260": [
+      4,
+      11
+    ],
+    "018670": [
+      4,
+      12
+    ],
+    "060370": [
+      4,
+      11
+    ],
+    "010120": [
+      4,
+      11
+    ],
+    "267260": [
+      4,
+      11
+    ],
+    "298040": [
+      4,
+      11
+    ],
+    "009900": [
+      5,
+      6
+    ],
+    "001740": [
+      6,
+      12
+    ],
+    "005380": [
+      6,
+      11
+    ],
+    "373220": [
+      6,
+      11
+    ],
+    "237690": [
+      7,
+      8
+    ],
+    "039200": [
+      7,
+      8
+    ],
+    "222040": [
+      7,
+      12
+    ],
+    "068270": [
+      7,
+      8
+    ],
+    "207940": [
+      7,
+      8
+    ],
+    "012450": [
+      10,
+      13
+    ],
+    "047810": [
+      10,
+      13
+    ],
+    "005490": [
+      11,
+      13
+    ],
+    "009540": [
+      11,
+      13
+    ]
+  },
+  "uncovered_tickers": {
+    "purpose": "매크로 무관 개별 종목 풀",
+    "v4_change_note": "v3 대비 24/24 교체 (30억 하한 + 회전율 보정)",
+    "by_sector_summary": {
+      "화학": 5,
+      "전자반도체": 3,
+      "운송물류": 2,
+      "전기장비": 3,
+      "철강금속": 4,
+      "미디어콘텐츠": 5,
+      "전문서비스": 3,
+      "의료정밀": 1,
+      "건설": 2,
+      "제약바이오": 2,
+      "정유": 1,
+      "고무플라스틱": 1,
+      "금융": 1,
+      "기계": 1
+    },
+    "list_flat": [
+      "004710",
+      "005880",
+      "006400",
+      "009830",
+      "011930",
+      "016380",
+      "028670",
+      "036570",
+      "041830",
+      "047040",
+      "051910",
+      "058430",
+      "066980",
+      "089010",
+      "096530",
+      "096770",
+      "108670",
+      "192080",
+      "223250",
+      "243840",
+      "259960",
+      "263750",
+      "306200",
+      "375500",
+      "382800",
+      "460860",
+      "488280"
+    ]
+  },
+  "summary": {
+    "version": "v5",
+    "n_idea_matched": 12,
+    "match_count_by_idea": {
+      "#1 AI 인프라 — HBM·메모리·하이퍼스케일러 Capex": 19,
+      "#2 AI 에이전트 — Agentic AI 본격 상용화": 4,
+      "#3 SMR·소형원전 — AI 데이터센터 전용 전력원": 6,
+      "#4 데이터센터 전력·전력기기 — AI Capex 직접 수혜": 13,
+      "#5 휴머노이드 로봇 — 양산 진입 단계": 2,
+      "#6 자율주행 — Robotaxi 본격화 (한국 신호 강함)": 8,
+      "#7 GLP-1 비만약 — 시장 폭증 지속": 6,
+      "#8 유전자 치료(CRISPR) — CASGEVY 이후 상용": 4,
+      "#9 양자 컴퓨팅 — 알고리즘 우위 + 사업화 가시화": 0,
+      "#10 위성통신·LEO — 글로벌 인터넷 인프라": 5,
+      "#11 한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)": 23,
+      "#12 한국 내수·유통·면세·K-뷰티 회복 (자동 발굴)": 6,
+      "#13 K-방산·K-조선 수출 사이클": 10
+    },
+    "uncovered_count": 27,
+    "multi_matched_count": 33,
+    "v3_to_v4_change": {
+      "added": [
+        "000270",
+        "003550",
+        "004150",
+        "009450",
+        "012330",
+        "037440",
+        "042510",
+        "049070",
+        "060370",
+        "066980",
+        "071970",
+        "078890",
+        "089010",
+        "115440",
+        "120110",
+        "123330",
+        "149950",
+        "204620",
+        "222040",
+        "223250",
+        "322310",
+        "336260",
+        "336570",
+        "403870"
+      ],
+      "removed": [
+        "003490",
+        "009150",
+        "012450",
+        "013030",
+        "016360",
+        "016580",
+        "017960",
+        "020000",
+        "028050",
+        "030190",
+        "032830",
+        "033160",
+        "033780",
+        "036800",
+        "099190",
+        "119610",
+        "125210",
+        "183300",
+        "194370",
+        "194700",
+        "214180",
+        "280360",
+        "307950",
+        "355150",
+        "482630",
+        "499790"
+      ]
+    }
+  },
+  "version_diff_from_v1": {
+    "신규_universe_진입_매칭_보강": {
+      "AI인프라": "삼성SDS(클라우드)·SK스퀘어·SK(지주, SK하이닉스 보유)·DB하이텍 등 보강",
+      "AI에이전트": "삼성SDS(Brity Copilot, 한국 기업 AI 에이전트 대표) 진입",
+      "SMR": "삼성E&A(EPC)·STX엔진·한화엔진·한텍 등 SMR 보조설비 다수",
+      "데이터센터_전력": "대한전선(HVDC 케이블) 신규 매칭, LS(지주) + SK가스(발전) 인접",
+      "LEO_위성": "한화에어로스페이스(누리호·발사체) 신규 진입 — 직접 매칭",
+      "자율주행": "쏘카(카셰어링·Robotaxi 인접) 신규"
+    },
+    "v1에서_빠진_종목": "두산에너빌리티·KT·NAVER·삼성전자·HD현대일렉트릭·효성중공업·한미약품·쎄트렉아이·로보티즈·기아 — 5팩터 점수 부족으로 탈락",
+    "신규_uncovered_큰_그룹": "게임 빅3(펄어비스·크래프톤·NC), 2차전지(삼성SDI·LG화학), 조선(HD중공업·삼성중공업), 항공(대한항공), 정유(SK이노베이션), 보톡스(휴젤), 진단(씨젠)"
+  }
+}

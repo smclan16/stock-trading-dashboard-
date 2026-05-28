@@ -1,0 +1,80 @@
+{
+  "as_of": "2026-05-27T22:19:58+09:00",
+  "overall": "WARN",
+  "n_fail": 0,
+  "n_warn": 2,
+  "results": [
+    {
+      "id": "A",
+      "name": "자산배분 ↔ 포트폴리오 합",
+      "verdict": "PASS",
+      "detail": "포트폴리오 합 100.00% (기준 100%, 오차 0.00%p) / 자본대비 합 125.00% vs equity 125.0% (오차 0.00%p)"
+    },
+    {
+      "id": "B-1",
+      "name": "단일 종목 한도",
+      "verdict": "PASS",
+      "detail": "최대 7.08% / 한도 15%"
+    },
+    {
+      "id": "B-2",
+      "name": "섹터 한도",
+      "verdict": "PASS",
+      "detail": "최대 12.99% (제약바이오) / 한도 30%"
+    },
+    {
+      "id": "B-3",
+      "name": "제외 종목/섹터",
+      "verdict": "PASS",
+      "detail": "제외 종목 위반 0 / 제외 섹터 위반 0"
+    },
+    {
+      "id": "B-4",
+      "name": "포트폴리오 변동성 한도",
+      "verdict": "PASS",
+      "detail": "추정 7.08% / 한도 30% (β 단순화 한계)"
+    },
+    {
+      "id": "C",
+      "name": "아이디어 비중 정합",
+      "verdict": "PASS",
+      "detail": "최대 차이 0.00%p / 임계 1.5%p / 위반 0개"
+    },
+    {
+      "id": "C-default",
+      "name": "default_picks 비중 합",
+      "verdict": "PASS",
+      "detail": "expected 10.0% / actual 10.00% (오차 0.00%p)"
+    },
+    {
+      "id": "D",
+      "name": "default_picks 매크로 베타",
+      "verdict": "PASS",
+      "detail": "4종목 모두 β<0.7"
+    },
+    {
+      "id": "E",
+      "name": "매칭 강도-비중 일관성",
+      "verdict": "WARN",
+      "detail": "direct < indirect 평균 비중 위반: 3개 아이디어"
+    },
+    {
+      "id": "F",
+      "name": "매력도-비중 상관",
+      "verdict": "WARN",
+      "detail": "Spearman ρ = -0.082 / 임계 0.3"
+    },
+    {
+      "id": "G",
+      "name": "데이터 신선도",
+      "verdict": "PASS",
+      "detail": "모든 단계 신선"
+    },
+    {
+      "id": "H",
+      "name": "레짐 ↔ 팩터 가중치",
+      "verdict": "PASS",
+      "detail": "레짐=중립 / 모멘텀계열 합=60%"
+    }
+  ]
+}

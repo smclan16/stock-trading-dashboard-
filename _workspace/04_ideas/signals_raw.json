@@ -1,0 +1,892 @@
+{
+  "as_of": "2026-05-27T00:55:35+09:00",
+  "windows": {
+    "arxiv": "30d vs 180d",
+    "wiki": "4w vs 12w",
+    "wiki_ko": "4w vs 12w",
+    "trends": "4w vs 12w",
+    "github": "30d vs 180d",
+    "hn": "30d vs 180d",
+    "sec_edgar": "90d vs 365d (10-K)",
+    "patents": "180d vs 730d (priority date)",
+    "federal_register": "90d vs 365d",
+    "naver_news": "30d vs 180d",
+    "assembly_bills": "180d vs 730d (22대)"
+  },
+  "data_source": "arXiv + Wikipedia(EN/KO) + GitHub + HackerNews + SEC EDGAR + Google Patents + federalregister.gov + 네이버 뉴스 + 국회 의안 (+ Google Trends optional)",
+  "n_themes": 10,
+  "signals": [
+    {
+      "theme_hint": "AI 인프라·LLM",
+      "arxiv": [
+        {
+          "keyword": "large language model",
+          "n_recent": 1000,
+          "n_base": 1000,
+          "days_recent": 30,
+          "days_base": 180,
+          "growth_pct": 500.0000000000001,
+          "truncated": true
+        }
+      ],
+      "wiki": [
+        {
+          "article": "Large_language_model",
+          "project": "en.wikipedia",
+          "avg_recent": 5146.758620689655,
+          "avg_base": 7050.447058823529,
+          "growth_pct": -27.000960680237096,
+          "n_days": 85
+        }
+      ],
+      "wiki_ko": [
+        {
+          "article": "대형_언어_모델",
+          "project": "ko.wikipedia",
+          "avg_recent": 71.03448275862068,
+          "avg_base": 112.2235294117647,
+          "growth_pct": -36.70268335797506,
+          "n_days": 85
+        }
+      ],
+      "trends": [],
+      "github": [
+        {
+          "keyword": "LLM",
+          "n_recent": 45413,
+          "n_base": 213236,
+          "growth_pct": 27.78236320321148,
+          "rate_limit_remaining": "29"
+        }
+      ],
+      "hn": [
+        {
+          "keyword": "LLM",
+          "n_recent": 1162,
+          "n_base": 8871,
+          "growth_pct": -21.40683124788637
+        }
+      ],
+      "sec_edgar": [
+        {
+          "keyword": "large language model",
+          "forms": [
+            "10-K"
+          ],
+          "n_recent": 39,
+          "n_base": 63,
+          "growth_pct": 151.05820105820106
+        }
+      ],
+      "patents": [],
+      "federal_register": [
+        {
+          "keyword": "artificial intelligence",
+          "n_recent": 77,
+          "n_base": 224,
+          "growth_pct": 39.40972222222221
+        }
+      ],
+      "naver_news": [
+        {
+          "keyword": "HBM 수출",
+          "n_recent": 974,
+          "n_base": 1000,
+          "naver_total_match": 24637,
+          "growth_pct": 484.40000000000003,
+          "truncated": true
+        }
+      ],
+      "assembly_bills": [
+        {
+          "keyword": "인공지능",
+          "error": "DATA_GO_KR_KEY not set in .env"
+        }
+      ]
+    },
+    {
+      "theme_hint": "AI 에이전트",
+      "arxiv": [
+        {
+          "keyword": "AI agent",
+          "n_recent": 222,
+          "n_base": 1000,
+          "days_recent": 30,
+          "days_base": 180,
+          "growth_pct": 33.20000000000001,
+          "truncated": true
+        }
+      ],
+      "wiki": [
+        {
+          "article": "Software_agent",
+          "project": "en.wikipedia",
+          "avg_recent": 154.6551724137931,
+          "avg_base": 149.48235294117646,
+          "growth_pct": 3.4604883926681484,
+          "n_days": 85
+        }
+      ],
+      "wiki_ko": [
+        {
+          "article": "인공지능",
+          "project": "ko.wikipedia",
+          "avg_recent": 379.6551724137931,
+          "avg_base": 405.88235294117646,
+          "growth_pct": -6.461769115442284,
+          "n_days": 85
+        }
+      ],
+      "trends": [],
+      "github": [
+        {
+          "keyword": "AI agent",
+          "n_recent": 25481,
+          "n_base": 120823,
+          "growth_pct": 26.53716593694908,
+          "rate_limit_remaining": "27"
+        }
+      ],
+      "hn": [
+        {
+          "keyword": "AI agent",
+          "n_recent": 1081,
+          "n_base": 8199,
+          "growth_pct": -20.89279180387852
+        }
+      ],
+      "sec_edgar": [
+        {
+          "keyword": "AI agent",
+          "forms": [
+            "10-K"
+          ],
+          "n_recent": 40,
+          "n_base": 56,
+          "growth_pct": 189.68253968253964
+        }
+      ],
+      "patents": [],
+      "federal_register": [
+        {
+          "keyword": "AI agent",
+          "n_recent": 20,
+          "n_base": 58,
+          "growth_pct": 39.84674329501914
+        }
+      ],
+      "naver_news": [
+        {
+          "keyword": "agentic AI",
+          "n_recent": 1000,
+          "n_base": 1000,
+          "naver_total_match": 14599,
+          "growth_pct": 500.0000000000001,
+          "truncated": true
+        }
+      ],
+      "assembly_bills": [
+        {
+          "keyword": "AI 에이전트",
+          "error": "DATA_GO_KR_KEY not set in .env"
+        }
+      ]
+    },
+    {
+      "theme_hint": "SMR·소형원전",
+      "arxiv": [
+        {
+          "keyword": "small modular reactor",
+          "n_recent": 0,
+          "n_base": 2,
+          "days_recent": 30,
+          "days_base": 180,
+          "growth_pct": -100.0,
+          "truncated": false
+        }
+      ],
+      "wiki": [
+        {
+          "article": "Small_modular_reactor",
+          "project": "en.wikipedia",
+          "avg_recent": 803.1724137931035,
+          "avg_base": 870.6705882352941,
+          "growth_pct": -7.752435347448483,
+          "n_days": 85
+        }
+      ],
+      "wiki_ko": [
+        {
+          "article": "소형_모듈_원자로",
+          "project": "ko.wikipedia",
+          "avg_recent": 0,
+          "avg_base": 2.0,
+          "growth_pct": -100.0,
+          "n_days": 1
+        }
+      ],
+      "trends": [],
+      "github": [],
+      "hn": [
+        {
+          "keyword": "SMR nuclear",
+          "n_recent": 0,
+          "n_base": 0,
+          "growth_pct": null
+        }
+      ],
+      "sec_edgar": [
+        {
+          "keyword": "small modular reactor",
+          "forms": [
+            "10-K"
+          ],
+          "n_recent": 38,
+          "n_base": 15,
+          "growth_pct": 927.4074074074075
+        }
+      ],
+      "patents": [],
+      "federal_register": [
+        {
+          "keyword": "small modular reactor",
+          "n_recent": 12,
+          "n_base": 19,
+          "growth_pct": 156.140350877193
+        }
+      ],
+      "naver_news": [
+        {
+          "keyword": "NuScale",
+          "n_recent": 21,
+          "n_base": 223,
+          "naver_total_match": 2469,
+          "growth_pct": -43.497757847533634,
+          "truncated": false
+        }
+      ],
+      "assembly_bills": [
+        {
+          "keyword": "소형원자로",
+          "error": "DATA_GO_KR_KEY not set in .env"
+        }
+      ]
+    },
+    {
+      "theme_hint": "데이터센터 전력",
+      "arxiv": [
+        {
+          "keyword": "data center power",
+          "n_recent": 2,
+          "n_base": 8,
+          "days_recent": 30,
+          "days_base": 180,
+          "growth_pct": 50.0,
+          "truncated": false
+        }
+      ],
+      "wiki": [
+        {
+          "article": "Data_center",
+          "project": "en.wikipedia",
+          "avg_recent": 2660.0,
+          "avg_base": 2022.0235294117647,
+          "growth_pct": 31.55138707875629,
+          "n_days": 85
+        }
+      ],
+      "wiki_ko": [
+        {
+          "article": "데이터_센터",
+          "project": "ko.wikipedia",
+          "avg_recent": 40.96551724137931,
+          "avg_base": 40.11764705882353,
+          "growth_pct": 2.1134593993325845,
+          "n_days": 85
+        }
+      ],
+      "trends": [],
+      "github": [],
+      "hn": [
+        {
+          "keyword": "data center power",
+          "n_recent": 34,
+          "n_base": 107,
+          "growth_pct": 90.65420560747664
+        }
+      ],
+      "sec_edgar": [
+        {
+          "keyword": "data center power",
+          "forms": [
+            "10-K"
+          ],
+          "n_recent": 22,
+          "n_base": 41,
+          "growth_pct": 117.61517615176152
+        }
+      ],
+      "patents": [],
+      "federal_register": [
+        {
+          "keyword": "data center energy",
+          "n_recent": 183,
+          "n_base": 578,
+          "growth_pct": 28.402537485582457
+        }
+      ],
+      "naver_news": [
+        {
+          "keyword": "초고압 변압기",
+          "n_recent": 774,
+          "n_base": 1000,
+          "naver_total_match": 21488,
+          "growth_pct": 364.40000000000003,
+          "truncated": true
+        }
+      ],
+      "assembly_bills": [
+        {
+          "keyword": "데이터센터",
+          "error": "DATA_GO_KR_KEY not set in .env"
+        }
+      ]
+    },
+    {
+      "theme_hint": "휴머노이드 로봇",
+      "arxiv": [
+        {
+          "keyword": "humanoid robot",
+          "n_recent": 30,
+          "n_base": 210,
+          "days_recent": 30,
+          "days_base": 180,
+          "growth_pct": -14.28571428571429,
+          "truncated": false
+        }
+      ],
+      "wiki": [
+        {
+          "article": "Humanoid_robot",
+          "project": "en.wikipedia",
+          "avg_recent": 489.2758620689655,
+          "avg_base": 493.8588235294118,
+          "growth_pct": -0.9279901951925629,
+          "n_days": 85
+        }
+      ],
+      "wiki_ko": [
+        {
+          "article": "휴머노이드_로봇",
+          "project": "ko.wikipedia",
+          "avg_recent": 26.689655172413794,
+          "avg_base": 25.03529411764706,
+          "growth_pct": 6.6081151153746465,
+          "n_days": 85
+        }
+      ],
+      "trends": [],
+      "github": [
+        {
+          "keyword": "humanoid robot",
+          "n_recent": 131,
+          "n_base": 2369,
+          "growth_pct": -66.8214436471085,
+          "rate_limit_remaining": "25"
+        }
+      ],
+      "hn": [
+        {
+          "keyword": "humanoid robot",
+          "n_recent": 33,
+          "n_base": 148,
+          "growth_pct": 33.7837837837838
+        }
+      ],
+      "sec_edgar": [
+        {
+          "keyword": "humanoid robot",
+          "forms": [
+            "10-K"
+          ],
+          "n_recent": 2,
+          "n_base": 6,
+          "growth_pct": 35.185185185185205
+        }
+      ],
+      "patents": [],
+      "federal_register": [
+        {
+          "keyword": "humanoid robotics",
+          "n_recent": 0,
+          "n_base": 2,
+          "growth_pct": -100.0
+        }
+      ],
+      "naver_news": [
+        {
+          "keyword": "옵티머스 로봇",
+          "n_recent": 261,
+          "n_base": 1000,
+          "naver_total_match": 11520,
+          "growth_pct": 56.59999999999998,
+          "truncated": true
+        }
+      ],
+      "assembly_bills": [
+        {
+          "keyword": "지능형 로봇",
+          "error": "DATA_GO_KR_KEY not set in .env"
+        }
+      ]
+    },
+    {
+      "theme_hint": "자율주행",
+      "arxiv": [
+        {
+          "keyword": "autonomous driving",
+          "n_recent": 182,
+          "n_base": 997,
+          "days_recent": 30,
+          "days_base": 180,
+          "growth_pct": 9.528585757271824,
+          "truncated": false
+        }
+      ],
+      "wiki": [
+        {
+          "article": "Self-driving_car",
+          "project": "en.wikipedia",
+          "avg_recent": 847.1724137931035,
+          "avg_base": 869.7882352941176,
+          "growth_pct": -2.6001526099472483,
+          "n_days": 85
+        }
+      ],
+      "wiki_ko": [
+        {
+          "article": "자율_주행_자동차",
+          "project": "ko.wikipedia",
+          "avg_recent": 2.3333333333333335,
+          "avg_base": 1.8636363636363635,
+          "growth_pct": 25.20325203252034,
+          "n_days": 22
+        }
+      ],
+      "trends": [],
+      "github": [
+        {
+          "keyword": "autonomous driving",
+          "n_recent": 304,
+          "n_base": 1576,
+          "growth_pct": 15.736040609137047,
+          "rate_limit_remaining": "29"
+        }
+      ],
+      "hn": [
+        {
+          "keyword": "autonomous vehicle",
+          "n_recent": 5,
+          "n_base": 36,
+          "growth_pct": -16.666666666666675
+        }
+      ],
+      "sec_edgar": [
+        {
+          "keyword": "autonomous vehicle",
+          "forms": [
+            "10-K"
+          ],
+          "n_recent": 39,
+          "n_base": 73,
+          "growth_pct": 116.66666666666666
+        }
+      ],
+      "patents": [],
+      "federal_register": [
+        {
+          "keyword": "autonomous vehicle",
+          "n_recent": 16,
+          "n_base": 54,
+          "growth_pct": 20.16460905349795
+        }
+      ],
+      "naver_news": [
+        {
+          "keyword": "FSD 베타",
+          "n_recent": 26,
+          "n_base": 71,
+          "naver_total_match": 1228,
+          "growth_pct": 119.71830985915494,
+          "truncated": false
+        }
+      ],
+      "assembly_bills": [
+        {
+          "keyword": "자율주행",
+          "error": "DATA_GO_KR_KEY not set in .env"
+        }
+      ]
+    },
+    {
+      "theme_hint": "GLP-1 비만약",
+      "arxiv": [
+        {
+          "keyword": "GLP-1 obesity",
+          "n_recent": 0,
+          "n_base": 0,
+          "days_recent": 30,
+          "days_base": 180,
+          "growth_pct": null,
+          "truncated": false
+        }
+      ],
+      "wiki": [
+        {
+          "article": "GLP-1_receptor_agonist",
+          "project": "en.wikipedia",
+          "avg_recent": 804.6206896551724,
+          "avg_base": 860.1882352941177,
+          "growth_pct": -6.459928578300711,
+          "n_days": 85
+        }
+      ],
+      "wiki_ko": [
+        {
+          "article": "GLP-1",
+          "project": "ko.wikipedia",
+          "avg_recent": 1.25,
+          "avg_base": 1.4285714285714286,
+          "growth_pct": -12.5,
+          "n_days": 28
+        }
+      ],
+      "trends": [],
+      "github": [],
+      "hn": [
+        {
+          "keyword": "GLP-1",
+          "n_recent": 16,
+          "n_base": 86,
+          "growth_pct": 11.627906976744185
+        }
+      ],
+      "sec_edgar": [
+        {
+          "keyword": "GLP-1",
+          "forms": [
+            "10-K"
+          ],
+          "n_recent": 93,
+          "n_base": 145,
+          "growth_pct": 160.1149425287357
+        }
+      ],
+      "patents": [],
+      "federal_register": [
+        {
+          "keyword": "GLP-1",
+          "n_recent": 3,
+          "n_base": 5,
+          "growth_pct": 143.33333333333337
+        }
+      ],
+      "naver_news": [
+        {
+          "keyword": "마운자로",
+          "n_recent": 627,
+          "n_base": 1000,
+          "naver_total_match": 10433,
+          "growth_pct": 276.2,
+          "truncated": true
+        }
+      ],
+      "assembly_bills": [
+        {
+          "keyword": "비만 치료",
+          "error": "DATA_GO_KR_KEY not set in .env"
+        }
+      ]
+    },
+    {
+      "theme_hint": "유전자 치료(CRISPR)",
+      "arxiv": [
+        {
+          "keyword": "CRISPR therapy",
+          "n_recent": 0,
+          "n_base": 0,
+          "days_recent": 30,
+          "days_base": 180,
+          "growth_pct": null,
+          "truncated": false
+        }
+      ],
+      "wiki": [
+        {
+          "article": "CRISPR_gene_editing",
+          "project": "en.wikipedia",
+          "avg_recent": 507.2413793103448,
+          "avg_base": 679.5411764705882,
+          "growth_pct": -25.355313721404904,
+          "n_days": 85
+        }
+      ],
+      "wiki_ko": [
+        {
+          "article": "크리스퍼",
+          "project": "ko.wikipedia",
+          "avg_recent": 2.0,
+          "avg_base": 2.0634920634920637,
+          "growth_pct": -3.076923076923088,
+          "n_days": 63
+        }
+      ],
+      "trends": [],
+      "github": [],
+      "hn": [
+        {
+          "keyword": "CRISPR",
+          "n_recent": 5,
+          "n_base": 57,
+          "growth_pct": -47.36842105263158
+        }
+      ],
+      "sec_edgar": [
+        {
+          "keyword": "gene therapy",
+          "forms": [
+            "10-K"
+          ],
+          "n_recent": 261,
+          "n_base": 345,
+          "growth_pct": 206.8115942028985
+        }
+      ],
+      "patents": [],
+      "federal_register": [
+        {
+          "keyword": "gene editing",
+          "n_recent": 6,
+          "n_base": 18,
+          "growth_pct": 35.18518518518518
+        }
+      ],
+      "naver_news": [
+        {
+          "keyword": "카스게비",
+          "n_recent": 5,
+          "n_base": 24,
+          "naver_total_match": 312,
+          "growth_pct": 25.0,
+          "truncated": false
+        }
+      ],
+      "assembly_bills": [
+        {
+          "keyword": "유전자치료",
+          "error": "DATA_GO_KR_KEY not set in .env"
+        }
+      ]
+    },
+    {
+      "theme_hint": "양자 컴퓨팅",
+      "arxiv": [
+        {
+          "keyword": "quantum computing",
+          "n_recent": 314,
+          "n_base": 1000,
+          "days_recent": 30,
+          "days_base": 180,
+          "growth_pct": 88.4,
+          "truncated": true
+        }
+      ],
+      "wiki": [
+        {
+          "article": "Quantum_computing",
+          "project": "en.wikipedia",
+          "avg_recent": 3153.793103448276,
+          "avg_base": 3822.0470588235294,
+          "growth_pct": -17.484189626407943,
+          "n_days": 85
+        }
+      ],
+      "wiki_ko": [
+        {
+          "article": "양자_컴퓨터",
+          "project": "ko.wikipedia",
+          "avg_recent": 68.51724137931035,
+          "avg_base": 82.17647058823529,
+          "growth_pct": -16.621825093179954,
+          "n_days": 85
+        }
+      ],
+      "trends": [],
+      "github": [
+        {
+          "keyword": "quantum computing",
+          "n_recent": 354,
+          "n_base": 2163,
+          "growth_pct": -1.8030513176144236,
+          "rate_limit_remaining": "27"
+        }
+      ],
+      "hn": [
+        {
+          "keyword": "quantum computing",
+          "n_recent": 26,
+          "n_base": 128,
+          "growth_pct": 21.875
+        }
+      ],
+      "sec_edgar": [
+        {
+          "keyword": "quantum computing",
+          "forms": [
+            "10-K"
+          ],
+          "n_recent": 293,
+          "n_base": 275,
+          "growth_pct": 332.1010101010101
+        }
+      ],
+      "patents": [],
+      "federal_register": [
+        {
+          "keyword": "quantum information",
+          "n_recent": 13,
+          "n_base": 39,
+          "growth_pct": 35.18518518518516
+        }
+      ],
+      "naver_news": [
+        {
+          "keyword": "양자컴퓨터 R&D",
+          "n_recent": 93,
+          "n_base": 630,
+          "naver_total_match": 6216,
+          "growth_pct": -11.428571428571422,
+          "truncated": false
+        }
+      ],
+      "assembly_bills": [
+        {
+          "keyword": "양자",
+          "error": "DATA_GO_KR_KEY not set in .env"
+        }
+      ]
+    },
+    {
+      "theme_hint": "위성통신·LEO",
+      "arxiv": [
+        {
+          "keyword": "LEO satellite",
+          "n_recent": 27,
+          "n_base": 129,
+          "days_recent": 30,
+          "days_base": 180,
+          "growth_pct": 25.581395348837212,
+          "truncated": false
+        }
+      ],
+      "wiki": [
+        {
+          "article": "Starlink",
+          "project": "en.wikipedia",
+          "avg_recent": 3909.551724137931,
+          "avg_base": 4533.117647058823,
+          "growth_pct": -13.755785123412235,
+          "n_days": 85
+        }
+      ],
+      "wiki_ko": [
+        {
+          "article": "스타링크",
+          "project": "ko.wikipedia",
+          "avg_recent": 46.827586206896555,
+          "avg_base": 38.576470588235296,
+          "growth_pct": 21.388985287776975,
+          "n_days": 85
+        }
+      ],
+      "trends": [],
+      "github": [],
+      "hn": [
+        {
+          "keyword": "satellite internet",
+          "n_recent": 3,
+          "n_base": 20,
+          "growth_pct": -9.999999999999986
+        }
+      ],
+      "sec_edgar": [
+        {
+          "keyword": "low earth orbit satellite",
+          "forms": [
+            "10-K"
+          ],
+          "n_recent": 4,
+          "n_base": 12,
+          "growth_pct": 35.185185185185205
+        }
+      ],
+      "patents": [],
+      "federal_register": [
+        {
+          "keyword": "low earth orbit satellite",
+          "n_recent": 5,
+          "n_base": 15,
+          "growth_pct": 35.18518518518518
+        }
+      ],
+      "naver_news": [
+        {
+          "keyword": "한화 저궤도",
+          "n_recent": 88,
+          "n_base": 1000,
+          "naver_total_match": 10274,
+          "growth_pct": -47.199999999999996,
+          "truncated": true
+        }
+      ],
+      "assembly_bills": [
+        {
+          "keyword": "우주산업",
+          "error": "DATA_GO_KR_KEY not set in .env"
+        }
+      ]
+    }
+  ],
+  "factor_mapping": {
+    "Earliness": [
+      "github",
+      "hn",
+      "arxiv"
+    ],
+    "Durability": [
+      "patents",
+      "arxiv"
+    ],
+    "Capital_Inflow": [
+      "hn",
+      "sec_edgar",
+      "LLM(ETF Flow)"
+    ],
+    "Verifiability": [
+      "sec_edgar",
+      "naver_news",
+      "wiki_ko"
+    ],
+    "Policy_Momentum": [
+      "federal_register",
+      "assembly_bills",
+      "LLM(EU 보강)"
+    ]
+  },
+  "notes": [
+    "이 raw 신호는 LLM이 [2단계 구조적 수요] [3단계 자금 흐름] 외부 리서치와 결합하여 5점 평가에 활용",
+    "Crunchbase(VC)·한국 정책·ETF Flow 등은 WebFetch/WebSearch로 별도 수집",
+    "성장률 +∞ = 베이스라인 0이지만 최근 출현(완전 신규 키워드 — 강한 Earliness 신호)",
+    "GitHub: GITHUB_TOKEN .env 등록 시 60→5000 req/h"
+  ]
+}

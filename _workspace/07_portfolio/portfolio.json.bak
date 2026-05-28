@@ -1,0 +1,39 @@
+{
+  "holdings": [
+    {"rank": 1, "ticker": "000660", "name": "SK하이닉스", "weight": 0.0706, "idea": "AI인프라", "sector": "반도체", "score": 88},
+    {"rank": 2, "ticker": "012450", "name": "한화에어로스페이스", "weight": 0.0706, "idea": "K방산수출", "sector": "방산", "score": 88},
+    {"rank": 3, "ticker": "298040", "name": "효성중공업", "weight": 0.0658, "idea": "AI전력", "sector": "전력인프라", "score": 82},
+    {"rank": 4, "ticker": "064350", "name": "현대로템", "weight": 0.0658, "idea": "K전차수출", "sector": "방산", "score": 82},
+    {"rank": 5, "ticker": "267260", "name": "HD현대일렉트릭", "weight": 0.0658, "idea": "AI전력", "sector": "전력인프라", "score": 82},
+    {"rank": 6, "ticker": "267250", "name": "HD현대중공업", "weight": 0.0634, "idea": "조선슈퍼사이클", "sector": "조선", "score": 79},
+    {"rank": 7, "ticker": "105560", "name": "KB금융", "weight": 0.0626, "idea": "밸류업", "sector": "금융", "score": 78},
+    {"rank": 8, "ticker": "054540", "name": "한미반도체", "weight": 0.0610, "idea": "HBM장비", "sector": "반도체장비", "score": 76},
+    {"rank": 9, "ticker": "086790", "name": "하나금융지주", "weight": 0.0594, "idea": "밸류업", "sector": "금융", "score": 74},
+    {"rank": 10, "ticker": "047810", "name": "한국항공우주", "weight": 0.0594, "idea": "K항공수출", "sector": "방산", "score": 74},
+    {"rank": 11, "ticker": "005930", "name": "삼성전자", "weight": 0.0578, "idea": "HBM캐치업", "sector": "반도체", "score": 72},
+    {"rank": 12, "ticker": "055550", "name": "신한지주", "weight": 0.0578, "idea": "밸류업", "sector": "금융", "score": 72}
+  ],
+  "sector_weights": {
+    "방산": 0.1958,
+    "반도체": 0.1284,
+    "금융": 0.1798,
+    "전력인프라": 0.1316,
+    "조선": 0.0634,
+    "반도체장비": 0.0610
+  },
+  "equity_pct": 76,
+  "cash_pct": 24,
+  "method": "MV",
+  "regime": "위험선호",
+  "score_total": 947,
+  "num_holdings": 12,
+  "max_single_weight": 0.0706,
+  "max_sector_weight": 0.1958,
+  "hhi": 0.0484,
+  "constraints": {
+    "max_single_stock_pct": 15,
+    "max_sector_pct": 30,
+    "min_weight_pct": 5
+  },
+  "created_at": "2026-05-23"
+}

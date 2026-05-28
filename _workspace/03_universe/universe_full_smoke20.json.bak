@@ -1,0 +1,641 @@
+{
+ "meta": {
+  "as_of": "20260522",
+  "regime": "중립",
+  "weights": {
+   "value": 0.2,
+   "quality": 0.2,
+   "tp_rev": 0.2,
+   "roe_rev": 0.2,
+   "turnover": 0.2
+  },
+  "n_final": 20,
+  "data_source": "KRX Open API + FnSpace account/consensus(price·forward) — ALL LIVE",
+  "universe_total": 2770,
+  "filter_log": {
+   "전체(코스피+코스닥)": 2770,
+   "보통주만(우선주/리츠/스팩/예탁/외국주권 제외)": 2535,
+   "관리종목 제외": 2461,
+   "거래정지 제외(거래량 0)": 2398,
+   "20일평균거래대금 ≥ 1억": 2233,
+   "컨센서스 조회 대상(시총 상위 30)": 30,
+   "애널리스트 컨센서스 존재": 30
+  },
+  "market_dist": {
+   "KOSPI": 20
+  },
+  "turnover_window_days": 20,
+  "turnover_growth_window": {
+   "recent": [
+    "20260423",
+    "20260522"
+   ],
+   "prior": [
+    "20260123",
+    "20260224"
+   ]
+  },
+  "revision_lookback_days": 45,
+  "fnspace_scope_cap": 30,
+  "zscore_basis": "섹터중립(DART 업종)",
+  "factor_model": {
+   "factors": [
+    "value",
+    "quality",
+    "tp_rev",
+    "roe_rev",
+    "turnover"
+   ],
+   "note": "5팩터 섹터중립 z-score(±5σ) · 레짐 가중치 합산"
+  },
+  "notes": [
+   "거래정지=거래량0 근사",
+   "z-score 섹터중립(DART induty_code 기반, 표본<5 섹터는 전역 폴백)",
+   "컨센서스/재무 조회는 시총 상위 30로 경계(애널리스트 커버리지 집중구간)",
+   "목표주가 1M 변화율 = (종가×(1+괴리율/100))의 최근/1M전 비율",
+   "Fwd 12M ROE(E211570) 1M 변화율로 EPS Fwd 12M 대체 (FnSpace EPS 항목 null 응답); 음수 ROE 종목은 None"
+  ]
+ },
+ "universe": [
+  {
+   "rank": 1,
+   "ticker": "009150",
+   "name": "삼성전기",
+   "market": "KOSPI",
+   "sector": "전자반도체",
+   "scores": {
+    "value": -0.243,
+    "quality": -0.306,
+    "tp_rev": 3.095,
+    "roe_rev": 0.316,
+    "turnover": 2.553,
+    "total": 1.083
+   },
+   "metrics": {
+    "mcap_eok": 1000895.5264,
+    "turnover20_eok": 9980.397362565,
+    "per": 147.26380449886813,
+    "pbr": 10.609499559098849,
+    "ev_ebitda": 10.31555,
+    "roe": 7.704,
+    "roa": 5.338,
+    "opm": 8.072,
+    "debt_ratio": 48.978,
+    "tp_rev_1m_pct": 101.6163878670878,
+    "roe_fwd_rev_1m_pct": 18.536585365853654,
+    "turnover_growth_pct": 245.6653036424582
+   }
+  },
+  {
+   "rank": 2,
+   "ticker": "402340",
+   "name": "SK스퀘어",
+   "market": "KOSPI",
+   "sector": "금융",
+   "scores": {
+    "value": -0.924,
+    "quality": 2.235,
+    "tp_rev": 1.767,
+    "roe_rev": -0.02,
+    "turnover": 2.009,
+    "total": 1.0134
+   },
+   "metrics": {
+    "mcap_eok": 1563706.8741,
+    "turnover20_eok": 9736.812761594501,
+    "per": 17.828242156297524,
+    "pbr": 5.654596479624264,
+    "ev_ebitda": 5.30304,
+    "roe": 37.816,
+    "roa": 33.643,
+    "opm": 84.141,
+    "debt_ratio": 9.01,
+    "tp_rev_1m_pct": 69.4214373576167,
+    "roe_fwd_rev_1m_pct": 25.132487554199457,
+    "turnover_growth_pct": 138.7019205652744
+   }
+  },
+  {
+   "rank": 3,
+   "ticker": "034730",
+   "name": "SK",
+   "market": "KOSPI",
+   "sector": "금융",
+   "scores": {
+    "value": 0.826,
+    "quality": -0.452,
+    "tp_rev": 0.958,
+    "roe_rev": 2.19,
+    "turnover": 0.523,
+    "total": 0.809
+   },
+   "metrics": {
+    "mcap_eok": 465467.35326,
+    "turnover20_eok": 1413.0804542499998,
+    "per": 29.36479044468402,
+    "pbr": 1.4041038146581661,
+    "ev_ebitda": 7.1454,
+    "roe": 6.352,
+    "roa": 1.659,
+    "opm": 0.896,
+    "debt_ratio": 149.173,
+    "tp_rev_1m_pct": 48.79092658170205,
+    "roe_fwd_rev_1m_pct": 116.94169416941693,
+    "turnover_growth_pct": 50.444258045932685
+   }
+  },
+  {
+   "rank": 4,
+   "ticker": "000660",
+   "name": "SK하이닉스",
+   "market": "KOSPI",
+   "sector": "전자반도체",
+   "scores": {
+    "value": 0.104,
+    "quality": 2.312,
+    "tp_rev": 0.451,
+    "roe_rev": -0.354,
+    "turnover": 0.857,
+    "total": 0.674
+   },
+   "metrics": {
+    "mcap_eok": 13833552.90465,
+    "turnover20_eok": 89829.18203353,
+    "per": 32.923487065828475,
+    "pbr": 11.120755539722026,
+    "ev_ebitda": 7.58541,
+    "roe": 44.151,
+    "roa": 29.022,
+    "opm": 48.593,
+    "debt_ratio": 45.945,
+    "tp_rev_1m_pct": 33.69950147886303,
+    "roe_fwd_rev_1m_pct": 0.8455325593134777,
+    "turnover_growth_pct": 114.76430306760466
+   }
+  },
+  {
+   "rank": 5,
+   "ticker": "267260",
+   "name": "HD현대일렉트릭",
+   "market": "KOSPI",
+   "sector": "전기장비",
+   "scores": {
+    "value": 0.313,
+    "quality": 1.558,
+    "tp_rev": 0.328,
+    "roe_rev": -0.538,
+    "turnover": -0.26,
+    "total": 0.2802
+   },
+   "metrics": {
+    "mcap_eok": 422832.89355,
+    "turnover20_eok": 2486.2477777440004,
+    "per": 57.71632264456462,
+    "pbr": 20.8103469479328,
+    "ev_ebitda": 25.43518,
+    "roe": 41.501,
+    "roa": 17.088,
+    "opm": 24.398,
+    "debt_ratio": 134.627,
+    "tp_rev_1m_pct": 40.80450003382872,
+    "roe_fwd_rev_1m_pct": 0.3272910372608351,
+    "turnover_growth_pct": 49.11294827334554
+   }
+  },
+  {
+   "rank": 6,
+   "ticker": "032830",
+   "name": "삼성생명",
+   "market": "KOSPI",
+   "sector": "보험",
+   "scores": {
+    "value": 0.553,
+    "quality": -0.628,
+    "tp_rev": 0.605,
+    "roe_rev": 0.031,
+    "turnover": 0.484,
+    "total": 0.209
+   },
+   "metrics": {
+    "mcap_eok": 729000.0,
+    "turnover20_eok": 1524.0198162000002,
+    "per": 31.656604440522713,
+    "pbr": 1.043535138997843,
+    "ev_ebitda": 16.84437,
+    "roe": 4.961,
+    "roa": 0.74,
+    "opm": 6.948,
+    "debt_ratio": 440.887,
+    "tp_rev_1m_pct": 37.65296399514815,
+    "roe_fwd_rev_1m_pct": 10.989010989010994,
+    "turnover_growth_pct": 85.98800081476976
+   }
+  },
+  {
+   "rank": 7,
+   "ticker": "010120",
+   "name": "LS ELECTRIC",
+   "market": "KOSPI",
+   "sector": "전기장비",
+   "scores": {
+    "value": 0.109,
+    "quality": 0.086,
+    "tp_rev": -0.667,
+    "roe_rev": -0.454,
+    "turnover": 1.926,
+    "total": 0.2
+   },
+   "metrics": {
+    "mcap_eok": 421500.0,
+    "turnover20_eok": 4393.2134902610005,
+    "per": 147.05728322981653,
+    "pbr": 20.187099773550237,
+    "ev_ebitda": 25.76042,
+    "roe": 14.667,
+    "roa": 6.021,
+    "opm": 8.587,
+    "debt_ratio": 131.48,
+    "tp_rev_1m_pct": 24.020955783038133,
+    "roe_fwd_rev_1m_pct": 3.3609576427255927,
+    "turnover_growth_pct": 202.8100981090858
+   }
+  },
+  {
+   "rank": 8,
+   "ticker": "298040",
+   "name": "효성중공업",
+   "market": "KOSPI",
+   "sector": "전기장비",
+   "scores": {
+    "value": 0.531,
+    "quality": 0.485,
+    "tp_rev": 0.536,
+    "roe_rev": -0.44,
+    "turnover": -0.114,
+    "total": 0.1996
+   },
+   "metrics": {
+    "mcap_eok": 373634.63836,
+    "turnover20_eok": 2666.6894041,
+    "per": 71.86750433150713,
+    "pbr": 15.8658373962831,
+    "ev_ebitda": 20.65914,
+    "roe": 24.407,
+    "roa": 7.479,
+    "opm": 12.515,
+    "debt_ratio": 190.309,
+    "tp_rev_1m_pct": 44.311491147492,
+    "roe_fwd_rev_1m_pct": 3.8530146271851473,
+    "turnover_growth_pct": 59.37301210313735
+   }
+  },
+  {
+   "rank": 9,
+   "ticker": "066570",
+   "name": "LG전자",
+   "market": "KOSPI",
+   "sector": "전자반도체",
+   "scores": {
+    "value": 0.598,
+    "quality": -0.648,
+    "tp_rev": -0.121,
+    "roe_rev": -0.026,
+    "turnover": 1.193,
+    "total": 0.1992
+   },
+   "metrics": {
+    "mcap_eok": 386036.59206,
+    "turnover20_eok": 6542.351217965001,
+    "per": 44.537173303108894,
+    "pbr": 1.7865334685185168,
+    "ev_ebitda": 3.44827,
+    "roe": 4.28,
+    "roa": 1.818,
+    "opm": 2.778,
+    "debt_ratio": 140.334,
+    "tp_rev_1m_pct": 19.03319588195589,
+    "roe_fwd_rev_1m_pct": 9.491059147180202,
+    "turnover_growth_pct": 140.6751753406719
+   }
+  },
+  {
+   "rank": 10,
+   "ticker": "005930",
+   "name": "삼성전자",
+   "market": "KOSPI",
+   "sector": "전자반도체",
+   "scores": {
+    "value": 0.414,
+    "quality": -0.011,
+    "tp_rev": 0.224,
+    "roe_rev": 0.075,
+    "turnover": 0.186,
+    "total": 0.1776
+   },
+   "metrics": {
+    "mcap_eok": 17100364.9284,
+    "turnover20_eok": 83771.965208753,
+    "per": 44.56417199631311,
+    "pbr": 4.570509328984253,
+    "ev_ebitda": 7.53296,
+    "roe": 10.848,
+    "roa": 8.36,
+    "opm": 13.07,
+    "debt_ratio": 29.937,
+    "tp_rev_1m_pct": 27.880209213153684,
+    "roe_fwd_rev_1m_pct": 12.166666666666659,
+    "turnover_growth_pct": 62.96300651700384
+   }
+  },
+  {
+   "rank": 11,
+   "ticker": "329180",
+   "name": "HD현대중공업",
+   "market": "KOSPI",
+   "sector": "운송장비",
+   "scores": {
+    "value": 0.13,
+    "quality": 0.063,
+    "tp_rev": -0.624,
+    "roe_rev": -0.172,
+    "turnover": 1.486,
+    "total": 0.1766
+   },
+   "metrics": {
+    "mcap_eok": 713736.33,
+    "turnover20_eok": 3848.2363481505004,
+    "per": 43.30716825891691,
+    "pbr": 7.63832040314861,
+    "ev_ebitda": 21.31449,
+    "roe": 18.815,
+    "roa": 6.214,
+    "opm": 11.59,
+    "debt_ratio": 180.07,
+    "tp_rev_1m_pct": 6.101665646524035,
+    "roe_fwd_rev_1m_pct": 5.643602628527233,
+    "turnover_growth_pct": 163.31360556389308
+   }
+  },
+  {
+   "rank": 12,
+   "ticker": "042700",
+   "name": "한미반도체",
+   "market": "KOSPI",
+   "sector": "기계",
+   "scores": {
+    "value": -2.312,
+    "quality": 1.921,
+    "tp_rev": 1.555,
+    "roe_rev": -0.277,
+    "turnover": -0.169,
+    "total": 0.1436
+   },
+   "metrics": {
+    "mcap_eok": 305475.601,
+    "turnover20_eok": 5342.9556765,
+    "per": 143.53124838513352,
+    "pbr": 44.037628904906896,
+    "ev_ebitda": 45.13918,
+    "roe": 34.764,
+    "roa": 28.081,
+    "opm": 43.592,
+    "debt_ratio": 17.818,
+    "tp_rev_1m_pct": 62.052181610162016,
+    "roe_fwd_rev_1m_pct": 2.8687544824288924,
+    "turnover_growth_pct": 35.57368393130547
+   }
+  },
+  {
+   "rank": 13,
+   "ticker": "012330",
+   "name": "현대모비스",
+   "market": "KOSPI",
+   "sector": "자동차",
+   "scores": {
+    "value": 0.696,
+    "quality": -0.372,
+    "tp_rev": -0.786,
+    "roe_rev": -0.518,
+    "turnover": 1.537,
+    "total": 0.1114
+   },
+   "metrics": {
+    "mcap_eok": 586132.48618,
+    "turnover20_eok": 4505.9231295415,
+    "per": 16.27940109292994,
+    "pbr": 1.1717230459084726,
+    "ev_ebitda": 5.67863,
+    "roe": 7.676,
+    "roa": 5.35,
+    "opm": 5.493,
+    "debt_ratio": 43.053,
+    "tp_rev_1m_pct": 1.9373790595202056,
+    "roe_fwd_rev_1m_pct": -3.4843205574912717,
+    "turnover_growth_pct": 167.2138115224419
+   }
+  },
+  {
+   "rank": 14,
+   "ticker": "028260",
+   "name": "삼성물산",
+   "market": "KOSPI",
+   "sector": "유통",
+   "scores": {
+    "value": 0.613,
+    "quality": -0.352,
+    "tp_rev": -0.055,
+    "roe_rev": -0.72,
+    "turnover": 0.646,
+    "total": 0.0264
+   },
+   "metrics": {
+    "mcap_eok": 681914.678105,
+    "turnover20_eok": 2818.4594419835003,
+    "per": 29.685807356342853,
+    "pbr": 1.3786010913133508,
+    "ev_ebitda": 9.04996,
+    "roe": 6.024,
+    "roa": 5.26,
+    "opm": 8.082,
+    "debt_ratio": 50.5,
+    "tp_rev_1m_pct": 20.719727852542945,
+    "roe_fwd_rev_1m_pct": -8.815028901734113,
+    "turnover_growth_pct": 98.41847111898142
+   }
+  },
+  {
+   "rank": 15,
+   "ticker": "005490",
+   "name": "POSCO홀딩스",
+   "market": "KOSPI",
+   "sector": "철강금속",
+   "scores": {
+    "value": 0.597,
+    "quality": -0.748,
+    "tp_rev": 0.038,
+    "roe_rev": 0.001,
+    "turnover": -0.389,
+    "total": -0.1002
+   },
+   "metrics": {
+    "mcap_eok": 354605.833325,
+    "turnover20_eok": 3247.4395763350008,
+    "per": 55.351377962535466,
+    "pbr": 0.6072166974584544,
+    "ev_ebitda": 6.65727,
+    "roe": 1.184,
+    "roa": 0.483,
+    "opm": 2.644,
+    "debt_ratio": 68.638,
+    "tp_rev_1m_pct": 23.091689347986932,
+    "roe_fwd_rev_1m_pct": 10.216718266253878,
+    "turnover_growth_pct": 18.564575246428983
+   }
+  },
+  {
+   "rank": 16,
+   "ticker": "207940",
+   "name": "삼성바이오로직스",
+   "market": "KOSPI",
+   "sector": "제약바이오",
+   "scores": {
+    "value": -0.03,
+    "quality": 1.158,
+    "tp_rev": -0.958,
+    "roe_rev": -0.351,
+    "turnover": -0.457,
+    "total": -0.1276
+   },
+   "metrics": {
+    "mcap_eok": 655016.95665,
+    "turnover20_eok": 1070.0526834999998,
+    "per": 53.25171630817942,
+    "pbr": 8.781096008455888,
+    "ev_ebitda": 28.83401,
+    "roe": 19.442,
+    "roa": 12.567,
+    "opm": 45.408,
+    "debt_ratio": 48.444,
+    "tp_rev_1m_pct": -2.4826626440384802,
+    "roe_fwd_rev_1m_pct": 0.9254974548819961,
+    "turnover_growth_pct": 13.294839173462103
+   }
+  },
+  {
+   "rank": 17,
+   "ticker": "006400",
+   "name": "삼성SDI",
+   "market": "KOSPI",
+   "sector": "전기장비",
+   "scores": {
+    "value": -1.918,
+    "quality": -1.24,
+    "tp_rev": 1.34,
+    "roe_rev": 1.998,
+    "turnover": -0.829,
+    "total": -0.1298
+   },
+   "metrics": {
+    "mcap_eok": 521388.3791,
+    "turnover20_eok": 5387.0793269999995,
+    "per": null,
+    "pbr": 2.3744383486740164,
+    "ev_ebitda": 295.28053,
+    "roe": -3.152,
+    "roa": -1.412,
+    "opm": -15.057,
+    "debt_ratio": 79.275,
+    "tp_rev_1m_pct": 57.868173006216985,
+    "roe_fwd_rev_1m_pct": 91.58415841584157,
+    "turnover_growth_pct": 9.069935555957876
+   }
+  },
+  {
+   "rank": 18,
+   "ticker": "000270",
+   "name": "기아",
+   "market": "KOSPI",
+   "sector": "자동차",
+   "scores": {
+    "value": 0.756,
+    "quality": -0.111,
+    "tp_rev": -0.947,
+    "roe_rev": -0.394,
+    "turnover": -0.349,
+    "total": -0.209
+   },
+   "metrics": {
+    "mcap_eok": 643400.620704,
+    "turnover20_eok": 2917.8030099100006,
+    "per": 8.623314089507936,
+    "pbr": 1.0466406892022648,
+    "ev_ebitda": 2.39983,
+    "roe": 12.923,
+    "roa": 7.88,
+    "opm": 7.953,
+    "debt_ratio": 61.756,
+    "tp_rev_1m_pct": -2.192937542134943,
+    "roe_fwd_rev_1m_pct": -0.23112480739599928,
+    "turnover_growth_pct": 21.670833993708747
+   }
+  },
+  {
+   "rank": 19,
+   "ticker": "012450",
+   "name": "한화에어로스페이스",
+   "market": "KOSPI",
+   "sector": "운송장비",
+   "scores": {
+    "value": 0.248,
+    "quality": 0.016,
+    "tp_rev": -0.378,
+    "roe_rev": -0.353,
+    "turnover": -0.62,
+    "total": -0.2174
+   },
+   "metrics": {
+    "mcap_eok": 650214.48661,
+    "turnover20_eok": 3046.940591964,
+    "per": 44.131820399430225,
+    "pbr": 6.698765741516671,
+    "ev_ebitda": 13.50784,
+    "roe": 19.141,
+    "roa": 4.516,
+    "opm": 11.569,
+    "debt_ratio": 221.379,
+    "tp_rev_1m_pct": 12.432743450623086,
+    "roe_fwd_rev_1m_pct": 0.8738394320043641,
+    "turnover_growth_pct": 0.7444248481756066
+   }
+  },
+  {
+   "rank": 20,
+   "ticker": "086790",
+   "name": "하나금융지주",
+   "market": "KOSPI",
+   "sector": "금융",
+   "scores": {
+    "value": 0.799,
+    "quality": -0.518,
+    "tp_rev": -0.63,
+    "roe_rev": -0.536,
+    "turnover": -0.439,
+    "total": -0.2648
+   },
+   "metrics": {
+    "mcap_eok": 335003.020308,
+    "turnover20_eok": 1186.577419661,
+    "per": 8.653222842955403,
+    "pbr": 0.7410075297948049,
+    "ev_ebitda": 18.1495,
+    "roe": 9.172,
+    "roa": 0.615,
+    "opm": 7.761,
+    "debt_ratio": 1377.889,
+    "tp_rev_1m_pct": 8.282131835180962,
+    "roe_fwd_rev_1m_pct": 3.7117903930131035,
+    "turnover_growth_pct": -6.698238351743724
+   }
+  }
+ ]
+}

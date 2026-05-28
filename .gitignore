@@ -1,0 +1,48 @@
+# API Keys & Secrets
+.env
+_workspace/.env
+.streamlit/secrets.toml
+*.key
+*credentials*
+
+# User Data (SQLite)
+_workspace/09_app/data/*.db
+_workspace/09_app/data/*.db-journal
+_workspace/09_app/data/*.db-wal
+_workspace/09_app/data/*.db-shm
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Cache (KRX/DART/FRED 응답 캐시)
+_workspace/lib/.cache/
+_workspace/**/cache_*
+
+# Logs
+*.log
+nohup.out
+
+# Build / Temp
+build/
+dist/
+*.tmp
+.streamlit/cache/

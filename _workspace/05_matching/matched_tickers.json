@@ -1,0 +1,83 @@
+[
+  {
+    "idea": "AI 인프라 — HBM·메모리 반도체 슈퍼사이클",
+    "idea_id": 1,
+    "confidence": 5,
+    "tickers": [
+      {"ticker": "000660", "name": "SK하이닉스",      "score": 0.998, "reason": "HBM 주력 생산사, 전세계 HBM 시장 50%+ 점유",           "multi_idea": false},
+      {"ticker": "005930", "name": "삼성전자",         "score": 0.930, "reason": "HBM3 양산·DRAM 메모리 2위, AI 반도체 종합 수혜",         "multi_idea": false},
+      {"ticker": "054540", "name": "한미반도체",        "score": 0.831, "reason": "HBM 열압착 본딩장비(TC Bonder) 독점 공급",              "multi_idea": false},
+      {"ticker": "042700", "name": "한미마이크로닉스",   "score": 0.778, "reason": "반도체 패키징 소재·EMI 쉴드 HBM 공급망",               "multi_idea": false},
+      {"ticker": "166090", "name": "하나머티리얼즈",     "score": 0.739, "reason": "반도체 식각 소재(실리콘 파트) 공급사",                  "multi_idea": false},
+      {"ticker": "000990", "name": "DB하이텍",         "score": 0.658, "reason": "아날로그 반도체 파운드리, AI 수요 간접 수혜",              "multi_idea": false},
+      {"ticker": "402340", "name": "SK스퀘어",         "score": 0.556, "reason": "SK하이닉스 지분 보유 지주사, NAV 디스카운트 해소 기대",     "multi_idea": false},
+      {"ticker": "009150", "name": "삼성전기",          "score": 0.527, "reason": "AI 서버용 MLCC·기판 공급, 데이터센터 성장 수혜",          "multi_idea": false},
+      {"ticker": "035420", "name": "NAVER",           "score": 0.483, "reason": "국내 AI 하이퍼스케일러, HBM 탑재 AI 서버 수요 창출",       "multi_idea": false},
+      {"ticker": "011070", "name": "LG이노텍",          "score": 0.483, "reason": "AI 서버용 기판·광학 모듈 공급 밸류체인",                "multi_idea": false}
+    ]
+  },
+  {
+    "idea": "AI 전력 인프라 — 원전·전력기기·변압기",
+    "idea_id": 2,
+    "confidence": 4,
+    "tickers": [
+      {"ticker": "010620", "name": "효성중공업",        "score": 0.957, "reason": "초고압 변압기 국내 1위, 미국 전력망 수출 급증",           "multi_idea": false},
+      {"ticker": "034020", "name": "두산에너빌리티",     "score": 0.948, "reason": "원전 주기기(원자로·터빈) 핵심 생산사, SMR 수주 기대",    "multi_idea": false},
+      {"ticker": "051600", "name": "한전KPS",          "score": 0.702, "reason": "원전·화력발전 O&M 서비스 독점, 전력 수요 증가 직접 수혜", "multi_idea": false},
+      {"ticker": "015760", "name": "한국전력",          "score": 0.585, "reason": "전력 유틸리티, 데이터센터 전력 요금 인상 수혜",            "multi_idea": false},
+      {"ticker": "028050", "name": "삼성엔지니어링",     "score": 0.544, "reason": "원전·전력 플랜트 EPC 수주 확대",                       "multi_idea": false},
+      {"ticker": "036460", "name": "한국가스공사",       "score": 0.514, "reason": "LNG 공급·에너지 인프라 운영, 전력 연료 공급 연관",        "multi_idea": false},
+      {"ticker": "028260", "name": "삼성물산",          "score": 0.498, "reason": "원전 건설 EPC·재생에너지 투자 연관, 팩터 상위",          "multi_idea": true},
+      {"ticker": "071970", "name": "STX중공업",         "score": 0.472, "reason": "발전소 보조기기·중공업 밸류체인 수혜",                   "multi_idea": true},
+      {"ticker": "082740", "name": "HSD엔진",          "score": 0.359, "reason": "중공업 기자재, 전력 인프라 간접 수혜",                   "multi_idea": true},
+      {"ticker": "009830", "name": "한화솔루션",         "score": 0.342, "reason": "태양광·에너지 전환 솔루션, 전력 수요 증가 연관",          "multi_idea": false}
+    ]
+  },
+  {
+    "idea": "방산·K-방산 수출 — 구조적 성장 섹터",
+    "idea_id": 3,
+    "confidence": 4,
+    "tickers": [
+      {"ticker": "012450", "name": "한화에어로스페이스", "score": 1.000, "reason": "K9 자주포·항공엔진 수출 1위, NATO 수주 잔고 최대",       "multi_idea": true},
+      {"ticker": "064350", "name": "현대로템",          "score": 0.981, "reason": "K2 전차 폴란드 수출 2조원+, 유럽 재무장 직접 수혜",       "multi_idea": false},
+      {"ticker": "047810", "name": "한국항공우주",       "score": 0.960, "reason": "FA-50 전투기·헬기 수출 확대, 항공우주 방산 핵심",         "multi_idea": false},
+      {"ticker": "272210", "name": "한화시스템",         "score": 0.916, "reason": "레이더·C4I 방산 IT 시스템, 방산 디지털화 수혜",          "multi_idea": false},
+      {"ticker": "071970", "name": "STX중공업",         "score": 0.812, "reason": "방산 기계·함정 기자재, K-방산 밸류체인",                 "multi_idea": true},
+      {"ticker": "028260", "name": "삼성물산",          "score": 0.348, "reason": "방산 간접 연관, 팩터 상위",                             "multi_idea": true}
+    ]
+  },
+  {
+    "idea": "조선·LNG 운반선 — 공급부족 구조 수혜",
+    "idea_id": 4,
+    "confidence": 4,
+    "tickers": [
+      {"ticker": "267250", "name": "HD현대중공업",      "score": 0.974, "reason": "LNG선 수주 잔고 사상 최대, 선가 상승 최대 수혜",          "multi_idea": false},
+      {"ticker": "009540", "name": "HD한국조선해양",    "score": 0.934, "reason": "HD현대 조선 지주, 그룹 수주 통합 수혜",                  "multi_idea": false},
+      {"ticker": "042660", "name": "한화오션",          "score": 0.920, "reason": "LNG선·잠수함 특화, 방산 조선 시너지",                   "multi_idea": false},
+      {"ticker": "010140", "name": "삼성중공업",         "score": 0.918, "reason": "LNG선 세계 점유율 1위, 드릴쉽 수주 재개",               "multi_idea": false},
+      {"ticker": "082740", "name": "HSD엔진",          "score": 0.879, "reason": "대형 선박 엔진 공급사, 조선 수주 증가 직접 수혜",          "multi_idea": true},
+      {"ticker": "329180", "name": "HD현대",            "score": 0.849, "reason": "조선·에너지 지주사, 그룹 밸류 수혜",                     "multi_idea": false},
+      {"ticker": "011200", "name": "HMM",              "score": 0.541, "reason": "LNG 운반선 운영 해운사, 선가 상승 연관",                  "multi_idea": false},
+      {"ticker": "086280", "name": "현대글로비스",       "score": 0.481, "reason": "자동차·LNG 물류 운반, 해운 밸류체인",                   "multi_idea": false},
+      {"ticker": "000120", "name": "CJ대한통운",        "score": 0.326, "reason": "물류 밸류체인 간접 수혜",                              "multi_idea": false},
+      {"ticker": "012450", "name": "한화에어로스페이스", "score": 0.300, "reason": "팩터 최상위 종목, 포트폴리오 보완 후보",                  "multi_idea": true}
+    ]
+  },
+  {
+    "idea": "금융주 — 금리 정상화·밸류업 정책 수혜",
+    "idea_id": 5,
+    "confidence": 3,
+    "tickers": [
+      {"ticker": "105560", "name": "KB금융",           "score": 0.957, "reason": "4대 금융지주 최대 NIM 개선, 주주환원 확대 선도",          "multi_idea": false},
+      {"ticker": "055550", "name": "신한지주",          "score": 0.918, "reason": "글로벌 네트워크 금융지주, NIM 수혜·배당 확대",            "multi_idea": false},
+      {"ticker": "086790", "name": "하나금융지주",      "score": 0.915, "reason": "자본비율 우수, 금리 정상화 NIM 직접 수혜",               "multi_idea": false},
+      {"ticker": "060000", "name": "메리츠금융지주",    "score": 0.879, "reason": "고ROE·고배당 금융지주, 밸류업 정책 최대 수혜",            "multi_idea": false},
+      {"ticker": "316140", "name": "우리금융지주",      "score": 0.871, "reason": "은행 중심 지주, NIM 개선 직접 수혜",                    "multi_idea": false},
+      {"ticker": "071050", "name": "한국금융지주",      "score": 0.837, "reason": "증권·금융 복합, 밸류업 정책 수혜",                      "multi_idea": false},
+      {"ticker": "024110", "name": "기업은행",          "score": 0.830, "reason": "정책은행, 금리 정상화 NIM 수혜·배당 확대",               "multi_idea": false},
+      {"ticker": "032830", "name": "삼성생명",          "score": 0.804, "reason": "보험사 금리 민감도 높음, 장기채 수익 개선",               "multi_idea": false},
+      {"ticker": "016360", "name": "삼성증권",          "score": 0.800, "reason": "자산관리 증권사, 고금리 환경 수혜·배당 매력",             "multi_idea": false},
+      {"ticker": "323410", "name": "카카오뱅크",        "score": 0.767, "reason": "인터넷은행, NIM 회복 및 플랫폼 성장 수혜",              "multi_idea": false}
+    ]
+  }
+]

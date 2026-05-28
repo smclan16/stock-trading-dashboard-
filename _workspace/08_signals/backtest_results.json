@@ -1,0 +1,434 @@
+{
+  "as_of": "2026-05-27T13:46:20+09:00",
+  "period_start": "20250514",
+  "period_end": "20260526",
+  "n_weeks": 51,
+  "initial_capital": 100000000,
+  "final_value": 131353873.06999996,
+  "total_return_pct": 31.35,
+  "kospi_return_pct": 182.15,
+  "excess_return_pct": -150.79,
+  "sharpe_weekly_ann": 2.436,
+  "mdd_pct": -4.59,
+  "n_trades": 121,
+  "n_buys": 70,
+  "n_sells": 51,
+  "vol_threshold_used": 130.3602807119594,
+  "fee_bps": 30,
+  "tickers_used": [
+    "237690",
+    "018260",
+    "085910",
+    "039200",
+    "307950",
+    "402340",
+    "028050",
+    "082740",
+    "012450",
+    "077970",
+    "034730",
+    "006260",
+    "098070",
+    "062040",
+    "001440",
+    "009900",
+    "005880",
+    "192080",
+    "108670",
+    "259960"
+  ],
+  "daily_value_trajectory": [
+    {
+      "date": "20251230",
+      "value": 110752124.52999997,
+      "cash": 82462824.52999997,
+      "n_holdings": 6
+    },
+    {
+      "date": "20260108",
+      "value": 112439829.42999998,
+      "cash": 79422029.42999998,
+      "n_holdings": 7
+    },
+    {
+      "date": "20260115",
+      "value": 115921361.22999997,
+      "cash": 71659411.22999997,
+      "n_holdings": 10
+    },
+    {
+      "date": "20260122",
+      "value": 117163494.72999997,
+      "cash": 73808444.72999997,
+      "n_holdings": 9
+    },
+    {
+      "date": "20260129",
+      "value": 120853103.52999997,
+      "cash": 70518203.52999997,
+      "n_holdings": 10
+    },
+    {
+      "date": "20260205",
+      "value": 118660376.72999997,
+      "cash": 87772776.72999997,
+      "n_holdings": 6
+    },
+    {
+      "date": "20260212",
+      "value": 118791233.66999997,
+      "cash": 76488003.66999997,
+      "n_holdings": 9
+    },
+    {
+      "date": "20260224",
+      "value": 122199543.66999997,
+      "cash": 76488003.66999997,
+      "n_holdings": 9
+    },
+    {
+      "date": "20260304",
+      "value": 119745217.11999996,
+      "cash": 109627137.11999996,
+      "n_holdings": 2
+    },
+    {
+      "date": "20260311",
+      "value": 120381685.91999996,
+      "cash": 100850485.91999996,
+      "n_holdings": 5
+    },
+    {
+      "date": "20260318",
+      "value": 121342785.91999996,
+      "cash": 100850485.91999996,
+      "n_holdings": 5
+    },
+    {
+      "date": "20260325",
+      "value": 121399285.91999996,
+      "cash": 103941185.91999996,
+      "n_holdings": 4
+    },
+    {
+      "date": "20260401",
+      "value": 121182698.91999996,
+      "cash": 101722698.91999996,
+      "n_holdings": 4
+    },
+    {
+      "date": "20260408",
+      "value": 120910973.41999996,
+      "cash": 94339573.41999996,
+      "n_holdings": 7
+    },
+    {
+      "date": "20260415",
+      "value": 123651069.41999996,
+      "cash": 92064769.41999996,
+      "n_holdings": 8
+    },
+    {
+      "date": "20260422",
+      "value": 124993829.41999996,
+      "cash": 88975529.41999996,
+      "n_holdings": 9
+    },
+    {
+      "date": "20260429",
+      "value": 128201363.21999995,
+      "cash": 77084563.21999995,
+      "n_holdings": 12
+    },
+    {
+      "date": "20260508",
+      "value": 135570733.31999993,
+      "cash": 78935333.31999995,
+      "n_holdings": 11
+    },
+    {
+      "date": "20260515",
+      "value": 129342437.66999996,
+      "cash": 101515937.66999996,
+      "n_holdings": 5
+    },
+    {
+      "date": "20260522",
+      "value": 131353873.06999996,
+      "cash": 89592073.06999996,
+      "n_holdings": 9
+    }
+  ],
+  "trades_sample": [
+    {
+      "date": "20260305",
+      "ticker": "001440",
+      "action": "sell",
+      "shares": 111,
+      "price": 29150.0,
+      "proceeds": 3225943.05,
+      "reason": "종가 26050 < MA60 27090"
+    },
+    {
+      "date": "20260312",
+      "ticker": "307950",
+      "action": "buy_stage1",
+      "shares": 8,
+      "price": 406500.0,
+      "cost": 3261755.9999999995,
+      "reason": "4조건 충족 (close>MA60 6M=135.8>KOSPI=75.2 σ=106.1)"
+    },
+    {
+      "date": "20260312",
+      "ticker": "402340",
+      "action": "buy_stage1",
+      "shares": 6,
+      "price": 554000.0,
+      "cost": 3333971.9999999995,
+      "reason": "4조건 충족 (close>MA60 6M=279.2>KOSPI=75.2 σ=81.5)"
+    },
+    {
+      "date": "20260312",
+      "ticker": "001440",
+      "action": "buy_stage1",
+      "shares": 72,
+      "price": 30200.0,
+      "cost": 2180923.1999999997,
+      "reason": "4조건 충족 (close>MA60 6M=93.7>KOSPI=75.2 σ=83.9)"
+    },
+    {
+      "date": "20260326",
+      "ticker": "307950",
+      "action": "sell",
+      "shares": 8,
+      "price": 387500.0,
+      "proceeds": 3090700.0,
+      "reason": "종가 405500 < MA60 421817"
+    },
+    {
+      "date": "20260402",
+      "ticker": "237690",
+      "action": "buy_stage1",
+      "shares": 35,
+      "price": 143200.0,
+      "cost": 5027035.999999999,
+      "reason": "4조건 충족 (close>MA60 6M=62.6>KOSPI=59.3 σ=74.4)"
+    },
+    {
+      "date": "20260402",
+      "ticker": "402340",
+      "action": "sell",
+      "shares": 6,
+      "price": 469500.0,
+      "proceeds": 2808549.0,
+      "reason": "종가 501000 < MA60 523417"
+    },
+    {
+      "date": "20260409",
+      "ticker": "237690",
+      "action": "sell",
+      "shares": 35,
+      "price": 141100.0,
+      "proceeds": 4923684.5,
+      "reason": "종가 140000 < MA60 146253"
+    },
+    {
+      "date": "20260409",
+      "ticker": "402340",
+      "action": "buy_stage1",
+      "shares": 6,
+      "price": 560000.0,
+      "cost": 3370079.9999999995,
+      "reason": "4조건 충족 (close>MA60 6M=196.0>KOSPI=54.9 σ=93.4)"
+    },
+    {
+      "date": "20260409",
+      "ticker": "028050",
+      "action": "buy_stage1",
+      "shares": 65,
+      "price": 51300.0,
+      "cost": 3344503.4999999995,
+      "reason": "4조건 충족 (close>MA60 6M=86.0>KOSPI=54.9 σ=71.7)"
+    },
+    {
+      "date": "20260409",
+      "ticker": "034730",
+      "action": "buy_stage1",
+      "shares": 9,
+      "price": 339500.0,
+      "cost": 3064666.4999999995,
+      "reason": "4조건 충족 (close>MA60 6M=65.6>KOSPI=54.9 σ=73.4)"
+    },
+    {
+      "date": "20260409",
+      "ticker": "006260",
+      "action": "buy_stage1",
+      "shares": 9,
+      "price": 280000.0,
+      "cost": 2527559.9999999995,
+      "reason": "4조건 충족 (close>MA60 6M=76.7>KOSPI=54.9 σ=81.7)"
+    },
+    {
+      "date": "20260416",
+      "ticker": "062040",
+      "action": "buy_stage1",
+      "shares": 12,
+      "price": 189000.0,
+      "cost": 2274803.9999999995,
+      "reason": "4조건 충족 (close>MA60 6M=74.3>KOSPI=69.5 σ=92.0)"
+    },
+    {
+      "date": "20260423",
+      "ticker": "307950",
+      "action": "buy_stage1",
+      "shares": 7,
+      "price": 440000.0,
+      "cost": 3089239.9999999995,
+      "reason": "4조건 충족 (close>MA60 6M=188.6>KOSPI=69.3 σ=83.8)"
+    },
+    {
+      "date": "20260430",
+      "ticker": "237690",
+      "action": "buy_stage1",
+      "shares": 34,
+      "price": 152500.0,
+      "cost": 5200554.999999999,
+      "reason": "4조건 충족 (close>MA60 6M=82.6>KOSPI=66.7 σ=71.2)"
+    },
+    {
+      "date": "20260430",
+      "ticker": "082740",
+      "action": "buy_stage1",
+      "shares": 38,
+      "price": 88000.0,
+      "cost": 3354031.9999999995,
+      "reason": "4조건 충족 (close>MA60 6M=79.3>KOSPI=66.7 σ=86.2)"
+    },
+    {
+      "date": "20260430",
+      "ticker": "077970",
+      "action": "buy_stage1",
+      "shares": 54,
+      "price": 61600.0,
+      "cost": 3336379.1999999997,
+      "reason": "4조건 충족 (close>MA60 6M=71.8>KOSPI=66.7 σ=102.4)"
+    },
+    {
+      "date": "20260511",
+      "ticker": "082740",
+      "action": "buy_stage2",
+      "shares": 22,
+      "price": 78400.0,
+      "cost": 1729974.4,
+      "reason": "진입가 대비 -9.8% (≤-5%)"
+    },
+    {
+      "date": "20260511",
+      "ticker": "012450",
+      "action": "sell",
+      "shares": 4,
+      "price": 1315000.0,
+      "proceeds": 5244220.0,
+      "reason": "종가 1307000 < MA60 1365250"
+    },
+    {
+      "date": "20260511",
+      "ticker": "077970",
+      "action": "buy_stage2",
+      "shares": 31,
+      "price": 53500.0,
+      "cost": 1663475.4999999998,
+      "reason": "진입가 대비 -10.7% (≤-5%)"
+    },
+    {
+      "date": "20260518",
+      "ticker": "237690",
+      "action": "sell",
+      "shares": 34,
+      "price": 124900.0,
+      "proceeds": 4233860.2,
+      "reason": "종가 131400 < MA60 149317"
+    },
+    {
+      "date": "20260518",
+      "ticker": "028050",
+      "action": "sell",
+      "shares": 65,
+      "price": 49500.0,
+      "proceeds": 3207847.5,
+      "reason": "종가 50600 < peak 62400 × 0.85"
+    },
+    {
+      "date": "20260518",
+      "ticker": "082740",
+      "action": "sell",
+      "shares": 60,
+      "price": 68400.0,
+      "proceeds": 4091688.0,
+      "reason": "종가 71600 < peak 88000 × 0.85"
+    },
+    {
+      "date": "20260518",
+      "ticker": "077970",
+      "action": "sell",
+      "shares": 85,
+      "price": 44650.0,
+      "proceeds": 3783864.25,
+      "reason": "종가 45850 < peak 61600 × 0.85"
+    },
+    {
+      "date": "20260518",
+      "ticker": "062040",
+      "action": "sell",
+      "shares": 12,
+      "price": 258500.0,
+      "proceeds": 3092694.0,
+      "reason": "종가 268500 < peak 331000 × 0.85"
+    },
+    {
+      "date": "20260518",
+      "ticker": "001440",
+      "action": "sell",
+      "shares": 72,
+      "price": 58100.0,
+      "proceeds": 4170650.4,
+      "reason": "종가 60000 < peak 72300 × 0.85"
+    },
+    {
+      "date": "20260526",
+      "ticker": "028050",
+      "action": "buy_stage1",
+      "shares": 65,
+      "price": 54600.0,
+      "cost": 3559646.9999999995,
+      "reason": "4조건 충족 (close>MA60 6M=105.0>KOSPI=75.2 σ=87.9)"
+    },
+    {
+      "date": "20260526",
+      "ticker": "082740",
+      "action": "buy_stage1",
+      "shares": 45,
+      "price": 78400.0,
+      "cost": 3538583.9999999995,
+      "reason": "4조건 충족 (close>MA60 6M=80.7>KOSPI=75.2 σ=87.6)"
+    },
+    {
+      "date": "20260526",
+      "ticker": "062040",
+      "action": "buy_stage1",
+      "shares": 9,
+      "price": 274000.0,
+      "cost": 2473397.9999999995,
+      "reason": "4조건 충족 (close>MA60 6M=96.3>KOSPI=75.2 σ=106.8)"
+    },
+    {
+      "date": "20260526",
+      "ticker": "001440",
+      "action": "buy_stage1",
+      "shares": 44,
+      "price": 53300.0,
+      "cost": 2352235.5999999996,
+      "reason": "4조건 충족 (close>MA60 6M=119.6>KOSPI=75.2 σ=109.9)"
+    }
+  ]
+}

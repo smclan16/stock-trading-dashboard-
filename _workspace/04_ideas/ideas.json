@@ -1,0 +1,646 @@
+{
+  "as_of": "2026-05-27",
+  "model": "3단계 깔때기 + 5점 평가 + 4분류 + **한국 자동 발굴(stage1 섹터모멘텀 + stage2 DART 공시)** 통합",
+  "data_basis": [
+    "signals_raw.json: 10개 글로벌 신호(arXiv·Wiki EN/KO·GitHub·HN·SEC·FedReg·Naver News + Patents·Assembly 옵션)",
+    "kr_themes_discovered.json: 한국 자동 발굴 — universe.json 5팩터 섹터 모멘텀 + DART 공시 빈도 변화",
+    "LLM 도메인 지식 보강"
+  ],
+  "scoring_note": "글로벌 키워드 변화 추적 + 한국 시장 자동 발굴(섹터 모멘텀·DART 수주/자사주/M&A 공시) 결합. 한국 거버넌스/내수 등 사용자 언급 테마가 자동 발굴 통해 11~13번에 진입.",
+  "categories": {
+    "핵심 장기 테마 후보": [
+      3,
+      4,
+      9,
+      11
+    ],
+    "관찰 리스트": [
+      1,
+      2,
+      5,
+      6,
+      7,
+      8,
+      10,
+      12,
+      13
+    ],
+    "검증 부족": [],
+    "아직 약한 아이디어": []
+  },
+  "kr_auto_discovered_themes_ids": [
+    11,
+    12,
+    13
+  ],
+  "ideas": [
+    {
+      "idea_id": 1,
+      "theme": "AI 인프라 — HBM·메모리·하이퍼스케일러 Capex",
+      "category": "관찰 리스트",
+      "scores": {
+        "durability": 5,
+        "capital_inflow": 5,
+        "verifiability": 5,
+        "earliness": 1,
+        "policy": 4,
+        "total": 20
+      },
+      "classification_reason": "total 20점이지만 Earliness 1 (모든≥3 조건 미충족). 한국 위키 -37% / 네이버 truncated → 이미 한국 시장도 완전 인지된 메가테마. 기존 보유 강화 관점",
+      "weak_signals": {
+        "arxiv": {
+          "keyword": "large language model",
+          "truncated": true
+        },
+        "wiki_en_growth_pct": -27.0,
+        "wiki_ko_growth_pct": -36.7,
+        "github_growth_pct": 27.6,
+        "hn_growth_pct": -21.6,
+        "sec_edgar_growth_pct": 151.1,
+        "federal_register_growth_pct": 39.4,
+        "naver_news_growth_pct": null,
+        "naver_truncated": true
+      },
+      "structural_demand": "글로벌 AI Capex 2026E $300B+, HBM 수요 2025~2027 CAGR 60%+. 한국 메모리 2강 독과점",
+      "money_flow": "SEC 10-K mention +151% (상장사 인식 정점), SOXX/SMH ETF AUM 신고가, 삼성전자·SK하이닉스 Capex 가이던스 동반 상향",
+      "policy_momentum": "FedReg AI mention +39%, CHIPS Act 보조금 집행, 한국 K-칩스법 통과",
+      "linked_universe_hint": [
+        "005930 삼성전자",
+        "000660 SK하이닉스",
+        "042700 한미반도체"
+      ],
+      "risks": [
+        "HBM 가격 피크 우려",
+        "관세·수출통제 확대",
+        "고객 Capex 사이클 감속"
+      ],
+      "allocation_pct": 7.42
+    },
+    {
+      "idea_id": 2,
+      "theme": "AI 에이전트 — Agentic AI 본격 상용화",
+      "category": "관찰 리스트",
+      "scores": {
+        "durability": 4,
+        "capital_inflow": 4,
+        "verifiability": 3,
+        "earliness": 3,
+        "policy": 3,
+        "total": 17
+      },
+      "classification_reason": "total 17점, SEC +189% 강력. Wiki KO·네이버 truncated → 한국에서도 인지 시작. 매출 가시성 12M+ 시점이라 핵심후보 조건 미충족",
+      "weak_signals": {
+        "arxiv_growth_pct": 33.2,
+        "wiki_en_growth_pct": 3.5,
+        "wiki_ko_growth_pct": null,
+        "github_growth_pct": 26.4,
+        "hn_growth_pct": -21.0,
+        "sec_edgar_growth_pct": 189.7,
+        "federal_register_growth_pct": 39.8,
+        "naver_news_growth_pct": null,
+        "naver_truncated": true
+      },
+      "structural_demand": "OpenAI Operator, Anthropic Computer Use, Microsoft Copilot Studio — SaaS 패러다임 전환",
+      "money_flow": "SEC mention +189% (가파른 사업화 인식), Magic·Cognition Series 평균 $1B+ valuation",
+      "policy_momentum": "FedReg +40%, EU AI Act 고위험 시스템 확장 가능성, 한국 AI 기본법 통과",
+      "linked_universe_hint": [
+        "035420 NAVER",
+        "012510 더존비즈온",
+        "035720 카카오"
+      ],
+      "risks": [
+        "환각·신뢰성 한계",
+        "토큰 비용 부담",
+        "보안·감사 이슈"
+      ],
+      "allocation_pct": 6.31
+    },
+    {
+      "idea_id": 3,
+      "theme": "SMR·소형원전 — AI 데이터센터 전용 전력원으로 격상",
+      "category": "핵심 장기 테마 후보",
+      "scores": {
+        "durability": 5,
+        "capital_inflow": 3,
+        "verifiability": 4,
+        "earliness": 3,
+        "policy": 5,
+        "total": 20
+      },
+      "classification_reason": "⭐ 직전 사이클 '검증부족'→'핵심 후보' 승격. SEC EDGAR 측정 결과 +927%(15→38건)로 미국 상장사 사업화 인식이 폭증 확인 → Verifiability 2→4. 네이버 truncated=인기 키워드 = Earliness 4→3 조정. Durability 5 + Policy 5(FedReg +156%) 강력",
+      "weak_signals": {
+        "arxiv_growth_pct": -100.0,
+        "wiki_en_growth_pct": -7.8,
+        "wiki_ko_growth_pct": null,
+        "hn_growth_pct": null,
+        "sec_edgar_growth_pct": 927.4,
+        "federal_register_growth_pct": 156.1,
+        "naver_news_growth_pct": null,
+        "naver_truncated": true
+      },
+      "structural_demand": "AI 데이터센터 전력 갭 + 탈탄소 동시 충족. NuScale·Holtec·X-energy 설계 인증 진행. Amazon·Google·Microsoft 원전 PPA 폭증",
+      "money_flow": "**SEC +927% (최강 사업화 신호)** — 미국 상장사 다수가 사업으로 인식 시작. URA·NLR 우라늄 ETF AUM 1년 +60%. SMR 가동 매출은 2028+",
+      "policy_momentum": "FedReg +156% (자동측정 강력), IRA 원전 세액공제, 한국 K-원전 수출, COP28 원전 3배 선언",
+      "linked_universe_hint": [
+        "034020 두산에너빌리티",
+        "298040 효성중공업",
+        "010620 현대미포조선"
+      ],
+      "risks": [
+        "설계 인증 지연",
+        "사회적 수용성",
+        "건설비 초기 우려",
+        "SEC 검색이 평문 폴백이라 false positive 포함 가능"
+      ],
+      "allocation_pct": 11.13
+    },
+    {
+      "idea_id": 4,
+      "theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
+      "category": "핵심 장기 테마 후보",
+      "scores": {
+        "durability": 5,
+        "capital_inflow": 4,
+        "verifiability": 5,
+        "earliness": 3,
+        "policy": 4,
+        "total": 21
+      },
+      "classification_reason": "총점 21점 (직전 20→21 상승). SEC +144% 측정 확보로 Verifiability 4→5 상승. 모든 항목 ≥3, Durability 5. 즉시 idea-stock-matching 후보 1순위",
+      "weak_signals": {
+        "arxiv_growth_pct": 50.0,
+        "wiki_en_growth_pct": 31.6,
+        "wiki_ko_growth_pct": 2.1,
+        "hn_growth_pct": 90.7,
+        "sec_edgar_growth_pct": 143.8,
+        "federal_register_growth_pct": 28.4,
+        "naver_news_growth_pct": null,
+        "naver_truncated": true
+      },
+      "structural_demand": "AI Capex 1MW당 발전·송배전·냉각 통합 수요. 미국 전력망 30년 노후화 + 데이터센터 신규 수요 동시. 변압기·초고압케이블·UPS·HVDC 공급 부족 ≥18M",
+      "money_flow": "SEC +144% (사업화 인식 광범위), HD현대일렉트릭·효성중공업·LS ELECTRIC 컨센서스 영업이익 연속 상향. GRID/PAVE ETF AUM 증가, GE Vernova·Eaton 주가 신고가",
+      "policy_momentum": "FedReg +28%, FERC 그리드 현대화, 한국 9차 전력수급계획 송전망 투자 확대",
+      "linked_universe_hint": [
+        "267260 HD현대일렉트릭",
+        "298040 효성중공업",
+        "010120 LS ELECTRIC",
+        "034020 두산에너빌리티"
+      ],
+      "risks": [
+        "주가 단기 과열",
+        "원자재(구리·강판) 가격 변동",
+        "AI Capex 사이클 둔화 시 첫 번째 타격"
+      ],
+      "allocation_pct": 11.69
+    },
+    {
+      "idea_id": 5,
+      "theme": "휴머노이드 로봇 — 양산 진입 단계",
+      "category": "관찰 리스트",
+      "scores": {
+        "durability": 4,
+        "capital_inflow": 4,
+        "verifiability": 3,
+        "earliness": 3,
+        "policy": 2,
+        "total": 16
+      },
+      "classification_reason": "직전 15→16점. SEC mention 측정 결과 +35%(2→6건, 절대수 작음). Wiki KO +7%로 한국 미세 관심 증가. 양산 시점 2~3년 후라 핵심후보 조건 미충족",
+      "weak_signals": {
+        "arxiv_growth_pct": -14.3,
+        "wiki_en_growth_pct": -0.9,
+        "wiki_ko_growth_pct": 6.6,
+        "github_growth_pct": -66.8,
+        "hn_growth_pct": 33.8,
+        "sec_edgar_growth_pct": 35.2,
+        "federal_register_growth_pct": -100.0,
+        "naver_news_growth_pct": null,
+        "naver_truncated": true
+      },
+      "structural_demand": "Tesla Optimus 2026E 5천대·2030E 100만대 가이던스, Figure AI Series B $675M, 중국 Unitree·Fourier 양산 진입",
+      "money_flow": "Figure AI $675M(NVIDIA·MSFT·OpenAI), Apptronik $350M. 매출 본격화 2027~2028",
+      "policy_momentum": "한국 산업부 K-휴머노이드 8대 부품 1조원 R&D, FedReg 미국 신호 약함",
+      "linked_universe_hint": [
+        "454910 두산로보틱스",
+        "277810 레인보우로보틱스",
+        "108860 셀바스AI"
+      ],
+      "risks": [
+        "양산 일정 반복적 지연",
+        "정밀모터·감속기 공급 병목",
+        "도입 단가 vs 인건비 균형점 미확보"
+      ],
+      "allocation_pct": 5.94
+    },
+    {
+      "idea_id": 6,
+      "theme": "자율주행 — Robotaxi 본격화 (한국 신호 강함)",
+      "category": "관찰 리스트",
+      "scores": {
+        "durability": 4,
+        "capital_inflow": 3,
+        "verifiability": 4,
+        "earliness": 1,
+        "policy": 3,
+        "total": 15
+      },
+      "classification_reason": "직전 14→15점. SEC +117% 측정 + Wiki KO +25% + 네이버 'FSD 베타' +120% (정확 측정) — 한국 시장에서 영문 신호(-3%)와 정반대로 관심 명확히 증가. Earliness 1로 핵심후보 조건 미충족하나, 한국 관심 패턴 추세 시 관찰 강화 대상",
+      "weak_signals": {
+        "arxiv_growth_pct": 9.5,
+        "wiki_en_growth_pct": -2.6,
+        "wiki_ko_growth_pct": 25.2,
+        "github_growth_pct": 15.7,
+        "hn_growth_pct": -16.7,
+        "sec_edgar_growth_pct": 116.7,
+        "federal_register_growth_pct": 20.2,
+        "naver_news_growth_pct": 119.7,
+        "naver_truncated": false,
+        "naver_kw": "FSD 베타"
+      },
+      "structural_demand": "Waymo 일주일 25만 라이드, Tesla FSD V13 구독 확대, 중국 Baidu Apollo Go 11개 도시",
+      "money_flow": "Waymo $5B 라운드, Wayve £450M. SEC +117% (상장사 사업화 가속). 흑자전환 2027+",
+      "policy_momentum": "FedReg +20%, NHTSA AV 가이드라인, 한국 자율차 시범운행 확대",
+      "linked_universe_hint": [
+        "005380 현대차",
+        "012330 현대모비스",
+        "204320 만도"
+      ],
+      "risks": [
+        "사고·소송 리스크",
+        "Tesla FSD 약속 지연",
+        "한국 OEM 자율주행 경쟁력 격차"
+      ],
+      "allocation_pct": 5.57
+    },
+    {
+      "idea_id": 7,
+      "theme": "GLP-1 비만약 — 시장 폭증 지속",
+      "category": "관찰 리스트",
+      "scores": {
+        "durability": 5,
+        "capital_inflow": 5,
+        "verifiability": 5,
+        "earliness": 1,
+        "policy": 3,
+        "total": 19
+      },
+      "classification_reason": "total 19점, SEC +160% / FedReg +143% 강력. Wiki KO -12.5%로 한국 일반 관심 감소 (이미 알려진 메가테마). Earliness 1로 핵심후보 조건 미충족",
+      "weak_signals": {
+        "arxiv_growth_pct": null,
+        "wiki_en_growth_pct": -6.5,
+        "wiki_ko_growth_pct": -12.5,
+        "hn_growth_pct": 11.6,
+        "sec_edgar_growth_pct": 160.1,
+        "federal_register_growth_pct": 143.3,
+        "naver_news_growth_pct": null,
+        "naver_truncated": true
+      },
+      "structural_demand": "Eli Lilly·Novo 독과점, 글로벌 GLP-1 매출 2030E $150B. 비만 외 심혈관·치매·간 적응증 확대",
+      "money_flow": "SEC mention +160%, XPH·IHE ETF AUM 신고가. 한국 CMO/원료 공급망 수혜",
+      "policy_momentum": "FedReg +143%, FDA 신속 승인, Medicare 커버리지 확대 논의",
+      "linked_universe_hint": [
+        "128940 한미약품",
+        "087010 펩트론",
+        "170900 동아에스티"
+      ],
+      "risks": [
+        "가격 인하 압박",
+        "한국 회사 CMO·바이오시밀러 포지션"
+      ],
+      "allocation_pct": 7.05
+    },
+    {
+      "idea_id": 8,
+      "theme": "유전자 치료 — CASGEVY 이후 상용화",
+      "category": "관찰 리스트",
+      "scores": {
+        "durability": 4,
+        "capital_inflow": 4,
+        "verifiability": 3,
+        "earliness": 2,
+        "policy": 3,
+        "total": 16
+      },
+      "classification_reason": "total 16점, SEC +207% 전 테마 최고. Wiki KO -3%로 한국에서도 일반 관심 식음. CDMO 간접 수혜 중심",
+      "weak_signals": {
+        "arxiv_growth_pct": null,
+        "wiki_en_growth_pct": -25.4,
+        "wiki_ko_growth_pct": -3.1,
+        "hn_growth_pct": -47.4,
+        "sec_edgar_growth_pct": 206.8,
+        "federal_register_growth_pct": 35.2,
+        "naver_news_growth_pct": null,
+        "naver_truncated": true
+      },
+      "structural_demand": "Vertex CASGEVY 보험 적용 확대, BLUE bird bio·CRISPR Therapeutics·Editas 임상 다수",
+      "money_flow": "SEC +207%, Vertex·CRISPR Therapeutics 매출 시작. 한국 CDMO(셀트리온·삼성바이오로직스) 간접",
+      "policy_momentum": "FedReg +35%, FDA Gene Therapy Hub 확대",
+      "linked_universe_hint": [
+        "207940 삼성바이오로직스",
+        "068270 셀트리온",
+        "084990 헬릭스미스"
+      ],
+      "risks": [
+        "치료비용 $2M+ 보험 부담",
+        "한국 직접 수혜 제한",
+        "유전체 안전성 이슈"
+      ],
+      "allocation_pct": 5.94
+    },
+    {
+      "idea_id": 9,
+      "theme": "양자 컴퓨팅 — 알고리즘 우위 + 사업화 가시화",
+      "category": "핵심 장기 테마 후보",
+      "scores": {
+        "durability": 5,
+        "capital_inflow": 3,
+        "verifiability": 4,
+        "earliness": 4,
+        "policy": 4,
+        "total": 20
+      },
+      "classification_reason": "⭐ 직전 '검증부족'→'핵심 후보' 승격. SEC +332%(275→293건, retry 측정 효과)로 미국 상장사 사업화 인식 강함 → Verifiability 2→4. Earliness 4+Verifiability 4>2이므로 검증부족 조건 불성립. 모든 ≥3 OK, Durability 5",
+      "weak_signals": {
+        "arxiv_growth_pct": 88.4,
+        "arxiv_truncated": true,
+        "wiki_en_growth_pct": -17.5,
+        "wiki_ko_growth_pct": -16.6,
+        "github_growth_pct": -1.8,
+        "hn_growth_pct": 21.9,
+        "sec_edgar_growth_pct": 332.1,
+        "federal_register_growth_pct": 35.2,
+        "naver_news_growth_pct": null,
+        "naver_truncated": true
+      },
+      "structural_demand": "Google Willow 칩(2024), IBM Heron, 양자오류정정 진전. 신약·소재·암호화 응용. 실용 양자우위는 2030+",
+      "money_flow": "SEC +332% (상장사 사업화 광범위), QTUM ETF AUM 회복, PsiQuantum $620M·SandboxAQ $300M. 매출은 IBM·Google 클라우드 양자 임대",
+      "policy_momentum": "FedReg +35%, NQI Act 재승인, EU Quantum Flagship, 한국 양자정보 R&D 1조원",
+      "linked_universe_hint": [
+        "030200 KT",
+        "017670 SK텔레콤"
+      ],
+      "risks": [
+        "실용 양자우위까지 5~10년",
+        "한국 종목은 양자암호통신 간접 수혜",
+        "거품 우려"
+      ],
+      "allocation_pct": 0.0
+    },
+    {
+      "idea_id": 10,
+      "theme": "위성통신·LEO — 글로벌 인터넷 인프라",
+      "category": "관찰 리스트",
+      "scores": {
+        "durability": 4,
+        "capital_inflow": 4,
+        "verifiability": 3,
+        "earliness": 2,
+        "policy": 4,
+        "total": 17
+      },
+      "classification_reason": "total 17점. Wiki KO **+21%** (한국에서 스타링크 관심 증가), arXiv +26·SEC +35·FedReg +35로 신호 균형. Earliness 2로 핵심후보 조건 미충족",
+      "weak_signals": {
+        "arxiv_growth_pct": 25.6,
+        "wiki_en_growth_pct": -13.8,
+        "wiki_ko_growth_pct": 21.4,
+        "hn_growth_pct": -10.0,
+        "sec_edgar_growth_pct": 35.2,
+        "federal_register_growth_pct": 35.2,
+        "naver_news_growth_pct": 315.2,
+        "naver_truncated": false
+      },
+      "structural_demand": "Starlink 350만 유저·흑자 임박, Amazon Kuiper 본격 발사 2026, EU IRIS²(7,000기)",
+      "money_flow": "Amazon Kuiper $10B 누적, FCC 스펙트럼 경매, ETF UFO/ITA AUM 양호. **한국 위키 +21% / 네이버 +315%** = 한국 시장 관심 명확히 증가",
+      "policy_momentum": "FedReg +35%, FCC 스펙트럼 정책, 한국 6G·저궤도 우주개발 본예산",
+      "linked_universe_hint": [
+        "047810 한국항공우주",
+        "272210 한화시스템",
+        "079550 LIG넥스원"
+      ],
+      "risks": [
+        "저궤도 혼잡·충돌",
+        "단말기 가격 부담",
+        "한국 종목 직접 매출 비중 작음"
+      ],
+      "allocation_pct": 6.31
+    },
+    {
+      "idea_id": 11,
+      "theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
+      "category": "핵심 장기 테마 후보",
+      "scores": {
+        "durability": 4,
+        "capital_inflow": 4,
+        "verifiability": 5,
+        "earliness": 2,
+        "policy": 5,
+        "total": 20
+      },
+      "classification_reason": "⭐ kr_themes_discovered.json 자동 발굴. 금융 섹터(지주사 다수) composite_z +0.40 + DART 자사주 취득 공시 +100%(미원·현대지에프 등) + 처분 공시 +14%(SK스퀘어·아모레퍼시픽홀딩스·AK홀딩스) + M&A 공시 +12%. 한국 시장 거버넌스 재편이 데이터에서 부상. total 20점·모든 ≥3·Durability 4 충족",
+      "discovery_source": "kr_themes_discovered.json — Stage 1(금융 섹터 모멘텀) + Stage 2(DART 자사주·M&A 공시 증가)",
+      "auto_signals": {
+        "sector_momentum_z": 0.4,
+        "sector_constituents": [
+          "402340 SK스퀘어",
+          "004800 효성",
+          "034730 SK",
+          "006260 LS",
+          "078930 GS",
+          "383800 LX홀딩스",
+          "005810 풍산홀딩스",
+          "016360 삼성증권"
+        ],
+        "dart_treasury_acq_growth_pct": 100.0,
+        "dart_treasury_disp_growth_pct": 14.3,
+        "dart_m_and_a_growth_pct": 12.2
+      },
+      "structural_demand": "정부 밸류업 가이드라인(기업가치 제고 계획) + 상법개정 논의 + 외국인 한국 저PBR 매수. 지주사 디스카운트 해소 흐름 영구화 기대",
+      "money_flow": "지주사 자사주 취득·소각 가속 (미원홀딩스·현대지에프홀딩스), SK스퀘어·아모레퍼시픽홀딩스 등 자사주 처분/소각 공시, M&A·분할 공시 +12%. 금융섹터 universe 컨센서스 영업이익 평균 +26% 상향",
+      "policy_momentum": "기재부/금감원 밸류업 가이드라인 2년차, 상법개정안 발의, 일반주주 보호 강화. (자동 측정 없음 — LLM WebFetch로 korea.kr·금융위 보강)",
+      "linked_universe_hint": [
+        "402340 SK스퀘어",
+        "004800 효성",
+        "034730 SK",
+        "006260 LS",
+        "078930 GS",
+        "016360 삼성증권"
+      ],
+      "risks": [
+        "정책 추진 동력 약화",
+        "지주사 디스카운트 본질 해소까진 장기",
+        "외국인 매수 의존 시 환율 영향"
+      ],
+      "allocation_pct": 11.13
+    },
+    {
+      "idea_id": 12,
+      "theme": "한국 내수·유통·면세 회복 (자동 발굴)",
+      "category": "관찰 리스트",
+      "scores": {
+        "durability": 3,
+        "capital_inflow": 3,
+        "verifiability": 3,
+        "earliness": 3,
+        "policy": 2,
+        "total": 14
+      },
+      "classification_reason": "kr_themes_discovered.json: 유통 섹터 composite_z +0.41. SK네트웍스·SK가스·롯데쇼핑·신세계인터내셔날 등 내수 종목 모멘텀. K-뷰티 글로벌 매출 + 인바운드 관광객 회복 신호. total 14점으로 관찰 리스트",
+      "discovery_source": "kr_themes_discovered.json — Stage 1(유통 섹터 모멘텀)",
+      "auto_signals": {
+        "sector_momentum_z": 0.41,
+        "sector_constituents": [
+          "001740 SK네트웍스",
+          "018670 SK가스",
+          "023530 롯데쇼핑",
+          "031430 신세계인터내셔날"
+        ],
+        "avg_turnover_growth_pct": 230.8,
+        "avg_tp_rev_pct": 26.5
+      },
+      "structural_demand": "인바운드 관광객 회복(엔저 효과 둔화 + 한류 지속), K-뷰티 글로벌 수출 폭증(달바·실리콘투 등). 면세점·유통 매출 재반등",
+      "money_flow": "롯데쇼핑·신세계인터내셔날 컨센서스 상향, 거래대금 +230% (단기 자금 유입). 한국 백화점/면세 데이터 추적 필요",
+      "policy_momentum": "관광객 유치 정책, 면세 한도 인상 논의 (자동 측정 없음)",
+      "linked_universe_hint": [
+        "001740 SK네트웍스",
+        "023530 롯데쇼핑",
+        "031430 신세계인터내셔날",
+        "020000 한섬",
+        "483650 달바글로벌",
+        "161890 한국콜마"
+      ],
+      "risks": [
+        "관광객 회복 속도 변동",
+        "내수 소비 약화 우려",
+        "환율 영향 큼"
+      ],
+      "allocation_pct": 5.2
+    },
+    {
+      "idea_id": 13,
+      "theme": "K-방산·K-조선 수출 사이클 (보강 필요)",
+      "category": "관찰 리스트",
+      "scores": {
+        "durability": 4,
+        "capital_inflow": 3,
+        "verifiability": 4,
+        "earliness": 2,
+        "policy": 4,
+        "total": 17
+      },
+      "classification_reason": "운송장비 섹터 composite_z -0.97 (단기 모멘텀 약함, 이미 대형주). 그러나 절대 점수 양수(+0.51), DART 수주 공시 +0% 평탄. 글로벌 공급망 재편·NATO 재무장 사이클 영구성 강함. 자동 신호로는 부상 어렵지만 도메인 지식 + 정책 모멘텀으로 관찰 리스트 진입",
+      "discovery_source": "kr_themes_discovered.json — Stage 1(운송장비 약함) + LLM 도메인 지식 보강. DART 수주 공시는 사이클 평탄(60일 윈도우 한계).",
+      "auto_signals": {
+        "sector_momentum_z": -0.97,
+        "sector_constituents": [
+          "329180 HD현대중공업",
+          "012450 한화에어로스페이스",
+          "010140 삼성중공업"
+        ],
+        "dart_contract_growth_pct": 0.0,
+        "note": "5팩터 단기 모멘텀 신호로는 부상 어렵지만 사이클 자체는 강력"
+      },
+      "structural_demand": "NATO 재무장 + 폴란드/중동 K-방산 수주, LNG선 카타르 발주, 우크라이나 재건 → 한국 방산·조선 다년 수주 사이클",
+      "money_flow": "한화에어로스페이스·HD중공업·삼성중공업 수주 잔고 사상 최대. 자동 측정상 30d vs 60d 평탄 — 사이클 호황 정체기로 해석 또는 윈도우 한계",
+      "policy_momentum": "방위사업청 수출 지원, 산업부 조선업 재편 (자동 측정 없음)",
+      "linked_universe_hint": [
+        "329180 HD현대중공업",
+        "012450 한화에어로스페이스",
+        "010140 삼성중공업",
+        "082740 한화엔진",
+        "077970 STX엔진"
+      ],
+      "risks": [
+        "수주→매출 인식 지연(조선 2~3년)",
+        "환율 영향",
+        "정책 변동 시 수출 차질"
+      ],
+      "allocation_pct": 6.31
+    }
+  ],
+  "summary": {
+    "핵심 장기 테마 후보 (4개)": "데이터센터 전력(#4) · SMR(#3) · 양자(#9) · **한국 거버넌스/지주사 모멘텀(#11, 신규 자동 발굴)**",
+    "관찰 리스트 (9개)": "글로벌 7 + 한국 자동 발굴 2(내수/유통 #12, K-방산조선 #13)",
+    "한국 자동 발굴 효과": "discover_kr_themes.py가 5팩터 universe 섹터 모멘텀 + DART 자사주/M&A 공시 결합으로 거버넌스·내수·방산조선 자동 부상. 사용자 지적 '글로벌 기술 편중' 일부 해소",
+    "기존 흐름 유지": "글로벌 키워드(arXiv·GitHub·HN·SEC·FedReg) 변화 추적은 그대로. 한국 신호는 자동 발굴로 추가",
+    "한국 자동 발굴 한계": "방산·조선처럼 catalyst-driven 다년 사이클은 30d vs 60d 단기 윈도우로 신호 약함 → LLM 도메인 지식 + 정책 보강 필수. 자사주 소각/유상감자 키워드 매칭 정교화 추가 검토",
+    "next_action": "핵심 후보 4건 → 5단계 idea-stock-matching 재실행 + 6단계 company-research → default_single_pick 확정"
+  },
+  "allocation_weights": {
+    "computed_at": "2026-05-27T20:58:11+09:00",
+    "method": "카테고리 차등 가중치 적용. 매칭 0건은 0%. uncovered_pool 고정 비중.",
+    "category_multipliers": {
+      "핵심 장기 테마 후보": 1.5,
+      "관찰 리스트": 1.0,
+      "검증 부족": 0.5,
+      "아직 약한 아이디어": 0.0
+    },
+    "allocatable_total_pct": 90.0,
+    "uncovered_fixed_pct": 10.0,
+    "weighted_score_sum": 242.5,
+    "formula": "allocation_pct = (idea.total_score × category_multiplier) / Σ(weighted_scores) × 90.0",
+    "by_idea": {
+      "1": 7.42,
+      "2": 6.31,
+      "3": 11.13,
+      "4": 11.69,
+      "5": 5.94,
+      "6": 5.57,
+      "7": 7.05,
+      "8": 5.94,
+      "9": 0.0,
+      "10": 6.31,
+      "11": 11.13,
+      "12": 5.2,
+      "13": 6.31
+    },
+    "uncovered_pool_pct": 10.0,
+    "sanity_check_sum": 100.0
+  },
+  "default_picks": {
+    "status": "FILLED",
+    "purpose": "매크로 사이클·테마 점수·레짐 가중치와 독립적인 개별 종목 풀(복수). 5단계 matching에서 어떤 아이디어에도 매칭되지 않은 종목 풀(uncovered_tickers)에서 6단계 company-research가 N종목 선정·비중 배분.",
+    "n_picks_target": "6단계 결정 (예: 3~5종목, 매력도·매크로베타 기준 균등 또는 가중)",
+    "selection_criteria": [
+      "4단계 어느 아이디어에도 매칭되지 않음 (5단계 uncovered_tickers 풀에서)",
+      "6단계 company-research 매력도 점수 상위 30% 이내",
+      "매크로 베타 < 0.7 (시장 변동성 의존도 낮음)",
+      "회사 고유 catalyst 명시 가능 (임상·M&A·턴어라운드·자사주 소각·신제품 등)"
+    ],
+    "filled_by": "06_research/company-research",
+    "allocation_pct": 10.0,
+    "picks": [
+      {
+        "ticker": "005880",
+        "name": "대한해운",
+        "attractiveness": 58.6,
+        "macro_beta": 0.111,
+        "catalyst": "news_growth 292.99999999999994% / DART pos+contract pts 0.0",
+        "weight_pct": 2.5
+      },
+      {
+        "ticker": "108670",
+        "name": "LX하우시스",
+        "attractiveness": 57.5,
+        "macro_beta": 0.634,
+        "catalyst": "news_growth 500.0% / DART pos+contract pts 0.0",
+        "weight_pct": 2.5
+      },
+      {
+        "ticker": "016380",
+        "name": "KG스틸",
+        "attractiveness": 54.5,
+        "macro_beta": 0.355,
+        "catalyst": "news_growth 326.0% / DART pos+contract pts 0.0",
+        "weight_pct": 2.5
+      },
+      {
+        "ticker": "460860",
+        "name": "동국제강",
+        "attractiveness": 54.5,
+        "macro_beta": 0.473,
+        "catalyst": "news_growth 500.0% / DART pos+contract pts 0.0",
+        "weight_pct": 2.5
+      }
+    ]
+  }
+}

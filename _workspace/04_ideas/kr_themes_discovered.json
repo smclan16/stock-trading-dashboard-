@@ -1,0 +1,1374 @@
+{
+  "as_of": "2026-05-27T09:05:36+09:00",
+  "n_universe": 100,
+  "n_sectors_analyzed": 16,
+  "n_emerging": 4,
+  "threshold_composite_z": 0.3,
+  "min_sector_size": 3,
+  "method": {
+    "stage1_sector_momentum": "3단계 universe.json(5팩터)의 종목별 metrics를 섹터별 평균집계 → composite z-score(목표가↑·ROE↑·거래대금↑·종합점수) 상위 = 부상 섹터.",
+    "stage2_dart_disclosures": "DART /list.json (pblntf_detail_ty=I001 거래소수시공시)의 보고서명 키워드 분류로 수주(단일판매·공급계약)·자사주 취득/처분/소각·기업가치 제고·M&A 공시 빈도 변화(30d vs 60d) 추적. 한국 시장 catalyst-driven 테마 자동 발굴."
+  },
+  "next_step_for_llm": "emerging_sectors + dart_disclosure_growth 종합 → (1) 한국 시장 맥락의 테마명 부여 (2) 매크로 무관 회사 자체 catalyst인지 vs 매크로 사이클인지 판별 (3) 기존 글로벌 테마와 중복되는지 확인 후 ideas.json에 통합",
+  "emerging_sectors_stage1": [
+    {
+      "sector": "전자반도체",
+      "n_members": 11,
+      "avg_total_score": 0.5613090909090909,
+      "avg_tp_rev_pct": 166.91889599171918,
+      "avg_roe_rev_pct": 60.9318019150305,
+      "avg_turnover_growth_pct": 475.6674167062011,
+      "members": [
+        {
+          "ticker": "004710",
+          "name": "한솔테크닉스",
+          "total_score": 0.9066,
+          "tp_rev": null,
+          "roe_rev": null,
+          "turnover": 1104.5250713070486
+        },
+        {
+          "ticker": "011930",
+          "name": "신성이엔지",
+          "total_score": 0.8854,
+          "tp_rev": 1279.860357114028,
+          "roe_rev": -1.611170784103122,
+          "turnover": 8.818517157677253
+        },
+        {
+          "ticker": "230240",
+          "name": "에치에프알",
+          "total_score": 0.6542,
+          "tp_rev": 0.4702253483979124,
+          "roe_rev": 65.15513126491645,
+          "turnover": 624.7555874237935
+        },
+        {
+          "ticker": "050890",
+          "name": "쏠리드",
+          "total_score": 0.6214,
+          "tp_rev": -8.232666213076257,
+          "roe_rev": 18.172268907563026,
+          "turnover": 702.4242130322367
+        },
+        {
+          "ticker": "336370",
+          "name": "솔루스첨단소재",
+          "total_score": 0.6202,
+          "tp_rev": 9.528829299793994,
+          "roe_rev": 406.4516129032258,
+          "turnover": 263.0732210370977
+        }
+      ],
+      "z_tp_rev": 3.5700306749451465,
+      "z_roe_rev": 2.705553484469824,
+      "z_turnover": 2.3584321851561647,
+      "z_total": -0.9364171452536681,
+      "composite_z": 1.9243997998293667,
+      "is_emerging": true
+    },
+    {
+      "sector": "유통",
+      "n_members": 4,
+      "avg_total_score": 0.7853,
+      "avg_tp_rev_pct": 26.534690290554835,
+      "avg_roe_rev_pct": 31.424530223301577,
+      "avg_turnover_growth_pct": 230.79305158473008,
+      "members": [
+        {
+          "ticker": "001740",
+          "name": "SK네트웍스",
+          "total_score": 1.1024,
+          "tp_rev": 5.145277813189675,
+          "roe_rev": 25.566343042071193,
+          "turnover": 723.3956869862109
+        },
+        {
+          "ticker": "018670",
+          "name": "SK가스",
+          "total_score": 0.7646,
+          "tp_rev": 16.89832445672643,
+          "roe_rev": 38.2636655948553,
+          "turnover": 126.54307546076194
+        },
+        {
+          "ticker": "023530",
+          "name": "롯데쇼핑",
+          "total_score": 0.6436,
+          "tp_rev": 47.47224701806976,
+          "roe_rev": 24.731182795698903,
+          "turnover": 12.787483893331952
+        },
+        {
+          "ticker": "031430",
+          "name": "신세계인터내셔날",
+          "total_score": 0.6306,
+          "tp_rev": 36.62291187423348,
+          "roe_rev": 37.136929460580916,
+          "turnover": 60.44595999861559
+        }
+      ],
+      "z_tp_rev": -0.1885688136299425,
+      "z_roe_rev": 0.8588861722552668,
+      "z_turnover": 0.36590322044711754,
+      "z_total": 0.5952139309836983,
+      "composite_z": 0.407858627514035,
+      "is_emerging": true
+    },
+    {
+      "sector": "금융",
+      "n_members": 8,
+      "avg_total_score": 0.8921250000000001,
+      "avg_tp_rev_pct": 43.88590462371282,
+      "avg_roe_rev_pct": 25.962539610429634,
+      "avg_turnover_growth_pct": 121.25231189880742,
+      "members": [
+        {
+          "ticker": "402340",
+          "name": "SK스퀘어",
+          "total_score": 1.8218,
+          "tp_rev": 84.37348465704586,
+          "roe_rev": 25.132487554199457,
+          "turnover": 138.7019205652744
+        },
+        {
+          "ticker": "004800",
+          "name": "효성",
+          "total_score": 1.4248,
+          "tp_rev": 80.32028567440292,
+          "roe_rev": 8.800000000000008,
+          "turnover": 281.09243455190176
+        },
+        {
+          "ticker": "034730",
+          "name": "SK",
+          "total_score": 1.2956,
+          "tp_rev": 50.463856952733124,
+          "roe_rev": 109.78723404255315,
+          "turnover": 50.444258045932685
+        },
+        {
+          "ticker": "006260",
+          "name": "LS",
+          "total_score": 0.6534,
+          "tp_rev": 74.90567217694021,
+          "roe_rev": 13.891625615763559,
+          "turnover": 138.48689573282505
+        },
+        {
+          "ticker": "078930",
+          "name": "GS",
+          "total_score": 0.6192,
+          "tp_rev": 14.107523887738882,
+          "roe_rev": 53.25884543761639,
+          "turnover": 31.217534813502734
+        }
+      ],
+      "z_tp_rev": 0.2759867607883801,
+      "z_roe_rev": 0.5170558725993118,
+      "z_turnover": -0.5254236300853354,
+      "z_total": 1.3256743339666215,
+      "composite_z": 0.3983233343172445,
+      "is_emerging": true
+    },
+    {
+      "sector": "자동차",
+      "n_members": 3,
+      "avg_total_score": 1.0149333333333332,
+      "avg_tp_rev_pct": 23.808677429748823,
+      "avg_roe_rev_pct": 5.694867968395105,
+      "avg_turnover_growth_pct": 215.42860960531956,
+      "members": [
+        {
+          "ticker": "009900",
+          "name": "명신산업",
+          "total_score": 1.2554,
+          "tp_rev": 24.546760149270597,
+          "roe_rev": -0.7448789571694592,
+          "turnover": 580.2052822552686
+        },
+        {
+          "ticker": "085910",
+          "name": "네오티스",
+          "total_score": 1.128,
+          "tp_rev": 32.84708407496595,
+          "roe_rev": 14.636449480642133,
+          "turnover": 45.89454751718913
+        },
+        {
+          "ticker": "005850",
+          "name": "에스엘",
+          "total_score": 0.6614,
+          "tp_rev": 14.03218806500992,
+          "roe_rev": 3.19303338171264,
+          "turnover": 20.185999043500978
+        }
+      ],
+      "z_tp_rev": -0.2615541647476118,
+      "z_roe_rev": -0.7513652510837125,
+      "z_turnover": 0.24088361843454756,
+      "z_total": 2.1654274316153708,
+      "composite_z": 0.3483479085546485,
+      "is_emerging": true
+    }
+  ],
+  "all_sectors_ranked_stage1": [
+    {
+      "sector": "전자반도체",
+      "n_members": 11,
+      "avg_total_score": 0.5613090909090909,
+      "avg_tp_rev_pct": 166.91889599171918,
+      "avg_roe_rev_pct": 60.9318019150305,
+      "avg_turnover_growth_pct": 475.6674167062011,
+      "members": [
+        {
+          "ticker": "004710",
+          "name": "한솔테크닉스",
+          "total_score": 0.9066,
+          "tp_rev": null,
+          "roe_rev": null,
+          "turnover": 1104.5250713070486
+        },
+        {
+          "ticker": "011930",
+          "name": "신성이엔지",
+          "total_score": 0.8854,
+          "tp_rev": 1279.860357114028,
+          "roe_rev": -1.611170784103122,
+          "turnover": 8.818517157677253
+        },
+        {
+          "ticker": "230240",
+          "name": "에치에프알",
+          "total_score": 0.6542,
+          "tp_rev": 0.4702253483979124,
+          "roe_rev": 65.15513126491645,
+          "turnover": 624.7555874237935
+        },
+        {
+          "ticker": "050890",
+          "name": "쏠리드",
+          "total_score": 0.6214,
+          "tp_rev": -8.232666213076257,
+          "roe_rev": 18.172268907563026,
+          "turnover": 702.4242130322367
+        },
+        {
+          "ticker": "336370",
+          "name": "솔루스첨단소재",
+          "total_score": 0.6202,
+          "tp_rev": 9.528829299793994,
+          "roe_rev": 406.4516129032258,
+          "turnover": 263.0732210370977
+        }
+      ],
+      "z_tp_rev": 3.5700306749451465,
+      "z_roe_rev": 2.705553484469824,
+      "z_turnover": 2.3584321851561647,
+      "z_total": -0.9364171452536681,
+      "composite_z": 1.9243997998293667,
+      "is_emerging": true
+    },
+    {
+      "sector": "유통",
+      "n_members": 4,
+      "avg_total_score": 0.7853,
+      "avg_tp_rev_pct": 26.534690290554835,
+      "avg_roe_rev_pct": 31.424530223301577,
+      "avg_turnover_growth_pct": 230.79305158473008,
+      "members": [
+        {
+          "ticker": "001740",
+          "name": "SK네트웍스",
+          "total_score": 1.1024,
+          "tp_rev": 5.145277813189675,
+          "roe_rev": 25.566343042071193,
+          "turnover": 723.3956869862109
+        },
+        {
+          "ticker": "018670",
+          "name": "SK가스",
+          "total_score": 0.7646,
+          "tp_rev": 16.89832445672643,
+          "roe_rev": 38.2636655948553,
+          "turnover": 126.54307546076194
+        },
+        {
+          "ticker": "023530",
+          "name": "롯데쇼핑",
+          "total_score": 0.6436,
+          "tp_rev": 47.47224701806976,
+          "roe_rev": 24.731182795698903,
+          "turnover": 12.787483893331952
+        },
+        {
+          "ticker": "031430",
+          "name": "신세계인터내셔날",
+          "total_score": 0.6306,
+          "tp_rev": 36.62291187423348,
+          "roe_rev": 37.136929460580916,
+          "turnover": 60.44595999861559
+        }
+      ],
+      "z_tp_rev": -0.1885688136299425,
+      "z_roe_rev": 0.8588861722552668,
+      "z_turnover": 0.36590322044711754,
+      "z_total": 0.5952139309836983,
+      "composite_z": 0.407858627514035,
+      "is_emerging": true
+    },
+    {
+      "sector": "금융",
+      "n_members": 8,
+      "avg_total_score": 0.8921250000000001,
+      "avg_tp_rev_pct": 43.88590462371282,
+      "avg_roe_rev_pct": 25.962539610429634,
+      "avg_turnover_growth_pct": 121.25231189880742,
+      "members": [
+        {
+          "ticker": "402340",
+          "name": "SK스퀘어",
+          "total_score": 1.8218,
+          "tp_rev": 84.37348465704586,
+          "roe_rev": 25.132487554199457,
+          "turnover": 138.7019205652744
+        },
+        {
+          "ticker": "004800",
+          "name": "효성",
+          "total_score": 1.4248,
+          "tp_rev": 80.32028567440292,
+          "roe_rev": 8.800000000000008,
+          "turnover": 281.09243455190176
+        },
+        {
+          "ticker": "034730",
+          "name": "SK",
+          "total_score": 1.2956,
+          "tp_rev": 50.463856952733124,
+          "roe_rev": 109.78723404255315,
+          "turnover": 50.444258045932685
+        },
+        {
+          "ticker": "006260",
+          "name": "LS",
+          "total_score": 0.6534,
+          "tp_rev": 74.90567217694021,
+          "roe_rev": 13.891625615763559,
+          "turnover": 138.48689573282505
+        },
+        {
+          "ticker": "078930",
+          "name": "GS",
+          "total_score": 0.6192,
+          "tp_rev": 14.107523887738882,
+          "roe_rev": 53.25884543761639,
+          "turnover": 31.217534813502734
+        }
+      ],
+      "z_tp_rev": 0.2759867607883801,
+      "z_roe_rev": 0.5170558725993118,
+      "z_turnover": -0.5254236300853354,
+      "z_total": 1.3256743339666215,
+      "composite_z": 0.3983233343172445,
+      "is_emerging": true
+    },
+    {
+      "sector": "자동차",
+      "n_members": 3,
+      "avg_total_score": 1.0149333333333332,
+      "avg_tp_rev_pct": 23.808677429748823,
+      "avg_roe_rev_pct": 5.694867968395105,
+      "avg_turnover_growth_pct": 215.42860960531956,
+      "members": [
+        {
+          "ticker": "009900",
+          "name": "명신산업",
+          "total_score": 1.2554,
+          "tp_rev": 24.546760149270597,
+          "roe_rev": -0.7448789571694592,
+          "turnover": 580.2052822552686
+        },
+        {
+          "ticker": "085910",
+          "name": "네오티스",
+          "total_score": 1.128,
+          "tp_rev": 32.84708407496595,
+          "roe_rev": 14.636449480642133,
+          "turnover": 45.89454751718913
+        },
+        {
+          "ticker": "005850",
+          "name": "에스엘",
+          "total_score": 0.6614,
+          "tp_rev": 14.03218806500992,
+          "roe_rev": 3.19303338171264,
+          "turnover": 20.185999043500978
+        }
+      ],
+      "z_tp_rev": -0.2615541647476118,
+      "z_roe_rev": -0.7513652510837125,
+      "z_turnover": 0.24088361843454756,
+      "z_total": 2.1654274316153708,
+      "composite_z": 0.3483479085546485,
+      "is_emerging": true
+    },
+    {
+      "sector": "의료정밀",
+      "n_members": 4,
+      "avg_total_score": 0.84895,
+      "avg_tp_rev_pct": 34.032493120509365,
+      "avg_roe_rev_pct": 33.57714412616628,
+      "avg_turnover_growth_pct": 68.59732039652116,
+      "members": [
+        {
+          "ticker": "131290",
+          "name": "티에스이",
+          "total_score": 1.6054,
+          "tp_rev": 81.21797980348893,
+          "roe_rev": 60.75373619233267,
+          "turnover": 71.49427929073214
+        },
+        {
+          "ticker": "041830",
+          "name": "인바디",
+          "total_score": 0.953,
+          "tp_rev": 17.36608905747554,
+          "roe_rev": 4.930156121610518,
+          "turnover": 263.9527639369307
+        },
+        {
+          "ticker": "119610",
+          "name": "인터로조",
+          "total_score": 0.4908,
+          "tp_rev": 26.28749465888052,
+          "roe_rev": 16.73789173789175,
+          "turnover": 11.18926976880601
+        },
+        {
+          "ticker": "099190",
+          "name": "아이센스",
+          "total_score": 0.3466,
+          "tp_rev": 11.25840896219248,
+          "roe_rev": 51.886792452830186,
+          "turnover": -72.24703141038421
+        }
+      ],
+      "z_tp_rev": 0.012174836564533909,
+      "z_roe_rev": 0.9936042096180066,
+      "z_turnover": -0.953874340525237,
+      "z_total": 1.0304473000439653,
+      "composite_z": 0.2705880014253172,
+      "is_emerging": false
+    },
+    {
+      "sector": "화학",
+      "n_members": 8,
+      "avg_total_score": 0.631775,
+      "avg_tp_rev_pct": 20.90440075323547,
+      "avg_roe_rev_pct": 34.02493923763884,
+      "avg_turnover_growth_pct": 285.6921536767341,
+      "members": [
+        {
+          "ticker": "009830",
+          "name": "한화솔루션",
+          "total_score": 1.1254,
+          "tp_rev": 26.50242939072318,
+          "roe_rev": 109.69162995594712,
+          "turnover": -61.38623300779798
+        },
+        {
+          "ticker": "425040",
+          "name": "티이엠씨",
+          "total_score": 1.0906,
+          "tp_rev": null,
+          "roe_rev": null,
+          "turnover": 1745.627563630701
+        },
+        {
+          "ticker": "483650",
+          "name": "달바글로벌",
+          "total_score": 0.7778,
+          "tp_rev": 28.164304326550436,
+          "roe_rev": 4.832104832104833,
+          "turnover": 78.78926963055474
+        },
+        {
+          "ticker": "161890",
+          "name": "한국콜마",
+          "total_score": 0.5092,
+          "tp_rev": 23.88074291300095,
+          "roe_rev": 9.082969432314414,
+          "turnover": 66.1185137442621
+        },
+        {
+          "ticker": "004000",
+          "name": "롯데정밀화학",
+          "total_score": 0.4458,
+          "tp_rev": 20.840724135164756,
+          "roe_rev": 9.559939301972676,
+          "turnover": 110.02707575041124
+        }
+      ],
+      "z_tp_rev": -0.3393122912868647,
+      "z_roe_rev": 1.0216287794110057,
+      "z_turnover": 0.8126141327983334,
+      "z_total": -0.4545771606891612,
+      "composite_z": 0.26008836505832833,
+      "is_emerging": false
+    },
+    {
+      "sector": "전기장비",
+      "n_members": 5,
+      "avg_total_score": 0.58716,
+      "avg_tp_rev_pct": 45.7691904799054,
+      "avg_roe_rev_pct": 25.18861973067132,
+      "avg_turnover_growth_pct": 250.4410426100381,
+      "members": [
+        {
+          "ticker": "006400",
+          "name": "삼성SDI",
+          "total_score": 0.7442,
+          "tp_rev": 56.38627220502293,
+          "roe_rev": 91.58415841584157,
+          "turnover": 9.069935555957876
+        },
+        {
+          "ticker": "062040",
+          "name": "산일전기",
+          "total_score": 0.6892,
+          "tp_rev": 66.24106398648183,
+          "roe_rev": 1.6055045871559592,
+          "turnover": 195.66482017233247
+        },
+        {
+          "ticker": "001440",
+          "name": "대한전선",
+          "total_score": 0.6114,
+          "tp_rev": 60.440619028795254,
+          "roe_rev": 10.730253353204166,
+          "turnover": 329.0507207411717
+        },
+        {
+          "ticker": "082920",
+          "name": "비츠로셀",
+          "total_score": 0.4464,
+          "tp_rev": -0.8835352373907646,
+          "roe_rev": 1.4187866927592996,
+          "turnover": 572.4986587086221
+        },
+        {
+          "ticker": "243840",
+          "name": "신흥에스이씨",
+          "total_score": 0.4446,
+          "tp_rev": 46.661532416617746,
+          "roe_rev": 20.6043956043956,
+          "turnover": 145.92107787210642
+        }
+      ],
+      "z_tp_rev": 0.3264092226356491,
+      "z_roe_rev": 0.4686212847067517,
+      "z_turnover": 0.5257778206195345,
+      "z_total": -0.7596507940061101,
+      "composite_z": 0.1402893834889563,
+      "is_emerging": false
+    },
+    {
+      "sector": "철강금속",
+      "n_members": 5,
+      "avg_total_score": 0.67416,
+      "avg_tp_rev_pct": 27.662396499808484,
+      "avg_roe_rev_pct": 6.6334402282572835,
+      "avg_turnover_growth_pct": 376.83542814861437,
+      "members": [
+        {
+          "ticker": "058430",
+          "name": "포스코스틸리온",
+          "total_score": 1.0756,
+          "tp_rev": 42.9638022244732,
+          "roe_rev": 0.22753128555177415,
+          "turnover": 872.554492665957
+        },
+        {
+          "ticker": "460860",
+          "name": "동국제강",
+          "total_score": 0.8398,
+          "tp_rev": 49.94776634028717,
+          "roe_rev": 5.5776892430278835,
+          "turnover": 488.025126647188
+        },
+        {
+          "ticker": "306200",
+          "name": "세아제강",
+          "total_score": 0.5822,
+          "tp_rev": 22.76941072739591,
+          "roe_rev": 16.083916083916083,
+          "turnover": 182.87240530291263
+        },
+        {
+          "ticker": "016380",
+          "name": "KG스틸",
+          "total_score": 0.4614,
+          "tp_rev": 14.565393116458015,
+          "roe_rev": 8.452722063037243,
+          "turnover": 276.09806779336463
+        },
+        {
+          "ticker": "013030",
+          "name": "하이록코리아",
+          "total_score": 0.4118,
+          "tp_rev": 8.065610090428121,
+          "roe_rev": 2.825342465753433,
+          "turnover": 64.62704833364946
+        }
+      ],
+      "z_tp_rev": -0.15837598702104025,
+      "z_roe_rev": -0.6926261466844175,
+      "z_turnover": 1.5542418414952475,
+      "z_total": -0.1647520806008749,
+      "composite_z": 0.1346219067972287,
+      "is_emerging": false
+    },
+    {
+      "sector": "기계",
+      "n_members": 12,
+      "avg_total_score": 0.6332333333333333,
+      "avg_tp_rev_pct": 58.03406567881831,
+      "avg_roe_rev_pct": 14.48970330836105,
+      "avg_turnover_growth_pct": 172.60915552153992,
+      "members": [
+        {
+          "ticker": "420770",
+          "name": "기가비스",
+          "total_score": 1.9082,
+          "tp_rev": 149.8577498376511,
+          "roe_rev": 79.65779467680608,
+          "turnover": 35.44824196541945
+        },
+        {
+          "ticker": "036930",
+          "name": "주성엔지니어링",
+          "total_score": 0.9188,
+          "tp_rev": 82.88823496751986,
+          "roe_rev": -2.605633802816898,
+          "turnover": 477.55892732566474
+        },
+        {
+          "ticker": "382800",
+          "name": "지앤비에스 에코",
+          "total_score": 0.8372,
+          "tp_rev": null,
+          "roe_rev": 9.106830122591948,
+          "turnover": 537.8125243360341
+        },
+        {
+          "ticker": "077970",
+          "name": "STX엔진",
+          "total_score": 0.6066,
+          "tp_rev": 54.29055399330858,
+          "roe_rev": -1.1639185257032114,
+          "turnover": 303.258638636731
+        },
+        {
+          "ticker": "183300",
+          "name": "코미코",
+          "total_score": 0.597,
+          "tp_rev": 113.12236997138525,
+          "roe_rev": -0.965794768611683,
+          "turnover": 32.77467681112074
+        }
+      ],
+      "z_tp_rev": 0.6547848644667659,
+      "z_roe_rev": -0.200953979302967,
+      "z_turnover": -0.10753587607904586,
+      "z_total": -0.4446051994970236,
+      "composite_z": -0.024577547603067643,
+      "is_emerging": false
+    },
+    {
+      "sector": "전문서비스",
+      "n_members": 4,
+      "avg_total_score": 0.75795,
+      "avg_tp_rev_pct": 19.392188519824323,
+      "avg_roe_rev_pct": 3.699605571067835,
+      "avg_turnover_growth_pct": 260.44455005940813,
+      "members": [
+        {
+          "ticker": "131970",
+          "name": "두산테스나",
+          "total_score": 0.8902,
+          "tp_rev": 41.567017322694056,
+          "roe_rev": 10.860484544695058,
+          "turnover": 150.3848464930675
+        },
+        {
+          "ticker": "330860",
+          "name": "네패스아크",
+          "total_score": 0.746,
+          "tp_rev": 9.413016127754004,
+          "roe_rev": 4.453781512605026,
+          "turnover": 321.3076323364098
+        },
+        {
+          "ticker": "443060",
+          "name": "HD현대마린솔루션",
+          "total_score": 0.7012,
+          "tp_rev": 20.974412385275976,
+          "roe_rev": -0.5158437730287457,
+          "turnover": 227.26754243943952
+        },
+        {
+          "ticker": "028050",
+          "name": "삼성E&A",
+          "total_score": 0.6944,
+          "tp_rev": 5.614308243573252,
+          "roe_rev": 0.0,
+          "turnover": 342.81817896871576
+        }
+      ],
+      "z_tp_rev": -0.3797997528123815,
+      "z_roe_rev": -0.8762356859693593,
+      "z_turnover": 0.607175799259173,
+      "z_total": 0.4081969216545814,
+      "composite_z": -0.060165679466996594,
+      "is_emerging": false
+    },
+    {
+      "sector": "제약바이오",
+      "n_members": 7,
+      "avg_total_score": 0.6952,
+      "avg_tp_rev_pct": 15.212783002204265,
+      "avg_roe_rev_pct": 14.830237993642225,
+      "avg_turnover_growth_pct": 201.0396741964248,
+      "members": [
+        {
+          "ticker": "005500",
+          "name": "삼진제약",
+          "total_score": 1.5268,
+          "tp_rev": 26.601872270254056,
+          "roe_rev": 0.0,
+          "turnover": 1406.8451048603401
+        },
+        {
+          "ticker": "096530",
+          "name": "씨젠",
+          "total_score": 0.93,
+          "tp_rev": 5.123124794144163,
+          "roe_rev": 66.77018633540372,
+          "turnover": 56.91923015925464
+        },
+        {
+          "ticker": "016580",
+          "name": "환인제약",
+          "total_score": 0.6968,
+          "tp_rev": 25.96281066520152,
+          "roe_rev": 16.009280742459396,
+          "turnover": 44.095138681855815
+        },
+        {
+          "ticker": "039200",
+          "name": "오스코텍",
+          "total_score": 0.5414,
+          "tp_rev": 10.491591029882507,
+          "roe_rev": 9.13818722139672,
+          "turnover": -48.00483628382742
+        },
+        {
+          "ticker": "237690",
+          "name": "에스티팜",
+          "total_score": 0.487,
+          "tp_rev": 22.22515546519974,
+          "roe_rev": 7.40410347903655,
+          "turnover": -47.82132412144341
+        }
+      ],
+      "z_tp_rev": -0.49169774990269355,
+      "z_roe_rev": -0.17964213866402742,
+      "z_turnover": 0.12380165863312716,
+      "z_total": -0.020882322784252044,
+      "composite_z": -0.14210513817946147,
+      "is_emerging": false
+    },
+    {
+      "sector": "미디어콘텐츠",
+      "n_members": 6,
+      "avg_total_score": 0.7911666666666667,
+      "avg_tp_rev_pct": 22.875599992037255,
+      "avg_roe_rev_pct": 13.242783327380916,
+      "avg_turnover_growth_pct": 104.14293139570366,
+      "members": [
+        {
+          "ticker": "488280",
+          "name": "에스투더블유",
+          "total_score": 1.082,
+          "tp_rev": 35.29411764705881,
+          "roe_rev": 13.519163763066189,
+          "turnover": 285.1376511145586
+        },
+        {
+          "ticker": "192080",
+          "name": "더블유게임즈",
+          "total_score": 1.0608,
+          "tp_rev": 22.740392931273057,
+          "roe_rev": 12.398703403565637,
+          "turnover": 135.52442498819798
+        },
+        {
+          "ticker": "263750",
+          "name": "펄어비스",
+          "total_score": 0.8874,
+          "tp_rev": 42.24793718744013,
+          "roe_rev": 21.272808188696036,
+          "turnover": 47.39013341792215
+        },
+        {
+          "ticker": "259960",
+          "name": "크래프톤",
+          "total_score": 0.6676,
+          "tp_rev": 16.843868943846886,
+          "roe_rev": 12.062546537602392,
+          "turnover": 32.57511696724693
+        },
+        {
+          "ticker": "036570",
+          "name": "NC",
+          "total_score": 0.5518,
+          "tp_rev": 14.157248591478467,
+          "roe_rev": 23.39235787511649,
+          "turnover": 3.2228962664456073
+        }
+      ],
+      "z_tp_rev": -0.28653606611370375,
+      "z_roe_rev": -0.2789905525883465,
+      "z_turnover": -0.664641698925459,
+      "z_total": 0.6353297062937834,
+      "composite_z": -0.14870965283343143,
+      "is_emerging": false
+    },
+    {
+      "sector": "음식료",
+      "n_members": 3,
+      "avg_total_score": 0.7267333333333333,
+      "avg_tp_rev_pct": 16.126511582097947,
+      "avg_roe_rev_pct": 2.4381903958204867,
+      "avg_turnover_growth_pct": 57.150518431701336,
+      "members": [
+        {
+          "ticker": "194700",
+          "name": "노바렉스",
+          "total_score": 1.06,
+          "tp_rev": 17.84748413209456,
+          "roe_rev": -0.13550135501354532,
+          "turnover": 163.05671487259664
+        },
+        {
+          "ticker": "280360",
+          "name": "롯데웰푸드",
+          "total_score": 0.648,
+          "tp_rev": 14.515555143020675,
+          "roe_rev": 5.133470225872694,
+          "turnover": 9.75120944369976
+        },
+        {
+          "ticker": "033780",
+          "name": "KT&G",
+          "total_score": 0.4722,
+          "tp_rev": 16.016495471178605,
+          "roe_rev": 2.316602316602312,
+          "turnover": -1.356369021192405
+        }
+      ],
+      "z_tp_rev": -0.4672338883455358,
+      "z_roe_rev": -0.9551794187412924,
+      "z_turnover": -1.0470163256279974,
+      "z_total": 0.19473996950745376,
+      "composite_z": -0.5686724158018429,
+      "is_emerging": false
+    },
+    {
+      "sector": "운송물류",
+      "n_members": 3,
+      "avg_total_score": 0.6512666666666667,
+      "avg_tp_rev_pct": 5.406315841926671,
+      "avg_roe_rev_pct": 10.09203008893412,
+      "avg_turnover_growth_pct": 35.208596331966056,
+      "members": [
+        {
+          "ticker": "005880",
+          "name": "대한해운",
+          "total_score": 1.0342,
+          "tp_rev": 10.36334246960433,
+          "roe_rev": 7.517482517482521,
+          "turnover": 103.33566302889014
+        },
+        {
+          "ticker": "028670",
+          "name": "팬오션",
+          "total_score": 0.5518,
+          "tp_rev": 7.172950099242725,
+          "roe_rev": 5.582137161084533,
+          "turnover": 30.83629737178213
+        },
+        {
+          "ticker": "003490",
+          "name": "대한항공",
+          "total_score": 0.3678,
+          "tp_rev": -1.317345043067042,
+          "roe_rev": 17.176470588235304,
+          "turnover": -28.5461714047741
+        }
+      ],
+      "z_tp_rev": -0.7542528020843371,
+      "z_roe_rev": -0.4761756083630825,
+      "z_turnover": -1.2255565141994904,
+      "z_total": -0.32129477652681954,
+      "composite_z": -0.6943199252934324,
+      "is_emerging": false
+    },
+    {
+      "sector": "운송장비",
+      "n_members": 3,
+      "avg_total_score": 0.5120666666666667,
+      "avg_tp_rev_pct": 5.9955958158125195,
+      "avg_roe_rev_pct": -0.06897254405726638,
+      "avg_turnover_growth_pct": 91.49729576201071,
+      "members": [
+        {
+          "ticker": "329180",
+          "name": "HD현대중공업",
+          "total_score": 0.7664,
+          "tp_rev": 6.425013116165856,
+          "roe_rev": 5.643602628527233,
+          "turnover": 163.31360556389308
+        },
+        {
+          "ticker": "012450",
+          "name": "한화에어로스페이스",
+          "total_score": 0.4354,
+          "tp_rev": 11.73289409223759,
+          "roe_rev": 0.8187772925764225,
+          "turnover": 0.7444248481756066
+        },
+        {
+          "ticker": "010140",
+          "name": "삼성중공업",
+          "total_score": 0.3344,
+          "tp_rev": -0.17111976096588766,
+          "roe_rev": -6.669297553275455,
+          "turnover": 110.43385687396344
+        }
+      ],
+      "z_tp_rev": -0.7384756183376862,
+      "z_roe_rev": -1.1120863634374294,
+      "z_turnover": -0.7675385263038211,
+      "z_total": -1.2731327179751961,
+      "composite_z": -0.9728083065135332,
+      "is_emerging": false
+    },
+    {
+      "sector": "IT서비스",
+      "n_members": 3,
+      "avg_total_score": 0.40873333333333334,
+      "avg_tp_rev_pct": 4.684471294518025,
+      "avg_roe_rev_pct": 1.0494012140064586,
+      "avg_turnover_growth_pct": 26.398550198652018,
+      "members": [
+        {
+          "ticker": "030190",
+          "name": "NICE평가정보",
+          "total_score": 0.4604,
+          "tp_rev": 8.572293193717261,
+          "roe_rev": 1.0193133047210257,
+          "turnover": 14.502584915554406
+        },
+        {
+          "ticker": "214180",
+          "name": "헥토이노베이션",
+          "total_score": 0.4358,
+          "tp_rev": 12.781513494410124,
+          "roe_rev": 0.8823529411764675,
+          "turnover": -83.38946906800342
+        },
+        {
+          "ticker": "018260",
+          "name": "삼성에스디에스",
+          "total_score": 0.33,
+          "tp_rev": -7.300392804573308,
+          "roe_rev": 1.2465373961218829,
+          "turnover": 148.08253474840507
+        }
+      ],
+      "z_tp_rev": -0.7735792251186795,
+      "z_roe_rev": -1.0420946582255328,
+      "z_turnover": -1.2972433650968611,
+      "z_total": -1.9797173967323722,
+      "composite_z": -1.2731586612933614,
+      "is_emerging": false
+    }
+  ],
+  "dart_disclosure_growth_stage2": {
+    "recent_days": 30,
+    "base_days": 60,
+    "n_total_recent": 2869,
+    "n_total_base": 6792,
+    "categories": {
+      "contract": {
+        "n_recent": 355,
+        "n_base": 710,
+        "growth_pct": 0.0,
+        "sample_companies": [
+          "비츠로셀",
+          "에스지헬스케어",
+          "IPARK현대산업개발",
+          "빅텍",
+          "스피어"
+        ]
+      },
+      "treasury_acq": {
+        "n_recent": 3,
+        "n_base": 3,
+        "growth_pct": 100.0,
+        "sample_companies": [
+          "미원홀딩스",
+          "현대지에프홀딩스"
+        ]
+      },
+      "treasury_disp": {
+        "n_recent": 4,
+        "n_base": 7,
+        "growth_pct": 14.28571428571428,
+        "sample_companies": [
+          "아모레퍼시픽홀딩스",
+          "AK홀딩스",
+          "SK스퀘어",
+          "SK"
+        ]
+      },
+      "treasury_burn": {
+        "n_recent": 0,
+        "n_base": 0,
+        "growth_pct": null,
+        "sample_companies": []
+      },
+      "value_up": {
+        "n_recent": 55,
+        "n_base": 293,
+        "growth_pct": -62.45733788395904,
+        "sample_companies": [
+          "에스아이리소스",
+          "대한제분",
+          "대한제당",
+          "하나마이크론",
+          "이크레더블"
+        ]
+      },
+      "m_and_a": {
+        "n_recent": 23,
+        "n_base": 41,
+        "growth_pct": 12.195121951219523,
+        "sample_companies": [
+          "앤로보틱스",
+          "디비금융스팩12호",
+          "SGA솔루션즈",
+          "컴투스",
+          "휴온스"
+        ]
+      },
+      "other": {
+        "n_recent": 2429,
+        "n_base": 5738,
+        "growth_pct": -15.336354130359009,
+        "sample_companies": [
+          "인스코비",
+          "수성웹툰",
+          "대웅",
+          "다원시스",
+          "에이프로젠"
+        ]
+      }
+    }
+  },
+  "universe_sector_dart_signals": {
+    "운송물류": {
+      "other": {
+        "recent": 6,
+        "base": 7,
+        "growth_pct": 71.42857142857144
+      },
+      "contract": {
+        "recent": 1,
+        "base": 1,
+        "growth_pct": 100.0
+      },
+      "m_and_a": {
+        "recent": 1,
+        "base": 1,
+        "growth_pct": 100.0
+      }
+    },
+    "화학": {
+      "other": {
+        "recent": 25,
+        "base": 38,
+        "growth_pct": 31.578947368421062
+      },
+      "value_up": {
+        "recent": 0,
+        "base": 2,
+        "growth_pct": -100.0
+      }
+    },
+    "전기장비": {
+      "contract": {
+        "recent": 2,
+        "base": 4,
+        "growth_pct": 0.0
+      },
+      "other": {
+        "recent": 2,
+        "base": 8,
+        "growth_pct": -50.0
+      }
+    },
+    "전문서비스": {
+      "other": {
+        "recent": 3,
+        "base": 9,
+        "growth_pct": -33.33333333333333
+      },
+      "contract": {
+        "recent": 1,
+        "base": 4,
+        "growth_pct": -50.0
+      },
+      "value_up": {
+        "recent": 0,
+        "base": 1,
+        "growth_pct": -100.0
+      }
+    },
+    "미디어콘텐츠": {
+      "other": {
+        "recent": 8,
+        "base": 22,
+        "growth_pct": -27.27272727272727
+      },
+      "value_up": {
+        "recent": 1,
+        "base": 1,
+        "growth_pct": 100.0
+      }
+    },
+    "자동차": {
+      "other": {
+        "recent": 1,
+        "base": 4,
+        "growth_pct": -50.0
+      },
+      "value_up": {
+        "recent": 0,
+        "base": 1,
+        "growth_pct": -100.0
+      }
+    },
+    "건설": {
+      "other": {
+        "recent": 8,
+        "base": 21,
+        "growth_pct": -23.809523809523803
+      },
+      "contract": {
+        "recent": 8,
+        "base": 16,
+        "growth_pct": 0.0
+      }
+    },
+    "유통": {
+      "other": {
+        "recent": 6,
+        "base": 17,
+        "growth_pct": -29.411764705882348
+      },
+      "value_up": {
+        "recent": 0,
+        "base": 1,
+        "growth_pct": -100.0
+      }
+    },
+    "제약바이오": {
+      "other": {
+        "recent": 15,
+        "base": 21,
+        "growth_pct": 42.85714285714286
+      }
+    },
+    "전자반도체": {
+      "other": {
+        "recent": 15,
+        "base": 28,
+        "growth_pct": 7.14285714285714
+      },
+      "value_up": {
+        "recent": 2,
+        "base": 4,
+        "growth_pct": 0.0
+      },
+      "contract": {
+        "recent": 2,
+        "base": 4,
+        "growth_pct": 0.0
+      }
+    },
+    "정유": {
+      "other": {
+        "recent": 7,
+        "base": 10,
+        "growth_pct": 40.000000000000014
+      }
+    },
+    "금융": {
+      "other": {
+        "recent": 34,
+        "base": 46,
+        "growth_pct": 47.82608695652173
+      },
+      "contract": {
+        "recent": 3,
+        "base": 7,
+        "growth_pct": -14.28571428571428
+      },
+      "treasury_disp": {
+        "recent": 2,
+        "base": 4,
+        "growth_pct": 0.0
+      }
+    },
+    "고무플라스틱": {
+      "other": {
+        "recent": 3,
+        "base": 3,
+        "growth_pct": 100.0
+      }
+    },
+    "운송장비": {
+      "other": {
+        "recent": 3,
+        "base": 15,
+        "growth_pct": -60.0
+      },
+      "contract": {
+        "recent": 8,
+        "base": 18,
+        "growth_pct": -11.111111111111105
+      },
+      "value_up": {
+        "recent": 0,
+        "base": 1,
+        "growth_pct": -100.0
+      }
+    },
+    "IT서비스": {
+      "other": {
+        "recent": 3,
+        "base": 4,
+        "growth_pct": 50.0
+      },
+      "value_up": {
+        "recent": 1,
+        "base": 1,
+        "growth_pct": 100.0
+      }
+    },
+    "기계": {
+      "contract": {
+        "recent": 2,
+        "base": 6,
+        "growth_pct": -33.333333333333336
+      },
+      "other": {
+        "recent": 12,
+        "base": 21,
+        "growth_pct": 14.285714285714302
+      },
+      "m_and_a": {
+        "recent": 1,
+        "base": 1,
+        "growth_pct": 100.0
+      },
+      "value_up": {
+        "recent": 1,
+        "base": 4,
+        "growth_pct": -50.0
+      }
+    },
+    "철강금속": {
+      "other": {
+        "recent": 2,
+        "base": 5,
+        "growth_pct": -19.999999999999996
+      },
+      "contract": {
+        "recent": 1,
+        "base": 1,
+        "growth_pct": 100.0
+      },
+      "value_up": {
+        "recent": 0,
+        "base": 1,
+        "growth_pct": -100.0
+      }
+    },
+    "기타": {
+      "other": {
+        "recent": 6,
+        "base": 6,
+        "growth_pct": 100.0
+      }
+    },
+    "음식료": {
+      "other": {
+        "recent": 1,
+        "base": 3,
+        "growth_pct": -33.333333333333336
+      }
+    },
+    "섬유의류": {
+      "value_up": {
+        "recent": 1,
+        "base": 1,
+        "growth_pct": 100.0
+      },
+      "other": {
+        "recent": 1,
+        "base": 2,
+        "growth_pct": 0.0
+      }
+    },
+    "의료정밀": {
+      "other": {
+        "recent": 4,
+        "base": 4,
+        "growth_pct": 100.0
+      }
+    },
+    "보험": {
+      "other": {
+        "recent": 0,
+        "base": 2,
+        "growth_pct": -100.0
+      }
+    },
+    "금속가공": {
+      "other": {
+        "recent": 0,
+        "base": 1,
+        "growth_pct": -100.0
+      },
+      "contract": {
+        "recent": 0,
+        "base": 2,
+        "growth_pct": -100.0
+      }
+    }
+  }
+}

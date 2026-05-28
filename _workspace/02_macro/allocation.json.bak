@@ -1,0 +1,17 @@
+{
+  "equity_pct": 125,
+  "cash_pct": -25,
+  "regime": "중립",
+  "w_macro": 0.5,
+  "updated_at": "2026-05-24T16:12:31+09:00",
+  "basis": {
+    "vix": 16.70,
+    "us10y": 4.57,
+    "fed_funds_rate": 3.62,
+    "cpi_yoy": 3.80,
+    "unemployment": 4.30,
+    "equity_pct_min": 100,
+    "equity_pct_max": 150,
+    "allocation_rule": "중립 (VIX Low, US10Y High): W_macro = 0.5 적용 → 100 + 50 * 0.5 = 125"
+  }
+}
