@@ -12,6 +12,8 @@ jobs:
     permissions:
       contents: write
     timeout-minutes: 60  # 전체 파이프라인 ~30분
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
 
     steps:
       - name: Checkout
