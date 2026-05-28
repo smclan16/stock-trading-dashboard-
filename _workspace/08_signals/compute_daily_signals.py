@@ -77,32 +77,51 @@ def main():
     print(f'  최종 포트: {len(holdings)}종목 | 현재 보유: {len(positions)}건 | 테마매핑: {len(match_map)} | 기술점수: {len(tech_map)}')
 
     krx = KRXMarket()
-    asof = args.asof or krx.latest_trading_date()
-    print(f'[2/4] KRX 데이터 ({asof}, {args.days}영업일)…')
+    # v15: KRX 호출 없이 시스템 날짜 기반 + yfinance fallback
+    try:
+        asof = args.asof or krx.latest_trading_date()
+    except Exception as e:
+        print(f'  ⚠ KRX latest_trading_date 실패 ({e}), 시스템 날짜 fallback')
+        asof = args.asof or krx.latest_trading_date_no_api()
+    print(f'[2/4] 가격 데이터 ({asof}, {args.days}영업일)…')
     dates = krx.trading_dates(asof, args.days)
-    dates.sort()  # 오래된→최신
+    dates.sort()
 
-    # KOSPI 6M for 강세장 필터 (v8)
+    target_tickers = {h['ticker'] for h in holdings}
+
+    # KOSPI 6M for 강세장 필터 (v8) — KRX 실패 시 yfinance로 ^KS11
+    kospi_6m_pct = None
     try:
         kospi_hist = krx.kospi_index_history(asof, 26)
         kospi_closes = [r['close'] for r in kospi_hist if 'close' in r]
-        kospi_6m_pct = (kospi_closes[-1] / kospi_closes[0] - 1) * 100 if len(kospi_closes) >= 2 else None
-    except Exception:
-        kospi_6m_pct = None
+        if len(kospi_closes) >= 2:
+            kospi_6m_pct = (kospi_closes[-1] / kospi_closes[0] - 1) * 100
+    except Exception as e:
+        print(f'  ⚠ KOSPI KRX 호출 실패 ({e}), yfinance ^KS11 fallback')
+        try:
+            import yfinance as yf
+            df = yf.Ticker('^KS11').history(period='6mo')
+            if len(df) >= 2:
+                kospi_6m_pct = (df['Close'].iloc[-1] / df['Close'].iloc[0] - 1) * 100
+        except Exception:
+            pass
     bull_market = kospi_6m_pct is not None and kospi_6m_pct >= 0
-    print(f'  KOSPI 6M: {kospi_6m_pct:.2f}% → {"강세장(MA20 청산 무효)" if bull_market else "약세장(MA20 청산 발효)"}')
+    print(f'  KOSPI 6M: {kospi_6m_pct}% → {"강세장(MA20 청산 무효)" if bull_market else "약세장(MA20 청산 발효)" if kospi_6m_pct is not None else "데이터 없음 (기본 약세장 처리)"}')
 
-    # 종목별 시계열
-    target_tickers = {h['ticker'] for h in holdings}
+    # 종목별 시계열 — KRX 실패 시 yfinance fallback
     price_map = {t: [] for t in target_tickers}
+    krx_fail_count = 0
     for d in dates:
         try:
-            day = krx.daily(d)
+            day = krx.daily(d, fallback_tickers=list(target_tickers))
         except Exception:
-            continue
+            krx_fail_count += 1
+            day = krx._daily_yfinance(d, tickers=list(target_tickers))
         for t in target_tickers:
             if t in day and day[t].get('close'):
                 price_map[t].append(day[t]['close'])
+    if krx_fail_count > 0:
+        print(f'  ⚠ {krx_fail_count}일치 KRX 호출 실패 → yfinance 사용')
 
     # 현재 보유 ticker → 교체 후보 검색 함수
     held_tickers = set(h['ticker'] for h in holdings)

@@ -365,39 +365,96 @@ class KRXMarket:
         return None
 
     def trading_dates(self, end, n):
-        """end(YYYYMMDD)부터 과거로 데이터가 있는 영업일 n개 리스트(최신순)."""
+        """end(YYYYMMDD)부터 과거로 영업일 n개 리스트(최신순).
+        v15: KRX 호출 없이 평일 + 한국 공휴일 근사로 빠른 산출.
+        """
         d = datetime.datetime.strptime(end, "%Y%m%d")
         out = []
         scans = 0
         while len(out) < n and scans < n * 3 + 20:
             ds = d.strftime("%Y%m%d")
-            if d.weekday() < 5 and self._get(self.TRD["KOSPI"], ds):
+            if d.weekday() < 5:  # 평일만 (공휴일 일부 포함 가능 — yfinance가 빈 값 반환)
                 out.append(ds)
             d -= datetime.timedelta(days=1); scans += 1
         return out
 
-    def daily(self, basDd):
-        """해당 일자 전체 코스피+코스닥 종목 매매정보.
-        반환 dict[ticker] = {name, market, close, volume, turnover_eok, mcap_eok, sect}."""
+    def latest_trading_date_no_api(self, end=None):
+        """KRX 호출 없이 최근 평일 반환 (오늘 기준 또는 end YYYYMMDD)."""
+        d = datetime.datetime.strptime(end, "%Y%m%d") if end else datetime.datetime.now()
+        for _ in range(10):
+            if d.weekday() < 5:
+                return d.strftime("%Y%m%d")
+            d -= datetime.timedelta(days=1)
+        return d.strftime("%Y%m%d")
+
+    def _daily_yfinance(self, basDd, tickers=None):
+        """v15: KRX 429 시 yfinance fallback.
+        tickers 지정 시 그 종목만, None이면 빈 dict (full universe X)."""
+        try:
+            import yfinance as yf
+        except ImportError:
+            return {}
+        if not tickers:
+            return {}
+        d = datetime.datetime.strptime(basDd, "%Y%m%d")
+        start = (d - datetime.timedelta(days=7)).strftime("%Y-%m-%d")
+        end = (d + datetime.timedelta(days=2)).strftime("%Y-%m-%d")
         out = {}
-        for mkt, ep in self.TRD.items():
-            for row in self._get(ep, basDd):
-                t = self._field(row, "ISU_SRT_CD", "ISU_CD")
-                if not t:
+        for tkr in tickers:
+            for suffix in ['.KS', '.KQ']:
+                try:
+                    df = yf.Ticker(f"{tkr}{suffix}").history(start=start, end=end, auto_adjust=False)
+                    if df.empty:
+                        continue
+                    # 가장 최근 row (basDd 또는 그 이전)
+                    target_ts = pd.Timestamp(d.strftime("%Y-%m-%d"))
+                    df_valid = df[df.index.tz_localize(None) <= target_ts] if df.index.tz else df[df.index <= target_ts]
+                    if df_valid.empty:
+                        continue
+                    row = df_valid.iloc[-1]
+                    out[tkr] = {
+                        "name": "", "market": "KOSPI" if suffix == '.KS' else "KOSDAQ",
+                        "close": float(row['Close']),
+                        "volume": int(row['Volume']) if pd.notna(row['Volume']) else 0,
+                        "turnover_eok": None, "mcap_eok": None,
+                        "list_shrs": None, "sect": "",
+                    }
+                    break  # 성공하면 다음 종목
+                except Exception:
                     continue
-                t = str(t).strip()[-6:]
-                turnover = self._num(self._field(row, "ACC_TRDVAL"))
-                mcap = self._num(self._field(row, "MKTCAP"))
-                out[t] = {
-                    "name": (self._field(row, "ISU_NM", "ISU_ABBRV") or "").strip(),
-                    "market": mkt,
-                    "close": self._num(self._field(row, "TDD_CLSPRC")),
-                    "volume": self._num(self._field(row, "ACC_TRDVOL")),
-                    "turnover_eok": (turnover / 1e8) if turnover is not None else None,  # 원→억원
-                    "mcap_eok": (mcap / 1e8) if mcap is not None else None,
-                    "list_shrs": self._num(self._field(row, "LIST_SHRS")),
-                    "sect": (self._field(row, "SECT_TP_NM") or "").strip(),
-                }
+        return out
+
+    def daily(self, basDd, fallback_tickers=None):
+        """해당 일자 전체 코스피+코스닥 종목 매매정보.
+        v15: KRX 429 시 fallback_tickers 종목만 yfinance로 보조.
+        """
+        out = {}
+        try:
+            for mkt, ep in self.TRD.items():
+                for row in self._get(ep, basDd):
+                    t = self._field(row, "ISU_SRT_CD", "ISU_CD")
+                    if not t:
+                        continue
+                    t = str(t).strip()[-6:]
+                    turnover = self._num(self._field(row, "ACC_TRDVAL"))
+                    mcap = self._num(self._field(row, "MKTCAP"))
+                    out[t] = {
+                        "name": (self._field(row, "ISU_NM", "ISU_ABBRV") or "").strip(),
+                        "market": mkt,
+                        "close": self._num(self._field(row, "TDD_CLSPRC")),
+                        "volume": self._num(self._field(row, "ACC_TRDVOL")),
+                        "turnover_eok": (turnover / 1e8) if turnover is not None else None,
+                        "mcap_eok": (mcap / 1e8) if mcap is not None else None,
+                        "list_shrs": self._num(self._field(row, "LIST_SHRS")),
+                        "sect": (self._field(row, "SECT_TP_NM") or "").strip(),
+                    }
+        except Exception as e:
+            print(f"  ⚠ KRX daily 호출 실패 ({e}), yfinance fallback 시도")
+            if fallback_tickers:
+                yf_out = self._daily_yfinance(basDd, fallback_tickers)
+                if yf_out:
+                    out.update(yf_out)
+                    print(f"  ✅ yfinance fallback {len(yf_out)}종 수신")
         return out
 
     def base_info(self, basDd):
