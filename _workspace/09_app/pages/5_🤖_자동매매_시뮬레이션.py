@@ -451,31 +451,92 @@ with tab_live:
                 trade_costs = sum((t.get('fee') or 0) + (t.get('tax') or 0) for t in sim_trades)
                 cost_cols[2].metric('🧾 매매비용 합 (수수료+세금)', f"{trade_costs:,.0f}원")
 
-                # 라인 차트
+                # ─── 누적 수익률 시계열 비교 차트 (시뮬 vs KOSPI vs 초과) ─────
+                st.markdown(f'### 📈 누적 수익률 시계열 ({sim["start_date"]} ~ 현재)')
+
                 df_daily = pd.DataFrame([
                     {'date': d, 'total_value': v['total_value'], 'cost_basis': v['cost_basis']}
                     for d, v in daily_v.items()
                 ])
                 df_daily['date_dt'] = pd.to_datetime(df_daily['date'])
-                df_daily = df_daily.sort_values('date_dt')
+                df_daily = df_daily.sort_values('date_dt').reset_index(drop=True)
                 df_daily['시뮬레이션 수익률(%)'] = (df_daily['total_value'] / df_daily['cost_basis'] - 1) * 100
 
-                chart_df = df_daily[['date_dt', '시뮬레이션 수익률(%)']].set_index('date_dt')
-
+                # KOSPI 같은 날짜로 정렬 + 시작 시점 정규화
+                kospi_df = None
                 if kospi:
                     kdf = pd.DataFrame([{'date_dt': pd.to_datetime(d), 'close': v} for d, v in kospi.items()])
-                    kdf = kdf.sort_values('date_dt')
-                    # 첫 평가일 종가 기준 정규화
+                    kdf = kdf.sort_values('date_dt').reset_index(drop=True)
                     asof_first = df_daily.iloc[0]['date_dt']
-                    kdf_filtered = kdf[kdf['date_dt'] >= asof_first]
+                    kdf_filtered = kdf[kdf['date_dt'] >= asof_first].copy()
                     if not kdf_filtered.empty:
-                        kdf_filtered = kdf_filtered.copy()
                         first_k = kdf_filtered.iloc[0]['close']
                         kdf_filtered['KOSPI 수익률(%)'] = (kdf_filtered['close'] / first_k - 1) * 100
-                        kdf_idx = kdf_filtered.set_index('date_dt')[['KOSPI 수익률(%)']]
-                        chart_df = chart_df.join(kdf_idx, how='outer').ffill()
+                        kospi_df = kdf_filtered[['date_dt', 'KOSPI 수익률(%)']]
 
-                st.line_chart(chart_df)
+                # Plotly 차트 (시뮬 + KOSPI + 초과 영역)
+                try:
+                    import plotly.graph_objects as go
+                    fig = go.Figure()
+                    fig.add_trace(go.Scatter(
+                        x=df_daily['date_dt'], y=df_daily['시뮬레이션 수익률(%)'],
+                        mode='lines', name='시뮬레이션 (Net)',
+                        line=dict(color='#0050b3', width=2.5),
+                    ))
+                    if kospi_df is not None:
+                        fig.add_trace(go.Scatter(
+                            x=kospi_df['date_dt'], y=kospi_df['KOSPI 수익률(%)'],
+                            mode='lines', name='KOSPI',
+                            line=dict(color='#999', width=2, dash='dash'),
+                        ))
+                        # 초과 수익률 영역 (시뮬 - KOSPI)
+                        merged = pd.merge_asof(
+                            df_daily[['date_dt', '시뮬레이션 수익률(%)']].sort_values('date_dt'),
+                            kospi_df.sort_values('date_dt'),
+                            on='date_dt', direction='backward'
+                        )
+                        merged['초과(%p)'] = merged['시뮬레이션 수익률(%)'] - merged['KOSPI 수익률(%)']
+                        fig.add_trace(go.Scatter(
+                            x=merged['date_dt'], y=merged['초과(%p)'],
+                            mode='lines', name='초과 수익률 (%p)',
+                            line=dict(color='#52c41a', width=1.5),
+                            fill='tozeroy', fillcolor='rgba(82,196,26,0.15)',
+                        ))
+                    # 0% 기준선
+                    fig.add_hline(y=0, line_dash='dot', line_color='#ccc')
+                    fig.update_layout(
+                        height=450,
+                        hovermode='x unified',
+                        legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='right', x=1),
+                        xaxis_title='', yaxis_title='수익률 (%)',
+                        margin=dict(l=10, r=10, t=10, b=10),
+                    )
+                    st.plotly_chart(fig, use_container_width=True)
+
+                    # 최종 outperform 지표 강조
+                    if kospi_df is not None and not merged.empty:
+                        final_excess = merged['초과(%p)'].iloc[-1]
+                        st.markdown(
+                            f"### 🎯 **vs KOSPI 최종 초과 수익: "
+                            f"<span style='color:{'#52c41a' if final_excess > 0 else '#f5222d'}; font-size:1.5em'>"
+                            f"{final_excess:+.2f}%p</span>**",
+                            unsafe_allow_html=True
+                        )
+                        # 일별 outperform 비율
+                        outperform_days = (merged['초과(%p)'] > 0).sum()
+                        total_days = len(merged)
+                        if total_days > 0:
+                            st.caption(
+                                f'📊 outperform 일수: {outperform_days}/{total_days}일 ({outperform_days/total_days*100:.1f}%) | '
+                                f'최대 초과 {merged["초과(%p)"].max():+.2f}%p | '
+                                f'최소 초과 {merged["초과(%p)"].min():+.2f}%p'
+                            )
+                except ImportError:
+                    # plotly 없으면 기존 line_chart
+                    chart_df = df_daily[['date_dt', '시뮬레이션 수익률(%)']].set_index('date_dt')
+                    if kospi_df is not None:
+                        chart_df = chart_df.join(kospi_df.set_index('date_dt'), how='outer').ffill()
+                    st.line_chart(chart_df)
 
             # 시뮬레이션 매매 이력
             st.divider()
