@@ -1,8 +1,8 @@
 {
-  "as_of": "2026-05-28T13:45:43.473870",
+  "as_of": "2026-05-28T22:12:37.113730",
   "method": "테마 비중 골격 + 결합점수 최고 1종 (테마 6 + default 4)",
   "investor_type": "안정형",
-  "equity_pct": 125.0,
+  "equity_pct": 60,
   "regime": "중립",
   "n_themes_selected": 6,
   "n_default_picks": 4,
@@ -134,7 +134,7 @@
         4,
         11
       ],
-      "capital_weight_pct": 14.015
+      "capital_weight_pct": 6.727
     },
     {
       "idea_id": 4,
@@ -179,7 +179,7 @@
         4,
         11
       ],
-      "capital_weight_pct": 13.566
+      "capital_weight_pct": 6.512
     },
     {
       "idea_id": 3,
@@ -224,7 +224,7 @@
         3,
         11
       ],
-      "capital_weight_pct": 14.801
+      "capital_weight_pct": 7.105
     },
     {
       "idea_id": 3,
@@ -269,7 +269,7 @@
         3,
         4
       ],
-      "capital_weight_pct": 11.46
+      "capital_weight_pct": 5.501
     },
     {
       "idea_id": 11,
@@ -314,7 +314,7 @@
         11,
         13
       ],
-      "capital_weight_pct": 13.171
+      "capital_weight_pct": 6.322
     },
     {
       "idea_id": 11,
@@ -359,7 +359,7 @@
         11,
         12
       ],
-      "capital_weight_pct": 13.09
+      "capital_weight_pct": 6.283
     },
     {
       "idea_id": 1,
@@ -404,7 +404,7 @@
         1,
         11
       ],
-      "capital_weight_pct": 17.508
+      "capital_weight_pct": 8.404
     },
     {
       "idea_id": 2,
@@ -449,7 +449,7 @@
         1,
         2
       ],
-      "capital_weight_pct": 14.887
+      "capital_weight_pct": 7.146
     },
     {
       "idea_id": "default",
@@ -488,7 +488,7 @@
         "pos_52w_pct": 58.6,
         "sigma_annual_pct": 82.0
       },
-      "capital_weight_pct": 7.812
+      "capital_weight_pct": 3.75
     },
     {
       "idea_id": "default",
@@ -507,7 +507,7 @@
       "catalyst": "news_growth 500.0% / DART pos+contract pts 3.0",
       "tech_breakdown": null,
       "indicators": null,
-      "capital_weight_pct": 7.812
+      "capital_weight_pct": 3.75
     },
     {
       "idea_id": "default",
@@ -526,7 +526,7 @@
       "catalyst": "news_growth 500.0% / DART pos+contract pts 0.0",
       "tech_breakdown": null,
       "indicators": null,
-      "capital_weight_pct": 7.812
+      "capital_weight_pct": 3.75
     },
     {
       "idea_id": "default",
@@ -565,7 +565,7 @@
         "pos_52w_pct": 73.8,
         "sigma_annual_pct": 40.5
       },
-      "capital_weight_pct": 7.812
+      "capital_weight_pct": 3.75
     }
   ]
 }

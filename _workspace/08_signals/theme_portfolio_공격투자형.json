@@ -1,8 +1,8 @@
 {
-  "as_of": "2026-05-28T13:45:43.733735",
+  "as_of": "2026-05-28T22:12:37.377930",
   "method": "테마 비중 골격 + 결합점수 최고 1종 (테마 10 + default 4)",
   "investor_type": "공격투자형",
-  "equity_pct": 125.0,
+  "equity_pct": 125,
   "regime": "중립",
   "n_themes_selected": 10,
   "n_default_picks": 4,

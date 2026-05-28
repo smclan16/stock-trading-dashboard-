@@ -1,8 +1,8 @@
 {
-  "as_of": "2026-05-28T13:45:43+09:00",
+  "as_of": "2026-05-28T22:12:37+09:00",
   "investor_type": "공격투자형",
   "investor_score": null,
-  "equity_pct": 125.0,
+  "equity_pct": 125,
   "cash_pct": -25.0,
   "regime": "중립",
   "method": "weighted-allocation (4단계 비중 × 5단계 매칭 × 6단계 매력도) + 1단계 투자성향 제약",

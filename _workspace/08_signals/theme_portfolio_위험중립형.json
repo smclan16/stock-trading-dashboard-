@@ -1,8 +1,8 @@
 {
-  "as_of": "2026-05-28T13:45:43.600095",
+  "as_of": "2026-05-28T22:12:37.241715",
   "method": "테마 비중 골격 + 결합점수 최고 1종 (테마 8 + default 4)",
   "investor_type": "위험중립형",
-  "equity_pct": 125.0,
+  "equity_pct": 100,
   "regime": "중립",
   "n_themes_selected": 8,
   "n_default_picks": 4,
@@ -135,7 +135,7 @@
       "matched_ideas": [
         4
       ],
-      "capital_weight_pct": 12.463
+      "capital_weight_pct": 9.97
     },
     {
       "idea_id": 4,
@@ -179,7 +179,7 @@
       "matched_ideas": [
         4
       ],
-      "capital_weight_pct": 11.896
+      "capital_weight_pct": 9.517
     },
     {
       "idea_id": 3,
@@ -224,7 +224,7 @@
         3,
         11
       ],
-      "capital_weight_pct": 18.75
+      "capital_weight_pct": 15.0
     },
     {
       "idea_id": 11,
@@ -269,7 +269,7 @@
         11,
         13
       ],
-      "capital_weight_pct": 7.969
+      "capital_weight_pct": 6.375
     },
     {
       "idea_id": 11,
@@ -314,7 +314,7 @@
         1,
         11
       ],
-      "capital_weight_pct": 7.74
+      "capital_weight_pct": 6.192
     },
     {
       "idea_id": 11,
@@ -359,7 +359,7 @@
         4,
         11
       ],
-      "capital_weight_pct": 7.481
+      "capital_weight_pct": 5.985
     },
     {
       "idea_id": 1,
@@ -404,7 +404,7 @@
         1,
         11
       ],
-      "capital_weight_pct": 7.963
+      "capital_weight_pct": 6.37
     },
     {
       "idea_id": 1,
@@ -448,7 +448,7 @@
       "matched_ideas": [
         1
       ],
-      "capital_weight_pct": 7.499
+      "capital_weight_pct": 5.999
     },
     {
       "idea_id": 2,
@@ -493,7 +493,7 @@
         1,
         2
       ],
-      "capital_weight_pct": 13.149
+      "capital_weight_pct": 10.519
     },
     {
       "idea_id": 13,
@@ -537,7 +537,7 @@
       "matched_ideas": [
         13
       ],
-      "capital_weight_pct": 13.149
+      "capital_weight_pct": 10.519
     },
     {
       "idea_id": "default",
@@ -576,7 +576,7 @@
         "pos_52w_pct": 58.6,
         "sigma_annual_pct": 82.0
       },
-      "capital_weight_pct": 4.688
+      "capital_weight_pct": 3.75
     },
     {
       "idea_id": "default",
@@ -595,7 +595,7 @@
       "catalyst": "news_growth 500.0% / DART pos+contract pts 3.0",
       "tech_breakdown": null,
       "indicators": null,
-      "capital_weight_pct": 4.688
+      "capital_weight_pct": 3.75
     },
     {
       "idea_id": "default",
@@ -614,7 +614,7 @@
       "catalyst": "news_growth 500.0% / DART pos+contract pts 0.0",
       "tech_breakdown": null,
       "indicators": null,
-      "capital_weight_pct": 4.688
+      "capital_weight_pct": 3.75
     },
     {
       "idea_id": "default",
@@ -653,7 +653,7 @@
         "pos_52w_pct": 73.8,
         "sigma_annual_pct": 40.5
       },
-      "capital_weight_pct": 4.688
+      "capital_weight_pct": 3.75
     }
   ]
 }

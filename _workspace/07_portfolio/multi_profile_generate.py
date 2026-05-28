@@ -21,24 +21,25 @@ WS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # - mcap_blend: 7단계 시총 가중 (안정형 0.8 = 대형 우선)
 # - axis_weights: 6축+기술점수 가중 (안정형 = 펀더+리스크역수, 공격형 = 모멘텀+기술)
 PROFILES = [
-    # 안정형: 배당 boost 0.20 (배당 5%면 ×2.0) + 과열 penalty 0.6 (52w 100% ×0.4)
-    {'name': '안정형', 'score': 30, 'e_min': 20, 'e_max': 100, 'single': 10, 'sector': 25, 'vol': 15,
+    # v18: e_max를 한국 증권사 기준으로 현실화 (안정형 60%, 안정추구형 80%, 위험중립형 100%, 적극 125%, 공격 150%)
+    # equity_pct는 min(매크로 allocation, constraints.e_max)로 cap → 유형별 실제 차별화
+    {'name': '안정형', 'score': 30, 'e_min': 30, 'e_max': 60, 'single': 10, 'sector': 25, 'vol': 15,
      'min_mcap_eok': 5000, 'n_themes': 6, 'default_pct': 25, 'max_tech_vol': 70, 'mcap_blend': 0.8,
      'axis_weights': 'fundamental=0.45,risk_inv=0.25,theme=0.10,catalyst=0.10,momentum=0.05,tech=0.05',
      'dividend_boost': 0.20, 'overheating_penalty': 0.6, 'momentum_boost': 0.0},
-    {'name': '안정추구형', 'score': 50, 'e_min': 40, 'e_max': 100, 'single': 12, 'sector': 28, 'vol': 20,
+    {'name': '안정추구형', 'score': 50, 'e_min': 50, 'e_max': 80, 'single': 12, 'sector': 28, 'vol': 20,
      'min_mcap_eok': 3000, 'n_themes': 7, 'default_pct': 20, 'max_tech_vol': 85, 'mcap_blend': 0.7,
      'axis_weights': 'fundamental=0.35,risk_inv=0.15,theme=0.15,catalyst=0.10,momentum=0.10,tech=0.15',
      'dividend_boost': 0.12, 'overheating_penalty': 0.3, 'momentum_boost': 0.0},
-    {'name': '위험중립형', 'score': 65, 'e_min': 60, 'e_max': 100, 'single': 13, 'sector': 30, 'vol': 25,
+    {'name': '위험중립형', 'score': 65, 'e_min': 70, 'e_max': 100, 'single': 13, 'sector': 30, 'vol': 25,
      'min_mcap_eok': 1500, 'n_themes': 8, 'default_pct': 15, 'max_tech_vol': 100, 'mcap_blend': 0.6,
      'axis_weights': 'fundamental=0.25,risk_inv=0.10,theme=0.15,catalyst=0.10,momentum=0.20,tech=0.20',
      'dividend_boost': 0.05, 'overheating_penalty': 0.0, 'momentum_boost': 0.0},
-    {'name': '적극투자형', 'score': 80, 'e_min': 100, 'e_max': 150, 'single': 15, 'sector': 30, 'vol': 30,
+    {'name': '적극투자형', 'score': 80, 'e_min': 100, 'e_max': 125, 'single': 15, 'sector': 30, 'vol': 30,
      'min_mcap_eok': 500, 'n_themes': 8, 'default_pct': 10, 'max_tech_vol': 0, 'mcap_blend': 0.5,
      'axis_weights': 'fundamental=0.15,risk_inv=0.05,theme=0.20,catalyst=0.10,momentum=0.25,tech=0.25',
      'dividend_boost': 0.0, 'overheating_penalty': 0.0, 'momentum_boost': 0.15},
-    {'name': '공격투자형', 'score': 95, 'e_min': 120, 'e_max': 200, 'single': 20, 'sector': 35, 'vol': 40,
+    {'name': '공격투자형', 'score': 95, 'e_min': 125, 'e_max': 150, 'single': 20, 'sector': 35, 'vol': 40,
      'min_mcap_eok': 0, 'n_themes': 10, 'default_pct': 5, 'max_tech_vol': 0, 'mcap_blend': 0.3,
      'axis_weights': 'fundamental=0.10,risk_inv=0.00,theme=0.20,catalyst=0.10,momentum=0.30,tech=0.30',
      'dividend_boost': 0.0, 'overheating_penalty': 0.0, 'momentum_boost': 0.30},

@@ -267,7 +267,12 @@ def main():
     company_meta = {x["ticker"]: x for x in json.load(open(META, encoding="utf-8"))["companies"]}
 
     investor_type = constraints.get("investor_type", "-")
-    equity_pct = allocation.get("equity_pct", 100)
+    # v18: equity_pct는 매크로 allocation × constraints.e_max로 cap
+    # → 유형별 실제 차별화 (안정형 60%, 안정추구형 80%, 위험중립형 100%, 적극 125%, 공격 150%)
+    macro_equity = allocation.get("equity_pct", 100)
+    e_min = constraints.get("equity_pct_min", 0)
+    e_max = constraints.get("equity_pct_max", 200)
+    equity_pct = max(e_min, min(macro_equity, e_max))  # 매크로 권고를 유형 한도 내로 clip
     excluded_tickers = set(constraints.get("excluded_tickers", []) or [])
     excluded_sectors = set(constraints.get("excluded_sectors", []) or [])
     max_single = constraints.get("max_single_stock_pct", 15)

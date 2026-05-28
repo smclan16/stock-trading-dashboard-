@@ -1,8 +1,8 @@
 {
-  "as_of": "2026-05-28T13:45:43+09:00",
+  "as_of": "2026-05-28T22:12:37+09:00",
   "investor_type": "위험중립형",
   "investor_score": null,
-  "equity_pct": 125.0,
+  "equity_pct": 100,
   "cash_pct": -25.0,
   "regime": "중립",
   "method": "weighted-allocation (4단계 비중 × 5단계 매칭 × 6단계 매력도) + 1단계 투자성향 제약",
@@ -13,7 +13,7 @@
       "name": "두산에너빌리티",
       "sector": "기계",
       "weight_pct": 7.574,
-      "capital_weight_pct": 9.467,
+      "capital_weight_pct": 7.574,
       "attractiveness": 60.79,
       "macro_beta": null,
       "matched_ideas": [
@@ -44,7 +44,7 @@
       "name": "삼성바이오로직스",
       "sector": "제약바이오",
       "weight_pct": 7.108,
-      "capital_weight_pct": 8.885,
+      "capital_weight_pct": 7.108,
       "attractiveness": 58.12,
       "macro_beta": null,
       "matched_ideas": [
@@ -75,7 +75,7 @@
       "name": "삼성전자",
       "sector": "전자반도체",
       "weight_pct": 6.492,
-      "capital_weight_pct": 8.115,
+      "capital_weight_pct": 6.492,
       "attractiveness": 63.19,
       "macro_beta": null,
       "matched_ideas": [
@@ -106,7 +106,7 @@
       "name": "한화에어로스페이스",
       "sector": "운송장비",
       "weight_pct": 5.484,
-      "capital_weight_pct": 6.855,
+      "capital_weight_pct": 5.484,
       "attractiveness": 62.45,
       "macro_beta": null,
       "matched_ideas": [
@@ -137,7 +137,7 @@
       "name": "셀트리온",
       "sector": "제약바이오",
       "weight_pct": 3.778,
-      "capital_weight_pct": 4.722,
+      "capital_weight_pct": 3.778,
       "attractiveness": 52.49,
       "macro_beta": null,
       "matched_ideas": [
@@ -168,7 +168,7 @@
       "name": "삼성물산",
       "sector": "유통",
       "weight_pct": 3.565,
-      "capital_weight_pct": 4.456,
+      "capital_weight_pct": 3.565,
       "attractiveness": 63.76,
       "macro_beta": null,
       "matched_ideas": [
@@ -199,7 +199,7 @@
       "name": "(주)네오티스",
       "sector": "자동차",
       "weight_pct": 3.424,
-      "capital_weight_pct": 4.28,
+      "capital_weight_pct": 3.424,
       "attractiveness": 58.32,
       "macro_beta": null,
       "matched_ideas": [
@@ -223,7 +223,7 @@
       "name": "삼성전기",
       "sector": "전자반도체",
       "weight_pct": 3.297,
-      "capital_weight_pct": 4.121,
+      "capital_weight_pct": 3.297,
       "attractiveness": 59.89,
       "macro_beta": null,
       "matched_ideas": [
@@ -254,7 +254,7 @@
       "name": "현대차",
       "sector": "자동차",
       "weight_pct": 2.7,
-      "capital_weight_pct": 3.375,
+      "capital_weight_pct": 2.7,
       "attractiveness": 60.61,
       "macro_beta": null,
       "matched_ideas": [
@@ -285,7 +285,7 @@
       "name": "명신산업(주)",
       "sector": "자동차",
       "weight_pct": 2.576,
-      "capital_weight_pct": 3.219,
+      "capital_weight_pct": 2.576,
       "attractiveness": 58.18,
       "macro_beta": null,
       "matched_ideas": [
@@ -316,7 +316,7 @@
       "name": "삼성생명",
       "sector": "보험",
       "weight_pct": 2.551,
-      "capital_weight_pct": 3.189,
+      "capital_weight_pct": 2.551,
       "attractiveness": 59.9,
       "macro_beta": null,
       "matched_ideas": [
@@ -347,7 +347,7 @@
       "name": "에스케이하이닉스(주)",
       "sector": "전자반도체",
       "weight_pct": 2.542,
-      "capital_weight_pct": 3.178,
+      "capital_weight_pct": 2.542,
       "attractiveness": 60.5,
       "macro_beta": null,
       "matched_ideas": [
@@ -371,7 +371,7 @@
       "name": "대한해운(주)",
       "sector": "운송물류",
       "weight_pct": 2.5,
-      "capital_weight_pct": 3.125,
+      "capital_weight_pct": 2.5,
       "attractiveness": 58.5,
       "macro_beta": 0.135,
       "matched_ideas": [],
@@ -393,7 +393,7 @@
       "name": "디엘이앤씨 주식회사",
       "sector": "건설",
       "weight_pct": 2.5,
-      "capital_weight_pct": 3.125,
+      "capital_weight_pct": 2.5,
       "attractiveness": 58.05,
       "macro_beta": 0.41,
       "matched_ideas": [],
@@ -415,7 +415,7 @@
       "name": "(주)인바디",
       "sector": "의료정밀",
       "weight_pct": 2.5,
-      "capital_weight_pct": 3.125,
+      "capital_weight_pct": 2.5,
       "attractiveness": 55.38,
       "macro_beta": 0.548,
       "matched_ideas": [],
@@ -437,7 +437,7 @@
       "name": "KG스틸(주)",
       "sector": "철강금속",
       "weight_pct": 2.5,
-      "capital_weight_pct": 3.125,
+      "capital_weight_pct": 2.5,
       "attractiveness": 54.55,
       "macro_beta": 0.435,
       "matched_ideas": [],
@@ -459,7 +459,7 @@
       "name": "한국항공우주",
       "sector": "운송장비",
       "weight_pct": 2.467,
-      "capital_weight_pct": 3.083,
+      "capital_weight_pct": 2.467,
       "attractiveness": 65.14,
       "macro_beta": null,
       "matched_ideas": [
@@ -490,7 +490,7 @@
       "name": "LS ELECTRIC",
       "sector": "전기장비",
       "weight_pct": 2.399,
-      "capital_weight_pct": 2.998,
+      "capital_weight_pct": 2.399,
       "attractiveness": 67.74,
       "macro_beta": null,
       "matched_ideas": [
@@ -521,7 +521,7 @@
       "name": "삼성E&A",
       "sector": "전문서비스",
       "weight_pct": 2.386,
-      "capital_weight_pct": 2.982,
+      "capital_weight_pct": 2.386,
       "attractiveness": 66.65,
       "macro_beta": null,
       "matched_ideas": [
@@ -552,7 +552,7 @@
       "name": "HD현대일렉트릭",
       "sector": "전기장비",
       "weight_pct": 2.361,
-      "capital_weight_pct": 2.951,
+      "capital_weight_pct": 2.361,
       "attractiveness": 68.37,
       "macro_beta": null,
       "matched_ideas": [
@@ -583,7 +583,7 @@
       "name": "NAVER",
       "sector": "IT서비스",
       "weight_pct": 2.302,
-      "capital_weight_pct": 2.878,
+      "capital_weight_pct": 2.302,
       "attractiveness": 61.21,
       "macro_beta": null,
       "matched_ideas": [
@@ -614,7 +614,7 @@
       "name": "KB금융",
       "sector": "금융",
       "weight_pct": 2.266,
-      "capital_weight_pct": 2.832,
+      "capital_weight_pct": 2.266,
       "attractiveness": 57.56,
       "macro_beta": null,
       "matched_ideas": [
@@ -645,7 +645,7 @@
       "name": "효성중공업",
       "sector": "전기장비",
       "weight_pct": 2.104,
-      "capital_weight_pct": 2.63,
+      "capital_weight_pct": 2.104,
       "attractiveness": 63.84,
       "macro_beta": null,
       "matched_ideas": [
@@ -676,7 +676,7 @@
       "name": "신한지주",
       "sector": "금융",
       "weight_pct": 1.946,
-      "capital_weight_pct": 2.432,
+      "capital_weight_pct": 1.946,
       "attractiveness": 57.43,
       "macro_beta": null,
       "matched_ideas": [
@@ -707,7 +707,7 @@
       "name": "LG에너지솔루션",
       "sector": "전기장비",
       "weight_pct": 1.832,
-      "capital_weight_pct": 2.29,
+      "capital_weight_pct": 1.832,
       "attractiveness": 54.56,
       "macro_beta": null,
       "matched_ideas": [
@@ -738,7 +738,7 @@
       "name": "에스케이스퀘어 주식회사",
       "sector": "금융",
       "weight_pct": 1.616,
-      "capital_weight_pct": 2.02,
+      "capital_weight_pct": 1.616,
       "attractiveness": 68.75,
       "macro_beta": null,
       "matched_ideas": [
@@ -769,7 +769,7 @@
       "name": "삼성에스디에스(주)",
       "sector": "IT서비스",
       "weight_pct": 1.565,
-      "capital_weight_pct": 1.957,
+      "capital_weight_pct": 1.565,
       "attractiveness": 66.6,
       "macro_beta": null,
       "matched_ideas": [
@@ -800,7 +800,7 @@
       "name": "한화엔진(주)",
       "sector": "기계",
       "weight_pct": 1.363,
-      "capital_weight_pct": 1.704,
+      "capital_weight_pct": 1.363,
       "attractiveness": 68.21,
       "macro_beta": null,
       "matched_ideas": [
@@ -831,7 +831,7 @@
       "name": "에스티팜(주)",
       "sector": "제약바이오",
       "weight_pct": 1.314,
-      "capital_weight_pct": 1.643,
+      "capital_weight_pct": 1.314,
       "attractiveness": 65.21,
       "macro_beta": null,
       "matched_ideas": [
@@ -862,7 +862,7 @@
       "name": "에이치디현대중공업(주)",
       "sector": "운송장비",
       "weight_pct": 1.306,
-      "capital_weight_pct": 1.632,
+      "capital_weight_pct": 1.306,
       "attractiveness": 66.85,
       "macro_beta": null,
       "matched_ideas": [
@@ -886,7 +886,7 @@
       "name": "(주)LS",
       "sector": "금융",
       "weight_pct": 1.261,
-      "capital_weight_pct": 1.577,
+      "capital_weight_pct": 1.261,
       "attractiveness": 66.16,
       "macro_beta": null,
       "matched_ideas": [
@@ -917,7 +917,7 @@
       "name": "기아(주)",
       "sector": "자동차",
       "weight_pct": 1.203,
-      "capital_weight_pct": 1.503,
+      "capital_weight_pct": 1.203,
       "attractiveness": 60.26,
       "macro_beta": null,
       "matched_ideas": [
@@ -941,7 +941,7 @@
       "name": "현대모비스(주)",
       "sector": "자동차",
       "weight_pct": 1.148,
-      "capital_weight_pct": 1.435,
+      "capital_weight_pct": 1.148,
       "attractiveness": 60.43,
       "macro_beta": null,
       "matched_ideas": [
@@ -965,7 +965,7 @@
       "name": "POSCO홀딩스",
       "sector": "철강금속",
       "weight_pct": 1.082,
-      "capital_weight_pct": 1.352,
+      "capital_weight_pct": 1.082,
       "attractiveness": 63.11,
       "macro_beta": null,
       "matched_ideas": [
@@ -996,7 +996,7 @@
       "name": "HD한국조선해양",
       "sector": "금융",
       "weight_pct": 1.073,
-      "capital_weight_pct": 1.341,
+      "capital_weight_pct": 1.073,
       "attractiveness": 64.47,
       "macro_beta": null,
       "matched_ideas": [
@@ -1027,7 +1027,7 @@
       "name": "대한전선(주)",
       "sector": "전기장비",
       "weight_pct": 0.853,
-      "capital_weight_pct": 1.066,
+      "capital_weight_pct": 0.853,
       "attractiveness": 66.72,
       "macro_beta": null,
       "matched_ideas": [
@@ -1051,7 +1051,7 @@
       "name": "한화오션",
       "sector": "운송장비",
       "weight_pct": 0.845,
-      "capital_weight_pct": 1.056,
+      "capital_weight_pct": 0.845,
       "attractiveness": 58.67,
       "macro_beta": null,
       "matched_ideas": [
@@ -1075,7 +1075,7 @@
       "name": "(주)오스코텍",
       "sector": "제약바이오",
       "weight_pct": 0.79,
-      "capital_weight_pct": 0.988,
+      "capital_weight_pct": 0.79,
       "attractiveness": 62.52,
       "macro_beta": null,
       "matched_ideas": [
@@ -1106,7 +1106,7 @@
       "name": "SK(주)",
       "sector": "금융",
       "weight_pct": 0.777,
-      "capital_weight_pct": 0.971,
+      "capital_weight_pct": 0.777,
       "attractiveness": 65.31,
       "macro_beta": null,
       "matched_ideas": [
@@ -1137,7 +1137,7 @@
       "name": "산일전기(주)",
       "sector": "전기장비",
       "weight_pct": 0.757,
-      "capital_weight_pct": 0.946,
+      "capital_weight_pct": 0.757,
       "attractiveness": 68.76,
       "macro_beta": null,
       "matched_ideas": [
@@ -1161,7 +1161,7 @@
       "name": "삼성중공업(주)",
       "sector": "운송장비",
       "weight_pct": 0.655,
-      "capital_weight_pct": 0.818,
+      "capital_weight_pct": 0.655,
       "attractiveness": 59.31,
       "macro_beta": null,
       "matched_ideas": [
@@ -1185,7 +1185,7 @@
       "name": "STX엔진(주)",
       "sector": "기계",
       "weight_pct": 0.636,
-      "capital_weight_pct": 0.795,
+      "capital_weight_pct": 0.636,
       "attractiveness": 63.94,
       "macro_beta": null,
       "matched_ideas": [
@@ -1216,7 +1216,7 @@
       "name": "LG전자",
       "sector": "전자반도체",
       "weight_pct": 0.605,
-      "capital_weight_pct": 0.757,
+      "capital_weight_pct": 0.605,
       "attractiveness": 58.57,
       "macro_beta": null,
       "matched_ideas": [

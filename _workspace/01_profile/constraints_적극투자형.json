@@ -2,7 +2,7 @@
   "investor_type": "적극투자형",
   "investor_score": 80,
   "equity_pct_min": 100,
-  "equity_pct_max": 150,
+  "equity_pct_max": 125,
   "max_single_stock_pct": 15,
   "max_sector_pct": 30,
   "max_annual_volatility": 30,
@@ -10,5 +10,5 @@
   "excluded_sectors": [],
   "esg_filter": false,
   "profile_name": "적극투자형",
-  "updated_at": "2026-05-28T13:45:43.604441"
+  "updated_at": "2026-05-28T22:12:37.245937"
 }
