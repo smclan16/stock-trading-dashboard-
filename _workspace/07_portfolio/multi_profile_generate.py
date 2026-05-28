@@ -13,13 +13,23 @@ import os, sys, json, subprocess, datetime
 
 WS = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# 5단계 유형 정의
+# 5단계 유형별 차별화 매트릭스:
+# - min_mcap_eok: 종목 시총 필터 (안정형 대형주만, 공격형 모든 규모)
+# - n_themes: 핵심 테마 수 (안정형 적게, 공격형 많이)
+# - default_pct: default_picks 비중 (안정형 高 = 매크로 무관 안전, 공격형 低 = 매크로 베팅)
+# - max_tech_vol: 종목 변동성 임계 (안정형 낮음, 공격형 제한 없음, 0=무제한)
+# - mcap_blend: 시총 가중치 (안정형 시총 우선, 공격형 매력도 우선)
 PROFILES = [
-    {'name': '안정형',     'score': 30, 'e_min': 20,  'e_max': 100, 'single': 10, 'sector': 25, 'vol': 15},
-    {'name': '안정추구형', 'score': 50, 'e_min': 40,  'e_max': 100, 'single': 12, 'sector': 28, 'vol': 20},
-    {'name': '위험중립형', 'score': 65, 'e_min': 60,  'e_max': 100, 'single': 13, 'sector': 30, 'vol': 25},
-    {'name': '적극투자형', 'score': 80, 'e_min': 100, 'e_max': 150, 'single': 15, 'sector': 30, 'vol': 30},
-    {'name': '공격투자형', 'score': 95, 'e_min': 120, 'e_max': 200, 'single': 20, 'sector': 35, 'vol': 40},
+    {'name': '안정형',     'score': 30, 'e_min': 20,  'e_max': 100, 'single': 10, 'sector': 25, 'vol': 15,
+     'min_mcap_eok': 50000, 'n_themes': 4, 'default_pct': 30, 'max_tech_vol': 35, 'mcap_blend': 0.8},
+    {'name': '안정추구형', 'score': 50, 'e_min': 40,  'e_max': 100, 'single': 12, 'sector': 28, 'vol': 20,
+     'min_mcap_eok': 20000, 'n_themes': 5, 'default_pct': 20, 'max_tech_vol': 50, 'mcap_blend': 0.7},
+    {'name': '위험중립형', 'score': 65, 'e_min': 60,  'e_max': 100, 'single': 13, 'sector': 30, 'vol': 25,
+     'min_mcap_eok': 5000, 'n_themes': 7, 'default_pct': 15, 'max_tech_vol': 70, 'mcap_blend': 0.6},
+    {'name': '적극투자형', 'score': 80, 'e_min': 100, 'e_max': 150, 'single': 15, 'sector': 30, 'vol': 30,
+     'min_mcap_eok': 1000, 'n_themes': 8, 'default_pct': 10, 'max_tech_vol': 0, 'mcap_blend': 0.5},
+    {'name': '공격투자형', 'score': 95, 'e_min': 120, 'e_max': 200, 'single': 20, 'sector': 35, 'vol': 40,
+     'min_mcap_eok': 0, 'n_themes': 10, 'default_pct': 5, 'max_tech_vol': 0, 'mcap_blend': 0.3},
 ]
 
 
@@ -56,26 +66,30 @@ def main():
         cpath = write_constraints(p)
         print(f'  ✅ constraints_{name}.json 생성')
 
-        # 2. 7단계 portfolio 생성
+        # 2. 7단계 portfolio 생성 (유형별 mcap_blend 적용)
         cmd = ['python3', os.path.join(WS, '07_portfolio', 'compose_portfolio.py'),
                '--constraints-file', cpath,
                '--output-suffix', suffix,
-               '--weighting', 'hybrid', '--mcap-blend', '0.5']
+               '--weighting', 'hybrid', '--mcap-blend', str(p['mcap_blend'])]
         r = subprocess.run(cmd, capture_output=True, text=True, cwd=WS, timeout=300)
         if r.returncode != 0:
             print(f'  ❌ portfolio 실패: {r.stderr[-300:]}')
             continue
-        # 산출 종목 수 표시
         pf_path = os.path.join(WS, '07_portfolio', f'portfolio{suffix}.json')
         if os.path.exists(pf_path):
             pf = json.load(open(pf_path, encoding='utf-8'))
             print(f'  ✅ portfolio{suffix}.json — {pf["n_holdings"]}종, 단일 최대 {pf["constraint_checks"]["max_single_stock"]["actual_max"]:.2f}%')
 
-        # 3. 8단계 theme_portfolio 생성
+        # 3. 8단계 theme_portfolio 생성 (유형별 시총·변동성·테마수·default 비중 적용)
         cmd2 = ['python3', os.path.join(WS, '08_signals', 'build_theme_portfolio.py'),
                 '--pf-file', pf_path,
                 '--output-suffix', suffix,
-                '--n-themes', '8']
+                '--n-themes', str(p['n_themes']),
+                '--min-mcap-eok', str(p['min_mcap_eok']),
+                '--default-pct', str(p['default_pct']),
+                '--rebalance-on-shortfall']  # 시총 필터로 부족분 발생 가능 → 재분배
+        if p['max_tech_vol'] > 0:
+            cmd2.extend(['--max-tech-vol', str(p['max_tech_vol'])])
         r2 = subprocess.run(cmd2, capture_output=True, text=True, cwd=WS, timeout=300)
         if r2.returncode != 0:
             print(f'  ❌ theme_portfolio 실패: {r2.stderr[-300:]}')

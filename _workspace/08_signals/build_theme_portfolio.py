@@ -42,6 +42,13 @@ def main():
     ap.add_argument('--rebalance-on-shortfall', action='store_true')
     ap.add_argument('--pf-file', default=None, help='portfolio.json 경로 override (다중 유형용)')
     ap.add_argument('--output-suffix', default='', help='산출 파일명 suffix (예: _안정형)')
+    # v9: 유형별 차별화 옵션
+    ap.add_argument('--min-mcap-eok', type=float, default=0,
+                    help='시총 최소 (억원) — 안정형용 대형주 필터')
+    ap.add_argument('--default-pct', type=float, default=None,
+                    help='default_picks 비중 (%) override — 안정형 30%, 공격형 5% 등')
+    ap.add_argument('--max-tech-vol', type=float, default=None,
+                    help='기술점수 변동성 임계 — 안정형 낮음, 공격형 높음')
     args = ap.parse_args()
     w_a = 1 - args.w_tech
     w_t = args.w_tech
@@ -57,9 +64,10 @@ def main():
 
     ideas = ideas_data['ideas']
     default_picks = ideas_data.get('default_picks', {})
-    default_alloc = default_picks.get('allocation_pct', 10.0)
+    default_alloc = args.default_pct if args.default_pct is not None else default_picks.get('allocation_pct', 10.0)
     default_list = default_picks.get('picks', [])
     print(f'  4단계 테마: {len(ideas)}개 / default {len(default_list)}종 ({default_alloc}%)')
+    print(f'  유형별 옵션: min_mcap={args.min_mcap_eok}억 / default_pct={default_alloc}% / max_tech_vol={args.max_tech_vol}')
 
     # 매칭 종목 (idea_id → list of {ticker, name, intensity})
     match_by_idea = {}
@@ -136,7 +144,7 @@ def main():
     theme_shortfall = {}  # idea_id → 남은 비중 (종목 부족 시)
 
     for t in top_themes:
-        # 테마 내 후보 점수화
+        # 테마 내 후보 점수화 (유형별 필터: 시총·변동성)
         ranked = []
         for m in t['matched_tickers']:
             tkr = m['ticker']
@@ -145,8 +153,17 @@ def main():
             cb = combined_score(tkr)
             if cb is None:
                 continue
-            iw = intensity_w.get(m.get('intensity', 'indirect'), 0.7)
             tinfo = pf_meta.get(tkr, {})
+            mcap = tinfo.get('mcap_eok') or 0
+            # 유형별 시총 필터 (안정형은 대형주만)
+            if args.min_mcap_eok > 0 and mcap < args.min_mcap_eok:
+                continue
+            # 유형별 변동성 필터 (안정형은 저변동만)
+            tech_ind = tech_scores.get(tkr, {}).get('indicators') or {}
+            sigma = tech_ind.get('sigma_annual_pct') or 0
+            if args.max_tech_vol and sigma > args.max_tech_vol:
+                continue
+            iw = intensity_w.get(m.get('intensity', 'indirect'), 0.7)
             ranked.append({
                 'ticker': tkr, 'name': m.get('name'),
                 'intensity': m.get('intensity'),
@@ -154,7 +171,8 @@ def main():
                 'attractiveness': attr_map.get(tkr, 0),
                 'tech_score': tech_scores.get(tkr, {}).get('tech_score'),
                 'size_tier': tinfo.get('size_tier'),
-                'mcap_eok': tinfo.get('mcap_eok'),
+                'mcap_eok': mcap,
+                'sigma_pct': sigma,
                 'sector': tinfo.get('sector'),
             })
         ranked.sort(key=lambda x: -x['weighted_score'])

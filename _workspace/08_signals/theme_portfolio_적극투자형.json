@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-28T13:04:57.990096",
+  "as_of": "2026-05-28T13:15:19.429483",
   "method": "테마 비중 골격 + 결합점수 최고 1종 (테마 8 + default 4)",
   "investor_type": "적극투자형",
   "equity_pct": 125.0,
@@ -7,7 +7,7 @@
   "n_themes_selected": 8,
   "n_default_picks": 4,
   "n_holdings": 11,
-  "total_weight_pct": 82.15,
+  "total_weight_pct": 92.89,
   "selected_themes": [
     {
       "idea_id": 4,
@@ -98,7 +98,7 @@
       "theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
       "orig_allocation_pct": 11.69,
       "theme_target_alloc": 15.621,
-      "allocation_pct": 7.878,
+      "allocation_pct": 9.827,
       "ticker": "298040",
       "name": "효성중공업",
       "sector": "전기장비",
@@ -136,14 +136,14 @@
         4,
         11
       ],
-      "capital_weight_pct": 9.848
+      "capital_weight_pct": 12.284
     },
     {
       "idea_id": 4,
       "theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
       "orig_allocation_pct": 11.69,
       "theme_target_alloc": 15.621,
-      "allocation_pct": 7.743,
+      "allocation_pct": 9.659,
       "ticker": "267260",
       "name": "HD현대일렉트릭",
       "sector": "전기장비",
@@ -181,14 +181,14 @@
         4,
         11
       ],
-      "capital_weight_pct": 9.679
+      "capital_weight_pct": 12.074
     },
     {
       "idea_id": 3,
       "theme": "SMR·소형원전 — AI 데이터센터 전용 전력원으로 격상",
       "orig_allocation_pct": 11.13,
       "theme_target_alloc": 14.873,
-      "allocation_pct": 14.873,
+      "allocation_pct": 15.0,
       "ticker": "028050",
       "name": "삼성E&A",
       "sector": "전문서비스",
@@ -226,14 +226,14 @@
         3,
         4
       ],
-      "capital_weight_pct": 18.591
+      "capital_weight_pct": 18.75
     },
     {
       "idea_id": 11,
       "theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
       "orig_allocation_pct": 11.13,
       "theme_target_alloc": 14.873,
-      "allocation_pct": 14.873,
+      "allocation_pct": 15.0,
       "ticker": "028260",
       "name": "삼성물산",
       "sector": "유통",
@@ -271,14 +271,14 @@
         3,
         11
       ],
-      "capital_weight_pct": 18.591
+      "capital_weight_pct": 18.75
     },
     {
       "idea_id": 1,
       "theme": "AI 인프라 — HBM·메모리·하이퍼스케일러 Capex",
       "orig_allocation_pct": 7.42,
       "theme_target_alloc": 9.915,
-      "allocation_pct": 9.915,
+      "allocation_pct": 12.369,
       "ticker": "005930",
       "name": "삼성전자",
       "sector": "전자반도체",
@@ -316,14 +316,14 @@
         1,
         11
       ],
-      "capital_weight_pct": 12.394
+      "capital_weight_pct": 15.461
     },
     {
       "idea_id": 2,
       "theme": "AI 에이전트 — Agentic AI 본격 상용화",
       "orig_allocation_pct": 6.31,
       "theme_target_alloc": 8.432,
-      "allocation_pct": 8.432,
+      "allocation_pct": 10.519,
       "ticker": "018260",
       "name": "삼성에스디에스",
       "sector": "IT서비스",
@@ -361,14 +361,14 @@
         1,
         2
       ],
-      "capital_weight_pct": 10.54
+      "capital_weight_pct": 13.149
     },
     {
       "idea_id": 13,
       "theme": "K-방산·K-조선 수출 사이클 (보강 필요)",
       "orig_allocation_pct": 6.31,
       "theme_target_alloc": 8.432,
-      "allocation_pct": 8.432,
+      "allocation_pct": 10.519,
       "ticker": "082740",
       "name": "한화엔진",
       "sector": "기계",
@@ -406,7 +406,7 @@
         3,
         13
       ],
-      "capital_weight_pct": 10.54
+      "capital_weight_pct": 13.149
     },
     {
       "idea_id": "default",
