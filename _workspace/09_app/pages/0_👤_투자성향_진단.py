@@ -184,7 +184,33 @@ if submitted:
             os.makedirs(os.path.dirname(CONSTRAINTS_PATH), exist_ok=True)
             json.dump(new_constraints, open(CONSTRAINTS_PATH, 'w', encoding='utf-8'),
                      ensure_ascii=False, indent=2)
-            st.success(f'✅ **{tname}** 진단 완료 (점수 {weighted_score:.2f}) → constraints.json 적용됨')
+
+            # allocation.json도 즉시 재계산 (기존 W_macro 유지하면서 새 유형의 e_min/max 적용)
+            ALLOC_PATH = os.path.join(
+                os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+                '02_macro', 'allocation.json'
+            )
+            if os.path.exists(ALLOC_PATH):
+                try:
+                    alloc = json.load(open(ALLOC_PATH, encoding='utf-8'))
+                    w = alloc.get('w_macro', 0.5)
+                    new_equity = e_min + (e_max - e_min) * w
+                    alloc['equity_pct'] = round(new_equity, 2)
+                    alloc['cash_pct'] = round(100 - new_equity, 2)
+                    alloc['updated_at'] = datetime.datetime.now().isoformat()
+                    if 'basis' in alloc:
+                        alloc['basis']['equity_pct_min'] = e_min
+                        alloc['basis']['equity_pct_max'] = e_max
+                        alloc['basis']['allocation_rule'] = f'{alloc.get("regime","중립")}: W_macro={w} → {e_min} + ({e_max}-{e_min})×{w} = {new_equity:.2f}'
+                        alloc['basis']['investor_type'] = tname
+                    json.dump(alloc, open(ALLOC_PATH, 'w', encoding='utf-8'),
+                             ensure_ascii=False, indent=2)
+                    st.success(f'✅ **{tname}** 진단 완료 (점수 {weighted_score:.2f}) → constraints.json + allocation.json 자동 적용 (새 equity {new_equity:.2f}%)')
+                except Exception as e:
+                    st.warning(f'allocation.json 갱신 실패: {e}')
+                    st.success(f'✅ **{tname}** 진단 완료 → constraints.json 적용됨')
+            else:
+                st.success(f'✅ **{tname}** 진단 완료 (점수 {weighted_score:.2f}) → constraints.json 적용됨')
 
             col_a, col_b, col_c, col_d = st.columns(4)
             col_a.metric('유형', tname)

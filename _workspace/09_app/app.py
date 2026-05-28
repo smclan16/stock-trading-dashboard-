@@ -66,10 +66,12 @@ with tab1:
 
     col1, col2, col3, col4 = st.columns(4)
 
-    # 매크로
+    # 매크로 (constraints의 현재 유형 + allocation 기반)
     alloc = loader.load('allocation')
+    profile = loader.load('profile')
+    cur_type = profile.get('investor_type', '-') if profile else '-'
     if alloc:
-        col1.metric('주식 비중 (equity)', f"{alloc.get('equity_pct', 0)}%",
+        col1.metric(f'주식 비중 ({cur_type})', f"{alloc.get('equity_pct', 0)}%",
                     delta=alloc.get('regime', '-'))
     # 유니버스
     uni = loader.load('universe')

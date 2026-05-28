@@ -89,14 +89,23 @@ elif stage.startswith('2'):
 
     st.markdown('### 📤 현재 적용')
     d = loader.load('allocation')
+    profile = loader.load('profile')
+    cur_type = profile.get('investor_type', '-') if profile else '-'
+    e_min = profile.get('equity_pct_min', '-') if profile else '-'
+    e_max = profile.get('equity_pct_max', '-') if profile else '-'
     if d:
-        col1, col2, col3 = st.columns(3)
-        col1.metric('VIX', d.get('vix', '-'))
-        col1.metric('US10Y', f"{d.get('us10y', 0)}%" if d.get('us10y') else '-')
-        col2.metric('W_macro', d.get('w_macro', '-'))
-        col2.metric('레짐', d.get('regime', '-'))
-        col3.metric('주식 비중', f"{d.get('equity_pct', 0)}%")
-        col3.metric('현금 비중', f"{d.get('cash_pct', 0)}%")
+        # basis에서 매크로 raw 값 추출
+        b = d.get('basis', {})
+        col1, col2, col3, col4 = st.columns(4)
+        col1.metric('👤 현재 투자성향', cur_type)
+        col1.metric('equity 허용 범위', f'{e_min}~{e_max}%')
+        col2.metric('VIX', b.get('vix', d.get('vix', '-')))
+        col2.metric('US10Y', f"{b.get('us10y', d.get('us10y', 0))}%" if (b.get('us10y') or d.get('us10y')) else '-')
+        col3.metric('W_macro', d.get('w_macro', '-'))
+        col3.metric('레짐', d.get('regime', '-'))
+        col4.metric('🎯 적용 주식 비중', f"{d.get('equity_pct', 0)}%")
+        col4.metric('현금/신용', f"{d.get('cash_pct', 0)}%")
+        st.caption(f"📐 산식: equity = {e_min} + ({e_max}-{e_min}) × W_macro({d.get('w_macro')}) = **{d.get('equity_pct')}%**")
         with st.expander('상세 JSON'):
             st.json(d)
 
