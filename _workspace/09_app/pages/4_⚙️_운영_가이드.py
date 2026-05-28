@@ -1,6 +1,6 @@
 """운영 가이드 — 매일/주간 작업 + 스크립트 실행 가이드"""
 import streamlit as st
-import subprocess
+import subprocess, sys
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from lib import loader
@@ -25,7 +25,7 @@ if st.button('▶ 일일 시그널 재생성', type='primary'):
     with st.spinner('compute_daily_signals.py 실행 중…'):
         try:
             r = subprocess.run(
-                ['python3', os.path.join(WS, '08_signals', 'compute_daily_signals.py')],
+                [sys.executable, os.path.join(WS, '08_signals', 'compute_daily_signals.py')],
                 capture_output=True, text=True, timeout=300, cwd=WS,
             )
             if r.returncode == 0:
@@ -74,7 +74,7 @@ with st.expander('🚀 일괄 실행 (주간)'):
         for label, cmd in steps:
             with st.spinner(f'{label} 실행 중…'):
                 parts = cmd.split()
-                full = ['python3', os.path.join(WS, parts[0])] + parts[1:]
+                full = [sys.executable, os.path.join(WS, parts[0])] + parts[1:]
                 try:
                     r = subprocess.run(full, capture_output=True, text=True, timeout=600, cwd=WS)
                     if r.returncode == 0:
