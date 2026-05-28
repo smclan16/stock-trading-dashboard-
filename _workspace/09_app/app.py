@@ -1,9 +1,16 @@
 """투자 의사결정 자동화 대시보드 — Streamlit MVP"""
 import streamlit as st
 import pandas as pd
-import os, sys
+import os, sys, traceback
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from lib import loader, db
+
+# 에러 발생 시 사용자에게 명확한 메시지 (Streamlit Cloud의 generic error 회피)
+try:
+    from lib import loader, db
+except Exception as e:
+    st.error(f'⚠ 모듈 로드 실패: {type(e).__name__}: {e}')
+    st.code(traceback.format_exc())
+    st.stop()
 
 st.set_page_config(
     page_title='Investment Pipeline Dashboard',
