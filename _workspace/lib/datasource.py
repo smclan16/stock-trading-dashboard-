@@ -301,18 +301,18 @@ class KRXMarket:
                 return rows
             except Exception:
                 pass
-        # 3) API 호출 (429 retry)
+        # 3) API 호출 (429 즉시 fallback, retry X — 시간 폭증 방지)
         url = f"{self.BASE}/{endpoint}"
         last_err = None
-        for attempt, sleep_sec in enumerate([0, 5, 15, 45], 1):
+        for attempt, sleep_sec in enumerate([0], 1):  # v17: retry 폐지
             if sleep_sec:
                 time.sleep(sleep_sec)
             try:
                 r = requests.get(url, params={"basDd": basDd},
-                                 headers={"AUTH_KEY": self.key}, timeout=self.timeout)
+                                 headers={"AUTH_KEY": self.key}, timeout=5)  # 5초 timeout
                 if r.status_code == 429:
-                    last_err = requests.exceptions.HTTPError(f"429 (try {attempt}/4)")
-                    continue  # backoff retry
+                    last_err = requests.exceptions.HTTPError(f"429 (try {attempt}/1)")
+                    continue
                 r.raise_for_status()
                 try:
                     data = r.json()

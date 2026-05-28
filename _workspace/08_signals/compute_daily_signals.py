@@ -77,12 +77,9 @@ def main():
     print(f'  최종 포트: {len(holdings)}종목 | 현재 보유: {len(positions)}건 | 테마매핑: {len(match_map)} | 기술점수: {len(tech_map)}')
 
     krx = KRXMarket()
-    # v15: KRX 호출 없이 시스템 날짜 기반 + yfinance fallback
-    try:
-        asof = args.asof or krx.latest_trading_date()
-    except Exception as e:
-        print(f'  ⚠ KRX latest_trading_date 실패 ({e}), 시스템 날짜 fallback')
-        asof = args.asof or krx.latest_trading_date_no_api()
+    # v17: KRX latest_trading_date 호출 자체 skip (시스템 날짜만 사용)
+    asof = args.asof or krx.latest_trading_date_no_api()
+    print(f'  asof: {asof} (시스템 날짜 기반)')
     print(f'[2/4] 가격 데이터 ({asof}, {args.days}영업일)…')
     dates = krx.trading_dates(asof, args.days)
     dates.sort()
