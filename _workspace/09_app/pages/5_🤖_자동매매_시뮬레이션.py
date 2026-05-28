@@ -427,14 +427,31 @@ with tab_live:
             if eval_dates:
                 sim_trades = db.list_sim_trades(sim_id)
                 base_cap = sim['start_capital']
-                # 시뮬레이션 시작 시 사용된 portfolio의 equity_pct 자동 감지
-                # notes에 "(equity 100%)" 등이 포함되거나, 메타로 저장된 경우 활용
-                sim_equity_pct = 100.0  # default — 신용 없음
-                if sim.get('notes'):
-                    import re
-                    m = re.search(r'equity\s*(\d+(?:\.\d+)?)\s*%', sim['notes'])
-                    if m:
-                        sim_equity_pct = float(m.group(1))
+
+                # 투자 유형 명시적 선택 (자동 추론 X — 사용자 혼란 방지)
+                PROFILE_EQUITY = {
+                    '안정형 (equity 60% · 신용 X)': 60,
+                    '안정추구형 (equity 80% · 신용 X)': 80,
+                    '위험중립형 (equity 100% · 신용 X)': 100,
+                    '적극투자형 (equity 125% · 신용 25%)': 125,
+                    '공격투자형 (equity 150% · 신용 50%)': 150,
+                }
+                default_idx = 2  # 위험중립형
+                sim_meta = (sim.get('notes') or '') + ' ' + (sim.get('name') or '')
+                for i, key in enumerate(PROFILE_EQUITY.keys()):
+                    profile_name = key.split(' ')[0]
+                    if profile_name in sim_meta:
+                        default_idx = i
+                        break
+
+                profile_choice = st.selectbox(
+                    '🎯 시뮬레이션 투자 유형 (equity % · 신용 사용 여부)',
+                    options=list(PROFILE_EQUITY.keys()),
+                    index=default_idx,
+                    help='equity 100% 이하 = 신용 미사용 (신용이자 0원). 125%+ = 신용 사용분에 연 6% 이자.',
+                )
+                sim_equity_pct = PROFILE_EQUITY[profile_choice]
+
                 daily_v = perf.daily_portfolio_value(sim_trades, price_history, eval_dates,
                                                       credit_interest_pct=costs.CREDIT_INTEREST_PCT_ANNUAL,
                                                       base_capital=base_cap,
@@ -451,13 +468,20 @@ with tab_live:
                     if metrics.get('sharpe_annual') is not None:
                         mc4.metric('샤프', f"{metrics['sharpe_annual']}")
 
-                # 비용 내역
-                cost_cols = st.columns(3)
-                cost_cols[0].metric('💰 누적 배당', f"{last_v.get('dividend_cum', 0):,.0f}원")
-                cost_cols[1].metric('💸 누적 신용이자', f"{last_v.get('credit_interest_cum', 0):,.0f}원")
-                # 매매비용 합
+                # 비용 내역 — 신용 사용 안 하면 신용이자 컬럼 숨김
                 trade_costs = sum((t.get('fee') or 0) + (t.get('tax') or 0) for t in sim_trades)
-                cost_cols[2].metric('🧾 매매비용 합 (수수료+세금)', f"{trade_costs:,.0f}원")
+                if sim_equity_pct > 100:
+                    cost_cols = st.columns(3)
+                    cost_cols[0].metric('💰 누적 배당', f"{last_v.get('dividend_cum', 0):,.0f}원")
+                    cost_cols[1].metric('💸 누적 신용이자',
+                                          f"{last_v.get('credit_interest_cum', 0):,.0f}원",
+                                          help=f'신용 사용액: 자본의 {sim_equity_pct - 100:.0f}% × 연 6%')
+                    cost_cols[2].metric('🧾 매매비용 합 (수수료+세금)', f"{trade_costs:,.0f}원")
+                else:
+                    cost_cols = st.columns(2)
+                    cost_cols[0].metric('💰 누적 배당', f"{last_v.get('dividend_cum', 0):,.0f}원")
+                    cost_cols[1].metric('🧾 매매비용 합 (수수료+세금)', f"{trade_costs:,.0f}원")
+                    st.caption(f'ℹ️ {profile_choice.split(" ")[0]} → 신용 미사용 (신용이자 0원)')
 
                 # ─── 누적 수익률 시계열 비교 차트 (시뮬 vs KOSPI vs 초과) ─────
                 st.markdown(f'### 📈 누적 수익률 시계열 ({sim["start_date"]} ~ 현재)')
