@@ -108,20 +108,31 @@ def main():
     bull_market = kospi_6m_pct is not None and kospi_6m_pct >= 0
     print(f'  KOSPI 6M: {kospi_6m_pct}% → {"강세장(MA20 청산 무효)" if bull_market else "약세장(MA20 청산 발효)" if kospi_6m_pct is not None else "데이터 없음 (기본 약세장 처리)"}')
 
-    # 종목별 시계열 — KRX 실패 시 yfinance fallback
+    # 종목별 시계열 — v16: KRX 1회 시도 후 실패 시 yfinance bulk (종목당 1회)
     price_map = {t: [] for t in target_tickers}
-    krx_fail_count = 0
-    for d in dates:
-        try:
-            day = krx.daily(d, fallback_tickers=list(target_tickers))
-        except Exception:
-            krx_fail_count += 1
-            day = krx._daily_yfinance(d, tickers=list(target_tickers))
-        for t in target_tickers:
-            if t in day and day[t].get('close'):
-                price_map[t].append(day[t]['close'])
-    if krx_fail_count > 0:
-        print(f'  ⚠ {krx_fail_count}일치 KRX 호출 실패 → yfinance 사용')
+    # KRX 첫 날짜 시도 → 실패 시 즉시 yfinance bulk
+    try:
+        krx.daily(dates[0])  # 헬스체크
+        krx_ok = True
+    except Exception:
+        krx_ok = False
+        print(f'  ⚠ KRX 호출 실패 — yfinance bulk download (종목당 1회, {len(target_tickers)}회) …')
+
+    if krx_ok:
+        for d in dates:
+            try:
+                day = krx.daily(d, fallback_tickers=list(target_tickers))
+                for t in target_tickers:
+                    if t in day and day[t].get('close'):
+                        price_map[t].append(day[t]['close'])
+            except Exception:
+                pass
+    else:
+        # yfinance bulk — 종목당 1회만 (총 N회, N=11~20)
+        yf_data = krx.yfinance_bulk_history(list(target_tickers), days=args.days)
+        for t, closes in yf_data.items():
+            price_map[t] = closes
+        print(f'  ✅ yfinance: {sum(1 for v in price_map.values() if v)}종 수신')
 
     # 현재 보유 ticker → 교체 후보 검색 함수
     held_tickers = set(h['ticker'] for h in holdings)

@@ -388,8 +388,7 @@ class KRXMarket:
         return d.strftime("%Y%m%d")
 
     def _daily_yfinance(self, basDd, tickers=None):
-        """v15: KRX 429 시 yfinance fallback.
-        tickers 지정 시 그 종목만, None이면 빈 dict (full universe X)."""
+        """v15: 단일 날짜 fallback (compute_daily_signals 호환). 비효율 — bulk 권장."""
         try:
             import yfinance as yf
         except ImportError:
@@ -406,7 +405,6 @@ class KRXMarket:
                     df = yf.Ticker(f"{tkr}{suffix}").history(start=start, end=end, auto_adjust=False)
                     if df.empty:
                         continue
-                    # 가장 최근 row (basDd 또는 그 이전)
                     target_ts = pd.Timestamp(d.strftime("%Y-%m-%d"))
                     df_valid = df[df.index.tz_localize(None) <= target_ts] if df.index.tz else df[df.index <= target_ts]
                     if df_valid.empty:
@@ -419,9 +417,35 @@ class KRXMarket:
                         "turnover_eok": None, "mcap_eok": None,
                         "list_shrs": None, "sect": "",
                     }
-                    break  # 성공하면 다음 종목
+                    break
                 except Exception:
                     continue
+        return out
+
+    def yfinance_bulk_history(self, tickers, days=80):
+        """v16: 종목별 시계열 일괄 다운로드 (호출 N회 = len(tickers)).
+        반환: dict[ticker] = list[close] (오래된→최신, 평일만)
+        """
+        try:
+            import yfinance as yf
+        except ImportError:
+            return {}
+        out = {}
+        period_arg = f'{int(days * 1.5)}d'  # 평일 80일 ≈ 달력 112일
+        for tkr in tickers:
+            for suffix in ['.KS', '.KQ']:
+                try:
+                    df = yf.Ticker(f"{tkr}{suffix}").history(period=period_arg, auto_adjust=False)
+                    if df.empty:
+                        continue
+                    closes = df['Close'].dropna().tolist()
+                    if closes:
+                        out[tkr] = closes[-days:]  # 최근 days만
+                        break
+                except Exception:
+                    continue
+            if tkr not in out:
+                out[tkr] = []
         return out
 
     def daily(self, basDd, fallback_tickers=None):
