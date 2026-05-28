@@ -456,7 +456,8 @@ with tab_live:
                                                       credit_interest_pct=costs.CREDIT_INTEREST_PCT_ANNUAL,
                                                       base_capital=base_cap,
                                                       equity_pct=sim_equity_pct)
-                metrics = perf.calc_perf_metrics(daily_v, kospi)
+                # v19: 시작 자본 대비 수익률 (시그널 적용 후 분모 폭증 방지)
+                metrics = perf.calc_perf_metrics(daily_v, kospi, base_capital=base_cap)
                 last_v = daily_v[max(daily_v.keys())]
                 if metrics:
                     mc1, mc2, mc3, mc4 = st.columns(4)
@@ -492,7 +493,8 @@ with tab_live:
                 ])
                 df_daily['date_dt'] = pd.to_datetime(df_daily['date'])
                 df_daily = df_daily.sort_values('date_dt').reset_index(drop=True)
-                df_daily['시뮬레이션 수익률(%)'] = (df_daily['total_value'] / df_daily['cost_basis'] - 1) * 100
+                # v19: PnL / 시작 자본 (metric과 일치)
+                df_daily['시뮬레이션 수익률(%)'] = (df_daily['total_value'] - df_daily['cost_basis']) / base_cap * 100
 
                 # KOSPI 같은 날짜로 정렬 + 시작 시점 정규화
                 kospi_df = None

@@ -156,19 +156,30 @@ def daily_portfolio_value(positions_history: list, price_history: dict, dates: l
     return out
 
 
-def calc_perf_metrics(daily_values: dict, kospi: dict) -> dict:
-    """누적 수익률·KOSPI 대비·샤프·MDD"""
+def calc_perf_metrics(daily_values: dict, kospi: dict, base_capital: float = None) -> dict:
+    """누적 수익률·KOSPI 대비·샤프·MDD
+    base_capital 지정 시: 시작 자본 대비 PnL (사용자 친화적, 차트와 일관)
+    base_capital 미지정: 누적 cost_basis 대비 (구버전 호환)
+    """
     if not daily_values:
         return {}
     dates = sorted(daily_values.keys())
     if len(dates) < 2:
         return {}
-    # 누적
-    start_v = daily_values[dates[0]]['cost_basis']
-    end_v = daily_values[dates[-1]]['market_value'] + daily_values[dates[-1]]['realized_pnl']
-    if start_v <= 0:
+
+    last = daily_values[dates[-1]]
+    # total_value = 시장가치 + 실현 + 배당 - 신용이자
+    end_v = last['market_value'] + last['realized_pnl'] + last.get('dividend_cum', 0) - last.get('credit_interest_cum', 0)
+    end_cost = last['cost_basis']  # 누적 매수 원가 (monotonic)
+
+    # 수익률 분모: 시작 자본 (있으면) 또는 cost_basis (호환)
+    denom = base_capital if (base_capital and base_capital > 0) else end_cost
+    if denom <= 0:
         return {}
-    cum_ret = (end_v / start_v - 1) * 100
+
+    # PnL = total_value - cost_basis (투입 - 회수 - 평가 = 순익)
+    pnl = end_v - end_cost
+    cum_ret = pnl / denom * 100
 
     # KOSPI 동기간
     kospi_dates = sorted([d for d in kospi.keys() if d >= dates[0]])
@@ -177,14 +188,15 @@ def calc_perf_metrics(daily_values: dict, kospi: dict) -> dict:
     else:
         kospi_ret = None
 
-    # 일별 수익률
+    # 일별 수익률 (분모 = denom 고정, 일별 PnL 변화율)
     rets = []
-    prev = start_v
+    prev_pnl_pct = 0
     for d in dates[1:]:
-        cur = daily_values[d]['market_value'] + daily_values[d]['realized_pnl']
-        if prev > 0:
-            rets.append((cur / prev - 1))
-        prev = cur
+        v = daily_values[d]
+        cur_pnl = v['market_value'] + v['realized_pnl'] + v.get('dividend_cum', 0) - v.get('credit_interest_cum', 0) - v['cost_basis']
+        cur_pnl_pct = cur_pnl / denom * 100
+        rets.append((cur_pnl_pct - prev_pnl_pct) / 100)  # 일별 수익률 (분수)
+        prev_pnl_pct = cur_pnl_pct
 
     sharpe = None
     if len(rets) >= 5:
@@ -194,13 +206,15 @@ def calc_perf_metrics(daily_values: dict, kospi: dict) -> dict:
         if sigma > 0:
             sharpe = round(mu / sigma * math.sqrt(252), 2)
 
-    # MDD
-    peak = start_v
+    # MDD (PnL% 기준)
+    peak_pnl_pct = 0
     mdd = 0
     for d in dates:
-        v = daily_values[d]['market_value'] + daily_values[d]['realized_pnl']
-        peak = max(peak, v)
-        dd = (v - peak) / peak * 100 if peak > 0 else 0
+        v = daily_values[d]
+        cur_pnl = v['market_value'] + v['realized_pnl'] + v.get('dividend_cum', 0) - v.get('credit_interest_cum', 0) - v['cost_basis']
+        cur_pnl_pct = cur_pnl / denom * 100
+        peak_pnl_pct = max(peak_pnl_pct, cur_pnl_pct)
+        dd = cur_pnl_pct - peak_pnl_pct
         mdd = min(mdd, dd)
 
     days_held = (datetime.datetime.strptime(dates[-1], '%Y%m%d') - datetime.datetime.strptime(dates[0], '%Y%m%d')).days
@@ -214,7 +228,7 @@ def calc_perf_metrics(daily_values: dict, kospi: dict) -> dict:
         'excess_vs_kospi_pct': round(cum_ret - kospi_ret, 2) if kospi_ret is not None else None,
         'sharpe_annual': sharpe,
         'mdd_pct': round(mdd, 2),
-        'cost_basis': round(start_v, 0),
+        'cost_basis': round(end_cost, 0),
         'market_value': round(daily_values[dates[-1]]['market_value'], 0),
         'realized_pnl': round(daily_values[dates[-1]]['realized_pnl'], 0),
         'total_value': round(daily_values[dates[-1]]['market_value'] + daily_values[dates[-1]]['realized_pnl'], 0),
