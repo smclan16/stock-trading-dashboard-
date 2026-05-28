@@ -283,22 +283,59 @@ class KRXMarket:
         self._cache = {}  # (endpoint, basDd) -> list
 
     def _get(self, endpoint, basDd):
-        import requests
+        """KRX API GET with 429 retry + persistent disk cache."""
+        import requests, json as _json, time, os
         ck = (endpoint, basDd)
+        # 1) 메모리 캐시
         if ck in self._cache:
             return self._cache[ck]
+        # 2) 디스크 캐시 (GitHub Actions 재사용)
+        cache_dir = os.path.join(os.path.dirname(__file__), '.krx_cache')
+        os.makedirs(cache_dir, exist_ok=True)
+        cache_file = os.path.join(cache_dir, f"{endpoint.replace('/', '_')}_{basDd}.json")
+        if os.path.exists(cache_file):
+            try:
+                with open(cache_file, encoding='utf-8') as f:
+                    rows = _json.load(f)
+                self._cache[ck] = rows
+                return rows
+            except Exception:
+                pass
+        # 3) API 호출 (429 retry)
         url = f"{self.BASE}/{endpoint}"
-        r = requests.get(url, params={"basDd": basDd},
-                         headers={"AUTH_KEY": self.key}, timeout=self.timeout)
-        r.raise_for_status()
-        try:
-            data = r.json()
-        except Exception:
-            self._cache[ck] = []
-            return []
-        rows = data.get("OutBlock_1") or data.get("output") or []
-        self._cache[ck] = rows
-        return rows
+        last_err = None
+        for attempt, sleep_sec in enumerate([0, 5, 15, 45], 1):
+            if sleep_sec:
+                time.sleep(sleep_sec)
+            try:
+                r = requests.get(url, params={"basDd": basDd},
+                                 headers={"AUTH_KEY": self.key}, timeout=self.timeout)
+                if r.status_code == 429:
+                    last_err = requests.exceptions.HTTPError(f"429 (try {attempt}/4)")
+                    continue  # backoff retry
+                r.raise_for_status()
+                try:
+                    data = r.json()
+                except Exception:
+                    self._cache[ck] = []
+                    return []
+                rows = data.get("OutBlock_1") or data.get("output") or []
+                self._cache[ck] = rows
+                # 디스크 캐시 저장 (성공 시만)
+                try:
+                    with open(cache_file, 'w', encoding='utf-8') as f:
+                        _json.dump(rows, f, ensure_ascii=False)
+                except Exception:
+                    pass
+                return rows
+            except requests.exceptions.HTTPError as e:
+                last_err = e
+                if e.response is None or e.response.status_code != 429:
+                    raise
+        # 4) 4번 retry 모두 429 → 실패
+        if last_err:
+            raise last_err
+        return []
 
     @staticmethod
     def _num(x):

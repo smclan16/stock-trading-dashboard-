@@ -33,8 +33,9 @@ Thumbs.db
 *.swp
 *.swo
 
-# Cache (KRX/DART/FRED 응답 캐시)
+# Cache (KRX/DART/FRED 응답 캐시) — 단, .krx_cache는 GitHub Actions cache로 재사용 가능
 _workspace/lib/.cache/
+_workspace/lib/.krx_cache/
 _workspace/**/cache_*
 
 # Logs
