@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-27T21:02:35+09:00",
+  "as_of": "2026-05-28T13:41:23+09:00",
   "n_scored": 100,
   "rows": [
     {
@@ -27,7 +27,7 @@
       "risk_inv_pts": 10.0,
       "risk_score": 0,
       "risk_triggered": [],
-      "news_growth_pct": 431.00000000000006,
+      "news_growth_pct": 434.0,
       "fundamental": 23.32,
       "momentum": 16.68,
       "theme": 9.76,
@@ -231,45 +231,6 @@
       "macro_beta": null
     },
     {
-      "ticker": "006260",
-      "name": "LS",
-      "sector": "금융",
-      "val_pts": 3.186,
-      "qual_pts": 5.10575,
-      "growth_raw": null,
-      "tp_pts": 9.0,
-      "roe_rev_pts": 4.804,
-      "tov_pts": 4.062,
-      "theme_raw": 1.6616919088687891,
-      "theme_matches": [
-        {
-          "idea_id": 4,
-          "intensity": "indirect"
-        },
-        {
-          "idea_id": 11,
-          "intensity": "direct"
-        }
-      ],
-      "growth_pts": 5.0,
-      "theme_pts": 15.0,
-      "news_pts": 8.0,
-      "dart_pos_pts": 0.0,
-      "dart_contract_pts": 3,
-      "risk_inv_pts": 10.0,
-      "risk_score": 0,
-      "risk_triggered": [],
-      "news_growth_pct": 500.0,
-      "fundamental": 13.29,
-      "momentum": 17.87,
-      "theme": 15.0,
-      "catalyst": 11.0,
-      "risk_inv": 10.0,
-      "total_score": 67.16,
-      "is_uncovered": false,
-      "macro_beta": null
-    },
-    {
       "ticker": "329180",
       "name": "HD현대중공업",
       "sector": "운송장비",
@@ -401,19 +362,58 @@
       ],
       "growth_pts": 5.0,
       "theme_pts": 11.635062154579538,
-      "news_pts": 7.8599999999999985,
+      "news_pts": 8.0,
       "dart_pos_pts": 0.0,
       "dart_contract_pts": 0.0,
       "risk_inv_pts": 10.0,
       "risk_score": 0,
       "risk_triggered": [],
-      "news_growth_pct": 292.99999999999994,
+      "news_growth_pct": 443.0,
       "fundamental": 20.02,
       "momentum": 16.94,
       "theme": 11.64,
-      "catalyst": 7.86,
+      "catalyst": 8.0,
       "risk_inv": 10.0,
-      "total_score": 66.46,
+      "total_score": 66.6,
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "ticker": "006260",
+      "name": "LS",
+      "sector": "금융",
+      "val_pts": 3.186,
+      "qual_pts": 5.10575,
+      "growth_raw": null,
+      "tp_pts": 9.0,
+      "roe_rev_pts": 4.804,
+      "tov_pts": 4.062,
+      "theme_raw": 1.6616919088687891,
+      "theme_matches": [
+        {
+          "idea_id": 4,
+          "intensity": "indirect"
+        },
+        {
+          "idea_id": 11,
+          "intensity": "direct"
+        }
+      ],
+      "growth_pts": 5.0,
+      "theme_pts": 15.0,
+      "news_pts": 8.0,
+      "dart_pos_pts": 0.0,
+      "dart_contract_pts": 2.0,
+      "risk_inv_pts": 10.0,
+      "risk_score": 0,
+      "risk_triggered": [],
+      "news_growth_pct": 500.0,
+      "fundamental": 13.29,
+      "momentum": 17.87,
+      "theme": 15.0,
+      "catalyst": 10.0,
+      "risk_inv": 10.0,
+      "total_score": 66.16,
       "is_uncovered": false,
       "macro_beta": null
     },
@@ -442,7 +442,7 @@
       "theme_pts": 10.500000000000002,
       "news_pts": 8.0,
       "dart_pos_pts": 0.0,
-      "dart_contract_pts": 3,
+      "dart_contract_pts": 2.0,
       "risk_inv_pts": 10.0,
       "risk_score": 0,
       "risk_triggered": [],
@@ -450,9 +450,9 @@
       "fundamental": 17.97,
       "momentum": 16.85,
       "theme": 10.5,
-      "catalyst": 11.0,
+      "catalyst": 10.0,
       "risk_inv": 10.0,
-      "total_score": 66.32,
+      "total_score": 65.32,
       "is_uncovered": false,
       "macro_beta": null
     },
@@ -654,45 +654,6 @@
       "macro_beta": null
     },
     {
-      "ticker": "077970",
-      "name": "STX엔진",
-      "sector": "기계",
-      "val_pts": 6.774,
-      "qual_pts": 7.462,
-      "growth_raw": null,
-      "tp_pts": 5.69475,
-      "roe_rev_pts": 3.152,
-      "tov_pts": 8.0,
-      "theme_raw": 1.452666513691288,
-      "theme_matches": [
-        {
-          "idea_id": 3,
-          "intensity": "indirect"
-        },
-        {
-          "idea_id": 13,
-          "intensity": "direct"
-        }
-      ],
-      "growth_pts": 5.0,
-      "theme_pts": 13.113139438828371,
-      "news_pts": 5.16,
-      "dart_pos_pts": 0.0,
-      "dart_contract_pts": 0.0,
-      "risk_inv_pts": 10.0,
-      "risk_score": 0,
-      "risk_triggered": [],
-      "news_growth_pct": 158.0,
-      "fundamental": 19.24,
-      "momentum": 16.85,
-      "theme": 13.11,
-      "catalyst": 5.16,
-      "risk_inv": 10.0,
-      "total_score": 64.36,
-      "is_uncovered": false,
-      "macro_beta": null
-    },
-    {
       "ticker": "001740",
       "name": "SK네트웍스",
       "sector": "유통",
@@ -763,6 +724,45 @@
       "catalyst": 8.0,
       "risk_inv": 10.0,
       "total_score": 64.09,
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "ticker": "077970",
+      "name": "STX엔진",
+      "sector": "기계",
+      "val_pts": 6.774,
+      "qual_pts": 7.462,
+      "growth_raw": null,
+      "tp_pts": 5.69475,
+      "roe_rev_pts": 3.152,
+      "tov_pts": 8.0,
+      "theme_raw": 1.452666513691288,
+      "theme_matches": [
+        {
+          "idea_id": 3,
+          "intensity": "indirect"
+        },
+        {
+          "idea_id": 13,
+          "intensity": "direct"
+        }
+      ],
+      "growth_pts": 5.0,
+      "theme_pts": 13.113139438828371,
+      "news_pts": 4.739999999999999,
+      "dart_pos_pts": 0.0,
+      "dart_contract_pts": 0.0,
+      "risk_inv_pts": 10.0,
+      "risk_score": 0,
+      "risk_triggered": [],
+      "news_growth_pct": 136.99999999999997,
+      "fundamental": 19.24,
+      "momentum": 16.85,
+      "theme": 13.11,
+      "catalyst": 4.74,
+      "risk_inv": 10.0,
+      "total_score": 63.94,
       "is_uncovered": false,
       "macro_beta": null
     },
@@ -1085,19 +1085,19 @@
       ],
       "growth_pts": 5.0,
       "theme_pts": 7.922022190250547,
-      "news_pts": 6.6,
+      "news_pts": 6.66,
       "dart_pos_pts": 0.0,
       "dart_contract_pts": 0.0,
       "risk_inv_pts": 10.0,
       "risk_score": 0,
       "risk_triggered": [],
-      "news_growth_pct": 229.99999999999997,
+      "news_growth_pct": 233.0,
       "fundamental": 23.57,
       "momentum": 14.37,
       "theme": 7.92,
-      "catalyst": 6.6,
+      "catalyst": 6.66,
       "risk_inv": 10.0,
-      "total_score": 62.46,
+      "total_score": 62.52,
       "is_uncovered": false,
       "macro_beta": null
     },
@@ -1215,41 +1215,6 @@
       "macro_beta": null
     },
     {
-      "ticker": "383800",
-      "name": "LX홀딩스",
-      "sector": "금융",
-      "val_pts": 8.238,
-      "qual_pts": 13.0,
-      "growth_raw": null,
-      "tp_pts": 3.88125,
-      "roe_rev_pts": 2.224,
-      "tov_pts": 4.616,
-      "theme_raw": 1.0549881515922348,
-      "theme_matches": [
-        {
-          "idea_id": 11,
-          "intensity": "direct"
-        }
-      ],
-      "growth_pts": 5.0,
-      "theme_pts": 9.523319087866536,
-      "news_pts": 5.1,
-      "dart_pos_pts": 0.0,
-      "dart_contract_pts": 0.0,
-      "risk_inv_pts": 10.0,
-      "risk_score": 0,
-      "risk_triggered": [],
-      "news_growth_pct": 154.99999999999997,
-      "fundamental": 26.24,
-      "momentum": 10.72,
-      "theme": 9.52,
-      "catalyst": 5.1,
-      "risk_inv": 10.0,
-      "total_score": 61.58,
-      "is_uncovered": false,
-      "macro_beta": null
-    },
-    {
       "ticker": "403870",
       "name": "HPSP",
       "sector": "기계",
@@ -1281,6 +1246,41 @@
       "catalyst": 8.8,
       "risk_inv": 10.0,
       "total_score": 61.53,
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "ticker": "383800",
+      "name": "LX홀딩스",
+      "sector": "금융",
+      "val_pts": 8.238,
+      "qual_pts": 13.0,
+      "growth_raw": null,
+      "tp_pts": 3.88125,
+      "roe_rev_pts": 2.224,
+      "tov_pts": 4.616,
+      "theme_raw": 1.0549881515922348,
+      "theme_matches": [
+        {
+          "idea_id": 11,
+          "intensity": "direct"
+        }
+      ],
+      "growth_pts": 5.0,
+      "theme_pts": 9.523319087866536,
+      "news_pts": 5.039999999999999,
+      "dart_pos_pts": 0.0,
+      "dart_contract_pts": 0.0,
+      "risk_inv_pts": 10.0,
+      "risk_score": 0,
+      "risk_triggered": [],
+      "news_growth_pct": 151.99999999999994,
+      "fundamental": 26.24,
+      "momentum": 10.72,
+      "theme": 9.52,
+      "catalyst": 5.04,
+      "risk_inv": 10.0,
+      "total_score": 61.52,
       "is_uncovered": false,
       "macro_beta": null
     },
@@ -1649,6 +1649,45 @@
       "macro_beta": null
     },
     {
+      "ticker": "032830",
+      "name": "삼성생명",
+      "sector": "보험",
+      "val_pts": 0.0,
+      "qual_pts": 3.76025,
+      "growth_raw": null,
+      "tp_pts": 9.0,
+      "roe_rev_pts": 5.708,
+      "tov_pts": 5.7379999999999995,
+      "theme_raw": 1.4056777724642302,
+      "theme_matches": [
+        {
+          "idea_id": 11,
+          "intensity": "direct"
+        },
+        {
+          "idea_id": 12,
+          "intensity": "perception"
+        }
+      ],
+      "growth_pts": 5.0,
+      "theme_pts": 12.688974697672663,
+      "news_pts": 8.0,
+      "dart_pos_pts": 0.0,
+      "dart_contract_pts": 0.0,
+      "risk_inv_pts": 10.0,
+      "risk_score": 0,
+      "risk_triggered": [],
+      "news_growth_pct": 500.0,
+      "fundamental": 8.76,
+      "momentum": 20.45,
+      "theme": 12.69,
+      "catalyst": 8.0,
+      "risk_inv": 10.0,
+      "total_score": 59.9,
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
       "ticker": "009150",
       "name": "삼성전기",
       "sector": "전자반도체",
@@ -1865,75 +1904,6 @@
       "macro_beta": null
     },
     {
-      "ticker": "005880",
-      "name": "대한해운",
-      "sector": "운송물류",
-      "val_pts": 9.264,
-      "qual_pts": 9.11625,
-      "growth_raw": null,
-      "tp_pts": 5.409,
-      "roe_rev_pts": 4.826,
-      "tov_pts": 7.15,
-      "theme_raw": 0.0,
-      "theme_matches": [],
-      "growth_pts": 5.0,
-      "theme_pts": 0.0,
-      "news_pts": 7.8599999999999985,
-      "dart_pos_pts": 0.0,
-      "dart_contract_pts": 0.0,
-      "risk_inv_pts": 10.0,
-      "risk_score": 0,
-      "risk_triggered": [],
-      "news_growth_pct": 292.99999999999994,
-      "fundamental": 23.38,
-      "momentum": 17.38,
-      "theme": 0.0,
-      "catalyst": 7.86,
-      "risk_inv": 10.0,
-      "total_score": 58.62,
-      "is_uncovered": true,
-      "macro_beta": 0.111
-    },
-    {
-      "ticker": "009900",
-      "name": "명신산업",
-      "sector": "자동차",
-      "val_pts": 7.7669999999999995,
-      "qual_pts": 7.74475,
-      "growth_raw": null,
-      "tp_pts": 6.882750000000001,
-      "roe_rev_pts": 3.582,
-      "tov_pts": 6.448,
-      "theme_raw": 0.8260919440352872,
-      "theme_matches": [
-        {
-          "idea_id": 5,
-          "intensity": "perception"
-        },
-        {
-          "idea_id": 6,
-          "intensity": "indirect"
-        }
-      ],
-      "growth_pts": 5.0,
-      "theme_pts": 7.457085813798566,
-      "news_pts": 3.72,
-      "dart_pos_pts": 0.0,
-      "dart_contract_pts": 0.0,
-      "risk_inv_pts": 10.0,
-      "risk_score": 0,
-      "risk_triggered": [],
-      "news_growth_pct": 86.00000000000001,
-      "fundamental": 20.51,
-      "momentum": 16.91,
-      "theme": 7.46,
-      "catalyst": 3.72,
-      "risk_inv": 10.0,
-      "total_score": 58.6,
-      "is_uncovered": false,
-      "macro_beta": null
-    },
-    {
       "ticker": "066570",
       "name": "LG전자",
       "sector": "전자반도체",
@@ -2008,6 +1978,36 @@
       "macro_beta": null
     },
     {
+      "ticker": "005880",
+      "name": "대한해운",
+      "sector": "운송물류",
+      "val_pts": 9.264,
+      "qual_pts": 9.11625,
+      "growth_raw": null,
+      "tp_pts": 5.409,
+      "roe_rev_pts": 4.826,
+      "tov_pts": 7.15,
+      "theme_raw": 0.0,
+      "theme_matches": [],
+      "growth_pts": 5.0,
+      "theme_pts": 0.0,
+      "news_pts": 7.739999999999998,
+      "dart_pos_pts": 0.0,
+      "dart_contract_pts": 0.0,
+      "risk_inv_pts": 10.0,
+      "risk_score": 0,
+      "risk_triggered": [],
+      "news_growth_pct": 286.99999999999994,
+      "fundamental": 23.38,
+      "momentum": 17.38,
+      "theme": 0.0,
+      "catalyst": 7.74,
+      "risk_inv": 10.0,
+      "total_score": 58.5,
+      "is_uncovered": true,
+      "macro_beta": 0.135
+    },
+    {
       "ticker": "085910",
       "name": "네오티스",
       "sector": "자동차",
@@ -2039,6 +2039,84 @@
       "catalyst": 5.4,
       "risk_inv": 10.0,
       "total_score": 58.32,
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "ticker": "018670",
+      "name": "SK가스",
+      "sector": "유통",
+      "val_pts": 7.952999999999999,
+      "qual_pts": 6.17175,
+      "growth_raw": null,
+      "tp_pts": 3.816,
+      "roe_rev_pts": 8.0,
+      "tov_pts": 4.864,
+      "theme_raw": 0.5718307441892226,
+      "theme_matches": [
+        {
+          "idea_id": 4,
+          "intensity": "value_chain"
+        },
+        {
+          "idea_id": 12,
+          "intensity": "perception"
+        }
+      ],
+      "growth_pts": 5.0,
+      "theme_pts": 5.161884171824318,
+      "news_pts": 7.26,
+      "dart_pos_pts": 0.0,
+      "dart_contract_pts": 0.0,
+      "risk_inv_pts": 10.0,
+      "risk_score": 0,
+      "risk_triggered": [],
+      "news_growth_pct": 263.0,
+      "fundamental": 19.12,
+      "momentum": 16.68,
+      "theme": 5.16,
+      "catalyst": 7.26,
+      "risk_inv": 10.0,
+      "total_score": 58.22,
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "ticker": "009900",
+      "name": "명신산업",
+      "sector": "자동차",
+      "val_pts": 7.7669999999999995,
+      "qual_pts": 7.74475,
+      "growth_raw": null,
+      "tp_pts": 6.882750000000001,
+      "roe_rev_pts": 3.582,
+      "tov_pts": 6.448,
+      "theme_raw": 0.8260919440352872,
+      "theme_matches": [
+        {
+          "idea_id": 5,
+          "intensity": "perception"
+        },
+        {
+          "idea_id": 6,
+          "intensity": "indirect"
+        }
+      ],
+      "growth_pts": 5.0,
+      "theme_pts": 7.457085813798566,
+      "news_pts": 3.3,
+      "dart_pos_pts": 0.0,
+      "dart_contract_pts": 0.0,
+      "risk_inv_pts": 10.0,
+      "risk_score": 0,
+      "risk_triggered": [],
+      "news_growth_pct": 64.99999999999999,
+      "fundamental": 20.51,
+      "momentum": 16.91,
+      "theme": 7.46,
+      "catalyst": 3.3,
+      "risk_inv": 10.0,
+      "total_score": 58.18,
       "is_uncovered": false,
       "macro_beta": null
     },
@@ -2109,7 +2187,7 @@
       "risk_inv": 10.0,
       "total_score": 58.05,
       "is_uncovered": true,
-      "macro_beta": 0.757
+      "macro_beta": 0.41
     },
     {
       "ticker": "082920",
@@ -2130,7 +2208,7 @@
       ],
       "growth_pts": 5.0,
       "theme_pts": 6.831971554329725,
-      "news_pts": 5.58,
+      "news_pts": 5.52,
       "dart_pos_pts": 0.0,
       "dart_contract_pts": 1.0,
       "risk_inv_pts": 8.5,
@@ -2138,13 +2216,13 @@
       "risk_triggered": [
         "lawsuit×1(15)"
       ],
-      "news_growth_pct": 179.0,
+      "news_growth_pct": 176.00000000000003,
       "fundamental": 22.5,
       "momentum": 13.63,
       "theme": 6.83,
-      "catalyst": 6.58,
+      "catalyst": 6.52,
       "risk_inv": 8.5,
-      "total_score": 58.04,
+      "total_score": 57.98,
       "is_uncovered": false,
       "macro_beta": null
     },
@@ -2167,37 +2245,37 @@
       ],
       "growth_pts": 5.0,
       "theme_pts": 5.019419268363009,
-      "news_pts": 7.3199999999999985,
+      "news_pts": 7.199999999999999,
       "dart_pos_pts": 0.0,
       "dart_contract_pts": 0.0,
       "risk_inv_pts": 10.0,
       "risk_score": 0,
       "risk_triggered": [],
-      "news_growth_pct": 265.99999999999994,
+      "news_growth_pct": 259.99999999999994,
       "fundamental": 19.64,
       "momentum": 16.0,
       "theme": 5.02,
-      "catalyst": 7.32,
+      "catalyst": 7.2,
       "risk_inv": 10.0,
-      "total_score": 57.98,
+      "total_score": 57.86,
       "is_uncovered": false,
       "macro_beta": null
     },
     {
-      "ticker": "018670",
-      "name": "SK가스",
-      "sector": "유통",
-      "val_pts": 7.952999999999999,
-      "qual_pts": 6.17175,
+      "ticker": "105560",
+      "name": "KB금융",
+      "sector": "금융",
+      "val_pts": 6.264,
+      "qual_pts": 5.13175,
       "growth_raw": null,
-      "tp_pts": 3.816,
-      "roe_rev_pts": 8.0,
-      "tov_pts": 4.864,
-      "theme_raw": 0.5718307441892226,
+      "tp_pts": 3.5505,
+      "roe_rev_pts": 3.602,
+      "tov_pts": 3.318,
+      "theme_raw": 1.4056777724642302,
       "theme_matches": [
         {
-          "idea_id": 4,
-          "intensity": "value_chain"
+          "idea_id": 11,
+          "intensity": "direct"
         },
         {
           "idea_id": 12,
@@ -2205,20 +2283,20 @@
         }
       ],
       "growth_pts": 5.0,
-      "theme_pts": 5.161884171824318,
-      "news_pts": 6.9,
+      "theme_pts": 12.688974697672663,
+      "news_pts": 8.0,
       "dart_pos_pts": 0.0,
       "dart_contract_pts": 0.0,
       "risk_inv_pts": 10.0,
       "risk_score": 0,
       "risk_triggered": [],
-      "news_growth_pct": 245.00000000000003,
-      "fundamental": 19.12,
-      "momentum": 16.68,
-      "theme": 5.16,
-      "catalyst": 6.9,
+      "news_growth_pct": 500.0,
+      "fundamental": 16.4,
+      "momentum": 10.47,
+      "theme": 12.69,
+      "catalyst": 8.0,
       "risk_inv": 10.0,
-      "total_score": 57.86,
+      "total_score": 57.56,
       "is_uncovered": false,
       "macro_beta": null
     },
@@ -2250,7 +2328,46 @@
       "risk_inv": 10.0,
       "total_score": 57.5,
       "is_uncovered": true,
-      "macro_beta": 0.634
+      "macro_beta": 0.748
+    },
+    {
+      "ticker": "055550",
+      "name": "신한지주",
+      "sector": "금융",
+      "val_pts": 6.401999999999999,
+      "qual_pts": 5.02775,
+      "growth_raw": null,
+      "tp_pts": 3.5100000000000002,
+      "roe_rev_pts": 3.586,
+      "tov_pts": 3.216,
+      "theme_raw": 1.4056777724642302,
+      "theme_matches": [
+        {
+          "idea_id": 11,
+          "intensity": "direct"
+        },
+        {
+          "idea_id": 12,
+          "intensity": "perception"
+        }
+      ],
+      "growth_pts": 5.0,
+      "theme_pts": 12.688974697672663,
+      "news_pts": 8.0,
+      "dart_pos_pts": 0.0,
+      "dart_contract_pts": 0.0,
+      "risk_inv_pts": 10.0,
+      "risk_score": 0,
+      "risk_triggered": [],
+      "news_growth_pct": 500.0,
+      "fundamental": 16.43,
+      "momentum": 10.31,
+      "theme": 12.69,
+      "catalyst": 8.0,
+      "risk_inv": 10.0,
+      "total_score": 57.43,
+      "is_uncovered": false,
+      "macro_beta": null
     },
     {
       "ticker": "403550",
@@ -2284,41 +2401,6 @@
       "catalyst": 8.0,
       "risk_inv": 10.0,
       "total_score": 57.13,
-      "is_uncovered": false,
-      "macro_beta": null
-    },
-    {
-      "ticker": "032830",
-      "name": "삼성생명",
-      "sector": "보험",
-      "val_pts": 0.0,
-      "qual_pts": 3.76025,
-      "growth_raw": null,
-      "tp_pts": 9.0,
-      "roe_rev_pts": 5.708,
-      "tov_pts": 5.7379999999999995,
-      "theme_raw": 1.0549881515922348,
-      "theme_matches": [
-        {
-          "idea_id": 11,
-          "intensity": "direct"
-        }
-      ],
-      "growth_pts": 5.0,
-      "theme_pts": 9.523319087866536,
-      "news_pts": 8.0,
-      "dart_pos_pts": 0.0,
-      "dart_contract_pts": 0.0,
-      "risk_inv_pts": 10.0,
-      "risk_score": 0,
-      "risk_triggered": [],
-      "news_growth_pct": 500.0,
-      "fundamental": 8.76,
-      "momentum": 20.45,
-      "theme": 9.52,
-      "catalyst": 8.0,
-      "risk_inv": 10.0,
-      "total_score": 56.73,
       "is_uncovered": false,
       "macro_beta": null
     },
@@ -2358,47 +2440,6 @@
       "macro_beta": null
     },
     {
-      "ticker": "222040",
-      "name": "코스맥스엔비티",
-      "sector": "음식료",
-      "val_pts": 2.91,
-      "qual_pts": 0.2275000000000002,
-      "growth_raw": null,
-      "tp_pts": 9.0,
-      "roe_rev_pts": 8.0,
-      "tov_pts": 8.0,
-      "theme_raw": 1.2174768991648262,
-      "theme_matches": [
-        {
-          "idea_id": 7,
-          "intensity": "perception"
-        },
-        {
-          "idea_id": 12,
-          "intensity": "direct"
-        }
-      ],
-      "growth_pts": 5.0,
-      "theme_pts": 10.990095931744959,
-      "news_pts": 3.48,
-      "dart_pos_pts": 0.0,
-      "dart_contract_pts": 0.0,
-      "risk_inv_pts": 8.5,
-      "risk_score": 15.0,
-      "risk_triggered": [
-        "lawsuit×1(15)"
-      ],
-      "news_growth_pct": 74.0,
-      "fundamental": 8.14,
-      "momentum": 25.0,
-      "theme": 10.99,
-      "catalyst": 3.48,
-      "risk_inv": 8.5,
-      "total_score": 56.11,
-      "is_uncovered": false,
-      "macro_beta": null
-    },
-    {
       "ticker": "042510",
       "name": "라온시큐어",
       "sector": "미디어콘텐츠",
@@ -2434,36 +2475,42 @@
       "macro_beta": null
     },
     {
-      "ticker": "425040",
-      "name": "티이엠씨",
-      "sector": "화학",
-      "val_pts": 6.776999999999999,
-      "qual_pts": 7.17275,
+      "ticker": "222040",
+      "name": "코스맥스엔비티",
+      "sector": "음식료",
+      "val_pts": 2.91,
+      "qual_pts": 0.2275000000000002,
       "growth_raw": null,
-      "tp_pts": 4.5,
-      "roe_rev_pts": 4.0,
+      "tp_pts": 9.0,
+      "roe_rev_pts": 8.0,
       "tov_pts": 8.0,
-      "theme_raw": 0.6029759530860248,
+      "theme_raw": 1.2174768991648262,
       "theme_matches": [
         {
-          "idea_id": 1,
-          "intensity": "indirect"
+          "idea_id": 7,
+          "intensity": "perception"
+        },
+        {
+          "idea_id": 12,
+          "intensity": "direct"
         }
       ],
       "growth_pts": 5.0,
-      "theme_pts": 5.443030232028744,
-      "news_pts": 5.039999999999999,
+      "theme_pts": 10.990095931744959,
+      "news_pts": 3.3,
       "dart_pos_pts": 0.0,
       "dart_contract_pts": 0.0,
-      "risk_inv_pts": 10.0,
-      "risk_score": 0,
-      "risk_triggered": [],
-      "news_growth_pct": 151.99999999999994,
-      "fundamental": 18.95,
-      "momentum": 16.5,
-      "theme": 5.44,
-      "catalyst": 5.04,
-      "risk_inv": 10.0,
+      "risk_inv_pts": 8.5,
+      "risk_score": 15.0,
+      "risk_triggered": [
+        "lawsuit×1(15)"
+      ],
+      "news_growth_pct": 64.99999999999999,
+      "fundamental": 8.14,
+      "momentum": 25.0,
+      "theme": 10.99,
+      "catalyst": 3.3,
+      "risk_inv": 8.5,
       "total_score": 55.93,
       "is_uncovered": false,
       "macro_beta": null
@@ -2496,7 +2543,7 @@
       "risk_inv": 10.0,
       "total_score": 55.38,
       "is_uncovered": true,
-      "macro_beta": 0.791
+      "macro_beta": 0.548
     },
     {
       "ticker": "336260",
@@ -2530,6 +2577,41 @@
       "catalyst": 11.0,
       "risk_inv": 10.0,
       "total_score": 55.34,
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "ticker": "425040",
+      "name": "티이엠씨",
+      "sector": "화학",
+      "val_pts": 6.776999999999999,
+      "qual_pts": 7.17275,
+      "growth_raw": null,
+      "tp_pts": 4.5,
+      "roe_rev_pts": 4.0,
+      "tov_pts": 8.0,
+      "theme_raw": 0.6029759530860248,
+      "theme_matches": [
+        {
+          "idea_id": 1,
+          "intensity": "indirect"
+        }
+      ],
+      "growth_pts": 5.0,
+      "theme_pts": 5.443030232028744,
+      "news_pts": 4.44,
+      "dart_pos_pts": 0.0,
+      "dart_contract_pts": 0.0,
+      "risk_inv_pts": 10.0,
+      "risk_score": 0,
+      "risk_triggered": [],
+      "news_growth_pct": 122.00000000000001,
+      "fundamental": 18.95,
+      "momentum": 16.5,
+      "theme": 5.44,
+      "catalyst": 4.44,
+      "risk_inv": 10.0,
+      "total_score": 55.33,
       "is_uncovered": false,
       "macro_beta": null
     },
@@ -2592,7 +2674,7 @@
       "risk_inv_pts": 10.0,
       "risk_score": 0,
       "risk_triggered": [],
-      "news_growth_pct": 326.0,
+      "news_growth_pct": 331.99999999999994,
       "fundamental": 20.12,
       "momentum": 16.43,
       "theme": 0.0,
@@ -2600,42 +2682,7 @@
       "risk_inv": 10.0,
       "total_score": 54.55,
       "is_uncovered": true,
-      "macro_beta": 0.355
-    },
-    {
-      "ticker": "064290",
-      "name": "인텍플러스",
-      "sector": "기계",
-      "val_pts": 5.823,
-      "qual_pts": 4.66375,
-      "growth_raw": null,
-      "tp_pts": 4.33125,
-      "roe_rev_pts": 4.056,
-      "tov_pts": 8.0,
-      "theme_raw": 0.8613942186943212,
-      "theme_matches": [
-        {
-          "idea_id": 1,
-          "intensity": "direct"
-        }
-      ],
-      "growth_pts": 5.0,
-      "theme_pts": 7.775757474326777,
-      "news_pts": 4.86,
-      "dart_pos_pts": 0.0,
-      "dart_contract_pts": 0.0,
-      "risk_inv_pts": 10.0,
-      "risk_score": 0,
-      "risk_triggered": [],
-      "news_growth_pct": 143.00000000000003,
-      "fundamental": 15.49,
-      "momentum": 16.39,
-      "theme": 7.78,
-      "catalyst": 4.86,
-      "risk_inv": 10.0,
-      "total_score": 54.52,
-      "is_uncovered": false,
-      "macro_beta": null
+      "macro_beta": 0.435
     },
     {
       "ticker": "009830",
@@ -2665,7 +2712,7 @@
       "risk_inv": 10.0,
       "total_score": 54.5,
       "is_uncovered": true,
-      "macro_beta": 0.818
+      "macro_beta": 0.405
     },
     {
       "ticker": "460860",
@@ -2695,7 +2742,7 @@
       "risk_inv": 10.0,
       "total_score": 54.5,
       "is_uncovered": true,
-      "macro_beta": 0.473
+      "macro_beta": 0.72
     },
     {
       "ticker": "192080",
@@ -2725,7 +2772,7 @@
       "risk_inv": 10.0,
       "total_score": 54.48,
       "is_uncovered": true,
-      "macro_beta": 0.026
+      "macro_beta": 0.108
     },
     {
       "ticker": "096530",
@@ -2747,7 +2794,7 @@
       "risk_inv_pts": 10.0,
       "risk_score": 0,
       "risk_triggered": [],
-      "news_growth_pct": 434.0,
+      "news_growth_pct": 386.00000000000006,
       "fundamental": 18.73,
       "momentum": 17.69,
       "theme": 0.0,
@@ -2755,75 +2802,40 @@
       "risk_inv": 10.0,
       "total_score": 54.42,
       "is_uncovered": true,
-      "macro_beta": 0.378
+      "macro_beta": 0.381
     },
     {
-      "ticker": "105560",
-      "name": "KB금융",
-      "sector": "금융",
-      "val_pts": 6.264,
-      "qual_pts": 5.13175,
+      "ticker": "064290",
+      "name": "인텍플러스",
+      "sector": "기계",
+      "val_pts": 5.823,
+      "qual_pts": 4.66375,
       "growth_raw": null,
-      "tp_pts": 3.5505,
-      "roe_rev_pts": 3.602,
-      "tov_pts": 3.318,
-      "theme_raw": 1.0549881515922348,
+      "tp_pts": 4.33125,
+      "roe_rev_pts": 4.056,
+      "tov_pts": 8.0,
+      "theme_raw": 0.8613942186943212,
       "theme_matches": [
         {
-          "idea_id": 11,
+          "idea_id": 1,
           "intensity": "direct"
         }
       ],
       "growth_pts": 5.0,
-      "theme_pts": 9.523319087866536,
-      "news_pts": 8.0,
+      "theme_pts": 7.775757474326777,
+      "news_pts": 4.739999999999999,
       "dart_pos_pts": 0.0,
       "dart_contract_pts": 0.0,
       "risk_inv_pts": 10.0,
       "risk_score": 0,
       "risk_triggered": [],
-      "news_growth_pct": 500.0,
-      "fundamental": 16.4,
-      "momentum": 10.47,
-      "theme": 9.52,
-      "catalyst": 8.0,
+      "news_growth_pct": 136.99999999999997,
+      "fundamental": 15.49,
+      "momentum": 16.39,
+      "theme": 7.78,
+      "catalyst": 4.74,
       "risk_inv": 10.0,
-      "total_score": 54.39,
-      "is_uncovered": false,
-      "macro_beta": null
-    },
-    {
-      "ticker": "055550",
-      "name": "신한지주",
-      "sector": "금융",
-      "val_pts": 6.401999999999999,
-      "qual_pts": 5.02775,
-      "growth_raw": null,
-      "tp_pts": 3.5100000000000002,
-      "roe_rev_pts": 3.586,
-      "tov_pts": 3.216,
-      "theme_raw": 1.0549881515922348,
-      "theme_matches": [
-        {
-          "idea_id": 11,
-          "intensity": "direct"
-        }
-      ],
-      "growth_pts": 5.0,
-      "theme_pts": 9.523319087866536,
-      "news_pts": 8.0,
-      "dart_pos_pts": 0.0,
-      "dart_contract_pts": 0.0,
-      "risk_inv_pts": 10.0,
-      "risk_score": 0,
-      "risk_triggered": [],
-      "news_growth_pct": 500.0,
-      "fundamental": 16.43,
-      "momentum": 10.31,
-      "theme": 9.52,
-      "catalyst": 8.0,
-      "risk_inv": 10.0,
-      "total_score": 54.26,
+      "total_score": 54.4,
       "is_uncovered": false,
       "macro_beta": null
     },
@@ -2846,19 +2858,54 @@
       ],
       "growth_pts": 5.0,
       "theme_pts": 5.019419268363009,
-      "news_pts": 4.44,
+      "news_pts": 4.379999999999999,
       "dart_pos_pts": 0.0,
       "dart_contract_pts": 0.0,
       "risk_inv_pts": 10.0,
       "risk_score": 0,
       "risk_triggered": [],
-      "news_growth_pct": 122.00000000000001,
+      "news_growth_pct": 118.99999999999994,
       "fundamental": 18.71,
       "momentum": 15.95,
       "theme": 5.02,
-      "catalyst": 4.44,
+      "catalyst": 4.38,
       "risk_inv": 10.0,
-      "total_score": 54.12,
+      "total_score": 54.06,
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "ticker": "230240",
+      "name": "에치에프알",
+      "sector": "전자반도체",
+      "val_pts": 6.558,
+      "qual_pts": 6.53575,
+      "growth_raw": null,
+      "tp_pts": 4.06125,
+      "roe_rev_pts": 6.024,
+      "tov_pts": 7.116,
+      "theme_raw": 0.556048559030594,
+      "theme_matches": [
+        {
+          "idea_id": 10,
+          "intensity": "indirect"
+        }
+      ],
+      "growth_pts": 5.0,
+      "theme_pts": 5.019419268363009,
+      "news_pts": 3.6,
+      "dart_pos_pts": 0.0,
+      "dart_contract_pts": 0.0,
+      "risk_inv_pts": 10.0,
+      "risk_score": 0,
+      "risk_triggered": [],
+      "news_growth_pct": 79.99999999999999,
+      "fundamental": 18.09,
+      "momentum": 17.2,
+      "theme": 5.02,
+      "catalyst": 3.6,
+      "risk_inv": 10.0,
+      "total_score": 53.91,
       "is_uncovered": false,
       "macro_beta": null
     },
@@ -2882,7 +2929,7 @@
       "risk_inv_pts": 10.0,
       "risk_score": 0,
       "risk_triggered": [],
-      "news_growth_pct": 463.99999999999994,
+      "news_growth_pct": 458.0,
       "fundamental": 18.37,
       "momentum": 16.52,
       "theme": 0.0,
@@ -2890,72 +2937,7 @@
       "risk_inv": 10.0,
       "total_score": 53.89,
       "is_uncovered": true,
-      "macro_beta": 0.342
-    },
-    {
-      "ticker": "230240",
-      "name": "에치에프알",
-      "sector": "전자반도체",
-      "val_pts": 6.558,
-      "qual_pts": 6.53575,
-      "growth_raw": null,
-      "tp_pts": 4.06125,
-      "roe_rev_pts": 6.024,
-      "tov_pts": 7.116,
-      "theme_raw": 0.556048559030594,
-      "theme_matches": [
-        {
-          "idea_id": 10,
-          "intensity": "indirect"
-        }
-      ],
-      "growth_pts": 5.0,
-      "theme_pts": 5.019419268363009,
-      "news_pts": 3.54,
-      "dart_pos_pts": 0.0,
-      "dart_contract_pts": 0.0,
-      "risk_inv_pts": 10.0,
-      "risk_score": 0,
-      "risk_triggered": [],
-      "news_growth_pct": 76.99999999999999,
-      "fundamental": 18.09,
-      "momentum": 17.2,
-      "theme": 5.02,
-      "catalyst": 3.54,
-      "risk_inv": 10.0,
-      "total_score": 53.85,
-      "is_uncovered": false,
-      "macro_beta": null
-    },
-    {
-      "ticker": "058430",
-      "name": "포스코스틸리온",
-      "sector": "철강금속",
-      "val_pts": 7.497,
-      "qual_pts": 6.06775,
-      "growth_raw": null,
-      "tp_pts": 8.77275,
-      "roe_rev_pts": 2.63,
-      "tov_pts": 8.0,
-      "theme_raw": 0.0,
-      "theme_matches": [],
-      "growth_pts": 5.0,
-      "theme_pts": 0.0,
-      "news_pts": 5.76,
-      "dart_pos_pts": 0.0,
-      "dart_contract_pts": 0.0,
-      "risk_inv_pts": 10.0,
-      "risk_score": 0,
-      "risk_triggered": [],
-      "news_growth_pct": 188.0,
-      "fundamental": 18.56,
-      "momentum": 19.4,
-      "theme": 0.0,
-      "catalyst": 5.76,
-      "risk_inv": 10.0,
-      "total_score": 53.72,
-      "is_uncovered": true,
-      "macro_beta": -0.14
+      "macro_beta": 0.313
     },
     {
       "ticker": "259960",
@@ -2985,7 +2967,7 @@
       "risk_inv": 10.0,
       "total_score": 53.4,
       "is_uncovered": true,
-      "macro_beta": 0.174
+      "macro_beta": 0.518
     },
     {
       "ticker": "263750",
@@ -3015,7 +2997,7 @@
       "risk_inv": 10.0,
       "total_score": 53.39,
       "is_uncovered": true,
-      "macro_beta": -1.096
+      "macro_beta": -0.292
     },
     {
       "ticker": "011930",
@@ -3037,7 +3019,7 @@
       "risk_inv_pts": 10.0,
       "risk_score": 0,
       "risk_triggered": [],
-      "news_growth_pct": 350.0,
+      "news_growth_pct": 359.0,
       "fundamental": 17.94,
       "momentum": 16.18,
       "theme": 0.0,
@@ -3045,7 +3027,37 @@
       "risk_inv": 10.0,
       "total_score": 53.12,
       "is_uncovered": true,
-      "macro_beta": -1.542
+      "macro_beta": -1.797
+    },
+    {
+      "ticker": "058430",
+      "name": "포스코스틸리온",
+      "sector": "철강금속",
+      "val_pts": 7.497,
+      "qual_pts": 6.06775,
+      "growth_raw": null,
+      "tp_pts": 8.77275,
+      "roe_rev_pts": 2.63,
+      "tov_pts": 8.0,
+      "theme_raw": 0.0,
+      "theme_matches": [],
+      "growth_pts": 5.0,
+      "theme_pts": 0.0,
+      "news_pts": 4.9799999999999995,
+      "dart_pos_pts": 0.0,
+      "dart_contract_pts": 0.0,
+      "risk_inv_pts": 10.0,
+      "risk_score": 0,
+      "risk_triggered": [],
+      "news_growth_pct": 148.99999999999997,
+      "fundamental": 18.56,
+      "momentum": 19.4,
+      "theme": 0.0,
+      "catalyst": 4.98,
+      "risk_inv": 10.0,
+      "total_score": 52.94,
+      "is_uncovered": true,
+      "macro_beta": -0.256
     },
     {
       "ticker": "066980",
@@ -3075,7 +3087,7 @@
       "risk_inv": 10.0,
       "total_score": 52.85,
       "is_uncovered": true,
-      "macro_beta": 0.39
+      "macro_beta": 0.453
     },
     {
       "ticker": "047040",
@@ -3105,7 +3117,7 @@
       "risk_inv": 10.0,
       "total_score": 52.8,
       "is_uncovered": true,
-      "macro_beta": 1.456
+      "macro_beta": 0.784
     },
     {
       "ticker": "068270",
@@ -3174,7 +3186,7 @@
       "risk_inv": 10.0,
       "total_score": 52.25,
       "is_uncovered": true,
-      "macro_beta": 0.497
+      "macro_beta": 0.556
     },
     {
       "ticker": "028670",
@@ -3204,7 +3216,7 @@
       "risk_inv": 10.0,
       "total_score": 52.05,
       "is_uncovered": true,
-      "macro_beta": 0.194
+      "macro_beta": 0.359
     },
     {
       "ticker": "223250",
@@ -3220,21 +3232,21 @@
       "theme_matches": [],
       "growth_pts": 5.0,
       "theme_pts": 0.0,
-      "news_pts": 4.9799999999999995,
+      "news_pts": 5.039999999999999,
       "dart_pos_pts": 0.0,
       "dart_contract_pts": 0.0,
       "risk_inv_pts": 10.0,
       "risk_score": 0,
       "risk_triggered": [],
-      "news_growth_pct": 148.99999999999997,
+      "news_growth_pct": 151.99999999999994,
       "fundamental": 19.64,
       "momentum": 17.05,
       "theme": 0.0,
-      "catalyst": 4.98,
+      "catalyst": 5.04,
       "risk_inv": 10.0,
-      "total_score": 51.67,
+      "total_score": 51.73,
       "is_uncovered": true,
-      "macro_beta": 0.8
+      "macro_beta": 0.618
     },
     {
       "ticker": "051910",
@@ -3264,7 +3276,7 @@
       "risk_inv": 10.0,
       "total_score": 51.62,
       "is_uncovered": true,
-      "macro_beta": 0.931
+      "macro_beta": 1.205
     },
     {
       "ticker": "006400",
@@ -3294,7 +3306,7 @@
       "risk_inv": 10.0,
       "total_score": 51.53,
       "is_uncovered": true,
-      "macro_beta": 0.704
+      "macro_beta": 1.0
     },
     {
       "ticker": "336370",
@@ -3321,7 +3333,7 @@
       "risk_inv_pts": 10.0,
       "risk_score": 0,
       "risk_triggered": [],
-      "news_growth_pct": 460.99999999999994,
+      "news_growth_pct": 467.0,
       "fundamental": 10.48,
       "momentum": 16.18,
       "theme": 5.44,
@@ -3345,21 +3357,21 @@
       "theme_matches": [],
       "growth_pts": 5.0,
       "theme_pts": 0.0,
-      "news_pts": 6.0,
+      "news_pts": 5.7,
       "dart_pos_pts": 0.0,
       "dart_contract_pts": 0.0,
       "risk_inv_pts": 10.0,
       "risk_score": 0,
       "risk_triggered": [],
-      "news_growth_pct": 200.0,
+      "news_growth_pct": 184.99999999999997,
       "fundamental": 18.18,
       "momentum": 16.5,
       "theme": 0.0,
-      "catalyst": 6.0,
+      "catalyst": 5.7,
       "risk_inv": 10.0,
-      "total_score": 50.68,
+      "total_score": 50.38,
       "is_uncovered": true,
-      "macro_beta": 1.39
+      "macro_beta": 0.998
     },
     {
       "ticker": "096770",
@@ -3391,7 +3403,7 @@
       "risk_inv": 7.0,
       "total_score": 50.35,
       "is_uncovered": true,
-      "macro_beta": 0.487
+      "macro_beta": 0.574
     },
     {
       "ticker": "488280",
@@ -3421,7 +3433,7 @@
       "risk_inv": 10.0,
       "total_score": 48.36,
       "is_uncovered": true,
-      "macro_beta": 0.277
+      "macro_beta": 0.988
     },
     {
       "ticker": "089010",
@@ -3437,21 +3449,21 @@
       "theme_matches": [],
       "growth_pts": 5.0,
       "theme_pts": 0.0,
-      "news_pts": 3.48,
+      "news_pts": 3.36,
       "dart_pos_pts": 0.0,
       "dart_contract_pts": 0.0,
       "risk_inv_pts": 10.0,
       "risk_score": 0,
       "risk_triggered": [],
-      "news_growth_pct": 74.0,
+      "news_growth_pct": 68.0,
       "fundamental": 17.94,
       "momentum": 16.71,
       "theme": 0.0,
-      "catalyst": 3.48,
+      "catalyst": 3.36,
       "risk_inv": 10.0,
-      "total_score": 48.13,
+      "total_score": 48.01,
       "is_uncovered": true,
-      "macro_beta": 1.044
+      "macro_beta": 1.127
     },
     {
       "ticker": "382800",
@@ -3467,21 +3479,21 @@
       "theme_matches": [],
       "growth_pts": 5.0,
       "theme_pts": 0.0,
-      "news_pts": 2.1,
+      "news_pts": 2.22,
       "dart_pos_pts": 0.0,
       "dart_contract_pts": 0.0,
       "risk_inv_pts": 10.0,
       "risk_score": 0,
       "risk_triggered": [],
-      "news_growth_pct": 5.000000000000004,
+      "news_growth_pct": 11.00000000000001,
       "fundamental": 18.47,
       "momentum": 17.1,
       "theme": 0.0,
-      "catalyst": 2.1,
+      "catalyst": 2.22,
       "risk_inv": 10.0,
-      "total_score": 47.67,
+      "total_score": 47.79,
       "is_uncovered": true,
-      "macro_beta": 0.644
+      "macro_beta": 0.726
     },
     {
       "ticker": "243840",
@@ -3497,21 +3509,21 @@
       "theme_matches": [],
       "growth_pts": 5.0,
       "theme_pts": 0.0,
-      "news_pts": 1.38,
+      "news_pts": 1.74,
       "dart_pos_pts": 0.0,
       "dart_contract_pts": 0.0,
       "risk_inv_pts": 10.0,
       "risk_score": 0,
       "risk_triggered": [],
-      "news_growth_pct": -30.999999999999993,
+      "news_growth_pct": -13.0,
       "fundamental": 19.56,
       "momentum": 16.47,
       "theme": 0.0,
-      "catalyst": 1.38,
+      "catalyst": 1.74,
       "risk_inv": 10.0,
-      "total_score": 47.41,
+      "total_score": 47.77,
       "is_uncovered": true,
-      "macro_beta": 0.209
+      "macro_beta": 0.562
     }
   ]
 }

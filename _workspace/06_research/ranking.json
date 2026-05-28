@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-27T21:02:35+09:00",
+  "as_of": "2026-05-28T13:41:23+09:00",
   "top_n": 15,
   "ranking": [
     {
@@ -100,22 +100,6 @@
     },
     {
       "rank": 7,
-      "ticker": "006260",
-      "name": "LS",
-      "sector": "금융",
-      "total_score": 67.16,
-      "breakdown": {
-        "fundamental": 13.29,
-        "momentum": 17.87,
-        "theme": 15.0,
-        "catalyst": 11.0,
-        "risk_inv": 10.0
-      },
-      "is_uncovered": false,
-      "macro_beta": null
-    },
-    {
-      "rank": 8,
       "ticker": "329180",
       "name": "HD현대중공업",
       "sector": "운송장비",
@@ -131,7 +115,7 @@
       "macro_beta": null
     },
     {
-      "rank": 9,
+      "rank": 8,
       "ticker": "001440",
       "name": "대한전선",
       "sector": "전기장비",
@@ -147,7 +131,7 @@
       "macro_beta": null
     },
     {
-      "rank": 10,
+      "rank": 9,
       "ticker": "028050",
       "name": "삼성E&A",
       "sector": "전문서비스",
@@ -163,16 +147,32 @@
       "macro_beta": null
     },
     {
-      "rank": 11,
+      "rank": 10,
       "ticker": "018260",
       "name": "삼성에스디에스",
       "sector": "IT서비스",
-      "total_score": 66.46,
+      "total_score": 66.6,
       "breakdown": {
         "fundamental": 20.02,
         "momentum": 16.94,
         "theme": 11.64,
-        "catalyst": 7.86,
+        "catalyst": 8.0,
+        "risk_inv": 10.0
+      },
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "rank": 11,
+      "ticker": "006260",
+      "name": "LS",
+      "sector": "금융",
+      "total_score": 66.16,
+      "breakdown": {
+        "fundamental": 13.29,
+        "momentum": 17.87,
+        "theme": 15.0,
+        "catalyst": 10.0,
         "risk_inv": 10.0
       },
       "is_uncovered": false,
@@ -183,12 +183,12 @@
       "ticker": "060370",
       "name": "LS마린솔루션",
       "sector": "건설",
-      "total_score": 66.32,
+      "total_score": 65.32,
       "breakdown": {
         "fundamental": 17.97,
         "momentum": 16.85,
         "theme": 10.5,
-        "catalyst": 11.0,
+        "catalyst": 10.0,
         "risk_inv": 10.0
       },
       "is_uncovered": false,

@@ -51,7 +51,8 @@ NEW_MAPPINGS = {
         {'id': 3, 'intensity': 'perception', 'evidence': '건설 부문 SMR·발전 EPC 가능성'},
     ]},
     '032830': {'name': '삼성생명', 'ideas': [
-        {'id': 11, 'intensity': 'direct', 'evidence': '밸류업 핵심 (PBR 낮은 보험 대표주)'},
+        {'id': 11, 'intensity': 'direct', 'evidence': '밸류업 핵심 (PBR 낮은 보험 대표주, 배당수익률 3%+)'},
+        {'id': 12, 'intensity': 'perception', 'evidence': '내수 금융·생명보험 (안정 배당주)'},
     ]},
     '034020': {'name': '두산에너빌리티', 'ideas': [
         {'id': 3, 'intensity': 'direct', 'evidence': 'SMR 주기기 (NuScale·X-energy 협력)'},
@@ -69,7 +70,8 @@ NEW_MAPPINGS = {
         {'id': 10, 'intensity': 'direct', 'evidence': '인공위성·발사체 사업'},
     ]},
     '055550': {'name': '신한지주', 'ideas': [
-        {'id': 11, 'intensity': 'direct', 'evidence': '밸류업 핵심 (자사주 소각·배당)'},
+        {'id': 11, 'intensity': 'direct', 'evidence': '밸류업 핵심 (자사주 소각·배당수익률 4%+)'},
+        {'id': 12, 'intensity': 'perception', 'evidence': '내수 금융 (안정 배당주)'},
     ]},
     '066570': {'name': 'LG전자', 'ideas': [
         {'id': 1, 'intensity': 'indirect', 'evidence': 'AI 가전·서버용 모니터'},
@@ -80,7 +82,8 @@ NEW_MAPPINGS = {
         {'id': 8, 'intensity': 'perception', 'evidence': '항체치료 (CRISPR 인접)'},
     ]},
     '105560': {'name': 'KB금융', 'ideas': [
-        {'id': 11, 'intensity': 'direct', 'evidence': '밸류업 대표주 (PBR 0.5 미만, 자사주 매입)'},
+        {'id': 11, 'intensity': 'direct', 'evidence': '밸류업 대표주 (PBR 0.5 미만, 자사주 매입, 배당수익률 4%+)'},
+        {'id': 12, 'intensity': 'perception', 'evidence': '내수 금융 (안정 배당주 대표)'},
     ]},
     '207940': {'name': '삼성바이오로직스', 'ideas': [
         {'id': 7, 'intensity': 'indirect', 'evidence': 'GLP-1 CDMO·삼성그룹 바이오 핵심'},

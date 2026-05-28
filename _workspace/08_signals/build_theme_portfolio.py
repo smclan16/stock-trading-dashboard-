@@ -49,9 +49,16 @@ def main():
                     help='default_picks 비중 (%) override — 안정형 30%, 공격형 5% 등')
     ap.add_argument('--max-tech-vol', type=float, default=None,
                     help='기술점수 변동성 임계 — 안정형 낮음, 공격형 높음')
-    # v10: 6축 + 기술점수 유형별 재가중 (안정형=가치/퀄리티, 공격형=모멘텀)
+    # v10: 6축 + 기술점수 유형별 재가중
     ap.add_argument('--axis-weights', default=None,
-                    help='6축+기술점수 가중치 JSON. 예: fundamental=0.4,risk_inv=0.3,tech=0.1,momentum=0.05,theme=0.05,catalyst=0.1')
+                    help='6축+기술점수 가중치. 예: fundamental=0.4,risk_inv=0.3,...')
+    # v11: 종목 비중 multiplier — 안정형=배당+저변동 우대, 과열·성장 패널티 / 공격형=모멘텀 우대
+    ap.add_argument('--dividend-boost', type=float, default=0.0,
+                    help='추정 배당수익률(%) 1%당 비중 multiplier (예: 0.15 → 배당 4%면 ×1.6)')
+    ap.add_argument('--overheating-penalty', type=float, default=0.0,
+                    help='52주 위치 80%+ 종목에 비중 multiplier 감소 (예: 0.5 → 위치 100% 종목 ×0.5)')
+    ap.add_argument('--momentum-boost', type=float, default=0.0,
+                    help='모멘텀 점수 1점당 비중 multiplier 증가 (예: 0.05 → 모멘25면 ×1.25 추가)')
     args = ap.parse_args()
 
     axis_w = {'fundamental': 1.0, 'momentum': 1.0, 'theme': 1.0,
@@ -153,14 +160,123 @@ def main():
 
     print(f'\n[3/5] 테마별 종목 선정 (cap 초과 시 분할, MA60 위, 중복 회피)…')
 
+    # 주요 종목 배당수익률 (사용자 직접 등록·갱신 가능, 향후 FnSpace 자동 연동)
+    KNOWN_DIVIDEND_YIELD = {
+        # 고배당주 (금융·통신·정유·내수)
+        '105560': 5.5,  # KB금융
+        '055550': 5.0,  # 신한지주
+        '086790': 5.0,  # 하나금융
+        '316140': 4.5,  # 우리금융
+        '138930': 5.5,  # BNK금융
+        '032830': 4.0,  # 삼성생명
+        '088350': 5.5,  # 한화생명
+        '030200': 6.0,  # KT
+        '017670': 6.5,  # SK텔레콤
+        '032640': 5.0,  # LG유플러스
+        '033780': 5.0,  # KT&G
+        '005490': 5.0,  # POSCO홀딩스
+        '096770': 4.5,  # SK이노베이션
+        '010950': 5.0,  # S-Oil
+        '003490': 5.5,  # 대한항공
+        '003410': 5.0,  # 쌍용C&E
+        '047040': 4.5,  # 대우건설
+        '012330': 3.5,  # 현대모비스
+        '005380': 3.5,  # 현대차
+        '000270': 4.0,  # 기아
+        '015760': 5.0,  # 한국전력
+        '034730': 3.5,  # SK
+        '003550': 2.5,  # LG
+        '028260': 2.0,  # 삼성물산
+        '005930': 2.5,  # 삼성전자
+        '009150': 1.5,  # 삼성전기
+        '011170': 3.0,  # 롯데케미칼
+        '066570': 1.5,  # LG전자
+        '004020': 3.0,  # 현대제철
+        '004800': 3.5,  # 효성
+        '023530': 3.0,  # 롯데쇼핑
+        '161890': 1.5,  # 한국콜마
+        '108670': 4.0,  # LX하우시스
+        '383800': 3.0,  # LX홀딩스
+        '004150': 3.5,  # 한솔홀딩스
+        '078930': 4.5,  # GS
+        '005880': 5.0,  # 대한해운
+        '016380': 5.0,  # KG스틸
+        '460860': 4.0,  # 동국제강
+        # 성장주 (배당 미미)
+        '028050': 0.5,  # 삼성E&A
+        '298040': 0.5,  # 효성중공업
+        '267260': 0.3,  # HD현대일렉트릭
+        '034020': 0.0,  # 두산에너빌리티
+        '009540': 1.0,  # HD현대조선해양
+        '042660': 0.5,  # 한화오션
+        '329180': 0.5,  # HD현대중공업
+        '082740': 0.0,  # 한화엔진
+        '077970': 0.0,  # STX엔진
+        '085910': 0.0,  # 네오티스
+        '000660': 1.5,  # SK하이닉스
+        '402340': 0.0,  # SK스퀘어
+        '018260': 1.5,  # 삼성SDS
+        '207940': 0.5,  # 삼성바이오로직스
+        '068270': 0.0,  # 셀트리온
+        '047810': 1.5,  # 한국항공우주
+        '012450': 1.0,  # 한화에어로스페이스
+        '373220': 0.0,  # LG에너지솔루션
+        '005500': 1.5,  # 삼진제약
+    }
+
+    def estimate_dividend_yield(ticker, mcap_eok, beta):
+        """배당수익률 추정. 알려진 값 우선, 없으면 시총·β 기반 proxy."""
+        if ticker in KNOWN_DIVIDEND_YIELD:
+            return KNOWN_DIVIDEND_YIELD[ticker]
+        # Proxy fallback (시총 + β)
+        y = 0.0
+        if mcap_eok >= 100000: y += 2.5
+        elif mcap_eok >= 30000: y += 1.8
+        elif mcap_eok >= 10000: y += 1.2
+        elif mcap_eok >= 3000: y += 0.6
+        if beta is not None and beta < 0.5: y += 1.5
+        elif beta is not None and beta < 0.8: y += 0.8
+        return min(y, 6.0)
+
+    def apply_multipliers(score, ticker, pf_data, axes):
+        """v12: 유형별 종목 비중 multiplier.
+        - 안정형: 배당주 강력 boost (배당 4%+ ×3) + 배당 미달 종목(<1.5%) 강한 패널티 ×0.3
+        - 과열(52w 80%+) 패널티
+        - 공격형: 모멘텀 boost
+        """
+        mult = 1.0
+        ind = tech_scores.get(ticker, {}).get('indicators') or {}
+        mcap = pf_data.get('mcap_eok', 0)
+        beta = pf_data.get('macro_beta')
+
+        if args.dividend_boost > 0:
+            div = estimate_dividend_yield(ticker, mcap, beta)
+            # 배당 미달 종목 강한 패널티 (안정형이 배당주만 선택하도록)
+            if div < 1.5:
+                mult *= 0.3
+            else:
+                mult *= (1 + args.dividend_boost * div)
+
+        if args.overheating_penalty > 0:
+            pos_52w = ind.get('pos_52w_pct') or 0
+            if pos_52w >= 80:
+                overheating = (pos_52w - 80) / 20
+                mult *= (1 - args.overheating_penalty * overheating)
+
+        if args.momentum_boost > 0:
+            mom = axes.get('momentum', 0)
+            mult *= (1 + args.momentum_boost * mom / 25)
+
+        return score * max(mult, 0.05)
+
     def combined_score(ticker):
-        """v10: 유형별 6축 + 기술점수 가중 결합. axis_w 정의 시 그 가중치, 없으면 기존 (매력도×0.5 + 기술×0.5)."""
+        """v10/v11: 6축 + 기술점수 가중 결합 + 유형별 multiplier"""
         tsc = tech_scores.get(ticker, {}).get('tech_score')
         if tsc is None:
             return None
+        axes = raw_axes_map.get(ticker, {})
         if args.axis_weights:
-            axes = raw_axes_map.get(ticker, {})
-            return (
+            base = (
                 axis_w['fundamental'] * axes.get('fundamental', 0) +
                 axis_w['momentum'] * axes.get('momentum', 0) +
                 axis_w['theme'] * axes.get('theme', 0) +
@@ -168,9 +284,13 @@ def main():
                 axis_w['risk_inv'] * axes.get('risk_inv', 0) +
                 axis_w['tech'] * tsc
             )
-        # default: 기존 방식
-        att = attr_map.get(ticker, 0)
-        return w_a * att + w_t * tsc
+        else:
+            base = w_a * attr_map.get(ticker, 0) + w_t * tsc
+
+        # v11: 유형별 multiplier 적용
+        if args.dividend_boost > 0 or args.overheating_penalty > 0 or args.momentum_boost > 0:
+            return apply_multipliers(base, ticker, pf_meta.get(ticker, {}), axes)
+        return base
 
     intensity_w = {'direct': 1.0, 'indirect': 0.7, 'value_chain': 0.4, 'perception': 0.3}
     used_tickers = set()
@@ -219,7 +339,9 @@ def main():
             picked = []
         else:
             top_cap = size_cap_for(ranked[0]['size_tier'])
-            K = max(1, min(3, math.ceil(target_alloc / top_cap)))
+            # v12: 매칭 풀 큰 테마는 K ≥ 2 강제 (다양성 — 예: #1 AI인프라 → 삼성전자 + SK하이닉스 둘 다)
+            min_k = 2 if len(t['matched_tickers']) >= 8 else 1
+            K = max(min_k, min(3, math.ceil(target_alloc / top_cap)))
             # 후보 K개 점수 비례 분배
             cands = ranked[:K]
             score_sum = sum(c['weighted_score'] for c in cands)
