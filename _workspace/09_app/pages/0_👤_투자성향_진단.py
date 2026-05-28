@@ -201,12 +201,22 @@ if submitted:
                 {'항목': '연환산 변동성 한도', '값': f'{max_vol}%', '의미': '포트폴리오 σ 상한'},
             ]), hide_index=True, use_container_width=True)
 
-            st.info(
-                '💡 **다음 단계** — 변경된 투자성향이 매매에 반영되려면:\n'
-                '1. ⚙️ 운영 가이드 페이지 → "▶ 매크로 → 검증 → 최종 포트 전체 재실행" 클릭\n'
-                '   (equity_pct·단일·섹터 한도가 새 유형으로 재계산)\n'
-                '2. 또는 🤖 자동매매 시뮬레이션에서 새 시뮬레이션 시작'
-            )
+            # 해당 유형 theme_portfolio가 사전 산출되어 있는지 확인
+            WS_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            tp_path = os.path.join(WS_ROOT, '08_signals', f'theme_portfolio_{tname}.json')
+            if os.path.exists(tp_path):
+                tp = json.load(open(tp_path, encoding='utf-8'))
+                st.success(
+                    f'🎯 **{tname}** 유형의 모델 포트폴리오가 사전 산출되어 있습니다 — {tp["n_holdings"]}종목, equity {tp["equity_pct"]}%\n\n'
+                    f'**바로 시뮬레이션 가능**: 🤖 자동매매 시뮬레이션 페이지 → 새 시뮬레이션 시작 시 "{tname}" 유형이 자동 선택됩니다.'
+                )
+                # 5개 유형 비교 페이지 안내
+                st.info('💡 **여러 유형 동시 비교**: 📊 유형별 포트 비교 페이지 → 일괄 시뮬레이션 시작')
+            else:
+                st.warning(
+                    f'⚠ {tname} 유형 사전 산출물 없음 — 로컬에서 다음 실행 필요:\n'
+                    f'`python3 _workspace/07_portfolio/multi_profile_generate.py`'
+                )
         except Exception as e:
             st.error(f'저장 실패: {e}\n\n*Streamlit Cloud는 파일 시스템이 휘발성이라 재배포 시 초기화됩니다.*')
 

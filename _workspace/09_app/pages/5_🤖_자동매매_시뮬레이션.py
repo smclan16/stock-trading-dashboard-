@@ -158,55 +158,126 @@ with tab_live:
 
     col_a, col_b = st.columns([1, 1])
 
-    # ─── 신규 시뮬레이션 생성 ─────────────────────────
+    # ─── 신규 시뮬레이션 생성 (투자성향 유형 자동 매핑) ─────────
     with col_a:
         st.markdown('### ➕ 새 시뮬레이션 시작')
+
+        # 현재 진단된 투자성향 (constraints.json) 로드
+        WS_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        cur_profile_path = os.path.join(WS_ROOT, '01_profile', 'constraints.json')
+        cur_profile_type = None
+        if os.path.exists(cur_profile_path):
+            try:
+                cur_profile_type = json.load(open(cur_profile_path, encoding='utf-8')).get('investor_type')
+            except Exception:
+                pass
+
+        # 5개 유형별 theme_portfolio 존재 확인
+        AVAILABLE_PROFILES = []
+        for pname in ['안정형', '안정추구형', '위험중립형', '적극투자형', '공격투자형']:
+            tp_path = os.path.join(WS_ROOT, '08_signals', f'theme_portfolio_{pname}.json')
+            if os.path.exists(tp_path):
+                AVAILABLE_PROFILES.append(pname)
+
+        if cur_profile_type:
+            st.info(f'👤 현재 진단된 투자성향: **{cur_profile_type}**')
+
         with st.form('new_sim'):
-            sim_name = st.text_input('시뮬레이션 이름', value=f'v8 적극투자형 {datetime.date.today().strftime("%y%m%d")}')
+            # 사용할 포트 선택 (진단 결과 default)
+            portfolio_choices = ['현재 모델 포트 (theme_portfolio.json)'] + [f'유형: {p}' for p in AVAILABLE_PROFILES]
+            default_idx = 0
+            if cur_profile_type and cur_profile_type in AVAILABLE_PROFILES:
+                default_idx = AVAILABLE_PROFILES.index(cur_profile_type) + 1
+            portfolio_choice = st.selectbox(
+                '📦 사용할 포트폴리오',
+                options=portfolio_choices,
+                index=default_idx,
+                help='투자성향 진단 결과에 따라 자동 선택됩니다. 다른 유형도 시뮬레이션 가능.'
+            )
+
+            sim_name = st.text_input('시뮬레이션 이름',
+                                     value=f'{cur_profile_type or "default"} {datetime.date.today().strftime("%y%m%d")}')
             start_date = st.date_input('시작 일자', value=datetime.date.today())
             start_capital_eok = st.number_input('시작 자본 (억원)', min_value=0.1, value=1.0, step=0.1)
             notes = st.text_area('메모', value='시스템 자동 추천 포트폴리오 추종', height=80)
             submitted = st.form_submit_button('🚀 시뮬레이션 시작', type='primary', use_container_width=True)
+
             if submitted:
-                # entry_order_plan.json 로드
-                entry_plan = loader.load('entry_plan')
-                if not entry_plan or not entry_plan.get('orders_1st'):
-                    st.error('entry_order_plan.json 없음. `build_entry_order_plan.py --use-final` 먼저 실행 필요.')
-                else:
+                # 선택한 포트 → theme_portfolio 또는 entry_plan 로드
+                if portfolio_choice.startswith('유형:'):
+                    pname = portfolio_choice.split('유형:')[1].strip()
+                    tp_path = os.path.join(WS_ROOT, '08_signals', f'theme_portfolio_{pname}.json')
+                    tp = json.load(open(tp_path, encoding='utf-8'))
+                    holdings = tp['holdings']
+                    cap_won = start_capital_eok * 1e8
                     sim_id = db.create_simulation(
                         name=sim_name,
                         start_date=start_date.strftime('%Y%m%d'),
-                        start_capital=start_capital_eok * 1e8,
-                        notes=notes,
+                        start_capital=cap_won,
+                        notes=f'{notes} | 유형: {pname} (equity {tp["equity_pct"]}%)',
                     )
-                    # 1차 매수 일괄 등록 (키움 매매비용 자동 차감)
                     n_orders = 0
-                    for o in entry_plan['orders_1st']:
-                        if o.get('first_shares', 0) > 0:
-                            mi = o.get('matched_ideas') or []
-                            if o.get('is_default_pick'):
-                                theme_id = 'default'
-                            elif mi:
-                                theme_id = f'#{mi[0]}'
-                            else:
-                                theme_id = None
-                            price = float(o['close'])
-                            shares = int(o['first_shares'])
-                            c = costs.calc_trade_cost(price, shares, 'BUY')
-                            db.add_sim_trade(
-                                sim_id=sim_id,
-                                trade_date=start_date.strftime('%Y%m%d'),
-                                ticker=o['ticker'], name=o['name'],
-                                action='BUY', shares=shares,
-                                price=price,
-                                fee=c['fee'] + c['slippage'], tax=c['tax'],
-                                theme_id=theme_id,
-                                signal_type='ENTRY_1ST',
-                                note=f'1차 매수 (비중 {o["capital_weight_pct"]:.2f}%) | 수수료+슬리피지 {c["fee"]+c["slippage"]:,}원',
-                            )
-                            n_orders += 1
-                    st.success(f'✅ 시뮬레이션 #{sim_id} 시작! 1차 매수 {n_orders}건 (키움 매매비용 자동 반영)')
+                    for h in holdings:
+                        ind = h.get('indicators') or {}
+                        price = ind.get('close')
+                        if not price:
+                            continue
+                        cap_pct = h.get('capital_weight_pct', 0)
+                        budget = cap_won * cap_pct / 100
+                        first_won = budget * 0.75  # v8: 1차 75%
+                        shares = int(first_won / price) if price > 0 else 0
+                        if shares <= 0 and budget >= price:
+                            shares = 1
+                        if shares <= 0:
+                            continue
+                        c = costs.calc_trade_cost(price, shares, 'BUY')
+                        theme_id = 'default' if h['idea_id'] == 'default' else f'#{h["idea_id"]}'
+                        db.add_sim_trade(
+                            sim_id=sim_id,
+                            trade_date=start_date.strftime('%Y%m%d'),
+                            ticker=h['ticker'], name=h['name'],
+                            action='BUY', shares=shares, price=price,
+                            fee=c['fee'] + c['slippage'], tax=c['tax'],
+                            theme_id=theme_id,
+                            signal_type='ENTRY_1ST',
+                            note=f'{pname} 1차 75% (비중 {cap_pct:.2f}%)',
+                        )
+                        n_orders += 1
+                    st.success(f'✅ **{pname}** 유형 시뮬레이션 #{sim_id} 시작! 1차 매수 {n_orders}건')
                     st.rerun()
+                else:
+                    # 기본 entry_order_plan.json
+                    entry_plan = loader.load('entry_plan')
+                    if not entry_plan or not entry_plan.get('orders_1st'):
+                        st.error('entry_order_plan.json 없음.')
+                    else:
+                        sim_id = db.create_simulation(
+                            name=sim_name,
+                            start_date=start_date.strftime('%Y%m%d'),
+                            start_capital=start_capital_eok * 1e8,
+                            notes=notes,
+                        )
+                        n_orders = 0
+                        for o in entry_plan['orders_1st']:
+                            if o.get('first_shares', 0) > 0:
+                                mi = o.get('matched_ideas') or []
+                                theme_id = 'default' if o.get('is_default_pick') else (f'#{mi[0]}' if mi else None)
+                                price = float(o['close'])
+                                shares = int(o['first_shares'])
+                                c = costs.calc_trade_cost(price, shares, 'BUY')
+                                db.add_sim_trade(
+                                    sim_id=sim_id,
+                                    trade_date=start_date.strftime('%Y%m%d'),
+                                    ticker=o['ticker'], name=o['name'],
+                                    action='BUY', shares=shares, price=price,
+                                    fee=c['fee'] + c['slippage'], tax=c['tax'],
+                                    theme_id=theme_id,
+                                    signal_type='ENTRY_1ST',
+                                    note=f'1차 매수 (비중 {o["capital_weight_pct"]:.2f}%) | 비용 {c["fee"]+c["slippage"]:,}원',
+                                )
+                                n_orders += 1
+                        st.success(f'✅ 시뮬레이션 #{sim_id} 시작! 1차 매수 {n_orders}건')
+                        st.rerun()
 
     # ─── 진행 중 시뮬레이션 목록 ─────────────────────────
     with col_b:
