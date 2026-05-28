@@ -227,13 +227,37 @@ if submitted:
                 {'항목': '연환산 변동성 한도', '값': f'{max_vol}%', '의미': '포트폴리오 σ 상한'},
             ]), hide_index=True, use_container_width=True)
 
-            # 해당 유형 theme_portfolio가 사전 산출되어 있는지 확인
+            # v18: 해당 유형 파일들을 단일 default 파일로 복사 (홈/파이프라인/수익률 페이지 동기화)
             WS_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
             tp_path = os.path.join(WS_ROOT, '08_signals', f'theme_portfolio_{tname}.json')
+            pf_path = os.path.join(WS_ROOT, '07_portfolio', f'portfolio_{tname}.json')
+
             if os.path.exists(tp_path):
                 tp = json.load(open(tp_path, encoding='utf-8'))
+                # 단일 default 파일들로 복사 — 모든 페이지가 진단 유형 반영
+                import shutil
+                synced_files = []
+                try:
+                    # theme_portfolio.json (홈, 수익률, 파이프라인 상세 페이지가 읽음)
+                    default_tp = os.path.join(WS_ROOT, '08_signals', 'theme_portfolio.json')
+                    shutil.copyfile(tp_path, default_tp)
+                    synced_files.append('theme_portfolio.json')
+                    # portfolio.json
+                    if os.path.exists(pf_path):
+                        default_pf = os.path.join(WS_ROOT, '07_portfolio', 'portfolio.json')
+                        shutil.copyfile(pf_path, default_pf)
+                        synced_files.append('portfolio.json')
+                    # 모델 포트 .md
+                    tp_md = os.path.join(WS_ROOT, '08_signals', f'theme_portfolio_{tname}.md')
+                    if os.path.exists(tp_md):
+                        shutil.copyfile(tp_md, os.path.join(WS_ROOT, '08_signals', 'theme_portfolio.md'))
+                        synced_files.append('theme_portfolio.md')
+                except Exception as e:
+                    st.warning(f'단일 default 파일 동기화 실패: {e}')
+
                 st.success(
                     f'🎯 **{tname}** 유형의 모델 포트폴리오가 사전 산출되어 있습니다 — {tp["n_holdings"]}종목, equity {tp["equity_pct"]}%\n\n'
+                    f'✅ 모든 페이지 동기화 완료: {", ".join(synced_files)}\n\n'
                     f'**바로 시뮬레이션 가능**: 🤖 자동매매 시뮬레이션 페이지 → 새 시뮬레이션 시작 시 "{tname}" 유형이 자동 선택됩니다.'
                 )
                 # 5개 유형 비교 페이지 안내
