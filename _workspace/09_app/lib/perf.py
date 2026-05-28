@@ -84,21 +84,26 @@ def evaluate_positions(positions: dict, latest_prices: dict) -> list:
 
 def daily_portfolio_value(positions_history: list, price_history: dict, dates: list,
                           credit_interest_pct: float = 6.0,
-                          base_capital: float = None) -> dict:
+                          base_capital: float = None,
+                          equity_pct: float = None) -> dict:
     """일별 포트폴리오 평가액 시계열 (배당 + 신용이자 반영)
-    positions_history: list of trades (action: BUY/SELL/DIVIDEND)
-    credit_interest_pct: 신용 이자 연율 (기본 6%)
-    base_capital: 자기자본 기준액 (이 액수 초과한 cost_basis에 신용이자 부과)
+    cost_basis: 누적 매수 원가 (monotonic — SELL로 줄어들지 X). 분모로 사용.
+    realized: 매도 회수 현금 (수수료/세금 제외).
+    신용이자: equity_pct > 100인 경우만 발생 (예: 적극투자형 125%면 자본의 25%가 신용).
     """
     out = {}
     holdings = {}
-    cost_basis = 0.0
-    realized = 0.0
+    cost_basis = 0.0      # 누적 매수 원가 (monotonic)
+    realized = 0.0        # 누적 매도 회수 (수수료/세금 제외)
     dividend_cum = 0.0
     credit_interest_cum = 0.0
     trade_idx = 0
     sorted_trades = sorted(positions_history, key=lambda x: (x['trade_date'], x.get('id', 0)))
     prev_date = None
+
+    # 신용 사용액 (시뮬레이션 시작 시점 고정, equity_pct > 100인 경우만)
+    use_credit = equity_pct is not None and equity_pct > 100 and base_capital
+    margin_used = base_capital * (equity_pct - 100) / 100 if use_credit else 0.0
 
     for d in dates:
         while trade_idx < len(sorted_trades) and sorted_trades[trade_idx]['trade_date'] <= d:
@@ -106,25 +111,25 @@ def daily_portfolio_value(positions_history: list, price_history: dict, dates: l
             tkr = t['ticker']
             if t['action'] == 'BUY':
                 holdings[tkr] = holdings.get(tkr, 0) + t['shares']
-                cost_basis += t['shares'] * t['price'] + (t.get('fee') or 0)
+                cost_basis += t['shares'] * t['price'] + (t.get('fee') or 0)  # monotonic 누적
             elif t['action'] == 'SELL':
                 holdings[tkr] = holdings.get(tkr, 0) - t['shares']
-                cost_basis -= t['shares'] * t['price']
-                realized += (t['shares'] * t['price'] - (t.get('fee') or 0) - (t.get('tax') or 0))
+                # cost_basis 변화 X (monotonic — 분모 안정성 유지)
+                # 매도 회수액만 realized로 기록 (수수료·세금 제외)
+                realized += t['shares'] * t['price'] - (t.get('fee') or 0) - (t.get('tax') or 0)
             elif t['action'] == 'DIVIDEND':
                 dividend_cum += t['shares'] * t['price']
             trade_idx += 1
 
-        # 신용 이자 (cost_basis가 base_capital 초과한 부분에 일별)
-        if base_capital and cost_basis > base_capital and prev_date:
+        # 신용이자: 시작 자본 초과분에 일별 부과 (equity_pct > 100만)
+        if use_credit and prev_date:
             try:
                 d1 = datetime.datetime.strptime(prev_date, '%Y%m%d')
                 d2 = datetime.datetime.strptime(d, '%Y%m%d')
                 days_diff = max(1, (d2 - d1).days)
             except Exception:
                 days_diff = 1
-            margin = cost_basis - base_capital
-            credit_interest_cum += margin * credit_interest_pct / 100 / 365 * days_diff
+            credit_interest_cum += margin_used * credit_interest_pct / 100 / 365 * days_diff
         prev_date = d
 
         mkt_val = 0

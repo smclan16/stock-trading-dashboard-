@@ -105,11 +105,12 @@ else:
     if not eval_dates:
         st.warning('첫 매수일 이후 가격 데이터 없음')
     else:
-        # 신용이자: 자기자본 = 최초 1년 매수 누적 cost_basis의 80% (보수 가정)
-        base_cap = total_cost * 0.80
+        # 신용이자: 사용자 수동 입력은 신용 사용 여부 확인 불가 → 0으로 가정 (실 매매에서 입력 시 정확)
+        base_cap = total_cost
         daily_v = perf.daily_portfolio_value(trades, price_history, eval_dates,
                                               credit_interest_pct=costs.CREDIT_INTEREST_PCT_ANNUAL,
-                                              base_capital=base_cap)
+                                              base_capital=base_cap,
+                                              equity_pct=100.0)  # 신용 없음 가정
         metrics = perf.calc_perf_metrics(daily_v, kospi)
 
         # 누적 신용이자 표시

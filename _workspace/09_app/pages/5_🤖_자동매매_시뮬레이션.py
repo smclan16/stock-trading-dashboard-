@@ -426,11 +426,19 @@ with tab_live:
 
             if eval_dates:
                 sim_trades = db.list_sim_trades(sim_id)
-                # 신용이자: 시작 자본 = base, equity 125% → 자기자본 80%만 본인 자본
-                base_cap = sim['start_capital']  # 시뮬레이션 시작 자본 = 자기자본 가정
+                base_cap = sim['start_capital']
+                # 시뮬레이션 시작 시 사용된 portfolio의 equity_pct 자동 감지
+                # notes에 "(equity 100%)" 등이 포함되거나, 메타로 저장된 경우 활용
+                sim_equity_pct = 100.0  # default — 신용 없음
+                if sim.get('notes'):
+                    import re
+                    m = re.search(r'equity\s*(\d+(?:\.\d+)?)\s*%', sim['notes'])
+                    if m:
+                        sim_equity_pct = float(m.group(1))
                 daily_v = perf.daily_portfolio_value(sim_trades, price_history, eval_dates,
                                                       credit_interest_pct=costs.CREDIT_INTEREST_PCT_ANNUAL,
-                                                      base_capital=base_cap)
+                                                      base_capital=base_cap,
+                                                      equity_pct=sim_equity_pct)
                 metrics = perf.calc_perf_metrics(daily_v, kospi)
                 last_v = daily_v[max(daily_v.keys())]
                 if metrics:
