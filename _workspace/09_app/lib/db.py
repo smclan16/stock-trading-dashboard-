@@ -149,6 +149,9 @@ def get_positions() -> dict:
             p['shares'] -= t['shares']
             p['total_sell_amount'] += sell_amount
             p['total_sell_shares'] += t['shares']
+            # 매도분 원가만큼 total_buy 비례 차감 (재매수 시 평균단가 정확성)
+            p['total_buy_amount'] = max(0.0, p['total_buy_amount'] - cost)
+            p['total_buy_shares'] = max(0, p['total_buy_shares'] - t['shares'])
         elif t['action'] == 'DIVIDEND':
             # 현금배당: shares × 주당배당금
             p['dividend_total'] += t['shares'] * t['price']
@@ -267,6 +270,9 @@ def get_sim_positions(sim_id: int) -> dict:
             cost = t['shares'] * avg
             p['realized_pnl'] += sell_amount - cost
             p['shares'] -= t['shares']
+            # 매도분의 원가만큼 total_buy 비례 차감 (재매수 시 평균단가 정확성)
+            p['total_buy_amount'] = max(0.0, p['total_buy_amount'] - cost)
+            p['total_buy_shares'] = max(0, p['total_buy_shares'] - t['shares'])
         if p['total_buy_shares'] > 0 and p['shares'] > 0:
             p['avg_price'] = p['total_buy_amount'] / p['total_buy_shares']
     return {k: v for k, v in positions.items() if v['shares'] > 0}
