@@ -339,9 +339,20 @@ def main():
             picked = []
         else:
             top_cap = size_cap_for(ranked[0]['size_tier'])
-            # v12: 매칭 풀 큰 테마는 K ≥ 2 강제 (다양성 — 예: #1 AI인프라 → 삼성전자 + SK하이닉스 둘 다)
-            min_k = 2 if len(t['matched_tickers']) >= 8 else 1
-            K = max(min_k, min(3, math.ceil(target_alloc / top_cap)))
+            # v13: 인위적 K 강제 폐지. 점수 자연 차이로 결정.
+            # 1) 비중/cap 기반 기본 K
+            K_base = max(1, min(3, math.ceil(target_alloc / top_cap)))
+            # 2) 자연 분할: 1위와 점수 차 작으면 (10% 이내) K↑
+            K = K_base
+            if len(ranked) >= 2 and ranked[0]['weighted_score'] > 0:
+                gap_1_2 = (ranked[0]['weighted_score'] - ranked[1]['weighted_score']) / ranked[0]['weighted_score']
+                if gap_1_2 < 0.10 and K < 2:
+                    K = 2
+                if len(ranked) >= 3 and ranked[0]['weighted_score'] > 0:
+                    gap_1_3 = (ranked[0]['weighted_score'] - ranked[2]['weighted_score']) / ranked[0]['weighted_score']
+                    if gap_1_3 < 0.10 and K < 3:
+                        K = 3
+            # K가 cap 이상으로 늘면 자연스럽게 분할 발생
             # 후보 K개 점수 비례 분배
             cands = ranked[:K]
             score_sum = sum(c['weighted_score'] for c in cands)

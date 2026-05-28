@@ -1,13 +1,13 @@
 {
-  "as_of": "2026-05-28T13:41:23.802950",
+  "as_of": "2026-05-28T13:45:43.733735",
   "method": "테마 비중 골격 + 결합점수 최고 1종 (테마 10 + default 4)",
   "investor_type": "공격투자형",
   "equity_pct": 125.0,
   "regime": "중립",
   "n_themes_selected": 10,
   "n_default_picks": 4,
-  "n_holdings": 15,
-  "total_weight_pct": 93.29,
+  "n_holdings": 18,
+  "total_weight_pct": 93.28,
   "selected_themes": [
     {
       "idea_id": 4,
@@ -100,7 +100,7 @@
       "theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
       "orig_allocation_pct": 11.69,
       "theme_target_alloc": 13.279,
-      "allocation_pct": 8.888,
+      "allocation_pct": 5.99,
       "ticker": "001440",
       "name": "대한전선",
       "sector": "전기장비",
@@ -137,14 +137,14 @@
       "matched_ideas": [
         4
       ],
-      "capital_weight_pct": 11.11
+      "capital_weight_pct": 7.487
     },
     {
       "idea_id": 4,
       "theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
       "orig_allocation_pct": 11.69,
       "theme_target_alloc": 13.279,
-      "allocation_pct": 8.667,
+      "allocation_pct": 5.841,
       "ticker": "298040",
       "name": "효성중공업",
       "sector": "전기장비",
@@ -182,7 +182,52 @@
         4,
         11
       ],
-      "capital_weight_pct": 10.834
+      "capital_weight_pct": 7.301
+    },
+    {
+      "idea_id": 4,
+      "theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
+      "orig_allocation_pct": 11.69,
+      "theme_target_alloc": 13.279,
+      "allocation_pct": 5.724,
+      "ticker": "267260",
+      "name": "HD현대일렉트릭",
+      "sector": "전기장비",
+      "mcap_eok": 413821.1098,
+      "size_tier": "large",
+      "size_cap_pct": 15,
+      "intensity": "direct",
+      "attractiveness": 68.37,
+      "tech_score": 74,
+      "combined_score": 36.609407839999996,
+      "weighted_score": 36.609407839999996,
+      "tech_breakdown": {
+        "alignment(20)": 12,
+        "ma60_margin(15)": 15,
+        "momentum(15)": 8,
+        "volume(10)": 6,
+        "pos_52w(15)": 15,
+        "rsi(10)": 6,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 1148000.0,
+        "ma5": 1123600.0,
+        "ma20": 1248850.0,
+        "ma60": 1063566.7,
+        "ma120": 966741.7,
+        "ma60_margin_pct": 7.94,
+        "ret_6m_pct": 47.18,
+        "rsi14": 37.6,
+        "vol_5d_to_20d_ratio": 0.82,
+        "pos_52w_pct": 59.6,
+        "sigma_annual_pct": 64.4
+      },
+      "matched_ideas": [
+        4,
+        11
+      ],
+      "capital_weight_pct": 7.155
     },
     {
       "idea_id": 3,
@@ -234,7 +279,7 @@
       "theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
       "orig_allocation_pct": 11.13,
       "theme_target_alloc": 12.643,
-      "allocation_pct": 8.382,
+      "allocation_pct": 5.601,
       "ticker": "034730",
       "name": "SK",
       "sector": "금융",
@@ -272,14 +317,14 @@
         1,
         11
       ],
-      "capital_weight_pct": 10.477
+      "capital_weight_pct": 7.001
     },
     {
       "idea_id": 11,
       "theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
       "orig_allocation_pct": 11.13,
       "theme_target_alloc": 12.643,
-      "allocation_pct": 8.333,
+      "allocation_pct": 5.568,
       "ticker": "028260",
       "name": "삼성물산",
       "sector": "유통",
@@ -317,7 +362,52 @@
         3,
         11
       ],
-      "capital_weight_pct": 10.416
+      "capital_weight_pct": 6.96
+    },
+    {
+      "idea_id": 11,
+      "theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
+      "orig_allocation_pct": 11.13,
+      "theme_target_alloc": 12.643,
+      "allocation_pct": 5.545,
+      "ticker": "006260",
+      "name": "LS",
+      "sector": "금융",
+      "mcap_eok": 172536.0,
+      "size_tier": "large",
+      "size_cap_pct": 15,
+      "intensity": "direct",
+      "attractiveness": 66.16,
+      "tech_score": 79,
+      "combined_score": 41.7645916,
+      "weighted_score": 41.7645916,
+      "tech_breakdown": {
+        "alignment(20)": 20,
+        "ma60_margin(15)": 6,
+        "momentum(15)": 15,
+        "volume(10)": 10,
+        "pos_52w(15)": 6,
+        "rsi(10)": 10,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 553000.0,
+        "ma5": 531800.0,
+        "ma20": 496050.0,
+        "ma60": 353725.0,
+        "ma120": 282472.5,
+        "ma60_margin_pct": 56.34,
+        "ret_6m_pct": 211.72,
+        "rsi14": 56.7,
+        "vol_5d_to_20d_ratio": 1.01,
+        "pos_52w_pct": 100.0,
+        "sigma_annual_pct": 77.0
+      },
+      "matched_ideas": [
+        4,
+        11
+      ],
+      "capital_weight_pct": 6.931
     },
     {
       "idea_id": 1,
@@ -458,7 +548,7 @@
       "theme": "K-방산·K-조선 수출 사이클 (보강 필요)",
       "orig_allocation_pct": 6.31,
       "theme_target_alloc": 7.168,
-      "allocation_pct": 4.794,
+      "allocation_pct": 3.219,
       "ticker": "082740",
       "name": "한화엔진",
       "sector": "기계",
@@ -496,14 +586,14 @@
         3,
         13
       ],
-      "capital_weight_pct": 5.992
+      "capital_weight_pct": 4.024
     },
     {
       "idea_id": 13,
       "theme": "K-방산·K-조선 수출 사이클 (보강 필요)",
       "orig_allocation_pct": 6.31,
       "theme_target_alloc": 7.168,
-      "allocation_pct": 4.683,
+      "allocation_pct": 3.145,
       "ticker": "329180",
       "name": "HD현대중공업",
       "sector": "운송장비",
@@ -540,7 +630,52 @@
       "matched_ideas": [
         13
       ],
-      "capital_weight_pct": 5.854
+      "capital_weight_pct": 3.931
+    },
+    {
+      "idea_id": 13,
+      "theme": "K-방산·K-조선 수출 사이클 (보강 필요)",
+      "orig_allocation_pct": 6.31,
+      "theme_target_alloc": 7.168,
+      "allocation_pct": 3.112,
+      "ticker": "077970",
+      "name": "STX엔진",
+      "sector": "기계",
+      "mcap_eok": 19170.7000825,
+      "size_tier": "large",
+      "size_cap_pct": 15,
+      "intensity": "direct",
+      "attractiveness": 63.94,
+      "tech_score": 69,
+      "combined_score": 36.997704999999996,
+      "weighted_score": 36.997704999999996,
+      "tech_breakdown": {
+        "alignment(20)": 12,
+        "ma60_margin(15)": 15,
+        "momentum(15)": 8,
+        "volume(10)": 10,
+        "pos_52w(15)": 15,
+        "rsi(10)": 2,
+        "volatility(15)": 7
+      },
+      "indicators": {
+        "close": 47750.0,
+        "ma5": 45500.0,
+        "ma20": 52782.5,
+        "ma60": 41016.7,
+        "ma120": 38227.9,
+        "ma60_margin_pct": 16.42,
+        "ret_6m_pct": 56.56,
+        "rsi14": 29.8,
+        "vol_5d_to_20d_ratio": 1.13,
+        "pos_52w_pct": 53.6,
+        "sigma_annual_pct": 84.1
+      },
+      "matched_ideas": [
+        3,
+        13
+      ],
+      "capital_weight_pct": 3.89
     },
     {
       "idea_id": 5,

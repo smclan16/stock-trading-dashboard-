@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-28T13:41:23.546746",
+  "as_of": "2026-05-28T13:45:43.473870",
   "method": "테마 비중 골격 + 결합점수 최고 1종 (테마 6 + default 4)",
   "investor_type": "안정형",
   "equity_pct": 125.0,
@@ -96,7 +96,7 @@
       "theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
       "orig_allocation_pct": 11.69,
       "theme_target_alloc": 19.223,
-      "allocation_pct": 12.922,
+      "allocation_pct": 11.212,
       "ticker": "267260",
       "name": "HD현대일렉트릭",
       "sector": "전기장비",
@@ -134,14 +134,14 @@
         4,
         11
       ],
-      "capital_weight_pct": 16.152
+      "capital_weight_pct": 14.015
     },
     {
       "idea_id": 4,
       "theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
       "orig_allocation_pct": 11.69,
       "theme_target_alloc": 19.223,
-      "allocation_pct": 12.508,
+      "allocation_pct": 10.853,
       "ticker": "298040",
       "name": "효성중공업",
       "sector": "전기장비",
@@ -179,14 +179,14 @@
         4,
         11
       ],
-      "capital_weight_pct": 15.635
+      "capital_weight_pct": 13.566
     },
     {
       "idea_id": 3,
       "theme": "SMR·소형원전 — AI 데이터센터 전용 전력원으로 격상",
       "orig_allocation_pct": 11.13,
       "theme_target_alloc": 18.303,
-      "allocation_pct": 13.647,
+      "allocation_pct": 11.841,
       "ticker": "028260",
       "name": "삼성물산",
       "sector": "유통",
@@ -224,14 +224,14 @@
         3,
         11
       ],
-      "capital_weight_pct": 17.059
+      "capital_weight_pct": 14.801
     },
     {
       "idea_id": 3,
       "theme": "SMR·소형원전 — AI 데이터센터 전용 전력원으로 격상",
       "orig_allocation_pct": 11.13,
       "theme_target_alloc": 18.303,
-      "allocation_pct": 10.566,
+      "allocation_pct": 9.168,
       "ticker": "028050",
       "name": "삼성E&A",
       "sector": "전문서비스",
@@ -269,14 +269,14 @@
         3,
         4
       ],
-      "capital_weight_pct": 13.207
+      "capital_weight_pct": 11.46
     },
     {
       "idea_id": 11,
       "theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
       "orig_allocation_pct": 11.13,
       "theme_target_alloc": 18.303,
-      "allocation_pct": 12.144,
+      "allocation_pct": 10.537,
       "ticker": "005490",
       "name": "POSCO홀딩스",
       "sector": "철강금속",
@@ -314,14 +314,14 @@
         11,
         13
       ],
-      "capital_weight_pct": 15.18
+      "capital_weight_pct": 13.171
     },
     {
       "idea_id": 11,
       "theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
       "orig_allocation_pct": 11.13,
       "theme_target_alloc": 18.303,
-      "allocation_pct": 12.069,
+      "allocation_pct": 10.472,
       "ticker": "105560",
       "name": "KB금융",
       "sector": "금융",
@@ -359,14 +359,14 @@
         11,
         12
       ],
-      "capital_weight_pct": 15.086
+      "capital_weight_pct": 13.09
     },
     {
       "idea_id": 1,
       "theme": "AI 인프라 — HBM·메모리·하이퍼스케일러 Capex",
       "orig_allocation_pct": 7.42,
       "theme_target_alloc": 12.202,
-      "allocation_pct": 10.087,
+      "allocation_pct": 14.006,
       "ticker": "005930",
       "name": "삼성전자",
       "sector": "전자반도체",
@@ -404,25 +404,25 @@
         1,
         11
       ],
-      "capital_weight_pct": 12.609
+      "capital_weight_pct": 17.508
     },
     {
-      "idea_id": 1,
-      "theme": "AI 인프라 — HBM·메모리·하이퍼스케일러 Capex",
-      "orig_allocation_pct": 7.42,
-      "theme_target_alloc": 12.202,
-      "allocation_pct": 6.055,
+      "idea_id": 2,
+      "theme": "AI 에이전트 — Agentic AI 본격 상용화",
+      "orig_allocation_pct": 6.31,
+      "theme_target_alloc": 10.376,
+      "allocation_pct": 11.91,
       "ticker": "018260",
       "name": "삼성에스디에스",
       "sector": "IT서비스",
       "mcap_eok": 155916.267,
       "size_tier": "large",
       "size_cap_pct": 15,
-      "intensity": "indirect",
+      "intensity": "direct",
       "attractiveness": 66.6,
       "tech_score": 71,
       "combined_score": 9.2924,
-      "weighted_score": 6.5046800000000005,
+      "weighted_score": 9.2924,
       "tech_breakdown": {
         "alignment(20)": 11,
         "ma60_margin(15)": 15,
@@ -449,7 +449,7 @@
         1,
         2
       ],
-      "capital_weight_pct": 7.569
+      "capital_weight_pct": 14.887
     },
     {
       "idea_id": "default",

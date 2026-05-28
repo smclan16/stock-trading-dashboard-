@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-28T13:41:23.675233",
+  "as_of": "2026-05-28T13:45:43.600095",
   "method": "테마 비중 골격 + 결합점수 최고 1종 (테마 8 + default 4)",
   "investor_type": "위험중립형",
   "equity_pct": 125.0,
@@ -231,7 +231,7 @@
       "theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
       "orig_allocation_pct": 11.13,
       "theme_target_alloc": 14.873,
-      "allocation_pct": 9.411,
+      "allocation_pct": 6.375,
       "ticker": "005490",
       "name": "POSCO홀딩스",
       "sector": "철강금속",
@@ -269,14 +269,14 @@
         11,
         13
       ],
-      "capital_weight_pct": 11.764
+      "capital_weight_pct": 7.969
     },
     {
       "idea_id": 11,
       "theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
       "orig_allocation_pct": 11.13,
       "theme_target_alloc": 14.873,
-      "allocation_pct": 9.143,
+      "allocation_pct": 6.192,
       "ticker": "034730",
       "name": "SK",
       "sector": "금융",
@@ -314,7 +314,52 @@
         1,
         11
       ],
-      "capital_weight_pct": 11.429
+      "capital_weight_pct": 7.74
+    },
+    {
+      "idea_id": 11,
+      "theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
+      "orig_allocation_pct": 11.13,
+      "theme_target_alloc": 14.873,
+      "allocation_pct": 5.985,
+      "ticker": "006260",
+      "name": "LS",
+      "sector": "금융",
+      "mcap_eok": 172536.0,
+      "size_tier": "large",
+      "size_cap_pct": 15,
+      "intensity": "direct",
+      "attractiveness": 66.16,
+      "tech_score": 79,
+      "combined_score": 30.314812500000002,
+      "weighted_score": 30.314812500000002,
+      "tech_breakdown": {
+        "alignment(20)": 20,
+        "ma60_margin(15)": 6,
+        "momentum(15)": 15,
+        "volume(10)": 10,
+        "pos_52w(15)": 6,
+        "rsi(10)": 10,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 553000.0,
+        "ma5": 531800.0,
+        "ma20": 496050.0,
+        "ma60": 353725.0,
+        "ma120": 282472.5,
+        "ma60_margin_pct": 56.34,
+        "ret_6m_pct": 211.72,
+        "rsi14": 56.7,
+        "vol_5d_to_20d_ratio": 1.01,
+        "pos_52w_pct": 100.0,
+        "sigma_annual_pct": 77.0
+      },
+      "matched_ideas": [
+        4,
+        11
+      ],
+      "capital_weight_pct": 7.481
     },
     {
       "idea_id": 1,
@@ -455,7 +500,7 @@
       "theme": "K-방산·K-조선 수출 사이클 (보강 필요)",
       "orig_allocation_pct": 6.31,
       "theme_target_alloc": 8.432,
-      "allocation_pct": 8.143,
+      "allocation_pct": 10.519,
       "ticker": "010140",
       "name": "삼성중공업",
       "sector": "운송장비",
@@ -492,52 +537,7 @@
       "matched_ideas": [
         13
       ],
-      "capital_weight_pct": 10.179
-    },
-    {
-      "idea_id": 13,
-      "theme": "K-방산·K-조선 수출 사이클 (보강 필요)",
-      "orig_allocation_pct": 6.31,
-      "theme_target_alloc": 8.432,
-      "allocation_pct": 2.375,
-      "ticker": "082740",
-      "name": "한화엔진",
-      "sector": "기계",
-      "mcap_eok": 65422.559328,
-      "size_tier": "large",
-      "size_cap_pct": 15,
-      "intensity": "direct",
-      "attractiveness": 68.21,
-      "tech_score": 72.47,
-      "combined_score": 7.9746,
-      "weighted_score": 7.9746,
-      "tech_breakdown": {
-        "alignment(20)": 12,
-        "ma60_margin(15)": 10.5,
-        "momentum(15)": 15,
-        "volume(10)": 2,
-        "pos_52w(15)": 15,
-        "rsi(10)": 6,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 78400.0,
-        "ma5": 72340.0,
-        "ma20": 78705.0,
-        "ma60": 59145.0,
-        "ma120": 54181.7,
-        "ma60_margin_pct": 32.56,
-        "ret_6m_pct": 86.0,
-        "rsi14": 36.0,
-        "vol_5d_to_20d_ratio": 0.7,
-        "pos_52w_pct": 77.6,
-        "sigma_annual_pct": 71.8
-      },
-      "matched_ideas": [
-        3,
-        13
-      ],
-      "capital_weight_pct": 2.969
+      "capital_weight_pct": 13.149
     },
     {
       "idea_id": "default",
