@@ -112,7 +112,7 @@ elif stage.startswith('3'):
         {'#': 2, '조건': '관리종목 제외', '산식': 'KRX 소속부 ∉ {관리/투자주의/투자위험}'},
         {'#': 3, '조건': '20일 평균 거래대금 ≥ 30억원', '산식': 'mean(daily_turnover, 20d) ≥ 30억'},
         {'#': 4, '조건': '컨센서스 보유', '산식': 'FnSpace 영업이익 추정 non-null'},
-        {'#': 5, '경계', '산식': '시총 상위 MAX_FNSPACE=1000만 컨센서스 조회 (비용)'},
+        {'#': 5, '조건': '컨센서스 조회 경계 (비용)', '산식': '시총 상위 MAX_FNSPACE=1000만 fnspace 조회'},
     ]), hide_index=True, use_container_width=True)
 
     st.markdown('### 🔢 5팩터 (섹터중립 z-score, ±5σ winsor)')
