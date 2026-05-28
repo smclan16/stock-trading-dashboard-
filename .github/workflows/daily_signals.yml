@@ -1,0 +1,55 @@
+name: Daily Signal Generation
+
+on:
+  schedule:
+    # 매일 18:30 KST = UTC 09:30 (월~금만)
+    - cron: '30 9 * * 1-5'
+  workflow_dispatch:  # 수동 실행 가능
+
+jobs:
+  generate-signals:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # commit·push 권한
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate daily signals
+        env:
+          KRX_API_KEY: ${{ secrets.KRX_API_KEY }}
+          DART_API_KEY: ${{ secrets.DART_API_KEY }}
+          FNSPACE_API_KEY: ${{ secrets.FNSPACE_API_KEY }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+          GITHUB_TOKEN_PAT: ${{ secrets.GH_TOKEN_PAT }}
+        run: |
+          python3 _workspace/08_signals/compute_daily_signals.py
+
+      - name: Commit + push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add _workspace/08_signals/daily_signal_queue.md \
+                  _workspace/08_signals/daily_signals.json
+          if git diff --staged --quiet; then
+            echo "No changes — skipping commit"
+          else
+            git commit -m "daily: auto signal $(date +%Y-%m-%d)"
+            git push
+          fi

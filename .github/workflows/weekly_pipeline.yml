@@ -1,0 +1,70 @@
+name: Weekly Full Pipeline
+
+on:
+  schedule:
+    # 매주 토요일 02:00 KST = UTC 금요일 17:00 (금요일 종가 후)
+    - cron: '0 17 * * 5'
+  workflow_dispatch:
+
+jobs:
+  full-pipeline:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    timeout-minutes: 60  # 전체 파이프라인 ~30분
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run full pipeline (매크로 → 검증 → 최종 포트)
+        env:
+          KRX_API_KEY: ${{ secrets.KRX_API_KEY }}
+          DART_API_KEY: ${{ secrets.DART_API_KEY }}
+          FNSPACE_API_KEY: ${{ secrets.FNSPACE_API_KEY }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+        run: |
+          set -e
+          python3 _workspace/02_macro/fetch_macro.py
+          python3 _workspace/04_ideas/recompute_allocation.py
+          python3 _workspace/06_research/compute_research_scores.py
+          python3 _workspace/07_portfolio/compose_portfolio.py
+          python3 _workspace/validation/validate_logic.py
+          python3 _workspace/08_signals/compute_trading_signals.py
+          python3 _workspace/08_signals/compute_technical_scores.py --top-n 10 --w-tech 0.5
+          python3 _workspace/08_signals/build_theme_portfolio.py --n-themes 8 --w-tech 0.5
+          python3 _workspace/07_portfolio/multi_profile_generate.py
+          python3 _workspace/08_signals/compute_daily_signals.py
+
+      - name: Commit + push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add _workspace/02_macro/ \
+                  _workspace/04_ideas/ \
+                  _workspace/06_research/ \
+                  _workspace/07_portfolio/ \
+                  _workspace/08_signals/ \
+                  _workspace/validation/ \
+                  _workspace/01_profile/
+          if git diff --staged --quiet; then
+            echo "No changes — skipping commit"
+          else
+            git commit -m "weekly: auto pipeline $(date +%Y-%m-%d)"
+            git push
+          fi

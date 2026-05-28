@@ -21,7 +21,16 @@ st.markdown("""
 | 4 | **"📈 수익률 관리"** 페이지에서 평가 확인 | 일별 모니터링 |
 """)
 
-if st.button('▶ 일일 시그널 재생성', type='primary'):
+st.info(
+    '💡 **자동 실행 안내**\n\n'
+    '이 버튼은 **로컬 환경에서만 안정적**입니다 (Streamlit Cloud는 KRX API IP 차단 - 429 에러).\n\n'
+    '**권장 운영**:\n'
+    '- 🤖 GitHub Actions 자동 실행 (매일 18:30 KST) — `.github/workflows/daily_signals.yml`\n'
+    '- 💻 또는 로컬에서: `python3 _workspace/08_signals/compute_daily_signals.py`\n\n'
+    'GitHub Actions가 자동 실행하고 JSON을 git push하면 이 앱은 자동 반영됩니다.'
+)
+
+if st.button('▶ 일일 시그널 재생성 (로컬·테스트용)', type='secondary'):
     with st.spinner('compute_daily_signals.py 실행 중…'):
         try:
             r = subprocess.run(
@@ -31,10 +40,9 @@ if st.button('▶ 일일 시그널 재생성', type='primary'):
             if r.returncode == 0:
                 st.success('✅ 일일 시그널 갱신 완료')
                 st.code(r.stdout[-2000:])
-                # cache 무효화
                 loader.load.clear()
             else:
-                st.error('실행 실패')
+                st.error('실행 실패 (Streamlit Cloud에서 KRX API 429 에러 가능 — GitHub Actions 활용 권장)')
                 st.code(r.stderr[-2000:])
         except Exception as e:
             st.error(f'실행 오류: {e}')
