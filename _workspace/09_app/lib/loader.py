@@ -28,7 +28,7 @@ PATHS = {
 }
 
 
-@st.cache_data(ttl=60)
+@st.cache_data(ttl=10)
 def load(name: str) -> Any:
     path = PATHS.get(name)
     if not path or not os.path.exists(path):
