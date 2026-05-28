@@ -1,0 +1,14 @@
+{
+  "investor_type": "안정추구형",
+  "investor_score": 50,
+  "equity_pct_min": 40,
+  "equity_pct_max": 100,
+  "max_single_stock_pct": 12,
+  "max_sector_pct": 28,
+  "max_annual_volatility": 20,
+  "excluded_tickers": [],
+  "excluded_sectors": [],
+  "esg_filter": false,
+  "profile_name": "안정추구형",
+  "updated_at": "2026-05-28T13:04:57.796922"
+}

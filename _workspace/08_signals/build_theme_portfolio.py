@@ -39,8 +39,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--n-themes', type=int, default=8, help='핵심 테마 수 (기본 8)')
     ap.add_argument('--w-tech', type=float, default=0.5, help='기술점수 가중 (0~1)')
-    ap.add_argument('--rebalance-on-shortfall', action='store_true',
-                    help='테마 내 종목 부족 시 다른 테마에 재분배 (기본: 현금 보유)')
+    ap.add_argument('--rebalance-on-shortfall', action='store_true')
+    ap.add_argument('--pf-file', default=None, help='portfolio.json 경로 override (다중 유형용)')
+    ap.add_argument('--output-suffix', default='', help='산출 파일명 suffix (예: _안정형)')
     args = ap.parse_args()
     w_a = 1 - args.w_tech
     w_t = args.w_tech
@@ -51,7 +52,8 @@ def main():
     research_data = json.load(open(RESEARCH_PATH, encoding='utf-8'))
     tech_data = json.load(open(TECH_PATH, encoding='utf-8'))
     sigs = json.load(open(SIG_PATH, encoding='utf-8'))
-    pf = json.load(open(PF_PATH, encoding='utf-8'))
+    pf_path = args.pf_file or PF_PATH
+    pf = json.load(open(pf_path, encoding='utf-8'))
 
     ideas = ideas_data['ideas']
     default_picks = ideas_data.get('default_picks', {})
@@ -300,7 +302,8 @@ def main():
         'ma60_exit_excluded': sorted(exit_set),
         'holdings': selected,
     }
-    with open(OUT_JSON, 'w', encoding='utf-8') as f:
+    out_json = OUT_JSON.replace('.json', f'{args.output_suffix}.json') if args.output_suffix else OUT_JSON
+    with open(out_json, 'w', encoding='utf-8') as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
 
     # final_portfolio.json도 동일 내용 (호환성: entry_order_plan / daily_signals 가 사용)
@@ -419,7 +422,8 @@ def main():
     L.append('---')
     L.append('*면책: 본 자료는 정보 제공 목적의 분석 결과이며 투자 권유가 아닙니다.*')
 
-    with open(OUT_MD, 'w', encoding='utf-8') as f:
+    out_md = OUT_MD.replace('.md', f'{args.output_suffix}.md') if args.output_suffix else OUT_MD
+    with open(out_md, 'w', encoding='utf-8') as f:
         f.write('\n'.join(L) + '\n')
     print(f'  저장: {OUT_JSON}')
     print(f'         {OUT_MD}')

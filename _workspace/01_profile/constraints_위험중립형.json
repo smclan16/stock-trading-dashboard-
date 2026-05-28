@@ -1,0 +1,14 @@
+{
+  "investor_type": "위험중립형",
+  "investor_score": 65,
+  "equity_pct_min": 60,
+  "equity_pct_max": 100,
+  "max_single_stock_pct": 13,
+  "max_sector_pct": 30,
+  "max_annual_volatility": 25,
+  "excluded_tickers": [],
+  "excluded_sectors": [],
+  "esg_filter": false,
+  "profile_name": "위험중립형",
+  "updated_at": "2026-05-28T13:04:57.859199"
+}

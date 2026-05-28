@@ -252,10 +252,14 @@ def main():
                     help="비중 산식: score(매력도)·mcap(시총)·hybrid(혼합, 기본)")
     ap.add_argument("--mcap-blend", type=float, default=0.5,
                     help="hybrid 모드 시 시총 가중치 α (0~1, 기본 0.5). w = mcap^α × score^(1-α)")
+    ap.add_argument("--constraints-file", default=None, help="constraints 파일 경로 override (다중 유형용)")
+    ap.add_argument("--output-suffix", default="", help="산출 파일명 suffix (예: '_안정형' → portfolio_안정형.json)")
     args = ap.parse_args()
 
     print("[1/5] 입력 로드…")
-    constraints = json.load(open(CONSTRAINTS, encoding="utf-8"))
+    constraints_path = args.constraints_file or CONSTRAINTS
+    constraints = json.load(open(constraints_path, encoding="utf-8"))
+    print(f"  constraints: {constraints_path}")
     allocation = json.load(open(ALLOCATION, encoding="utf-8"))
     ideas = json.load(open(IDEAS, encoding="utf-8"))
     matching = json.load(open(MATRIX, encoding="utf-8"))
@@ -419,7 +423,8 @@ def main():
         "constraint_checks": constraint_checks,
         "diversification": diversification,
     }
-    json.dump(out, open(OUT_JSON, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    out_json = OUT_JSON.replace(".json", f"{args.output_suffix}.json") if args.output_suffix else OUT_JSON
+    json.dump(out, open(out_json, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 
     # Markdown
     L = [f"# 모델 포트폴리오 ({datetime.datetime.now().strftime('%Y-%m-%d')})\n",
@@ -453,8 +458,9 @@ def main():
         L.append(f"    - {sec}: {pct:.2f}%")
     L.append("\n*면책: 정보 제공 목적이며 투자 권유가 아닙니다.*")
 
-    open(OUT_MD, "w", encoding="utf-8").write("\n".join(L) + "\n")
-    print(f"  저장: {OUT_JSON}, {OUT_MD}")
+    out_md = OUT_MD.replace(".md", f"{args.output_suffix}.md") if args.output_suffix else OUT_MD
+    open(out_md, "w", encoding="utf-8").write("\n".join(L) + "\n")
+    print(f"  저장: {out_json}, {out_md}")
 
     print(f"\n=== 포트폴리오 상위 10 ===")
     for h in holdings[:10]:

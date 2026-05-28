@@ -1,0 +1,14 @@
+{
+  "investor_type": "공격투자형",
+  "investor_score": 95,
+  "equity_pct_min": 120,
+  "equity_pct_max": 200,
+  "max_single_stock_pct": 20,
+  "max_sector_pct": 35,
+  "max_annual_volatility": 40,
+  "excluded_tickers": [],
+  "excluded_sectors": [],
+  "esg_filter": false,
+  "profile_name": "공격투자형",
+  "updated_at": "2026-05-28T13:04:57.994377"
+}
