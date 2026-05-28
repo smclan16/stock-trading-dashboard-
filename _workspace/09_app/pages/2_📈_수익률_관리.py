@@ -160,7 +160,7 @@ else:
             chart_df = chart_df.set_index('일자')
             if kospi and not kospi_df.empty:
                 kospi_merge = kospi_df[['date_dt', 'KOSPI 수익률(%)']].rename(columns={'date_dt': '일자'}).set_index('일자')
-                chart_df = chart_df.join(kospi_merge, how='left').fillna(method='ffill')
+                chart_df = chart_df.join(kospi_merge, how='left').ffill()
             st.line_chart(chart_df)
 
         with col_b:

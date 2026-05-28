@@ -473,7 +473,7 @@ with tab_live:
                         first_k = kdf_filtered.iloc[0]['close']
                         kdf_filtered['KOSPI 수익률(%)'] = (kdf_filtered['close'] / first_k - 1) * 100
                         kdf_idx = kdf_filtered.set_index('date_dt')[['KOSPI 수익률(%)']]
-                        chart_df = chart_df.join(kdf_idx, how='outer').fillna(method='ffill')
+                        chart_df = chart_df.join(kdf_idx, how='outer').ffill()
 
                 st.line_chart(chart_df)
 
