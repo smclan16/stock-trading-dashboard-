@@ -11,31 +11,46 @@ def get_krx():
     return KRXMarket()
 
 
-def fetch_close_prices(tickers: list, days: int = 130) -> dict:
-    """KRX 일별 종가 시계열 (오래된→최신 정렬)"""
-    krx = get_krx()
-    asof = krx.latest_trading_date()
-    dates = krx.trading_dates(asof, days)
-    dates.sort()
+def _yfinance_close_prices(tickers: list, days: int = 130) -> dict:
+    """yfinance bulk download — 종목당 1회, KRX 429 시 fallback."""
+    try:
+        import yfinance as yf
+    except ImportError:
+        return {}
     price_map = {t: {} for t in tickers}
-    for d in dates:
-        try:
-            day = krx.daily(d)
-        except Exception:
-            continue
-        for t in tickers:
-            if t in day and day[t].get('close'):
-                price_map[t][d] = day[t]['close']
+    period_arg = f'{int(days * 1.5)}d'  # 평일 N일 ≈ 달력 1.5N일
+    for tkr in tickers:
+        for suffix in ['.KS', '.KQ']:
+            try:
+                df = yf.Ticker(f"{tkr}{suffix}").history(period=period_arg, auto_adjust=False)
+                if df.empty:
+                    continue
+                for ts, row in df['Close'].dropna().items():
+                    ds = ts.strftime('%Y%m%d')
+                    price_map[tkr][ds] = float(row)
+                break  # 성공하면 다음 종목
+            except Exception:
+                continue
     return price_map
 
 
+def fetch_close_prices(tickers: list, days: int = 130) -> dict:
+    """일별 종가 시계열. v17: KRX 시도 1회 후 실패 시 yfinance bulk.
+    Streamlit Cloud에서는 KRX 429 → yfinance 자동 사용.
+    """
+    # v17: KRX 호출 자체 skip (Streamlit Cloud는 차단됨), yfinance만 사용
+    return _yfinance_close_prices(tickers, days)
+
+
 def fetch_kospi_history(days: int = 130) -> dict:
-    """KOSPI 일별 지수 (date → close)"""
-    krx = get_krx()
-    asof = krx.latest_trading_date()
-    weeks = math.ceil(days / 5)
-    rows = krx.kospi_index_history(asof, weeks)
-    return {r['date']: r['close'] for r in rows if 'date' in r}
+    """KOSPI 일별 지수. v17: yfinance ^KS11 사용 (KRX 차단 회피)."""
+    try:
+        import yfinance as yf
+        period_arg = f'{int(days * 1.5)}d'
+        df = yf.Ticker('^KS11').history(period=period_arg, auto_adjust=False)
+        return {ts.strftime('%Y%m%d'): float(row) for ts, row in df['Close'].dropna().items()}
+    except Exception:
+        return {}
 
 
 def evaluate_positions(positions: dict, latest_prices: dict) -> list:
