@@ -1,8 +1,9 @@
 {
-  "as_of": "20260526",
-  "generated_at": "2026-05-28T05:47:43.977022",
+  "as_of": "20260528",
+  "generated_at": "2026-05-28T12:27:36.473635",
   "counts": {
-    "ENTRY_1ST": 11
+    "ENTRY_1ST": 8,
+    "WATCH": 3
   },
   "signals": [
     {
@@ -10,121 +11,112 @@
       "name": "효성중공업",
       "signal": "ENTRY_1ST",
       "action": "1차 75% 진입 (지정가 권장)",
-      "close": 3834000.0,
-      "ma60": 3161116.7,
+      "close": 3653000.0,
+      "ma60": 3267350.0,
       "weight_pct": 7.878,
       "capital_weight_pct": 9.848,
-      "reason": "MA60 위 첫 진입 (종가 3,834,000 > MA60 3,161,117)"
+      "reason": "MA60 위 첫 진입 (종가 3,653,000 > MA60 3,267,350)"
     },
     {
       "ticker": "267260",
       "name": "HD현대일렉트릭",
-      "signal": "ENTRY_1ST",
-      "action": "1차 75% 진입 (지정가 권장)",
-      "close": 1148000.0,
-      "ma60": 1063566.7,
-      "weight_pct": 7.743,
-      "capital_weight_pct": 9.679,
-      "reason": "MA60 위 첫 진입 (종가 1,148,000 > MA60 1,063,567)"
+      "signal": "WATCH",
+      "close": 1047000.0,
+      "ma60": 1077850.0,
+      "reason": "MA60 아래, 추세 대기 (1,047,000 < MA60 1,077,850)"
     },
     {
       "ticker": "028050",
       "name": "삼성E&A",
       "signal": "ENTRY_1ST",
       "action": "1차 75% 진입 (지정가 권장)",
-      "close": 54600.0,
-      "ma60": 44489.2,
+      "close": 50800.0,
+      "ma60": 45973.3,
       "weight_pct": 14.873,
       "capital_weight_pct": 18.591,
-      "reason": "MA60 위 첫 진입 (종가 54,600 > MA60 44,489)"
+      "reason": "MA60 위 첫 진입 (종가 50,800 > MA60 45,973)"
     },
     {
       "ticker": "028260",
       "name": "삼성물산",
       "signal": "ENTRY_1ST",
       "action": "1차 75% 진입 (지정가 권장)",
-      "close": 411000.0,
-      "ma60": 320208.3,
+      "close": 399500.0,
+      "ma60": 324491.7,
       "weight_pct": 14.873,
       "capital_weight_pct": 18.591,
-      "reason": "MA60 위 첫 진입 (종가 411,000 > MA60 320,208)"
+      "reason": "MA60 위 첫 진입 (종가 399,500 > MA60 324,492)"
     },
     {
       "ticker": "005930",
       "name": "삼성전자",
       "signal": "ENTRY_1ST",
       "action": "1차 75% 진입 (지정가 권장)",
-      "close": 299000.0,
-      "ma60": 219083.3,
+      "close": 299500.0,
+      "ma60": 225067.5,
       "weight_pct": 9.915,
       "capital_weight_pct": 12.394,
-      "reason": "MA60 위 첫 진입 (종가 299,000 > MA60 219,083)"
+      "reason": "MA60 위 첫 진입 (종가 299,500 > MA60 225,068)"
     },
     {
       "ticker": "018260",
       "name": "삼성에스디에스",
       "signal": "ENTRY_1ST",
       "action": "1차 75% 진입 (지정가 권장)",
-      "close": 201500.0,
-      "ma60": 168000.0,
+      "close": 248500.0,
+      "ma60": 170511.7,
       "weight_pct": 8.432,
       "capital_weight_pct": 10.54,
-      "reason": "MA60 위 첫 진입 (종가 201,500 > MA60 168,000)"
+      "reason": "MA60 위 첫 진입 (종가 248,500 > MA60 170,512)"
     },
     {
       "ticker": "082740",
       "name": "한화엔진",
       "signal": "ENTRY_1ST",
       "action": "1차 75% 진입 (지정가 권장)",
-      "close": 78400.0,
-      "ma60": 59145.0,
+      "close": 67000.0,
+      "ma60": 61495.0,
       "weight_pct": 8.432,
       "capital_weight_pct": 10.54,
-      "reason": "MA60 위 첫 진입 (종가 78,400 > MA60 59,145)"
+      "reason": "MA60 위 첫 진입 (종가 67,000 > MA60 61,495)"
     },
     {
       "ticker": "005880",
       "name": "대한해운",
-      "signal": "ENTRY_1ST",
-      "action": "1차 75% 진입 (지정가 권장)",
-      "close": 2510.0,
-      "ma60": 2473.7,
-      "weight_pct": 2.5,
-      "capital_weight_pct": 3.125,
-      "reason": "MA60 위 첫 진입 (종가 2,510 > MA60 2,474)"
+      "signal": "WATCH",
+      "close": 2325.0,
+      "ma60": 2485.1,
+      "reason": "MA60 아래, 추세 대기 (2,325 < MA60 2,485)"
     },
     {
       "ticker": "108670",
       "name": "LX하우시스",
       "signal": "ENTRY_1ST",
       "action": "1차 75% 진입 (지정가 권장)",
-      "close": 36700.0,
-      "ma60": 32100.0,
+      "close": 34550.0,
+      "ma60": 32695.0,
       "weight_pct": 2.5,
       "capital_weight_pct": 3.125,
-      "reason": "MA60 위 첫 진입 (종가 36,700 > MA60 32,100)"
+      "reason": "MA60 위 첫 진입 (종가 34,550 > MA60 32,695)"
     },
     {
       "ticker": "016380",
       "name": "KG스틸",
-      "signal": "ENTRY_1ST",
-      "action": "1차 75% 진입 (지정가 권장)",
-      "close": 6850.0,
-      "ma60": 6045.2,
-      "weight_pct": 2.5,
-      "capital_weight_pct": 3.125,
-      "reason": "MA60 위 첫 진입 (종가 6,850 > MA60 6,045)"
+      "signal": "WATCH",
+      "close": 6110.0,
+      "ma60": 6121.2,
+      "reason": "MA60 아래, 추세 대기 (6,110 < MA60 6,121)"
     },
     {
       "ticker": "460860",
       "name": "동국제강",
       "signal": "ENTRY_1ST",
       "action": "1차 75% 진입 (지정가 권장)",
-      "close": 11970.0,
-      "ma60": 10901.5,
+      "close": 11440.0,
+      "ma60": 11226.7,
       "weight_pct": 2.5,
       "capital_weight_pct": 3.125,
-      "reason": "MA60 위 첫 진입 (종가 11,970 > MA60 10,902)"
+      "reason": "MA60 위 첫 진입 (종가 11,440 > MA60 11,227)"
     }
   ]
 }
