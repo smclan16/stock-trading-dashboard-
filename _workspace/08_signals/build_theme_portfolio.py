@@ -49,7 +49,17 @@ def main():
                     help='default_picks 비중 (%) override — 안정형 30%, 공격형 5% 등')
     ap.add_argument('--max-tech-vol', type=float, default=None,
                     help='기술점수 변동성 임계 — 안정형 낮음, 공격형 높음')
+    # v10: 6축 + 기술점수 유형별 재가중 (안정형=가치/퀄리티, 공격형=모멘텀)
+    ap.add_argument('--axis-weights', default=None,
+                    help='6축+기술점수 가중치 JSON. 예: fundamental=0.4,risk_inv=0.3,tech=0.1,momentum=0.05,theme=0.05,catalyst=0.1')
     args = ap.parse_args()
+
+    axis_w = {'fundamental': 1.0, 'momentum': 1.0, 'theme': 1.0,
+              'catalyst': 1.0, 'risk_inv': 1.0, 'tech': 1.0}
+    if args.axis_weights:
+        for kv in args.axis_weights.split(','):
+            k, v = kv.split('=')
+            axis_w[k.strip()] = float(v.strip())
     w_a = 1 - args.w_tech
     w_t = args.w_tech
 
@@ -84,6 +94,18 @@ def main():
     for r in rows:
         if isinstance(r, dict) and 'ticker' in r:
             attr_map[r['ticker']] = r.get('total_score') or r.get('total', 0)
+
+    # 6축 raw 점수 (유형별 재가중용)
+    raw_axes_map = {}  # ticker → {fundamental, momentum, theme, catalyst, risk_inv}
+    for r in rows:
+        if isinstance(r, dict) and 'ticker' in r:
+            raw_axes_map[r['ticker']] = {
+                'fundamental': r.get('fundamental', 0) or 0,
+                'momentum': r.get('momentum', 0) or 0,
+                'theme': r.get('theme', 0) or 0,
+                'catalyst': r.get('catalyst', 0) or 0,
+                'risk_inv': r.get('risk_inv', 0) or 0,
+            }
 
     # 기술점수 (technical_scores)
     tech_scores = tech_data.get('scores', {})
@@ -132,10 +154,22 @@ def main():
     print(f'\n[3/5] 테마별 종목 선정 (cap 초과 시 분할, MA60 위, 중복 회피)…')
 
     def combined_score(ticker):
-        att = attr_map.get(ticker, 0)
+        """v10: 유형별 6축 + 기술점수 가중 결합. axis_w 정의 시 그 가중치, 없으면 기존 (매력도×0.5 + 기술×0.5)."""
         tsc = tech_scores.get(ticker, {}).get('tech_score')
         if tsc is None:
             return None
+        if args.axis_weights:
+            axes = raw_axes_map.get(ticker, {})
+            return (
+                axis_w['fundamental'] * axes.get('fundamental', 0) +
+                axis_w['momentum'] * axes.get('momentum', 0) +
+                axis_w['theme'] * axes.get('theme', 0) +
+                axis_w['catalyst'] * axes.get('catalyst', 0) +
+                axis_w['risk_inv'] * axes.get('risk_inv', 0) +
+                axis_w['tech'] * tsc
+            )
+        # default: 기존 방식
+        att = attr_map.get(ticker, 0)
         return w_a * att + w_t * tsc
 
     intensity_w = {'direct': 1.0, 'indirect': 0.7, 'value_chain': 0.4, 'perception': 0.3}

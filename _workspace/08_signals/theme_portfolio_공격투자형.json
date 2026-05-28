@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-28T13:15:19.494184",
+  "as_of": "2026-05-28T13:23:02.975440",
   "method": "테마 비중 골격 + 결합점수 최고 1종 (테마 10 + default 4)",
   "investor_type": "공격투자형",
   "equity_pct": 125.0,
@@ -110,8 +110,8 @@
       "intensity": "direct",
       "attractiveness": 63.84,
       "tech_score": 81,
-      "combined_score": 72.42,
-      "weighted_score": 72.42,
+      "combined_score": 33.246,
+      "weighted_score": 33.246,
       "tech_breakdown": {
         "alignment(20)": 12,
         "ma60_margin(15)": 15,
@@ -155,8 +155,8 @@
       "intensity": "direct",
       "attractiveness": 66.65,
       "tech_score": 77,
-      "combined_score": 71.825,
-      "weighted_score": 71.825,
+      "combined_score": 32.861,
+      "weighted_score": 32.861,
       "tech_breakdown": {
         "alignment(20)": 12,
         "ma60_margin(15)": 15,
@@ -200,8 +200,8 @@
       "intensity": "direct",
       "attractiveness": 63.76,
       "tech_score": 90.99,
-      "combined_score": 77.375,
-      "weighted_score": 77.375,
+      "combined_score": 36.592,
+      "weighted_score": 36.592,
       "tech_breakdown": {
         "alignment(20)": 20,
         "ma60_margin(15)": 13.0,
@@ -245,8 +245,8 @@
       "intensity": "direct",
       "attractiveness": 63.19,
       "tech_score": 73.11,
-      "combined_score": 68.15,
-      "weighted_score": 68.15,
+      "combined_score": 30.986,
+      "weighted_score": 30.986,
       "tech_breakdown": {
         "alignment(20)": 20,
         "ma60_margin(15)": 8.1,
@@ -290,8 +290,8 @@
       "intensity": "direct",
       "attractiveness": 66.46,
       "tech_score": 71,
-      "combined_score": 68.72999999999999,
-      "weighted_score": 68.72999999999999,
+      "combined_score": 31.497999999999998,
+      "weighted_score": 31.497999999999998,
       "tech_breakdown": {
         "alignment(20)": 11,
         "ma60_margin(15)": 15,
@@ -335,8 +335,8 @@
       "intensity": "direct",
       "attractiveness": 68.21,
       "tech_score": 72.47,
-      "combined_score": 70.34,
-      "weighted_score": 70.34,
+      "combined_score": 32.087,
+      "weighted_score": 32.087,
       "tech_breakdown": {
         "alignment(20)": 12,
         "ma60_margin(15)": 10.5,
@@ -380,8 +380,8 @@
       "intensity": "direct",
       "attractiveness": 58.32,
       "tech_score": 63.05,
-      "combined_score": 60.685,
-      "weighted_score": 60.685,
+      "combined_score": 28.293,
+      "weighted_score": 28.293,
       "tech_breakdown": {
         "alignment(20)": 12,
         "ma60_margin(15)": 11.0,

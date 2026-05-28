@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-05-28T13:15:19.429483",
+  "as_of": "2026-05-28T13:23:02.908754",
   "method": "테마 비중 골격 + 결합점수 최고 1종 (테마 8 + default 4)",
   "investor_type": "적극투자형",
   "equity_pct": 125.0,
@@ -98,7 +98,7 @@
       "theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
       "orig_allocation_pct": 11.69,
       "theme_target_alloc": 15.621,
-      "allocation_pct": 9.827,
+      "allocation_pct": 9.897,
       "ticker": "298040",
       "name": "효성중공업",
       "sector": "전기장비",
@@ -108,8 +108,8 @@
       "intensity": "direct",
       "attractiveness": 63.84,
       "tech_score": 81,
-      "combined_score": 72.42,
-      "weighted_score": 72.42,
+      "combined_score": 30.207,
+      "weighted_score": 30.207,
       "tech_breakdown": {
         "alignment(20)": 12,
         "ma60_margin(15)": 15,
@@ -136,14 +136,14 @@
         4,
         11
       ],
-      "capital_weight_pct": 12.284
+      "capital_weight_pct": 12.371
     },
     {
       "idea_id": 4,
       "theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
       "orig_allocation_pct": 11.69,
       "theme_target_alloc": 15.621,
-      "allocation_pct": 9.659,
+      "allocation_pct": 9.589,
       "ticker": "267260",
       "name": "HD현대일렉트릭",
       "sector": "전기장비",
@@ -153,8 +153,8 @@
       "intensity": "direct",
       "attractiveness": 68.37,
       "tech_score": 74,
-      "combined_score": 71.185,
-      "weighted_score": 71.185,
+      "combined_score": 29.2675,
+      "weighted_score": 29.2675,
       "tech_breakdown": {
         "alignment(20)": 12,
         "ma60_margin(15)": 15,
@@ -181,7 +181,7 @@
         4,
         11
       ],
-      "capital_weight_pct": 12.074
+      "capital_weight_pct": 11.986
     },
     {
       "idea_id": 3,
@@ -198,8 +198,8 @@
       "intensity": "direct",
       "attractiveness": 66.65,
       "tech_score": 77,
-      "combined_score": 71.825,
-      "weighted_score": 71.825,
+      "combined_score": 29.8455,
+      "weighted_score": 29.8455,
       "tech_breakdown": {
         "alignment(20)": 12,
         "ma60_margin(15)": 15,
@@ -243,8 +243,8 @@
       "intensity": "direct",
       "attractiveness": 63.76,
       "tech_score": 90.99,
-      "combined_score": 77.375,
-      "weighted_score": 77.375,
+      "combined_score": 32.870999999999995,
+      "weighted_score": 32.870999999999995,
       "tech_breakdown": {
         "alignment(20)": 20,
         "ma60_margin(15)": 13.0,
@@ -288,8 +288,8 @@
       "intensity": "direct",
       "attractiveness": 63.19,
       "tech_score": 73.11,
-      "combined_score": 68.15,
-      "weighted_score": 68.15,
+      "combined_score": 28.223,
+      "weighted_score": 28.223,
       "tech_breakdown": {
         "alignment(20)": 20,
         "ma60_margin(15)": 8.1,
@@ -333,8 +333,8 @@
       "intensity": "direct",
       "attractiveness": 66.46,
       "tech_score": 71,
-      "combined_score": 68.72999999999999,
-      "weighted_score": 68.72999999999999,
+      "combined_score": 28.601999999999997,
+      "weighted_score": 28.601999999999997,
       "tech_breakdown": {
         "alignment(20)": 11,
         "ma60_margin(15)": 15,
@@ -378,8 +378,8 @@
       "intensity": "direct",
       "attractiveness": 68.21,
       "tech_score": 72.47,
-      "combined_score": 70.34,
-      "weighted_score": 70.34,
+      "combined_score": 29.1615,
+      "weighted_score": 29.1615,
       "tech_breakdown": {
         "alignment(20)": 12,
         "ma60_margin(15)": 10.5,
