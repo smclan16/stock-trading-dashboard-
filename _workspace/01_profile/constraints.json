@@ -1,19 +1,30 @@
 {
-  "investor_type": "적극투자형",
-  "equity_pct_min": 100,
-  "equity_pct_max": 150,
-  "max_single_stock_pct": 15,
+  "investor_type": "위험중립형",
+  "investor_score": 65.0,
+  "equity_pct_min": 60,
+  "equity_pct_max": 100,
+  "max_single_stock_pct": 13,
   "max_sector_pct": 30,
-  "max_annual_volatility": 30,
+  "max_annual_volatility": 25,
   "excluded_tickers": [],
   "excluded_sectors": [],
   "esg_filter": false,
-  "rebalancing_period": "quarterly",
-  "_meta": {
-    "score": 89.25,
-    "scored_at": "2026-05-23",
-    "survey_date": "2026-05-23",
-    "investment_scale_krw": 1000000000,
-    "warning": "단기 투자기간(6개월~2년)과 극단적 위험 선호 간 불일치 감지. 포트폴리오 실행 전 재확인 권장."
+  "profile_name": "default",
+  "updated_at": "2026-05-29T23:59:11.465448",
+  "survey_answers": {
+    "위험감내": 50,
+    "투자기간": 75,
+    "손실허용": 75,
+    "목표수익": 75,
+    "투자경험": 50,
+    "유동성": 75
+  },
+  "survey_weights": {
+    "위험감내": 0.3,
+    "투자기간": 0.2,
+    "손실허용": 0.2,
+    "목표수익": 0.15,
+    "투자경험": 0.1,
+    "유동성": 0.05
   }
 }

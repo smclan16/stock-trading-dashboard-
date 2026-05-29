@@ -1,9 +1,9 @@
 {
-  "equity_pct": 125.0,
-  "cash_pct": -25.0,
+  "equity_pct": 80.0,
+  "cash_pct": 20.0,
   "regime": "중립",
   "w_macro": 0.5,
-  "updated_at": "2026-05-26T23:15:05+09:00",
+  "updated_at": "2026-05-29T23:59:11.469451",
   "basis": {
     "vix": 16.59,
     "us10y": 4.57,
@@ -11,9 +11,10 @@
     "unemployment": 4.3,
     "cpi_yoy": 3.9470269087042764,
     "pce_yoy": 3.496081498479442,
-    "equity_pct_min": 100,
-    "equity_pct_max": 150,
-    "allocation_rule": "중립 (VIX Low, US10Y High): W_macro=0.5 → 100 + (150-100)×0.5 = 125.0",
-    "data_source": "FRED (St. Louis Fed) — VIXCLS, DGS10, FEDFUNDS, UNRATE, CPIAUCSL, PCEPI"
+    "equity_pct_min": 60,
+    "equity_pct_max": 100,
+    "allocation_rule": "중립: W_macro=0.5 → 60 + (100-60)×0.5 = 80.00",
+    "data_source": "FRED (St. Louis Fed) — VIXCLS, DGS10, FEDFUNDS, UNRATE, CPIAUCSL, PCEPI",
+    "investor_type": "위험중립형"
   }
 }
