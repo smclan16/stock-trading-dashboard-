@@ -3,9 +3,11 @@ import streamlit as st
 import pandas as pd
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from lib import loader
+from lib import loader, auth
 
 st.set_page_config(page_title='파이프라인 상세', page_icon='🧭', layout='wide')
+auth.require_login()
+auth.logout_button()
 st.title('🧭 파이프라인 상세 — 8단계 로직·조건·산출물')
 st.caption('각 단계의 로직·통과조건·산식을 표로 정리. 하단 산출물은 현재 시점 데이터.')
 

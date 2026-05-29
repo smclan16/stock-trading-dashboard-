@@ -2,6 +2,7 @@
 .env
 _workspace/.env
 .streamlit/secrets.toml
+**/.streamlit/secrets.toml
 *.key
 *credentials*
 

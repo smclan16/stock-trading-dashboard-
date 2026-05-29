@@ -1,117 +1,49 @@
-"""SQLite — 거래(체결) 이력 + 일별 평가 캐시"""
-import sqlite3
-import os
-import datetime
-from contextlib import contextmanager
+"""Supabase — 사용자별 거래(체결) 이력 + 시뮬 + 공유 시세 캐시.
 
-DB_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'portfolio.db')
-
-SCHEMA = """
-CREATE TABLE IF NOT EXISTS trades (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    trade_date TEXT NOT NULL,
-    ticker TEXT NOT NULL,
-    name TEXT,
-    action TEXT NOT NULL,        -- BUY / SELL / DIVIDEND
-    shares INTEGER NOT NULL,
-    price REAL NOT NULL,         -- DIVIDEND 시: 주당 배당금
-    fee REAL DEFAULT 0,
-    tax REAL DEFAULT 0,
-    theme_id TEXT,                -- #1, #3, default 등
-    note TEXT,
-    created_at TEXT DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE IF NOT EXISTS price_cache (
-    ticker TEXT NOT NULL,
-    trade_date TEXT NOT NULL,
-    close REAL NOT NULL,
-    PRIMARY KEY (ticker, trade_date)
-);
-
-CREATE TABLE IF NOT EXISTS portfolio_meta (
-    key TEXT PRIMARY KEY,
-    value TEXT
-);
-
-CREATE TABLE IF NOT EXISTS simulations (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT,
-    start_date TEXT NOT NULL,
-    start_capital REAL NOT NULL,
-    status TEXT DEFAULT 'active',     -- active / paused / stopped
-    last_synced TEXT,
-    notes TEXT,
-    created_at TEXT DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE IF NOT EXISTS simulated_trades (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    sim_id INTEGER NOT NULL,
-    trade_date TEXT NOT NULL,
-    ticker TEXT NOT NULL,
-    name TEXT,
-    action TEXT NOT NULL,           -- BUY / SELL / DIVIDEND / CREDIT_INTEREST
-    shares INTEGER NOT NULL,
-    price REAL NOT NULL,            -- DIVIDEND 시 주당 배당금, CREDIT_INTEREST 시 누적 이자(주식수=1)
-    fee REAL DEFAULT 0,
-    tax REAL DEFAULT 0,
-    theme_id TEXT,
-    signal_type TEXT,               -- ENTRY_1ST / ADD_2ND / EXIT_MA60_FULL 등
-    note TEXT,
-    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (sim_id) REFERENCES simulations(id)
-);
-
-CREATE INDEX IF NOT EXISTS idx_trades_date ON trades(trade_date);
-CREATE INDEX IF NOT EXISTS idx_trades_ticker ON trades(ticker);
-CREATE INDEX IF NOT EXISTS idx_sim_trades_sim ON simulated_trades(sim_id);
-CREATE INDEX IF NOT EXISTS idx_sim_trades_date ON simulated_trades(trade_date);
+모든 사용자 데이터 함수는 현재 로그인 사용자(auth.current_user_id())로 스코프된다.
+함수 시그니처는 기존 SQLite 버전과 동일 — 페이지 코드 변경 불필요.
+positions 계산 로직은 기존과 100% 동일.
 """
+from lib.supa import get_client
+from lib import auth
 
 
-def init_db():
-    os.makedirs(os.path.dirname(DB_PATH), exist_ok=True)
-    with sqlite3.connect(DB_PATH) as conn:
-        conn.executescript(SCHEMA)
+def _uid() -> str:
+    return auth.current_user_id()
 
 
-@contextmanager
-def get_conn():
-    init_db()
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
-    try:
-        yield conn
-        conn.commit()
-    finally:
-        conn.close()
+def _ymd(s):
+    """Supabase date('2026-05-04') → 앱 표준 'YYYYMMDD'(대시 없음).
+    앱 전체가 strftime('%Y%m%d') 형식을 쓰고 가격/KOSPI 딕셔너리 키와 비교하므로
+    DB에서 읽은 date 값의 대시를 제거해 형식을 일치시킨다."""
+    return s.replace("-", "") if isinstance(s, str) else s
 
 
+# ─── 거래(체결) ────────────────────────────────────────
 def add_trade(trade_date: str, ticker: str, name: str, action: str,
               shares: int, price: float, fee: float = 0, tax: float = 0,
               theme_id: str = None, note: str = None) -> int:
-    with get_conn() as conn:
-        c = conn.execute(
-            """INSERT INTO trades (trade_date, ticker, name, action, shares, price, fee, tax, theme_id, note)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-            (trade_date, ticker, name, action, shares, price, fee, tax, theme_id, note),
-        )
-        return c.lastrowid
+    res = get_client().table("trades").insert({
+        "user_id": _uid(), "trade_date": trade_date, "ticker": ticker,
+        "name": name, "action": action, "shares": shares, "price": price,
+        "fee": fee, "tax": tax, "theme_id": theme_id, "note": note,
+    }).execute()
+    return res.data[0]["id"]
 
 
 def delete_trade(trade_id: int):
-    with get_conn() as conn:
-        conn.execute("DELETE FROM trades WHERE id = ?", (trade_id,))
+    get_client().table("trades").delete().eq("id", trade_id).eq("user_id", _uid()).execute()
 
 
 def list_trades(ticker: str = None) -> list:
-    with get_conn() as conn:
-        if ticker:
-            rows = conn.execute("SELECT * FROM trades WHERE ticker = ? ORDER BY trade_date DESC, id DESC", (ticker,)).fetchall()
-        else:
-            rows = conn.execute("SELECT * FROM trades ORDER BY trade_date DESC, id DESC").fetchall()
-    return [dict(r) for r in rows]
+    q = get_client().table("trades").select("*").eq("user_id", _uid())
+    if ticker:
+        q = q.eq("ticker", ticker)
+    res = q.order("trade_date", desc=True).order("id", desc=True).execute()
+    rows = res.data or []
+    for r in rows:
+        r["trade_date"] = _ymd(r.get("trade_date"))
+    return rows
 
 
 def get_positions() -> dict:
@@ -160,86 +92,95 @@ def get_positions() -> dict:
     return {k: v for k, v in positions.items() if v['shares'] > 0}
 
 
+# ─── 시세 캐시 (공유 — user_id 없음) ──────────────────
 def cache_price(ticker: str, trade_date: str, close: float):
-    with get_conn() as conn:
-        conn.execute("INSERT OR REPLACE INTO price_cache (ticker, trade_date, close) VALUES (?, ?, ?)",
-                     (ticker, trade_date, close))
+    get_client().table("price_cache").upsert({
+        "ticker": ticker, "trade_date": trade_date, "close": close,
+    }).execute()
 
 
 def get_cached_prices(ticker: str) -> dict:
-    with get_conn() as conn:
-        rows = conn.execute("SELECT trade_date, close FROM price_cache WHERE ticker = ? ORDER BY trade_date",
-                            (ticker,)).fetchall()
-    return {r['trade_date']: r['close'] for r in rows}
+    res = get_client().table("price_cache").select("trade_date, close") \
+        .eq("ticker", ticker).order("trade_date").execute()
+    return {_ymd(r['trade_date']): r['close'] for r in (res.data or [])}
 
 
+# ─── 사용자 메타 (key-value) ──────────────────────────
 def set_meta(key: str, value: str):
-    with get_conn() as conn:
-        conn.execute("INSERT OR REPLACE INTO portfolio_meta (key, value) VALUES (?, ?)", (key, value))
+    get_client().table("portfolio_meta").upsert({
+        "user_id": _uid(), "key": key, "value": value,
+    }).execute()
 
 
 def get_meta(key: str, default: str = None) -> str:
-    with get_conn() as conn:
-        row = conn.execute("SELECT value FROM portfolio_meta WHERE key = ?", (key,)).fetchone()
-    return row['value'] if row else default
+    res = get_client().table("portfolio_meta").select("value") \
+        .eq("user_id", _uid()).eq("key", key).limit(1).execute()
+    return res.data[0]["value"] if res.data else default
 
 
 # ─── 시뮬레이션 ────────────────────────────────────────
 def create_simulation(name: str, start_date: str, start_capital: float, notes: str = None) -> int:
-    with get_conn() as conn:
-        c = conn.execute(
-            "INSERT INTO simulations (name, start_date, start_capital, notes, last_synced) VALUES (?, ?, ?, ?, ?)",
-            (name, start_date, start_capital, notes, start_date),
-        )
-        return c.lastrowid
+    res = get_client().table("simulations").insert({
+        "user_id": _uid(), "name": name, "start_date": start_date,
+        "start_capital": start_capital, "notes": notes, "last_synced": start_date,
+    }).execute()
+    return res.data[0]["id"]
 
 
 def list_simulations() -> list:
-    with get_conn() as conn:
-        rows = conn.execute("SELECT * FROM simulations ORDER BY id DESC").fetchall()
-    return [dict(r) for r in rows]
+    res = get_client().table("simulations").select("*") \
+        .eq("user_id", _uid()).order("id", desc=True).execute()
+    rows = res.data or []
+    for r in rows:
+        r["start_date"] = _ymd(r.get("start_date"))
+    return rows
 
 
 def get_simulation(sim_id: int) -> dict:
-    with get_conn() as conn:
-        row = conn.execute("SELECT * FROM simulations WHERE id = ?", (sim_id,)).fetchone()
-    return dict(row) if row else None
+    res = get_client().table("simulations").select("*") \
+        .eq("id", sim_id).eq("user_id", _uid()).limit(1).execute()
+    if not res.data:
+        return None
+    row = res.data[0]
+    row["start_date"] = _ymd(row.get("start_date"))
+    return row
 
 
 def delete_simulation(sim_id: int):
-    with get_conn() as conn:
-        conn.execute("DELETE FROM simulated_trades WHERE sim_id = ?", (sim_id,))
-        conn.execute("DELETE FROM simulations WHERE id = ?", (sim_id,))
+    uid = _uid()
+    sb = get_client()
+    # simulated_trades 는 sim_id FK(on delete cascade) 지만 user_id 스코프로 명시 삭제
+    sb.table("simulated_trades").delete().eq("sim_id", sim_id).eq("user_id", uid).execute()
+    sb.table("simulations").delete().eq("id", sim_id).eq("user_id", uid).execute()
 
 
 def update_simulation(sim_id: int, **fields):
     if not fields:
         return
-    sets = ', '.join(f'{k} = ?' for k in fields.keys())
-    with get_conn() as conn:
-        conn.execute(f"UPDATE simulations SET {sets} WHERE id = ?", list(fields.values()) + [sim_id])
+    get_client().table("simulations").update(fields) \
+        .eq("id", sim_id).eq("user_id", _uid()).execute()
 
 
 def add_sim_trade(sim_id: int, trade_date: str, ticker: str, name: str, action: str,
                   shares: int, price: float, fee: float = 0, tax: float = 0,
                   theme_id: str = None, signal_type: str = None, note: str = None) -> int:
-    with get_conn() as conn:
-        c = conn.execute(
-            """INSERT INTO simulated_trades
-               (sim_id, trade_date, ticker, name, action, shares, price, fee, tax, theme_id, signal_type, note)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-            (sim_id, trade_date, ticker, name, action, shares, price, fee, tax, theme_id, signal_type, note),
-        )
-        return c.lastrowid
+    res = get_client().table("simulated_trades").insert({
+        "user_id": _uid(), "sim_id": sim_id, "trade_date": trade_date,
+        "ticker": ticker, "name": name, "action": action, "shares": shares,
+        "price": price, "fee": fee, "tax": tax, "theme_id": theme_id,
+        "signal_type": signal_type, "note": note,
+    }).execute()
+    return res.data[0]["id"]
 
 
 def list_sim_trades(sim_id: int) -> list:
-    with get_conn() as conn:
-        rows = conn.execute(
-            "SELECT * FROM simulated_trades WHERE sim_id = ? ORDER BY trade_date, id",
-            (sim_id,),
-        ).fetchall()
-    return [dict(r) for r in rows]
+    res = get_client().table("simulated_trades").select("*") \
+        .eq("sim_id", sim_id).eq("user_id", _uid()) \
+        .order("trade_date").order("id").execute()
+    rows = res.data or []
+    for r in rows:
+        r["trade_date"] = _ymd(r.get("trade_date"))
+    return rows
 
 
 def get_sim_positions(sim_id: int) -> dict:

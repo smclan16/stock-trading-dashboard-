@@ -4,9 +4,11 @@ import pandas as pd
 import datetime
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from lib import db, perf, loader, costs
+from lib import db, perf, loader, costs, auth
 
 st.set_page_config(page_title='수익률 관리', page_icon='📈', layout='wide')
+auth.require_login()
+auth.logout_button()
 st.title('📈 수익률 관리')
 st.caption(f'{costs.explain_cost_model()}')
 

@@ -8,9 +8,11 @@ import streamlit as st
 import pandas as pd
 import datetime, os, sys, json, subprocess
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from lib import loader, db, perf, costs
+from lib import loader, db, perf, costs, auth
 
 st.set_page_config(page_title='자동매매 시뮬레이션', page_icon='🤖', layout='wide')
+auth.require_login()
+auth.logout_button()
 st.title('🤖 자동매매 시뮬레이션 — 시스템 추천대로 매매 시 수익률')
 
 st.info("""
@@ -405,6 +407,10 @@ with tab_live:
             latest_prices = {t: ph[max(ph.keys())] for t, ph in price_history.items() if ph}
 
             evals = perf.evaluate_positions(sim_positions, latest_prices)
+            if not evals:
+                st.warning('⚠️ 가격 데이터를 일시적으로 가져오지 못했습니다(yfinance 미응답/레이트리밋). '
+                           '잠시 후 새로고침하세요. 보유 종목 자체는 정상 저장되어 있습니다.')
+                st.stop()
             total_cost = sum(p['cost'] for p in evals)
             total_mkt = sum(p['market_value'] for p in evals)
             total_pnl = total_mkt - total_cost

@@ -3,9 +3,11 @@ import streamlit as st
 import subprocess, sys
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from lib import loader
+from lib import loader, auth
 
 st.set_page_config(page_title='운영 가이드', page_icon='⚙️', layout='wide')
+auth.require_login()
+auth.logout_button()
 st.title('⚙️ 운영 가이드 — 매일/주간 작업')
 
 WS = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))

@@ -3,9 +3,11 @@ import streamlit as st
 import pandas as pd
 import json, os, sys, datetime
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from lib import db, perf, costs
+from lib import db, perf, costs, auth
 
 st.set_page_config(page_title='유형별 포트 비교', page_icon='📊', layout='wide')
+auth.require_login()
+auth.logout_button()
 st.title('📊 5개 투자성향 유형별 포트폴리오 비교')
 st.caption('각 유형의 모델 포트 + 다중 시뮬레이션 동시 운영·수익률 비교')
 

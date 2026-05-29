@@ -1,6 +1,8 @@
-streamlit>=1.40
+streamlit>=1.42
 pandas>=2.0
 plotly>=5.20
 requests>=2.30
 altair>=5.0
 yfinance>=0.2.40
+supabase>=2.0
+Authlib==1.6.5  # 1.6.6+ 는 st.login 회귀 버그 (NoneType item assignment)
