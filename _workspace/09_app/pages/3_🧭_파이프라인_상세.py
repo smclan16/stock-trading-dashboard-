@@ -163,16 +163,36 @@ elif stage.startswith('3'):
         col3.metric('KOSPI', meta.get('market_dist', {}).get('KOSPI', '-'))
         col3.metric('KOSDAQ', meta.get('market_dist', {}).get('KOSDAQ', '-'))
 
-        st.markdown('#### 유니버스 Top 30')
         univ = d.get('universe', [])
-        udf = pd.DataFrame([{
-            '순위': x['rank'], '티커': x['ticker'], '종목명': x['name'],
-            '시장': x.get('market', '-'), '섹터': x.get('sector', '-'),
-            '시총(억)': (x.get('metrics') or {}).get('mcap_eok', 0),
-            '종합': (x.get('scores') or {}).get('total', 0),
-            'mcap auto': '✅' if x.get('auto_included_by_mcap') else '',
-        } for x in univ[:30]])
-        st.dataframe(udf, hide_index=True, use_container_width=True,
+        st.markdown(f'#### 유니버스 전체 {len(univ)}종 (스크롤 또는 검색)')
+        # 검색·시장·섹터 필터
+        fc1, fc2, fc3 = st.columns([2, 1, 1])
+        q = fc1.text_input('🔍 종목명·티커 검색', key='univ_q', placeholder='예: 삼성전자, 005930')
+        markets = sorted({x.get('market', '-') for x in univ if x.get('market')})
+        sectors = sorted({x.get('sector', '-') for x in univ if x.get('sector')})
+        sel_market = fc2.multiselect('시장', markets, default=markets, key='univ_m')
+        sel_sector = fc3.multiselect('섹터', sectors, default=sectors, key='univ_s')
+
+        rows = []
+        for x in univ:
+            if sel_market and x.get('market') not in sel_market:
+                continue
+            if sel_sector and x.get('sector') not in sel_sector:
+                continue
+            if q and q.strip():
+                k = q.strip().lower()
+                if k not in (x.get('name', '') or '').lower() and k not in (x.get('ticker', '') or ''):
+                    continue
+            rows.append({
+                '순위': x['rank'], '티커': x['ticker'], '종목명': x['name'],
+                '시장': x.get('market', '-'), '섹터': x.get('sector', '-'),
+                '시총(억)': (x.get('metrics') or {}).get('mcap_eok', 0),
+                '종합': (x.get('scores') or {}).get('total', 0),
+                'mcap auto': '✅' if x.get('auto_included_by_mcap') else '',
+            })
+        udf = pd.DataFrame(rows)
+        st.caption(f'표시 {len(udf)}종 / 전체 {len(univ)}종')
+        st.dataframe(udf, hide_index=True, use_container_width=True, height=600,
                      column_config={
                          '시총(억)': st.column_config.NumberColumn(format='%d'),
                          '종합': st.column_config.NumberColumn(format='%.3f'),
