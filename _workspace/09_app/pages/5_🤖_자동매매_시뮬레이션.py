@@ -314,9 +314,19 @@ with tab_live:
                         if existing:
                             st.warning(f'{today} 이미 적용됨 ({len(existing)}건). 중복 적용 방지.')
                         else:
+                            # v19: 시뮬 universe lock — 시뮬 시작 시 매수한 종목만 시그널 적용
+                            sim_universe = set(
+                                t['ticker'] for t in db.list_sim_trades(sim_id)
+                                if t['action'] == 'BUY'
+                            )
                             applied = 0
+                            skipped_universe = 0
                             for s in daily.get('signals', []):
                                 if s['signal'] == 'WATCH':
+                                    continue
+                                # 시뮬 portfolio 외 종목 차단 (다른 유형 시그널 침범 방지)
+                                if s['ticker'] not in sim_universe:
+                                    skipped_universe += 1
                                     continue
                                 if s['signal'] in ('EXIT_MA60_FULL', 'EXIT_MA60_REMAINDER', 'EXIT_MA20_PARTIAL', 'EXIT_MA60', 'EXIT_TRAILING'):
                                     pos = db.get_sim_positions(sim_id).get(s['ticker'])
@@ -357,7 +367,10 @@ with tab_live:
                                         )
                                         applied += 1
                             db.update_simulation(sim_id, last_synced=today)
-                            st.success(f'✅ {today} 시그널 {applied}건 적용 (키움 매매비용 자동 반영)')
+                            msg = f'✅ {today} 시그널 {applied}건 적용 (키움 매매비용 자동 반영)'
+                            if skipped_universe > 0:
+                                msg += f' | 🛡 시뮬 universe 외 {skipped_universe}건 차단 (다른 유형 portfolio 종목)'
+                            st.success(msg)
                             st.rerun()
 
     st.divider()
