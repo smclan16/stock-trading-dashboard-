@@ -165,19 +165,24 @@ elif stage.startswith('3'):
 
         univ = d.get('universe', [])
         st.markdown(f'#### 유니버스 전체 {len(univ)}종 (스크롤 또는 검색)')
-        # 검색·시장·섹터 필터
+
+        # 검색·필터 (selectbox로 통일 → 깔끔한 한 줄)
+        markets = ['전체'] + sorted({x.get('market', '-') for x in univ if x.get('market')})
+        sectors = ['전체'] + sorted({x.get('sector', '-') for x in univ if x.get('sector')})
         fc1, fc2, fc3 = st.columns([2, 1, 1])
-        q = fc1.text_input('🔍 종목명·티커 검색', key='univ_q', placeholder='예: 삼성전자, 005930')
-        markets = sorted({x.get('market', '-') for x in univ if x.get('market')})
-        sectors = sorted({x.get('sector', '-') for x in univ if x.get('sector')})
-        sel_market = fc2.multiselect('시장', markets, default=markets, key='univ_m')
-        sel_sector = fc3.multiselect('섹터', sectors, default=sectors, key='univ_s')
+        with fc1:
+            q = st.text_input('🔍 종목명·티커', key='univ_q', placeholder='예: 삼성전자, 005930',
+                              label_visibility='visible')
+        with fc2:
+            sel_market = st.selectbox('시장', markets, key='univ_m')
+        with fc3:
+            sel_sector = st.selectbox('섹터', sectors, key='univ_s')
 
         rows = []
         for x in univ:
-            if sel_market and x.get('market') not in sel_market:
+            if sel_market != '전체' and x.get('market') != sel_market:
                 continue
-            if sel_sector and x.get('sector') not in sel_sector:
+            if sel_sector != '전체' and x.get('sector') != sel_sector:
                 continue
             if q and q.strip():
                 k = q.strip().lower()
