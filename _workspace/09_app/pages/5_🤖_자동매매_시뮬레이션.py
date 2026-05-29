@@ -210,11 +210,17 @@ with tab_live:
                     tp = json.load(open(tp_path, encoding='utf-8'))
                     holdings = tp['holdings']
                     cap_won = start_capital_eok * 1e8
+                    # v19: cap_pct 합이 equity_pct를 초과하면 비례 정규화 (한도 초과 매수 방지)
+                    cap_total = sum(h.get('capital_weight_pct', 0) for h in holdings)
+                    equity_pct = tp.get('equity_pct', 100)
+                    cap_scale = 1.0
+                    if cap_total > equity_pct:
+                        cap_scale = equity_pct / cap_total
                     sim_id = db.create_simulation(
                         name=sim_name,
                         start_date=start_date.strftime('%Y%m%d'),
                         start_capital=cap_won,
-                        notes=f'{notes} | 유형: {pname} (equity {tp["equity_pct"]}%)',
+                        notes=f'{notes} | 유형: {pname} (equity {equity_pct}%) | cap_scale={cap_scale:.3f}',
                     )
                     n_orders = 0
                     for h in holdings:
@@ -222,7 +228,7 @@ with tab_live:
                         price = ind.get('close')
                         if not price:
                             continue
-                        cap_pct = h.get('capital_weight_pct', 0)
+                        cap_pct = h.get('capital_weight_pct', 0) * cap_scale  # equity 한도 내 정규화
                         budget = cap_won * cap_pct / 100
                         first_won = budget * 0.75  # v8: 1차 75%
                         shares = int(first_won / price) if price > 0 else 0
