@@ -408,13 +408,19 @@ with tab_live:
             total_cost = sum(p['cost'] for p in evals)
             total_mkt = sum(p['market_value'] for p in evals)
             total_pnl = total_mkt - total_cost
-            total_pnl_pct = (total_mkt / total_cost - 1) * 100 if total_cost > 0 else 0
+            # v19: 시작 자본 분모로 통일 (아래 시계열과 일치)
+            total_pnl_pct_cost = (total_mkt / total_cost - 1) * 100 if total_cost > 0 else 0
+            total_pnl_pct_cap = total_pnl / sim['start_capital'] * 100 if sim['start_capital'] > 0 else 0
 
-            col1, col2, col3, col4 = st.columns(4)
+            col1, col2, col3, col4, col5 = st.columns(5)
             col1.metric('시작 자본', f"{sim['start_capital']/1e8:.2f}억")
-            col2.metric('투입 금액', f'{total_cost:,.0f}원')
+            col2.metric('투입 금액', f'{total_cost:,.0f}원',
+                          help=f"투입률 {total_cost/sim['start_capital']*100:.1f}% (자본 대비)")
             col3.metric('현재 평가', f'{total_mkt:,.0f}원')
-            col4.metric('수익률', f'{total_pnl:,.0f}원', f'{total_pnl_pct:+.2f}%')
+            col4.metric('수익률 (자본 대비)', f'{total_pnl:,.0f}원', f'{total_pnl_pct_cap:+.2f}%',
+                          help='시작 자본 분모. 아래 시계열·KOSPI 비교와 일치.')
+            col5.metric('수익률 (매수원가 대비)', f'{total_pnl_pct_cost:+.2f}%',
+                          help='매수 cost_basis 분모. 보유 종목 표의 종목별 수익률(%)과 일관.')
 
             # 보유 종목 평가
             st.markdown('### 시뮬레이션 보유 종목')
