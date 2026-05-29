@@ -33,18 +33,16 @@ CONSTRAINTS_PATH = os.path.join(
     '01_profile', 'constraints.json'
 )
 
-# ─── 현재 적용 ───────────────────────
-current_type = '-'
+# ─── 현재 적용 (사용자별 — Phase 2 멀티유저) ───────────────────────
+saved_type = db.get_profile_type()
+current_type = saved_type or '-'
 current_equity_min = 0
 current_equity_max = 0
-if os.path.exists(CONSTRAINTS_PATH):
-    try:
-        cur = json.load(open(CONSTRAINTS_PATH, encoding='utf-8'))
-        current_type = cur.get('investor_type', '-')
-        current_equity_min = cur.get('equity_pct_min', 0)
-        current_equity_max = cur.get('equity_pct_max', 0)
-    except Exception:
-        pass
+if saved_type:
+    for _t in TYPES:
+        if _t[0] == saved_type:
+            current_equity_min, current_equity_max = _t[3], _t[4]
+            break
 
 col_now1, col_now2 = st.columns(2)
 col_now1.metric('현재 적용 유형', current_type)
@@ -165,7 +163,10 @@ if submitted:
     else:
         tname, e_min, e_max, max_single, max_sector, max_vol = matched_type
 
-        # constraints.json 갱신
+        # Phase 2: 진단 유형을 사용자별로 저장 (다른 사용자에게 영향 없음)
+        db.set_profile_type(tname)
+
+        # constraints.json 갱신 (로컬 파이프라인용 — 전역 공유)
         new_constraints = {
             'investor_type': tname,
             'investor_score': round(weighted_score, 2),

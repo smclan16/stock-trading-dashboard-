@@ -164,15 +164,16 @@ with tab_live:
     with col_a:
         st.markdown('### ➕ 새 시뮬레이션 시작')
 
-        # 현재 진단된 투자성향 (constraints.json) 로드
+        # 현재 진단된 투자성향 — Phase 2: 사용자별 meta 우선, 없으면 전역 constraints.json 폴백
         WS_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        cur_profile_path = os.path.join(WS_ROOT, '01_profile', 'constraints.json')
-        cur_profile_type = None
-        if os.path.exists(cur_profile_path):
-            try:
-                cur_profile_type = json.load(open(cur_profile_path, encoding='utf-8')).get('investor_type')
-            except Exception:
-                pass
+        cur_profile_type = db.get_profile_type()
+        if not cur_profile_type:
+            cur_profile_path = os.path.join(WS_ROOT, '01_profile', 'constraints.json')
+            if os.path.exists(cur_profile_path):
+                try:
+                    cur_profile_type = json.load(open(cur_profile_path, encoding='utf-8')).get('investor_type')
+                except Exception:
+                    pass
 
         # 5개 유형별 theme_portfolio 존재 확인
         AVAILABLE_PROFILES = []

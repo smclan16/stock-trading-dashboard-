@@ -118,6 +118,16 @@ def get_meta(key: str, default: str = None) -> str:
     return res.data[0]["value"] if res.data else default
 
 
+# ─── 투자성향(사용자별) ───────────────────────────────
+def get_profile_type(default: str = None) -> str:
+    """현재 로그인 사용자의 진단 투자유형(안정형~공격투자형). 미진단 시 default."""
+    return get_meta("profile_type", default)
+
+
+def set_profile_type(profile_type: str):
+    set_meta("profile_type", profile_type)
+
+
 # ─── 시뮬레이션 ────────────────────────────────────────
 def create_simulation(name: str, start_date: str, start_capital: float, notes: str = None) -> int:
     res = get_client().table("simulations").insert({

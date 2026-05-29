@@ -12,10 +12,11 @@ auth.logout_button()
 st.title('📝 포트폴리오 입력 — 체결·배당 등록')
 st.caption(costs.explain_cost_model())
 
-# 종목 자동완성용 (최종 포트 종목 우선)
-tp = loader.load('theme_portfolio')
+# 종목 자동완성용 (최종 포트 종목 우선) — Phase 2: 사용자 유형별
+ptype = db.get_profile_type()
+tp = loader.load_typed('theme_portfolio', ptype)
 final_tickers = {h['ticker']: h for h in (tp or {}).get('holdings', [])}
-pf = loader.load('portfolio')
+pf = loader.load_typed('portfolio', ptype)
 parent_tickers = {h['ticker']: h for h in (pf or {}).get('holdings', [])}
 ticker_options = list({**parent_tickers, **final_tickers}.keys())
 

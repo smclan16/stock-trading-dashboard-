@@ -76,10 +76,12 @@ with tab1:
 
     col1, col2, col3, col4 = st.columns(4)
 
+    # Phase 2: 사용자별 진단 유형 (없으면 전역 profile 폴백)
+    ptype = db.get_profile_type()
     # 매크로 (constraints의 현재 유형 + allocation 기반)
     alloc = loader.load('allocation')
     profile = loader.load('profile')
-    cur_type = profile.get('investor_type', '-') if profile else '-'
+    cur_type = ptype or (profile.get('investor_type', '-') if profile else '-')
     if alloc:
         col1.metric(f'주식 비중 ({cur_type})', f"{alloc.get('equity_pct', 0)}%",
                     delta=alloc.get('regime', '-'))
@@ -89,13 +91,13 @@ with tab1:
         n = len(uni.get('universe', []))
         meta = uni.get('meta', {})
         col2.metric('유니버스', f'{n}종', delta=meta.get('regime', '-'))
-    # 포트폴리오
-    pf = loader.load('portfolio')
+    # 포트폴리오 (사용자 유형별)
+    pf = loader.load_typed('portfolio', ptype)
     if pf:
         col3.metric('모델 포트', f"{pf.get('n_holdings', 0)}종",
                     delta=pf.get('investor_type', '-'))
-    # 최종 포트
-    tp = loader.load('theme_portfolio')
+    # 최종 포트 (사용자 유형별)
+    tp = loader.load_typed('theme_portfolio', ptype)
     if tp:
         col4.metric('최종 포트 (테마 골격)', f"{tp.get('n_holdings', 0)}종",
                     delta=f"{tp.get('n_themes_selected', 0)} 테마")

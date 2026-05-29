@@ -28,6 +28,27 @@ PATHS = {
 }
 
 
+# 투자유형별 사전계산 산출물 (Phase 2 멀티유저: 사용자 진단 유형에 맞춰 로드)
+TYPED_PATHS = {
+    'portfolio': os.path.join(WS, '07_portfolio', 'portfolio_{t}.json'),
+    'theme_portfolio': os.path.join(WS, '08_signals', 'theme_portfolio_{t}.json'),
+}
+
+
+@st.cache_data(ttl=10)
+def load_typed(name: str, profile_type: str) -> Any:
+    """투자유형별 산출물 로드. 유형 파일이 없으면 기본(default) 산출물로 폴백."""
+    if profile_type and name in TYPED_PATHS:
+        path = TYPED_PATHS[name].format(t=profile_type)
+        if os.path.exists(path):
+            try:
+                with open(path, encoding='utf-8') as f:
+                    return json.load(f)
+            except Exception:
+                pass
+    return load(name)
+
+
 @st.cache_data(ttl=10)
 def load(name: str) -> Any:
     path = PATHS.get(name)
