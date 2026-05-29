@@ -348,6 +348,9 @@ with tab_live:
                                         )
                                         applied += 1
                                 elif s['signal'] == 'ENTRY_1ST':
+                                    # v19: 이미 보유 중인 종목이면 ENTRY_1ST 중복 차단 (시뮬 시작 시 이미 1차 매수)
+                                    if db.get_sim_positions(sim_id).get(s['ticker']):
+                                        continue
                                     cap_pct = s.get('capital_weight_pct', 0)
                                     budget = sim['start_capital'] * cap_pct / 100
                                     first_won = budget * 0.75  # v8: 1차 75%
