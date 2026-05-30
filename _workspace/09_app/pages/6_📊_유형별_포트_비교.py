@@ -14,6 +14,14 @@ st.caption('각 유형의 모델 포트 + 다중 시뮬레이션 동시 운영·
 WS = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PROFILES = ['안정형', '안정추구형', '위험중립형', '적극투자형', '공격투자형']
 
+
+def _last_biz_day(d=None):
+    """주말이면 직전 금요일로 보정한 영업일(근사)."""
+    d = d or datetime.date.today()
+    while d.weekday() >= 5:
+        d -= datetime.timedelta(days=1)
+    return d
+
 # ─── 1. 5개 유형별 모델 포트 비교 ──────────────────────────────
 st.header('1️⃣ 모델 포트폴리오 비교')
 
@@ -89,7 +97,7 @@ st.markdown('### 🚀 일괄 시작 (5개 유형 한꺼번에)')
 with st.form('multi_sim'):
     col_a, col_b, col_c = st.columns(3)
     with col_a:
-        sim_start = st.date_input('시작 일자', value=datetime.date.today())
+        sim_start = st.date_input('시작 일자', value=_last_biz_day())
     with col_b:
         sim_capital = st.number_input('각 시뮬레이션 자본 (억원)', min_value=0.1, value=1.0, step=0.1)
     with col_c:
@@ -188,6 +196,12 @@ else:
                 if not trades:
                     continue
                 first_buy = min(t['trade_date'] for t in trades if t['action'] == 'BUY')
+                _all_px = sorted({d for ph in price_history.values() for d in ph.keys()})
+                _last_px = _all_px[-1] if _all_px else None
+                # 시작일이 주말·당일이라 종가가 아직 없으면 평가용으로 매수일을 마지막 거래일로 보정
+                if _last_px and first_buy > _last_px:
+                    first_buy = _last_px
+                    trades = [{**t, 'trade_date': _last_px} for t in trades]
                 dates = sorted({d for ph in price_history.values() for d in ph.keys() if d >= first_buy})
                 if not dates:
                     continue

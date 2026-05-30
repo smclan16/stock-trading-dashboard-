@@ -221,7 +221,9 @@ def main():
     print(f'[2/5] KRX {args.days}영업일 시계열 수집…')
     krx = KRXMarket()
     sig_asof = (sigs.get('rebalance_basis') or sigs.get('as_of') or as_of).replace('-', '')[:8]
-    dates = krx.trading_dates(sig_asof, args.days)
+    # 공휴일은 trading_dates에 평일로 포함되나 daily()가 빈 응답 → 손실 보전 위해 여유 요청
+    _need = args.days
+    dates = krx.trading_dates(sig_asof, int(_need * 1.3) + 15)
     dates.sort()  # 오래된→최신 (시계열 분석용)
     print(f'  asof={sig_asof} / {len(dates)} 영업일 (오래된={dates[0]} → 최신={dates[-1]})')
 

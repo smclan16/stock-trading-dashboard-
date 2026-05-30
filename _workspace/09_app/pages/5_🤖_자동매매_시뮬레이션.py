@@ -20,6 +20,15 @@ st.info("""
 **구분:** 사용자 수동 매매 (`📝 포트폴리오 입력`)와 **분리**하여 별도 DB 저장.
 """)
 
+def _last_biz_day(d=None):
+    """주말이면 직전 금요일로 보정한 영업일(근사). 매수가(전 거래일 종가)와 시작일을 맞춰
+    시작일 이후 거래일 0개로 성과가 안 보이는 문제를 예방."""
+    d = d or datetime.date.today()
+    while d.weekday() >= 5:  # 5=토, 6=일
+        d -= datetime.timedelta(days=1)
+    return d
+
+
 tab_live, tab_bt = st.tabs(['🤖 라이브 시뮬레이션 (오늘부터 Forward)', '📊 과거 백테스트 (12M & 24M)'])
 
 # ════════════════════════════════════════════════════════════════
@@ -200,7 +209,7 @@ with tab_live:
 
             sim_name = st.text_input('시뮬레이션 이름',
                                      value=f'{cur_profile_type or "default"} {datetime.date.today().strftime("%y%m%d")}')
-            start_date = st.date_input('시작 일자', value=datetime.date.today())
+            start_date = st.date_input('시작 일자', value=_last_biz_day())
             start_capital_eok = st.number_input('시작 자본 (억원)', min_value=0.1, value=1.0, step=0.1)
             notes = st.text_area('메모', value='시스템 자동 추천 포트폴리오 추종', height=80)
             submitted = st.form_submit_button('🚀 시뮬레이션 시작', type='primary', use_container_width=True)
@@ -457,10 +466,18 @@ with tab_live:
                 all_dates.update(ph.keys())
             all_dates = sorted(all_dates)
             first_buy = min(p.get('first_buy_date') for p in sim_positions.values() if p.get('first_buy_date'))
-            eval_dates = [d for d in all_dates if d >= first_buy]
+            last_px_date = all_dates[-1] if all_dates else None
+            sim_trades = db.list_sim_trades(sim_id)
+            # 시작일이 주말·공휴일·당일이라 아직 종가가 없으면 평가용으로만 매수일을 마지막 거래일로 보정
+            # (DB는 그대로 — 화면 평가만. 시작일 이후 거래일 0개라 성과가 안 보이던 문제 해결)
+            if last_px_date and first_buy > last_px_date:
+                eff_first_buy = last_px_date
+                sim_trades = [{**t, 'trade_date': last_px_date} for t in sim_trades]
+            else:
+                eff_first_buy = first_buy
+            eval_dates = [d for d in all_dates if d >= eff_first_buy]
 
             if eval_dates:
-                sim_trades = db.list_sim_trades(sim_id)
                 base_cap = sim['start_capital']
 
                 # 투자 유형 명시적 선택 (자동 추론 X — 사용자 혼란 방지)
