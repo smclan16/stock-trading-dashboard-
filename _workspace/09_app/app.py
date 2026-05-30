@@ -6,7 +6,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 # 에러 발생 시 사용자에게 명확한 메시지 (Streamlit Cloud의 generic error 회피)
 try:
-    from lib import loader, db, auth
+    from lib import loader, db, auth, theme
 except Exception as e:
     st.error(f'⚠ 모듈 로드 실패: {type(e).__name__}: {e}')
     st.code(traceback.format_exc())
@@ -21,6 +21,10 @@ st.set_page_config(
 
 auth.require_login()
 auth.logout_button()
+
+# ── 블룸버그 스타일 스킨 (디자인 전용, 사이드바 토글로 즉시 ON/OFF) ──
+theme.toggle(default=True)
+theme.apply()
 
 # CSS
 st.markdown("""

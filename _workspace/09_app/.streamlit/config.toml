@@ -1,0 +1,13 @@
+# ── 블룸버그 스타일 다크 테마 베이스 (디자인 전용) ──────────────
+# lib/theme.py(CSS 스킨)와 한 쌍. 이 베이스는 네이티브 차트(st.bar_chart 등)·
+# 위젯의 흰 배경까지 다크로 맞추기 위한 것. 데이터·로직과 무관.
+#
+# 되돌리기: 이 파일을 삭제(또는 [theme] 블록 제거)하면 즉시 원본 라이트 테마.
+#   ※ config.toml 은 전역이라 사이드바 토글로는 끌 수 없음 — 파일 단위로 복귀.
+[theme]
+base = "dark"
+primaryColor = "#ffb000"
+backgroundColor = "#0d1117"
+secondaryBackgroundColor = "#11161d"
+textColor = "#e0e0e0"
+font = "sans serif"

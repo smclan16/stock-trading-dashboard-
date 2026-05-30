@@ -2,11 +2,11 @@
 import streamlit as st
 import json, os, sys, datetime
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from lib import db, auth
-
+from lib import db, auth, theme
 st.set_page_config(page_title='투자성향 진단', page_icon='👤', layout='wide')
 auth.require_login()
 auth.logout_button()
+theme.toggle(default=True); theme.apply()
 st.title('👤 투자성향 진단')
 st.caption('6항목 설문 → 5단계 유형 분류 → equity_pct·단일·섹터·변동성 한도 자동 산출')
 

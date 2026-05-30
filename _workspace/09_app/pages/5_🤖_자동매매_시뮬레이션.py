@@ -8,11 +8,11 @@ import streamlit as st
 import pandas as pd
 import datetime, os, sys, json, subprocess
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from lib import loader, db, perf, costs, auth
-
+from lib import loader, db, perf, costs, auth, theme
 st.set_page_config(page_title='자동매매 시뮬레이션', page_icon='🤖', layout='wide')
 auth.require_login()
 auth.logout_button()
+theme.toggle(default=True); theme.apply()
 st.title('🤖 자동매매 시뮬레이션 — 시스템 추천대로 매매 시 수익률')
 
 st.info("""

@@ -4,11 +4,11 @@ import pandas as pd
 import datetime
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from lib import loader, db, costs, auth
-
+from lib import loader, db, costs, auth, theme
 st.set_page_config(page_title='포트폴리오 입력', page_icon='📝', layout='wide')
 auth.require_login()
 auth.logout_button()
+theme.toggle(default=True); theme.apply()
 st.title('📝 포트폴리오 입력 — 체결·배당 등록')
 st.caption(costs.explain_cost_model())
 
