@@ -1,9 +1,14 @@
+# ── 블룸버그 스타일 다크 테마 베이스 (디자인 전용) ──────────────
+# lib/theme.py(CSS 스킨)와 한 쌍. 네이티브 차트·위젯 흰 배경까지 다크로.
+# 되돌리기: 아래 5줄을 직전 라이트값으로 되돌리면 끝
+#   base="light" / primaryColor="#0050b3" / backgroundColor="#ffffff"
+#   secondaryBackgroundColor="#f5f7fa" / textColor="#212529"
 [theme]
-base = "light"
-primaryColor = "#0050b3"
-backgroundColor = "#ffffff"
-secondaryBackgroundColor = "#f5f7fa"
-textColor = "#212529"
+base = "dark"
+primaryColor = "#ffb000"
+backgroundColor = "#0d1117"
+secondaryBackgroundColor = "#11161d"
+textColor = "#e0e0e0"
 
 [server]
 headless = true
