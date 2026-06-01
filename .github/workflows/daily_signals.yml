@@ -2,8 +2,13 @@ name: Daily Signal Generation
 
 on:
   schedule:
-    # 매일 18:30 KST = UTC 09:30 (월~금만)
-    - cron: '30 9 * * 1-5'
+    # GitHub 예약(cron)은 best-effort라 지연·누락이 잦다. 평일 장 마감(15:30 KST)
+    # 후 여러 번 시도해 한 번이라도 성공시키는 전략. 아래 'gate' 스텝이 오늘 분이
+    # 이미 생성됐으면 재시도를 즉시 skip하므로 중복 커밋·불필요한 연산이 없다.
+    #   (off-peak :35 사용 — 정각/30분은 GitHub 부하로 누락 확률↑)
+    - cron: '35 9 * * 1-5'   # 18:35 KST  (주 트리거)
+    - cron: '35 11 * * 1-5'  # 20:35 KST  (재시도 1)
+    - cron: '35 13 * * 1-5'  # 22:35 KST  (재시도 2)
   workflow_dispatch:  # 수동 실행 가능
 
 jobs:
@@ -20,7 +25,28 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      # 오늘(최근 거래일) 분이 이미 daily_signals.json 에 있으면 이후 스텝을 모두 skip.
+      # compute_daily_signals.py 의 latest_trading_date_no_api() 와 동일한 로직
+      # (runner=UTC 기준 최근 평일)으로 as_of 를 비교해 재시도를 idempotent 하게 만든다.
+      - name: Gate — skip if today already generated
+        id: gate
+        run: |
+          # script 의 latest_trading_date_no_api() 와 동일: runner=UTC now 기준 최근 평일
+          DOW=$(date -u +%u)            # 1=Mon .. 7=Sun
+          BACK=0
+          [ "$DOW" -ge 6 ] && BACK=$((DOW - 5))   # 토→1, 일→2 만큼 직전 금요일로
+          LATEST=$(date -u -d "-$BACK day" +%Y%m%d)
+          CURRENT=$(python3 -c "import json;print(json.load(open('_workspace/08_signals/daily_signals.json')).get('as_of',''))" 2>/dev/null || echo "")
+          echo "latest trading day=$LATEST | current as_of=$CURRENT"
+          if [ "$LATEST" = "$CURRENT" ]; then
+            echo "이미 $LATEST 분 생성됨 — skip"
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Cache KRX responses (persistent disk cache)
+        if: steps.gate.outputs.run == 'true'
         uses: actions/cache@v4
         with:
           path: _workspace/lib/.krx_cache
@@ -29,17 +55,20 @@ jobs:
             krx-cache-
 
       - name: Setup Python 3.11
+        if: steps.gate.outputs.run == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
 
       - name: Install dependencies
+        if: steps.gate.outputs.run == 'true'
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Generate daily signals
+        if: steps.gate.outputs.run == 'true'
         env:
           KRX_API_KEY: ${{ secrets.KRX_API_KEY }}
           DART_API_KEY: ${{ secrets.DART_API_KEY }}
@@ -52,6 +81,7 @@ jobs:
           python3 _workspace/08_signals/compute_daily_signals.py
 
       - name: Commit + push if changed
+        if: steps.gate.outputs.run == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
