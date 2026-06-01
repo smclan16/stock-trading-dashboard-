@@ -7,7 +7,7 @@ from lib import db, perf, costs, auth, theme
 st.set_page_config(page_title='유형별 포트 비교', page_icon='📊', layout='wide')
 auth.require_login()
 auth.logout_button()
-theme.toggle(default=True); theme.apply()
+theme.apply()  # 테마는 메인 대시보드 토글로 일괄 제어 (세션 전역)
 st.title('📊 5개 투자성향 유형별 포트폴리오 비교')
 st.caption('각 유형의 모델 포트 + 다중 시뮬레이션 동시 운영·수익률 비교')
 

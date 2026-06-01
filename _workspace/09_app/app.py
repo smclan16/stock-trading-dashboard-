@@ -22,7 +22,7 @@ st.set_page_config(
 auth.require_login()
 auth.logout_button()
 
-# ── 블룸버그 스타일 스킨 (디자인 전용, 사이드바 토글로 즉시 ON/OFF) ──
+# ── 블룸버그 스타일 스킨 (디자인 전용) — 여기서 한 번 설정하면 전 페이지 일괄 적용 ──
 theme.toggle(default=True)
 theme.apply()
 

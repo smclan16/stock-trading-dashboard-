@@ -6,7 +6,7 @@ from lib import db, auth, theme
 st.set_page_config(page_title='투자성향 진단', page_icon='👤', layout='wide')
 auth.require_login()
 auth.logout_button()
-theme.toggle(default=True); theme.apply()
+theme.apply()  # 테마는 메인 대시보드 토글로 일괄 제어 (세션 전역)
 st.title('👤 투자성향 진단')
 st.caption('6항목 설문 → 5단계 유형 분류 → equity_pct·단일·섹터·변동성 한도 자동 산출')
 

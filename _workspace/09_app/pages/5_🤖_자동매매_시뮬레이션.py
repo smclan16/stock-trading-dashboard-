@@ -12,7 +12,7 @@ from lib import loader, db, perf, costs, auth, theme
 st.set_page_config(page_title='자동매매 시뮬레이션', page_icon='🤖', layout='wide')
 auth.require_login()
 auth.logout_button()
-theme.toggle(default=True); theme.apply()
+theme.apply()  # 테마는 메인 대시보드 토글로 일괄 제어 (세션 전역)
 st.title('🤖 자동매매 시뮬레이션 — 시스템 추천대로 매매 시 수익률')
 
 st.info("""

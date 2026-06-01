@@ -7,7 +7,7 @@ from lib import loader, auth, theme
 st.set_page_config(page_title='운영 가이드', page_icon='⚙️', layout='wide')
 auth.require_login()
 auth.logout_button()
-theme.toggle(default=True); theme.apply()
+theme.apply()  # 테마는 메인 대시보드 토글로 일괄 제어 (세션 전역)
 st.title('⚙️ 운영 가이드 — 매일/주간 작업')
 
 WS = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
