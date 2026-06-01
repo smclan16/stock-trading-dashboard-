@@ -1,6 +1,6 @@
 """운영 가이드 — 매일/주간 작업 + 스크립트 실행 가이드"""
 import streamlit as st
-import subprocess, sys
+import subprocess, shutil
 import os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from lib import loader, auth, theme
@@ -11,6 +11,63 @@ theme.toggle(default=True); theme.apply()
 st.title('⚙️ 운영 가이드 — 매일/주간 작업')
 
 WS = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+
+def _find_python():
+    """현재 Streamlit이 실행 중인 Python 환경의 인터프리터를 찾는다.
+    sys.executable이 패키지가 설치된 환경을 가리키면 그대로 사용하고,
+    아니면 PATH에서 pandas가 설치된 python3을 탐색한다."""
+    # 1차: 현재 프로세스의 Python (Streamlit이 실행 중인 환경)
+    try:
+        r = subprocess.run(
+            [sys.executable, '-c', 'import pandas; print("OK")'],
+            capture_output=True, text=True, timeout=10,
+        )
+        if r.returncode == 0 and 'OK' in r.stdout:
+            return sys.executable
+    except Exception:
+        pass
+
+    # 2차: PATH에서 python3 탐색
+    for candidate in ['python3', 'python']:
+        path = shutil.which(candidate)
+        if path:
+            try:
+                r = subprocess.run(
+                    [path, '-c', 'import pandas; print("OK")'],
+                    capture_output=True, text=True, timeout=10,
+                )
+                if r.returncode == 0 and 'OK' in r.stdout:
+                    return path
+            except Exception:
+                continue
+
+    # 3차: 폴백 — sys.executable (에러는 실행 시 표시)
+    return sys.executable
+
+
+def _run_script(label, cmd, python_exe, env, timeout=600):
+    """스크립트 한 건 실행. (성공여부, 메시지) 반환."""
+    parts = cmd.split()
+    script_path = os.path.join(WS, parts[0])
+    args = parts[1:]
+    full = [python_exe, script_path] + args
+
+    if not os.path.exists(script_path):
+        return False, f'스크립트 파일이 없습니다: {parts[0]}'
+
+    try:
+        r = subprocess.run(full, capture_output=True, text=True, timeout=timeout, cwd=WS, env=env)
+        if r.returncode == 0:
+            return True, r.stdout[-800:] if r.stdout else ''
+        else:
+            err_msg = (r.stderr or r.stdout or '')[-800:]
+            return False, f'종료코드 {r.returncode}\n{err_msg}'
+    except subprocess.TimeoutExpired:
+        return False, f'타임아웃 ({timeout}초 초과)'
+    except Exception as e:
+        return False, str(e)
+
 
 st.markdown("""
 ## 📅 매일 작업 (종가 후, 약 18:00)
@@ -33,21 +90,19 @@ st.info(
 )
 
 if st.button('▶ 일일 시그널 재생성 (로컬·테스트용)', type='secondary'):
+    python_exe = _find_python()
+    env = os.environ.copy()
+    env['PYTHONPATH'] = os.path.join(WS, 'lib') + os.pathsep + env.get('PYTHONPATH', '')
     with st.spinner('compute_daily_signals.py 실행 중…'):
-        try:
-            r = subprocess.run(
-                [sys.executable, os.path.join(WS, '08_signals', 'compute_daily_signals.py')],
-                capture_output=True, text=True, timeout=300, cwd=WS,
-            )
-            if r.returncode == 0:
-                st.success('✅ 일일 시그널 갱신 완료')
-                st.code(r.stdout[-2000:])
-                loader.load.clear()
-            else:
-                st.error('실행 실패 (Streamlit Cloud에서 KRX API 429 에러 가능 — GitHub Actions 활용 권장)')
-                st.code(r.stderr[-2000:])
-        except Exception as e:
-            st.error(f'실행 오류: {e}')
+        ok, msg = _run_script('daily', '08_signals/compute_daily_signals.py', python_exe, env, timeout=300)
+        if ok:
+            st.success('✅ 일일 시그널 갱신 완료')
+            if msg:
+                st.code(msg)
+            loader.load.clear()
+        else:
+            st.error(f'실행 실패 — {msg}')
+            st.caption(f'사용된 Python: `{python_exe}`')
 
 st.divider()
 st.markdown("""
@@ -69,33 +124,58 @@ st.markdown("""
 """)
 
 with st.expander('🚀 일괄 실행 (주간)'):
+    continue_on_error = st.checkbox(
+        '오류 발생 시에도 다음 단계 계속 실행',
+        value=True,
+        help='체크하면 한 단계가 실패해도 나머지 단계를 계속 실행합니다.',
+    )
+
     if st.button('▶ 매크로 → 검증 → 최종 포트 전체 재실행', type='secondary'):
+        python_exe = _find_python()
+        env = os.environ.copy()
+        env['PYTHONPATH'] = os.path.join(WS, 'lib') + os.pathsep + env.get('PYTHONPATH', '')
+
+        st.caption(f'🐍 Python: `{python_exe}`')
+
         steps = [
-            ('macro', '02_macro/fetch_macro.py'),
-            ('ideas alloc', '04_ideas/recompute_allocation.py'),
-            ('research', '06_research/compute_research_scores.py'),
-            ('portfolio', '07_portfolio/compose_portfolio.py'),
-            ('validation', 'validation/validate_logic.py'),
-            ('signals', '08_signals/compute_trading_signals.py'),
-            ('tech scores', '08_signals/compute_technical_scores.py --top-n 10'),
-            ('theme port', '08_signals/build_theme_portfolio.py --n-themes 8'),
-            ('daily', '08_signals/compute_daily_signals.py'),
+            ('① 매크로 갱신', '02_macro/fetch_macro.py'),
+            ('② 비중 재계산', '04_ideas/recompute_allocation.py'),
+            ('③ 리서치 점수', '06_research/compute_research_scores.py'),
+            ('④ 모델 포트', '07_portfolio/compose_portfolio.py'),
+            ('⑤ 로직 검증', 'validation/validate_logic.py'),
+            ('⑥ 트레이딩 시그널', '08_signals/compute_trading_signals.py'),
+            ('⑦ 기술 점수', '08_signals/compute_technical_scores.py --top-n 10'),
+            ('⑧ 테마 포트', '08_signals/build_theme_portfolio.py --n-themes 8'),
+            ('⑨ 일일 시그널', '08_signals/compute_daily_signals.py'),
         ]
-        for label, cmd in steps:
+
+        results = []
+        progress = st.progress(0, text='준비 중…')
+        for i, (label, cmd) in enumerate(steps):
+            progress.progress((i) / len(steps), text=f'{label} 실행 중…')
             with st.spinner(f'{label} 실행 중…'):
-                parts = cmd.split()
-                full = [sys.executable, os.path.join(WS, parts[0])] + parts[1:]
-                try:
-                    r = subprocess.run(full, capture_output=True, text=True, timeout=600, cwd=WS)
-                    if r.returncode == 0:
-                        st.success(f'✅ {label}')
-                    else:
-                        st.warning(f'⚠ {label} 실행 결과 코드 {r.returncode}')
-                        st.code(r.stderr[-500:])
-                except Exception as e:
-                    st.error(f'❌ {label}: {e}')
-                    break
+                ok, msg = _run_script(label, cmd, python_exe, env)
+                results.append((label, ok, msg))
+                if ok:
+                    st.success(f'✅ {label}')
+                else:
+                    st.error(f'❌ {label}')
+                    with st.expander(f'에러 상세 — {label}'):
+                        st.code(msg)
+                    if not continue_on_error:
+                        st.warning('⛔ 오류로 중단됨. "오류 발생 시에도 계속 실행" 옵션을 켜면 나머지 단계를 계속할 수 있습니다.')
+                        break
+
+        progress.progress(1.0, text='완료')
         loader.load.clear()
+
+        # 결과 요약
+        n_ok = sum(1 for _, ok, _ in results if ok)
+        n_fail = sum(1 for _, ok, _ in results if not ok)
+        if n_fail == 0:
+            st.success(f'🎉 전체 {n_ok}/{len(steps)} 단계 성공!')
+        else:
+            st.warning(f'⚠️ {n_ok}개 성공, {n_fail}개 실패 — 실패 항목의 에러 상세를 확인하세요.')
         st.info('🔄 페이지 새로고침으로 결과 확인')
 
 st.divider()
@@ -120,3 +200,4 @@ st.markdown("""
 | 4 | GitHub Search | GITHUB_TOKEN |
 | 4 | 네이버 뉴스 검색 | NAVER_CLIENT_ID/SECRET |
 """)
+

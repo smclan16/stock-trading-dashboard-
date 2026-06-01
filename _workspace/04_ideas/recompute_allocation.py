@@ -43,16 +43,17 @@ DEFAULTS = {
 def main():
     ap = argparse.ArgumentParser(description="4단계 아이디어 편입 비중 자동 재계산")
     ap.add_argument("--uncovered-pct", type=float, default=DEFAULTS["uncovered_pct"],
-                    help=f"매크로 무관 개별 종목 풀(default_picks) 비중 % (기본 {DEFAULTS['uncovered_pct']})")
+                    help="매크로 무관 개별 종목 풀(default_picks) 비중 %% (기본 %(default)s)")
     ap.add_argument("--core-weight", type=float, default=DEFAULTS["core_weight"],
-                    help=f"핵심 장기 테마 후보 가중치 (기본 {DEFAULTS['core_weight']})")
+                    help="핵심 장기 테마 후보 가중치 (기본 %(default)s)")
     ap.add_argument("--watch-weight", type=float, default=DEFAULTS["watch_weight"],
-                    help=f"관찰 리스트 가중치 (기본 {DEFAULTS['watch_weight']})")
+                    help="관찰 리스트 가중치 (기본 %(default)s)")
     ap.add_argument("--unverified-weight", type=float, default=DEFAULTS["unverified_weight"],
-                    help=f"검증 부족 가중치 (기본 {DEFAULTS['unverified_weight']})")
+                    help="검증 부족 가중치 (기본 %(default)s)")
     ap.add_argument("--weak-weight", type=float, default=DEFAULTS["weak_weight"],
-                    help=f"아직 약한 아이디어 가중치 (기본 {DEFAULTS['weak_weight']})")
+                    help="아직 약한 아이디어 가중치 (기본 %(default)s)")
     ap.add_argument("--dry-run", action="store_true", help="ideas.json 저장 없이 계산만 출력")
+
     args = ap.parse_args()
 
     cat_weights = {

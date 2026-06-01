@@ -200,11 +200,178 @@ elif stage.startswith('3'):
             })
         udf = pd.DataFrame(rows)
         st.caption(f'표시 {len(udf)}종 / 전체 {len(univ)}종')
-        st.dataframe(udf, hide_index=True, use_container_width=True, height=600,
+        st.dataframe(udf, hide_index=True, use_container_width=True, height=400,
                      column_config={
                          '시총(억)': st.column_config.NumberColumn(format='%d'),
                          '종합': st.column_config.NumberColumn(format='%.3f'),
                      })
+
+        # ═══════════════════════════════════════════════
+        # 📋 개별 종목 상세 뷰
+        # ═══════════════════════════════════════════════
+        st.divider()
+        st.markdown('### 🔎 종목 상세 — 종합점수 구성 지표')
+
+        # 종목 선택 dropdown
+        ticker_options = {f"{x['ticker']} {x['name']}": x['ticker'] for x in univ}
+        selected_stock = st.selectbox(
+            '상세 보기할 종목 선택',
+            options=['(선택하세요)'] + list(ticker_options.keys()),
+            key='stock_detail',
+        )
+
+        if selected_stock != '(선택하세요)':
+            sel_ticker = ticker_options[selected_stock]
+            # 유니버스에서 해당 종목 찾기
+            stock = next((x for x in univ if x['ticker'] == sel_ticker), None)
+            if stock:
+                scores = stock.get('scores') or {}
+                metrics = stock.get('metrics') or {}
+
+                st.markdown(f'## {stock["name"]} ({stock["ticker"]})')
+                st.caption(f'{stock.get("market", "-")} · {stock.get("sector", "-")} · 순위 #{stock["rank"]}')
+
+                # ─── 1. 기본 정보 + 시총/주가 ─────────
+                st.markdown('#### 📊 기본 지표')
+                bc1, bc2, bc3, bc4, bc5 = st.columns(5)
+                bc1.metric('시가총액', f'{metrics.get("mcap_eok", 0):,.0f}억원')
+                bc2.metric('PER', f'{metrics.get("per", 0):.1f}배' if metrics.get('per') else '-')
+                bc3.metric('PBR', f'{metrics.get("pbr", 0):.2f}배' if metrics.get('pbr') else '-')
+                bc4.metric('EV/EBITDA', f'{metrics.get("ev_ebitda", 0):.1f}' if metrics.get('ev_ebitda') else '-')
+                bc5.metric('부채비율', f'{metrics.get("debt_ratio", 0):.1f}%' if metrics.get('debt_ratio') else '-')
+
+                bc6, bc7, bc8, bc9 = st.columns(4)
+                bc6.metric('ROE', f'{metrics.get("roe", 0):.1f}%' if metrics.get('roe') else '-')
+                bc7.metric('ROA', f'{metrics.get("roa", 0):.1f}%' if metrics.get('roa') else '-')
+                bc8.metric('영업이익률', f'{metrics.get("opm", 0):.1f}%' if metrics.get('opm') else '-')
+                bc9.metric('20일평균거래대금', f'{metrics.get("turnover20_eok", 0):,.0f}억' if metrics.get('turnover20_eok') else '-')
+
+                # ─── 2. 유니버스 5팩터 점수 ─────────
+                st.markdown('#### 🧮 유니버스 5팩터 점수 (섹터중립 z-score)')
+                sc1, sc2, sc3, sc4, sc5, sc6 = st.columns(6)
+                sc1.metric('밸류', f'{scores.get("value", 0):.3f}')
+                sc2.metric('퀄리티', f'{scores.get("quality", 0):.3f}')
+                sc3.metric('목표가↑', f'{scores.get("tp_rev", 0):.3f}')
+                sc4.metric('Fwd ROE↑', f'{scores.get("roe_rev", 0):.3f}')
+                sc5.metric('거래대금↑', f'{scores.get("turnover", 0):.3f}')
+                sc6.metric('🏆 종합', f'{scores.get("total", 0):.3f}')
+
+                if stock.get('largecap_bonus'):
+                    st.caption(f'🏢 대형주 시총 보너스: +{stock["largecap_bonus"]}')
+                if stock.get('auto_included_by_mcap'):
+                    st.caption('✅ 시총 상위 자동 포함')
+
+                # ─── 3. 컨센서스 변화 ─────────
+                st.markdown('#### 📈 컨센서스 변화 (1개월)')
+                cc1, cc2, cc3 = st.columns(3)
+                cc1.metric('목표가 변화(1M)', f'{metrics.get("tp_rev_1m_pct", 0):+.1f}%' if metrics.get('tp_rev_1m_pct') is not None else '-')
+                cc2.metric('Fwd ROE 변화(1M)', f'{metrics.get("roe_fwd_rev_1m_pct", 0):+.1f}%' if metrics.get('roe_fwd_rev_1m_pct') is not None else '-')
+                cc3.metric('거래대금 성장률', f'{metrics.get("turnover_growth_pct", 0):+.1f}%' if metrics.get('turnover_growth_pct') is not None else '-')
+
+                # ─── 4. 리서치 6축 매력도 ─────────
+                research = loader.load('research_scores')
+                if research:
+                    r_rows = research.get('rows', [])
+                    r_stock = next((r for r in r_rows if r['ticker'] == sel_ticker), None)
+                    if r_stock:
+                        st.markdown('#### 🎯 6축 매력도 (리서치 점수)')
+                        rc1, rc2, rc3, rc4, rc5, rc6 = st.columns(6)
+                        rc1.metric('펀더(35)', f'{r_stock.get("fundamental", 0):.1f}')
+                        rc2.metric('모멘(25)', f'{r_stock.get("momentum", 0):.1f}')
+                        rc3.metric('테마(15)', f'{r_stock.get("theme", 0):.1f}')
+                        rc4.metric('Catalyst(15)', f'{r_stock.get("catalyst", 0):.1f}')
+                        rc5.metric('리스크역(10)', f'{r_stock.get("risk_inv", 0):.1f}')
+                        rc6.metric('🏆 총점', f'{r_stock.get("total_score", 0):.1f}')
+
+                        # 세부 점수 테이블
+                        with st.expander('점수 세부 구성'):
+                            detail_rows = [
+                                {'영역': '밸류 점수', '값': r_stock.get('val_pts', '-')},
+                                {'영역': '퀄리티 점수', '값': r_stock.get('qual_pts', '-')},
+                                {'영역': '성장 점수', '값': r_stock.get('growth_pts', '-')},
+                                {'영역': '목표가↑ 점수', '값': r_stock.get('tp_pts', '-')},
+                                {'영역': 'ROE리비전 점수', '값': r_stock.get('roe_rev_pts', '-')},
+                                {'영역': '거래대금↑ 점수', '값': r_stock.get('tov_pts', '-')},
+                                {'영역': '테마 raw', '값': r_stock.get('theme_raw', '-')},
+                                {'영역': '뉴스 성장(30d vs 180d)', '값': f'{r_stock.get("news_growth_pct", 0):.0f}%' if r_stock.get('news_growth_pct') is not None else '-'},
+                                {'영역': '뉴스 점수', '값': r_stock.get('news_pts', '-')},
+                                {'영역': 'DART 긍정', '값': r_stock.get('dart_pos_pts', '-')},
+                                {'영역': 'DART 수주', '값': r_stock.get('dart_contract_pts', '-')},
+                                {'영역': '리스크 점수', '값': r_stock.get('risk_score', '-')},
+                                {'영역': '매크로 베타', '값': r_stock.get('macro_beta', '-')},
+                            ]
+                            st.dataframe(pd.DataFrame(detail_rows), hide_index=True, use_container_width=True)
+
+                            # 리스크 트리거
+                            if r_stock.get('risk_triggered'):
+                                st.warning(f'⚠️ 리스크 트리거: {", ".join(r_stock["risk_triggered"])}')
+
+                        # 테마 매칭 정보
+                        if r_stock.get('theme_matches'):
+                            st.markdown('##### 🏷 매칭된 테마')
+                            for tm in r_stock['theme_matches']:
+                                st.caption(f'테마 #{tm["idea_id"]} — 강도: {tm["intensity"]}')
+
+                # ─── 5. 기술적 분석 지표 ─────────
+                tech = loader.load('technical_scores')
+                if tech:
+                    t_scores = tech.get('scores', {})
+                    t_stock = t_scores.get(sel_ticker)
+                    if t_stock:
+                        st.markdown('#### 📐 기술적 분석 (7지표)')
+                        tc1, tc2 = st.columns([1, 2])
+                        with tc1:
+                            st.metric('기술 점수', f'{t_stock.get("tech_score", 0)}/100')
+                            if t_stock.get('ma60_exit_signal'):
+                                st.error('🔴 MA60 하향 돌파 (청산 시그널)')
+                        with tc2:
+                            bd = t_stock.get('breakdown', {})
+                            bd_rows = [{'지표': k, '점수': v} for k, v in bd.items()]
+                            st.dataframe(pd.DataFrame(bd_rows), hide_index=True, use_container_width=True)
+
+                        # 가격·이동평균 지표
+                        ind = t_stock.get('indicators', {})
+                        if ind:
+                            st.markdown('##### 💹 가격 & 이동평균')
+                            pc1, pc2, pc3, pc4, pc5 = st.columns(5)
+                            pc1.metric('현재가', f'{ind.get("close", 0):,.0f}원')
+                            pc2.metric('MA5', f'{ind.get("ma5", 0):,.0f}원')
+                            pc3.metric('MA20', f'{ind.get("ma20", 0):,.0f}원')
+                            pc4.metric('MA60', f'{ind.get("ma60", 0):,.0f}원')
+                            pc5.metric('MA120', f'{ind.get("ma120", 0):,.0f}원')
+
+                            pm1, pm2, pm3, pm4, pm5 = st.columns(5)
+                            pm1.metric('MA60 이격', f'{ind.get("ma60_margin_pct", 0):+.1f}%')
+                            pm2.metric('6M 수익률', f'{ind.get("ret_6m_pct", 0):+.1f}%')
+                            pm3.metric('RSI(14)', f'{ind.get("rsi14", 0):.1f}')
+                            pm4.metric('52주 위치', f'{ind.get("pos_52w_pct", 0):.1f}%')
+                            pm5.metric('연간 변동성', f'{ind.get("sigma_annual_pct", 0):.1f}%')
+
+                # ─── 6. 종목 매칭 상세 (어떤 테마에 어떤 강도로) ─────────
+                matching = loader.load('matching')
+                if matching:
+                    matrix = matching.get('matrix', [])
+                    matched_ideas = []
+                    for idea in matrix:
+                        for mt in idea.get('matched_tickers', []):
+                            if mt['ticker'] == sel_ticker:
+                                matched_ideas.append({
+                                    'idea': idea,
+                                    'match': mt,
+                                })
+                    if matched_ideas:
+                        st.markdown('#### 🔗 테마 매칭 상세')
+                        for mi in matched_ideas:
+                            idea = mi['idea']
+                            match = mi['match']
+                            with st.expander(f'테마 #{idea["idea_id"]}: {idea["idea_theme"]} — [{match["intensity"]}]'):
+                                axes = match.get('axes', {})
+                                for axis_name, axis_data in axes.items():
+                                    if axis_data.get('matched'):
+                                        st.success(f'✅ {axis_name}: {axis_data.get("evidence", "-")}')
+                                    else:
+                                        st.caption(f'❌ {axis_name}: 미해당')
+
 
 
 # ════════════════════════════════════════════════════════════════

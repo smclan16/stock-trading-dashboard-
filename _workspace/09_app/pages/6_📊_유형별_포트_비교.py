@@ -173,6 +173,27 @@ else:
     else:
         st.write(f'표시 대상: {len(filtered)}개')
 
+        # ─── 기준 날짜 설정 ─────────────────────────
+        col_dt1, col_dt2 = st.columns([1, 2])
+        with col_dt1:
+            # 필터된 시뮬레이션 중 가장 빠른 시작일을 기본값으로
+            earliest = min(s['start_date'] for s in filtered)
+            try:
+                earliest_dt = datetime.datetime.strptime(earliest, '%Y%m%d').date()
+            except Exception:
+                earliest_dt = datetime.date.today() - datetime.timedelta(days=30)
+            ref_date = st.date_input(
+                '📅 기준 날짜 (이 날짜부터 수익률 비교)',
+                value=earliest_dt,
+                help='선택한 날짜 이후의 수익률만 표시합니다. 같은 시점에서 출발한 누적 수익률을 비교하세요.',
+            )
+            ref_date_str = ref_date.strftime('%Y%m%d')
+        with col_dt2:
+            st.caption(
+                f'ℹ️ 기준일: **{ref_date.strftime("%Y-%m-%d")}** — '
+                f'이 날짜를 0%로 놓고 이후 누적 수익률을 비교합니다.'
+            )
+
         # 모든 보유 종목 합집합
         all_tickers_sim = set()
         for s in filtered:
@@ -185,7 +206,7 @@ else:
                 tickers = list(tickers_tuple)
                 return perf.fetch_close_prices(tickers, days=days), perf.fetch_kospi_history(days=days)
 
-            price_history, kospi = fetch_all(tuple(sorted(all_tickers_sim)), 130)
+            price_history, kospi = fetch_all(tuple(sorted(all_tickers_sim)), 180)
 
             # 시뮬레이션별 KPI
             kpi_rows = []
@@ -198,7 +219,6 @@ else:
                 first_buy = min(t['trade_date'] for t in trades if t['action'] == 'BUY')
                 _all_px = sorted({d for ph in price_history.values() for d in ph.keys()})
                 _last_px = _all_px[-1] if _all_px else None
-                # 시작일이 주말·당일이라 종가가 아직 없으면 평가용으로 매수일을 마지막 거래일로 보정
                 if _last_px and first_buy > _last_px:
                     first_buy = _last_px
                     trades = [{**t, 'trade_date': _last_px} for t in trades]
@@ -224,9 +244,20 @@ else:
                     '샤프': metrics.get('sharpe_annual'),
                     'MDD(%)': metrics.get('mdd_pct'),
                 })
-                # 차트용
-                for d, v in daily_v.items():
-                    chart_data.setdefault(s['name'], {})[d] = (v['total_value'] / v['cost_basis'] - 1) * 100 if v['cost_basis'] > 0 else 0
+
+                # 차트용 — 기준일 기준으로 정규화
+                ref_value = None
+                for d in sorted(daily_v.keys()):
+                    if d >= ref_date_str and ref_value is None:
+                        ref_value = daily_v[d]['total_value']
+                    if ref_value and d >= ref_date_str:
+                        ret_pct = (daily_v[d]['total_value'] / ref_value - 1) * 100
+                        chart_data.setdefault(s['name'], {})[d] = ret_pct
+                # ref_value를 못 찾았으면 (기준일 이전에 시뮬이 시작된 경우) cost_basis 기준 폴백
+                if ref_value is None and daily_v:
+                    for d, v in daily_v.items():
+                        if d >= ref_date_str and v['cost_basis'] > 0:
+                            chart_data.setdefault(s['name'], {})[d] = (v['total_value'] / v['cost_basis'] - 1) * 100
 
             if kpi_rows:
                 st.markdown('### KPI 비교')
@@ -245,13 +276,65 @@ else:
                              })
 
             if chart_data:
-                st.markdown('### 누적 수익률 시계열 비교')
-                df_long = pd.DataFrame([
-                    {'date': pd.to_datetime(d), '시뮬레이션': name, '수익률(%)': v}
-                    for name, dvs in chart_data.items() for d, v in dvs.items()
-                ])
-                pivot = df_long.pivot_table(index='date', columns='시뮬레이션', values='수익률(%)').sort_index().ffill()
-                st.line_chart(pivot)
+                st.markdown(f'### 누적 수익률 시계열 비교 (기준일: {ref_date.strftime("%Y-%m-%d")})')
+
+                # KOSPI도 같은 기준일 정규화
+                kospi_series = {}
+                if kospi:
+                    ref_kospi = None
+                    for d in sorted(kospi.keys()):
+                        if d >= ref_date_str and ref_kospi is None:
+                            ref_kospi = kospi[d]
+                        if ref_kospi and d >= ref_date_str:
+                            kospi_series[d] = (kospi[d] / ref_kospi - 1) * 100
+
+                try:
+                    import plotly.graph_objects as go
+                    fig = go.Figure()
+
+                    # 각 시뮬레이션 라인
+                    colors = ['#0050b3', '#eb2f96', '#52c41a', '#fa8c16', '#722ed1']
+                    for idx, (name, dvs) in enumerate(chart_data.items()):
+                        dates_sorted = sorted(dvs.keys())
+                        fig.add_trace(go.Scatter(
+                            x=[pd.to_datetime(d) for d in dates_sorted],
+                            y=[dvs[d] for d in dates_sorted],
+                            mode='lines', name=name,
+                            line=dict(color=colors[idx % len(colors)], width=2),
+                        ))
+
+                    # KOSPI 벤치마크
+                    if kospi_series:
+                        dates_k = sorted(kospi_series.keys())
+                        fig.add_trace(go.Scatter(
+                            x=[pd.to_datetime(d) for d in dates_k],
+                            y=[kospi_series[d] for d in dates_k],
+                            mode='lines', name='KOSPI',
+                            line=dict(color='#999', width=2, dash='dash'),
+                        ))
+
+                    fig.add_hline(y=0, line_dash='dot', line_color='#ccc')
+                    fig.update_layout(
+                        height=500,
+                        hovermode='x unified',
+                        legend=dict(orientation='h', yanchor='bottom', y=1.02, xanchor='right', x=1),
+                        xaxis_title='', yaxis_title='수익률 (%)',
+                        margin=dict(l=10, r=10, t=10, b=10),
+                    )
+                    st.plotly_chart(fig, use_container_width=True)
+                except ImportError:
+                    # Plotly 없으면 기본 line_chart
+                    df_long = pd.DataFrame([
+                        {'date': pd.to_datetime(d), '시뮬레이션': name, '수익률(%)': v}
+                        for name, dvs in chart_data.items() for d, v in dvs.items()
+                    ])
+                    pivot = df_long.pivot_table(index='date', columns='시뮬레이션', values='수익률(%)').sort_index().ffill()
+                    if kospi_series:
+                        kospi_s = pd.Series(kospi_series, name='KOSPI')
+                        kospi_s.index = pd.to_datetime(kospi_s.index)
+                        pivot = pivot.join(kospi_s, how='outer').ffill()
+                    st.line_chart(pivot)
 
 st.divider()
-st.caption('💡 5개 유형은 동일 시점에 시작했을 때 각 투자성향 제약에 따른 종목·비중 차이를 보여줍니다. KOSPI 대비 outperform 지속성을 추적하세요.')
+st.caption('💡 기준 날짜를 바꾸면 해당 시점부터의 상대 수익률을 비교할 수 있습니다. KOSPI 점선과 함께 각 유형의 outperform 추이를 확인하세요.')
+
