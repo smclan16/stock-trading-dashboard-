@@ -131,9 +131,8 @@ def toggle(default: bool = True) -> bool:
     if _STATE_KEY not in st.session_state:
         st.session_state[_STATE_KEY] = default
     with st.sidebar:
-        val = st.toggle("🖥 블룸버그 스타일", value=st.session_state[_STATE_KEY],
-                        help="끄면 즉시 기본(라이트) 테마로 복귀합니다.")
-        st.session_state[_STATE_KEY] = val
+        st.toggle("🖥 블룸버그 스타일", key=_STATE_KEY,
+                  help="끄면 즉시 기본(라이트) 테마로 복귀합니다.")
     return st.session_state[_STATE_KEY]
 
 
