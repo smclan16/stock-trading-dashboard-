@@ -440,10 +440,10 @@ if selected_stock != '(선택하세요)':
                 
                 st.markdown(
                     f"""
-                    <div style="background-color: {theme.BG_CARD}; padding: 1.05rem; border-radius: 4px; border: 1px solid {theme.GRID}; border-left: 4px solid {theme.AMBER}; margin-bottom: 0.75rem;">
-                        <span style="color: #8c9ba5; font-size: 0.8rem;">{date_str}</span>
-                        <h4 style="margin: 0.25rem 0;"><a href="{link}" target="_blank" style="color: {theme.AMBER}; text-decoration: none; font-weight: bold;">{title}</a></h4>
-                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; color: {theme.TEXT}; line-height: 1.40;">{desc}</p>
+                    <div style="background-color: {theme.BG_CARD}; padding: 0.7rem 0.85rem; border-radius: 4px; border: 1px solid {theme.GRID}; border-left: 3px solid {theme.AMBER}; margin-bottom: 0.6rem;">
+                        <span style="color: #8c9ba5; font-size: 0.72rem;">{date_str}</span>
+                        <div style="margin: 0.15rem 0; font-size: 0.9rem; font-weight: bold;"><a href="{link}" target="_blank" style="color: {theme.AMBER}; text-decoration: none;">{title}</a></div>
+                        <p style="margin: 0.3rem 0 0 0; font-size: 0.82rem; color: {theme.TEXT}; line-height: 1.35;">{desc}</p>
                     </div>
                     """, 
                     unsafe_allow_html=True
