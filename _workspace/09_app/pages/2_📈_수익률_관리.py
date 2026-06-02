@@ -6,8 +6,15 @@ import os, sys
 import requests
 import urllib.parse
 import re
+
+# App-specific lib path (_workspace/09_app)
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from lib import db, perf, loader, costs, auth, theme, config
+from lib import db, perf, loader, costs, auth, theme
+
+# Core lib path (_workspace/lib) for config
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "lib"))
+import config
+
 st.set_page_config(page_title='수익률 관리', page_icon='📈', layout='wide')
 auth.require_login()
 auth.logout_button()
