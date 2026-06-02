@@ -1,49 +1,49 @@
 {
-  "as_of": "2026-05-30T12:06:34.546494",
-  "method": "테마 비중 골격 + 결합점수 최고 1종 (테마 6 + default 4)",
+  "as_of": "2026-06-02T09:09:53.029207",
+  "method": "테마 비중 골격 + 결합점수 최고 1종 (테마 6 + default 2)",
   "investor_type": "안정형",
   "equity_pct": 60,
   "regime": "위험선호",
   "n_themes_selected": 6,
-  "n_default_picks": 4,
-  "n_holdings": 11,
-  "total_weight_pct": 112.03,
+  "n_default_picks": 2,
+  "n_holdings": 9,
+  "total_weight_pct": 109.85,
   "selected_themes": [
     {
       "idea_id": 4,
       "theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
-      "orig_alloc": 11.69,
-      "scaled_alloc": 19.223
+      "orig_alloc": 16.69,
+      "scaled_alloc": 26.545
     },
     {
       "idea_id": 3,
       "theme": "SMR·소형원전 — AI 데이터센터 전용 전력원으로 격상",
       "orig_alloc": 11.13,
-      "scaled_alloc": 18.303
+      "scaled_alloc": 17.702
     },
     {
       "idea_id": 11,
       "theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
       "orig_alloc": 11.13,
-      "scaled_alloc": 18.303
+      "scaled_alloc": 17.702
     },
     {
       "idea_id": 1,
       "theme": "AI 인프라 — HBM·메모리·하이퍼스케일러 Capex",
       "orig_alloc": 7.42,
-      "scaled_alloc": 12.202
+      "scaled_alloc": 11.801
     },
     {
       "idea_id": 7,
       "theme": "GLP-1 비만약 — 시장 폭증 지속",
       "orig_alloc": 7.05,
-      "scaled_alloc": 11.593
+      "scaled_alloc": 11.213
     },
     {
       "idea_id": 2,
       "theme": "AI 에이전트 — Agentic AI 본격 상용화",
       "orig_alloc": 6.31,
-      "scaled_alloc": 10.376
+      "scaled_alloc": 10.036
     }
   ],
   "excluded_themes": [
@@ -81,30 +81,32 @@
   "ma60_exit_excluded": [
     "005880",
     "009540",
+    "009830",
     "009900",
     "010120",
     "010140",
     "012450",
-    "018670",
     "034020",
     "035420",
     "039200",
     "042660",
     "047810",
+    "055550",
     "068270",
     "077970",
     "105560",
     "207940",
     "237690",
-    "267260"
+    "267260",
+    "375500"
   ],
   "holdings": [
     {
       "idea_id": 4,
       "theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
-      "orig_allocation_pct": 11.69,
-      "theme_target_alloc": 19.223,
-      "allocation_pct": 13.661,
+      "orig_allocation_pct": 16.69,
+      "theme_target_alloc": 26.545,
+      "allocation_pct": 15,
       "ticker": "298040",
       "name": "효성중공업",
       "sector": "전기장비",
@@ -112,10 +114,10 @@
       "size_tier": "large",
       "size_cap_pct": 15,
       "intensity": "direct",
-      "attractiveness": 63.84,
+      "attractiveness": 59.84,
       "tech_score": 70,
-      "combined_score": 5.416200000000001,
-      "weighted_score": 5.416200000000001,
+      "combined_score": 5.2962,
+      "weighted_score": 5.2962,
       "tech_breakdown": {
         "alignment(20)": 12,
         "ma60_margin(15)": 15,
@@ -142,14 +144,14 @@
         4,
         11
       ],
-      "capital_weight_pct": 8.197
+      "capital_weight_pct": 9.0
     },
     {
       "idea_id": 4,
       "theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
-      "orig_allocation_pct": 11.69,
-      "theme_target_alloc": 19.223,
-      "allocation_pct": 9.375,
+      "orig_allocation_pct": 16.69,
+      "theme_target_alloc": 26.545,
+      "allocation_pct": 13.526,
       "ticker": "028050",
       "name": "삼성E&A",
       "sector": "전문서비스",
@@ -157,10 +159,10 @@
       "size_tier": "large",
       "size_cap_pct": 15,
       "intensity": "indirect",
-      "attractiveness": 66.65,
+      "attractiveness": 61.65,
       "tech_score": 66,
-      "combined_score": 5.31015,
-      "weighted_score": 3.7171049999999997,
+      "combined_score": 5.160150000000001,
+      "weighted_score": 3.612105,
       "tech_breakdown": {
         "alignment(20)": 12,
         "ma60_margin(15)": 15,
@@ -187,13 +189,13 @@
         3,
         4
       ],
-      "capital_weight_pct": 5.625
+      "capital_weight_pct": 8.116
     },
     {
       "idea_id": 3,
       "theme": "SMR·소형원전 — AI 데이터센터 전용 전력원으로 격상",
       "orig_allocation_pct": 11.13,
-      "theme_target_alloc": 18.303,
+      "theme_target_alloc": 17.702,
       "allocation_pct": 15,
       "ticker": "028260",
       "name": "삼성물산",
@@ -202,10 +204,10 @@
       "size_tier": "large",
       "size_cap_pct": 15,
       "intensity": "perception",
-      "attractiveness": 63.76,
+      "attractiveness": 58.37,
       "tech_score": 78,
-      "combined_score": 24.527593999999997,
-      "weighted_score": 7.358278199999999,
+      "combined_score": 23.782049199999996,
+      "weighted_score": 7.134614759999999,
       "tech_breakdown": {
         "alignment(20)": 20,
         "ma60_margin(15)": 15,
@@ -238,8 +240,8 @@
       "idea_id": 11,
       "theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
       "orig_allocation_pct": 11.13,
-      "theme_target_alloc": 18.303,
-      "allocation_pct": 11.254,
+      "theme_target_alloc": 17.702,
+      "allocation_pct": 14.913,
       "ticker": "005490",
       "name": "POSCO홀딩스",
       "sector": "철강금속",
@@ -247,10 +249,10 @@
       "size_tier": "large",
       "size_cap_pct": 15,
       "intensity": "direct",
-      "attractiveness": 63.11,
+      "attractiveness": 57.88,
       "tech_score": 66,
-      "combined_score": 32.830000000000005,
-      "weighted_score": 32.830000000000005,
+      "combined_score": 31.784000000000006,
+      "weighted_score": 31.784000000000006,
       "tech_breakdown": {
         "alignment(20)": 12,
         "ma60_margin(15)": 15,
@@ -277,59 +279,59 @@
         11,
         13
       ],
-      "capital_weight_pct": 6.752
+      "capital_weight_pct": 8.948
     },
     {
       "idea_id": 11,
       "theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
       "orig_allocation_pct": 11.13,
-      "theme_target_alloc": 18.303,
-      "allocation_pct": 10.68,
-      "ticker": "055550",
-      "name": "신한지주",
-      "sector": "금융",
-      "mcap_eok": 455668.18656,
+      "theme_target_alloc": 17.702,
+      "allocation_pct": 5.826,
+      "ticker": "005380",
+      "name": "현대차",
+      "sector": "자동차",
+      "mcap_eok": 1410781.00774,
       "size_tier": "large",
       "size_cap_pct": 15,
-      "intensity": "direct",
-      "attractiveness": 57.43,
-      "tech_score": 62,
-      "combined_score": 31.156000000000002,
-      "weighted_score": 31.156000000000002,
+      "intensity": "indirect",
+      "attractiveness": 55.4,
+      "tech_score": 88,
+      "combined_score": 17.739959000000006,
+      "weighted_score": 12.417971300000003,
       "tech_breakdown": {
-        "alignment(20)": 12,
-        "ma60_margin(15)": 0,
-        "momentum(15)": 8,
+        "alignment(20)": 20,
+        "ma60_margin(15)": 15,
+        "momentum(15)": 15,
         "volume(10)": 6,
-        "pos_52w(15)": 15,
-        "rsi(10)": 6,
-        "volatility(15)": 15
+        "pos_52w(15)": 10,
+        "rsi(10)": 10,
+        "volatility(15)": 12
       },
       "indicators": {
-        "close": 92800.0,
-        "ma5": 95360.0,
-        "ma20": 96540.0,
-        "ma60": 95120.0,
-        "ma120": 89710.0,
-        "ma60_margin_pct": -2.44,
-        "ret_6m_pct": 18.52,
-        "rsi14": 34.4,
-        "vol_5d_to_20d_ratio": 0.74,
-        "pos_52w_pct": 64.9,
-        "sigma_annual_pct": 34.6
+        "close": 677000.0,
+        "ma5": 673600.0,
+        "ma20": 627850.0,
+        "ma60": 548841.7,
+        "ma120": 476158.3,
+        "ma60_margin_pct": 23.35,
+        "ret_6m_pct": 158.89,
+        "rsi14": 63.4,
+        "vol_5d_to_20d_ratio": 0.7,
+        "pos_52w_pct": 93.0,
+        "sigma_annual_pct": 69.8
       },
       "matched_ideas": [
-        11,
-        12
+        6,
+        11
       ],
-      "capital_weight_pct": 6.408
+      "capital_weight_pct": 3.496
     },
     {
       "idea_id": 1,
       "theme": "AI 인프라 — HBM·메모리·하이퍼스케일러 Capex",
       "orig_allocation_pct": 7.42,
-      "theme_target_alloc": 12.202,
-      "allocation_pct": 14.622,
+      "theme_target_alloc": 11.801,
+      "allocation_pct": 13.826,
       "ticker": "005930",
       "name": "삼성전자",
       "sector": "전자반도체",
@@ -337,10 +339,10 @@
       "size_tier": "large",
       "size_cap_pct": 15,
       "intensity": "direct",
-      "attractiveness": 63.19,
+      "attractiveness": 57.92,
       "tech_score": 78.04,
-      "combined_score": 13.50406275,
-      "weighted_score": 13.50406275,
+      "combined_score": 13.109603249999997,
+      "weighted_score": 13.109603249999997,
       "tech_breakdown": {
         "alignment(20)": 20,
         "ma60_margin(15)": 9.0,
@@ -367,14 +369,14 @@
         1,
         11
       ],
-      "capital_weight_pct": 8.773
+      "capital_weight_pct": 8.296
     },
     {
       "idea_id": 2,
       "theme": "AI 에이전트 — Agentic AI 본격 상용화",
       "orig_allocation_pct": 6.31,
-      "theme_target_alloc": 10.376,
-      "allocation_pct": 12.434,
+      "theme_target_alloc": 10.036,
+      "allocation_pct": 11.758,
       "ticker": "018260",
       "name": "삼성에스디에스",
       "sector": "IT서비스",
@@ -382,10 +384,10 @@
       "size_tier": "large",
       "size_cap_pct": 15,
       "intensity": "direct",
-      "attractiveness": 66.6,
+      "attractiveness": 61.5,
       "tech_score": 61,
-      "combined_score": 16.822845,
-      "weighted_score": 16.822845,
+      "combined_score": 16.32891,
+      "weighted_score": 16.32891,
       "tech_breakdown": {
         "alignment(20)": 11,
         "ma60_margin(15)": 6,
@@ -412,23 +414,23 @@
         1,
         2
       ],
-      "capital_weight_pct": 7.46
+      "capital_weight_pct": 7.055
     },
     {
       "idea_id": "default",
       "theme": "default_picks (매크로 무관)",
-      "allocation_pct": 6.25,
+      "allocation_pct": 10.0,
       "ticker": "005880",
       "name": "대한해운",
       "sector": "운송물류",
       "mcap_eok": 8100.958234,
       "size_tier": "mid",
       "intensity": null,
-      "attractiveness": 58.4,
+      "attractiveness": 54.8,
       "tech_score": 55,
       "combined_score": null,
-      "macro_beta": 0.086,
-      "catalyst": "news_growth 284.0% / DART pos+contract pts 0.0",
+      "macro_beta": 0.005,
+      "catalyst": "news_growth None% / DART pos+contract pts 0.0",
       "tech_breakdown": {
         "alignment(20)": 12,
         "ma60_margin(15)": 0,
@@ -451,124 +453,26 @@
         "pos_52w_pct": 46.7,
         "sigma_annual_pct": 73.5
       },
-      "capital_weight_pct": 3.75
+      "capital_weight_pct": 6.0
     },
     {
       "idea_id": "default",
       "theme": "default_picks (매크로 무관)",
-      "allocation_pct": 6.25,
-      "ticker": "375500",
-      "name": "DL이앤씨",
-      "sector": "건설",
-      "mcap_eok": 31690.077237,
-      "size_tier": "large",
-      "intensity": null,
-      "attractiveness": 58.0,
-      "tech_score": 51,
-      "combined_score": null,
-      "macro_beta": 0.643,
-      "catalyst": "news_growth 500.0% / DART pos+contract pts 3.0",
-      "tech_breakdown": {
-        "alignment(20)": 12,
-        "ma60_margin(15)": 0,
-        "momentum(15)": 8,
-        "volume(10)": 2,
-        "pos_52w(15)": 15,
-        "rsi(10)": 2,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 76500.0,
-        "ma5": 79940.0,
-        "ma20": 86880.0,
-        "ma60": 76963.3,
-        "ma120": 60512.5,
-        "ma60_margin_pct": -0.6,
-        "ret_6m_pct": 91.25,
-        "rsi14": 22.3,
-        "vol_5d_to_20d_ratio": 0.55,
-        "pos_52w_pct": 59.2,
-        "sigma_annual_pct": 71.0
-      },
-      "capital_weight_pct": 3.75
-    },
-    {
-      "idea_id": "default",
-      "theme": "default_picks (매크로 무관)",
-      "allocation_pct": 6.25,
-      "ticker": "041830",
-      "name": "인바디",
-      "sector": "의료정밀",
-      "mcap_eok": 6201.20572,
+      "allocation_pct": 10.0,
+      "ticker": "108670",
+      "name": "LX하우시스",
+      "sector": "고무플라스틱",
+      "mcap_eok": 3291.13489,
       "size_tier": "mid",
       "intensity": null,
-      "attractiveness": 55.4,
-      "tech_score": 60,
+      "attractiveness": 53.5,
+      "tech_score": null,
       "combined_score": null,
-      "macro_beta": 0.622,
-      "catalyst": "news_growth 500.0% / DART pos+contract pts 0.0",
-      "tech_breakdown": {
-        "alignment(20)": 20,
-        "ma60_margin(15)": 6,
-        "momentum(15)": 8,
-        "volume(10)": 2,
-        "pos_52w(15)": 6,
-        "rsi(10)": 6,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 46800.0,
-        "ma5": 45780.0,
-        "ma20": 40187.5,
-        "ma60": 32885.0,
-        "ma120": 32537.5,
-        "ma60_margin_pct": 42.31,
-        "ret_6m_pct": 61.38,
-        "rsi14": 79.3,
-        "vol_5d_to_20d_ratio": 0.68,
-        "pos_52w_pct": 97.3,
-        "sigma_annual_pct": 58.6
-      },
-      "capital_weight_pct": 3.75
-    },
-    {
-      "idea_id": "default",
-      "theme": "default_picks (매크로 무관)",
-      "allocation_pct": 6.25,
-      "ticker": "009830",
-      "name": "한화솔루션",
-      "sector": "화학",
-      "mcap_eok": 76406.232252,
-      "size_tier": "large",
-      "intensity": null,
-      "attractiveness": 54.5,
-      "tech_score": 50,
-      "combined_score": null,
-      "macro_beta": 0.486,
-      "catalyst": "news_growth 500.0% / DART pos+contract pts 0.0",
-      "tech_breakdown": {
-        "alignment(20)": 12,
-        "ma60_margin(15)": 0,
-        "momentum(15)": 8,
-        "volume(10)": 2,
-        "pos_52w(15)": 15,
-        "rsi(10)": 6,
-        "volatility(15)": 7
-      },
-      "indicators": {
-        "close": 40700.0,
-        "ma5": 42160.0,
-        "ma20": 44810.0,
-        "ma60": 44479.2,
-        "ma120": 38612.5,
-        "ma60_margin_pct": -8.5,
-        "ret_6m_pct": 45.88,
-        "rsi14": 39.1,
-        "vol_5d_to_20d_ratio": 0.48,
-        "pos_52w_pct": 45.1,
-        "sigma_annual_pct": 88.7
-      },
-      "capital_weight_pct": 3.75
+      "macro_beta": 0.666,
+      "catalyst": "news_growth None% / DART pos+contract pts 0.0",
+      "tech_breakdown": null,
+      "indicators": null,
+      "capital_weight_pct": 6.0
     }
   ]
 }

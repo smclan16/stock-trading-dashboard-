@@ -127,18 +127,13 @@ div[data-baseweb="notification"] {{ background: {BG_CARD} !important; }}
 
 
 def toggle(default: bool = True) -> bool:
-    """메인 대시보드 사이드바에 블룸버그 테마 ON/OFF 토글을 그린다.
-
-    상태(_STATE_KEY)는 세션 전역으로 유지되므로, 여기서 한 번 설정하면
-    모든 페이지가 apply()를 통해 동일하게 적용한다. 개별 페이지는
-    toggle()을 호출하지 않고 apply()만 호출한다.
-    """
+    """사이드바에 블룸버그 테마 ON/OFF 토글을 그린다. 상태는 세션 전역 유지."""
     if _STATE_KEY not in st.session_state:
         st.session_state[_STATE_KEY] = default
     with st.sidebar:
-        st.toggle("🖥 블룸버그 스타일", key=_STATE_KEY,
-                  help="끄면 즉시 기본(라이트) 테마로 복귀합니다. "
-                       "이 설정은 모든 페이지에 일괄 적용됩니다.")
+        val = st.toggle("🖥 블룸버그 스타일", value=st.session_state[_STATE_KEY],
+                        help="끄면 즉시 기본(라이트) 테마로 복귀합니다.")
+        st.session_state[_STATE_KEY] = val
     return st.session_state[_STATE_KEY]
 
 

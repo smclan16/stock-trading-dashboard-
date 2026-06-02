@@ -1,20 +1,20 @@
 {
-  "as_of": "2026-05-30T12:06:34+09:00",
+  "as_of": "2026-06-02T09:09:53+09:00",
   "investor_type": "위험중립형",
   "investor_score": null,
   "equity_pct": 92.0,
   "cash_pct": 8.0,
   "regime": "위험선호",
   "method": "weighted-allocation (4단계 비중 × 5단계 매칭 × 6단계 매력도) + 1단계 투자성향 제약",
-  "n_holdings": 43,
+  "n_holdings": 41,
   "holdings": [
     {
       "ticker": "034020",
       "name": "두산에너빌리티",
       "sector": "기계",
-      "weight_pct": 7.574,
-      "capital_weight_pct": 6.968,
-      "attractiveness": 60.79,
+      "weight_pct": 8.678,
+      "capital_weight_pct": 7.984,
+      "attractiveness": 55.79,
       "macro_beta": null,
       "matched_ideas": [
         3,
@@ -29,13 +29,13 @@
           "idea_id": 3,
           "idea_theme": "SMR·소형원전 — AI 데이터센터 전용 전력원",
           "intensity": "direct",
-          "contribution_pct": 4.955
+          "contribution_pct": 4.951
         },
         {
           "idea_id": 4,
           "idea_theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
           "intensity": "direct",
-          "contribution_pct": 2.619
+          "contribution_pct": 3.727
         }
       ]
     },
@@ -43,9 +43,9 @@
       "ticker": "207940",
       "name": "삼성바이오로직스",
       "sector": "제약바이오",
-      "weight_pct": 7.107,
-      "capital_weight_pct": 6.538,
-      "attractiveness": 58.12,
+      "weight_pct": 7.102,
+      "capital_weight_pct": 6.534,
+      "attractiveness": 53.37,
       "macro_beta": null,
       "matched_ideas": [
         7,
@@ -60,13 +60,13 @@
           "idea_id": 7,
           "idea_theme": "GLP-1 비만약 — 시장 폭증 지속",
           "intensity": "indirect",
-          "contribution_pct": 3.857
+          "contribution_pct": 3.855
         },
         {
           "idea_id": 8,
           "idea_theme": "유전자 치료(CRISPR) — CASGEVY 이후 상용화",
           "intensity": "indirect",
-          "contribution_pct": 3.25
+          "contribution_pct": 3.248
         }
       ]
     },
@@ -74,9 +74,9 @@
       "ticker": "005930",
       "name": "삼성전자",
       "sector": "전자반도체",
-      "weight_pct": 6.491,
-      "capital_weight_pct": 5.972,
-      "attractiveness": 63.19,
+      "weight_pct": 6.476,
+      "capital_weight_pct": 5.958,
+      "attractiveness": 57.92,
       "macro_beta": null,
       "matched_ideas": [
         1,
@@ -91,13 +91,13 @@
           "idea_id": 1,
           "idea_theme": "AI 인프라 — HBM·메모리·하이퍼스케일러 Capex",
           "intensity": "direct",
-          "contribution_pct": 2.879
+          "contribution_pct": 2.866
         },
         {
           "idea_id": 11,
           "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
           "intensity": "indirect",
-          "contribution_pct": 3.611
+          "contribution_pct": 3.61
         }
       ]
     },
@@ -105,9 +105,9 @@
       "ticker": "012450",
       "name": "한화에어로스페이스",
       "sector": "운송장비",
-      "weight_pct": 5.484,
-      "capital_weight_pct": 5.046,
-      "attractiveness": 62.45,
+      "weight_pct": 5.52,
+      "capital_weight_pct": 5.078,
+      "attractiveness": 57.4,
       "macro_beta": null,
       "matched_ideas": [
         10,
@@ -122,13 +122,13 @@
           "idea_id": 10,
           "idea_theme": "위성통신·LEO — 글로벌 인터넷 인프라",
           "intensity": "direct",
-          "contribution_pct": 4.352
+          "contribution_pct": 4.376
         },
         {
           "idea_id": 13,
           "idea_theme": "K-방산·K-조선 수출 사이클",
           "intensity": "direct",
-          "contribution_pct": 1.132
+          "contribution_pct": 1.144
         }
       ]
     },
@@ -136,9 +136,9 @@
       "ticker": "068270",
       "name": "셀트리온",
       "sector": "제약바이오",
-      "weight_pct": 3.777,
-      "capital_weight_pct": 3.475,
-      "attractiveness": 52.49,
+      "weight_pct": 3.774,
+      "capital_weight_pct": 3.472,
+      "attractiveness": 48.16,
       "macro_beta": null,
       "matched_ideas": [
         7,
@@ -153,13 +153,13 @@
           "idea_id": 7,
           "idea_theme": "GLP-1 비만약 — 시장 폭증 지속",
           "intensity": "perception",
-          "contribution_pct": 2.05
+          "contribution_pct": 2.048
         },
         {
           "idea_id": 8,
           "idea_theme": "유전자 치료(CRISPR) — CASGEVY 이후 상용화",
           "intensity": "perception",
-          "contribution_pct": 1.727
+          "contribution_pct": 1.726
         }
       ]
     },
@@ -167,9 +167,9 @@
       "ticker": "028260",
       "name": "삼성물산",
       "sector": "유통",
-      "weight_pct": 3.565,
-      "capital_weight_pct": 3.28,
-      "attractiveness": 63.76,
+      "weight_pct": 3.559,
+      "capital_weight_pct": 3.274,
+      "attractiveness": 58.37,
       "macro_beta": null,
       "matched_ideas": [
         3,
@@ -184,13 +184,13 @@
           "idea_id": 3,
           "idea_theme": "SMR·소형원전 — AI 데이터센터 전용 전력원",
           "intensity": "perception",
-          "contribution_pct": 2.976
+          "contribution_pct": 2.97
         },
         {
           "idea_id": 11,
           "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
           "intensity": "direct",
-          "contribution_pct": 0.589
+          "contribution_pct": 0.588
         }
       ]
     },
@@ -198,9 +198,9 @@
       "ticker": "085910",
       "name": "(주)네오티스",
       "sector": "자동차",
-      "weight_pct": 3.42,
-      "capital_weight_pct": 3.146,
-      "attractiveness": 58.5,
+      "weight_pct": 3.403,
+      "capital_weight_pct": 3.131,
+      "attractiveness": 56.26,
       "macro_beta": null,
       "matched_ideas": [
         5
@@ -214,7 +214,7 @@
           "idea_id": 5,
           "idea_theme": "휴머노이드 로봇 — 양산 진입 단계",
           "intensity": "direct",
-          "contribution_pct": 3.42
+          "contribution_pct": 3.403
         }
       ]
     },
@@ -222,9 +222,9 @@
       "ticker": "009150",
       "name": "삼성전기",
       "sector": "전자반도체",
-      "weight_pct": 3.297,
-      "capital_weight_pct": 3.033,
-      "attractiveness": 59.89,
+      "weight_pct": 3.282,
+      "capital_weight_pct": 3.019,
+      "attractiveness": 54.13,
       "macro_beta": null,
       "matched_ideas": [
         1,
@@ -239,249 +239,13 @@
           "idea_id": 1,
           "idea_theme": "AI 인프라 — HBM·메모리·하이퍼스케일러 Capex",
           "intensity": "indirect",
-          "contribution_pct": 0.483
+          "contribution_pct": 0.479
         },
         {
           "idea_id": 2,
           "idea_theme": "AI 에이전트 — Agentic AI 본격 상용화",
           "intensity": "perception",
-          "contribution_pct": 2.814
-        }
-      ]
-    },
-    {
-      "ticker": "005380",
-      "name": "현대차",
-      "sector": "자동차",
-      "weight_pct": 2.711,
-      "capital_weight_pct": 2.494,
-      "attractiveness": 61.41,
-      "macro_beta": null,
-      "matched_ideas": [
-        6,
-        11
-      ],
-      "is_default_pick": false,
-      "mcap_eok": 1410781.00774,
-      "size_tier": "large",
-      "size_cap_pct": 13,
-      "sources": [
-        {
-          "idea_id": 6,
-          "idea_theme": "자율주행 — Robotaxi 본격화 (한국 신호 강함)",
-          "intensity": "direct",
-          "contribution_pct": 1.922
-        },
-        {
-          "idea_id": 11,
-          "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
-          "intensity": "indirect",
-          "contribution_pct": 0.789
-        }
-      ]
-    },
-    {
-      "ticker": "009900",
-      "name": "명신산업(주)",
-      "sector": "자동차",
-      "weight_pct": 2.58,
-      "capital_weight_pct": 2.373,
-      "attractiveness": 58.78,
-      "macro_beta": null,
-      "matched_ideas": [
-        5,
-        6
-      ],
-      "is_default_pick": false,
-      "mcap_eok": 5682.5154039,
-      "size_tier": "mid",
-      "size_cap_pct": 10,
-      "sources": [
-        {
-          "idea_id": 5,
-          "idea_theme": "휴머노이드 로봇 — 양산 진입 단계",
-          "intensity": "perception",
-          "contribution_pct": 2.52
-        },
-        {
-          "idea_id": 6,
-          "idea_theme": "자율주행 — Robotaxi 본격화 (한국 신호 강함)",
-          "intensity": "indirect",
-          "contribution_pct": 0.06
-        }
-      ]
-    },
-    {
-      "ticker": "032830",
-      "name": "삼성생명",
-      "sector": "보험",
-      "weight_pct": 2.551,
-      "capital_weight_pct": 2.347,
-      "attractiveness": 59.9,
-      "macro_beta": null,
-      "matched_ideas": [
-        11,
-        12
-      ],
-      "is_default_pick": false,
-      "mcap_eok": 696000.0,
-      "size_tier": "large",
-      "size_cap_pct": 13,
-      "sources": [
-        {
-          "idea_id": 11,
-          "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
-          "intensity": "direct",
-          "contribution_pct": 0.589
-        },
-        {
-          "idea_id": 12,
-          "idea_theme": "한국 내수·유통·면세·K-뷰티 회복 (자동 발굴)",
-          "intensity": "perception",
-          "contribution_pct": 1.962
-        }
-      ]
-    },
-    {
-      "ticker": "000660",
-      "name": "에스케이하이닉스(주)",
-      "sector": "전자반도체",
-      "weight_pct": 2.542,
-      "capital_weight_pct": 2.339,
-      "attractiveness": 60.5,
-      "macro_beta": null,
-      "matched_ideas": [
-        1
-      ],
-      "is_default_pick": false,
-      "mcap_eok": 14624652.5298,
-      "size_tier": "large",
-      "size_cap_pct": 13,
-      "sources": [
-        {
-          "idea_id": 1,
-          "idea_theme": "AI 인프라 — HBM·메모리·하이퍼스케일러 Capex",
-          "intensity": "direct",
-          "contribution_pct": 2.542
-        }
-      ]
-    },
-    {
-      "ticker": "005880",
-      "name": "대한해운(주)",
-      "sector": "운송물류",
-      "weight_pct": 2.5,
-      "capital_weight_pct": 2.3,
-      "attractiveness": 58.44,
-      "macro_beta": 0.086,
-      "matched_ideas": [],
-      "is_default_pick": true,
-      "mcap_eok": 8100.958234,
-      "size_tier": "mid",
-      "size_cap_pct": 10,
-      "sources": [
-        {
-          "source": "default_picks",
-          "macro_beta": 0.086,
-          "catalyst": "news_growth 284.0% / DART pos+contract pts 0.0",
-          "contribution_pct": 2.5
-        }
-      ]
-    },
-    {
-      "ticker": "375500",
-      "name": "디엘이앤씨 주식회사",
-      "sector": "건설",
-      "weight_pct": 2.5,
-      "capital_weight_pct": 2.3,
-      "attractiveness": 58.05,
-      "macro_beta": 0.643,
-      "matched_ideas": [],
-      "is_default_pick": true,
-      "mcap_eok": 31690.077237,
-      "size_tier": "large",
-      "size_cap_pct": 13,
-      "sources": [
-        {
-          "source": "default_picks",
-          "macro_beta": 0.643,
-          "catalyst": "news_growth 500.0% / DART pos+contract pts 3.0",
-          "contribution_pct": 2.5
-        }
-      ]
-    },
-    {
-      "ticker": "041830",
-      "name": "(주)인바디",
-      "sector": "의료정밀",
-      "weight_pct": 2.5,
-      "capital_weight_pct": 2.3,
-      "attractiveness": 55.38,
-      "macro_beta": 0.622,
-      "matched_ideas": [],
-      "is_default_pick": true,
-      "mcap_eok": 6201.20572,
-      "size_tier": "mid",
-      "size_cap_pct": 10,
-      "sources": [
-        {
-          "source": "default_picks",
-          "macro_beta": 0.622,
-          "catalyst": "news_growth 500.0% / DART pos+contract pts 0.0",
-          "contribution_pct": 2.5
-        }
-      ]
-    },
-    {
-      "ticker": "009830",
-      "name": "한화솔루션(주)",
-      "sector": "화학",
-      "weight_pct": 2.5,
-      "capital_weight_pct": 2.3,
-      "attractiveness": 54.5,
-      "macro_beta": 0.486,
-      "matched_ideas": [],
-      "is_default_pick": true,
-      "mcap_eok": 76406.232252,
-      "size_tier": "large",
-      "size_cap_pct": 13,
-      "sources": [
-        {
-          "source": "default_picks",
-          "macro_beta": 0.486,
-          "catalyst": "news_growth 500.0% / DART pos+contract pts 0.0",
-          "contribution_pct": 2.5
-        }
-      ]
-    },
-    {
-      "ticker": "047810",
-      "name": "한국항공우주",
-      "sector": "운송장비",
-      "weight_pct": 2.467,
-      "capital_weight_pct": 2.269,
-      "attractiveness": 65.14,
-      "macro_beta": null,
-      "matched_ideas": [
-        10,
-        13
-      ],
-      "is_default_pick": false,
-      "mcap_eok": 165610.206793,
-      "size_tier": "large",
-      "size_cap_pct": 13,
-      "sources": [
-        {
-          "idea_id": 10,
-          "idea_theme": "위성통신·LEO — 글로벌 인터넷 인프라",
-          "intensity": "direct",
-          "contribution_pct": 1.958
-        },
-        {
-          "idea_id": 13,
-          "idea_theme": "K-방산·K-조선 수출 사이클",
-          "intensity": "direct",
-          "contribution_pct": 0.509
+          "contribution_pct": 2.803
         }
       ]
     },
@@ -489,9 +253,9 @@
       "ticker": "010120",
       "name": "LS ELECTRIC",
       "sector": "전기장비",
-      "weight_pct": 2.399,
-      "capital_weight_pct": 2.207,
-      "attractiveness": 67.74,
+      "weight_pct": 3.236,
+      "capital_weight_pct": 2.977,
+      "attractiveness": 61.74,
       "macro_beta": null,
       "matched_ideas": [
         4,
@@ -506,44 +270,13 @@
           "idea_id": 4,
           "idea_theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
           "intensity": "direct",
-          "contribution_pct": 1.998
+          "contribution_pct": 2.836
         },
         {
           "idea_id": 11,
           "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
           "intensity": "indirect",
-          "contribution_pct": 0.401
-        }
-      ]
-    },
-    {
-      "ticker": "028050",
-      "name": "삼성E&A",
-      "sector": "전문서비스",
-      "weight_pct": 2.386,
-      "capital_weight_pct": 2.195,
-      "attractiveness": 66.65,
-      "macro_beta": null,
-      "matched_ideas": [
-        3,
-        4
-      ],
-      "is_default_pick": false,
-      "mcap_eok": 107016.0,
-      "size_tier": "large",
-      "size_cap_pct": 13,
-      "sources": [
-        {
-          "idea_id": 3,
-          "idea_theme": "SMR·소형원전 — AI 데이터센터 전용 전력원",
-          "intensity": "direct",
-          "contribution_pct": 1.636
-        },
-        {
-          "idea_id": 4,
-          "idea_theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
-          "intensity": "indirect",
-          "contribution_pct": 0.75
+          "contribution_pct": 0.4
         }
       ]
     },
@@ -551,9 +284,9 @@
       "ticker": "267260",
       "name": "HD현대일렉트릭",
       "sector": "전기장비",
-      "weight_pct": 2.361,
-      "capital_weight_pct": 2.172,
-      "attractiveness": 68.37,
+      "weight_pct": 3.206,
+      "capital_weight_pct": 2.95,
+      "attractiveness": 63.37,
       "macro_beta": null,
       "matched_ideas": [
         4,
@@ -568,75 +301,13 @@
           "idea_id": 4,
           "idea_theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
           "intensity": "direct",
-          "contribution_pct": 1.967
+          "contribution_pct": 2.81
         },
         {
           "idea_id": 11,
           "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
           "intensity": "indirect",
-          "contribution_pct": 0.394
-        }
-      ]
-    },
-    {
-      "ticker": "035420",
-      "name": "NAVER",
-      "sector": "IT서비스",
-      "weight_pct": 2.302,
-      "capital_weight_pct": 2.118,
-      "attractiveness": 61.21,
-      "macro_beta": null,
-      "matched_ideas": [
-        1,
-        2
-      ],
-      "is_default_pick": false,
-      "mcap_eok": 313747.552,
-      "size_tier": "large",
-      "size_cap_pct": 13,
-      "sources": [
-        {
-          "idea_id": 1,
-          "idea_theme": "AI 인프라 — HBM·메모리·하이퍼스케일러 Capex",
-          "intensity": "indirect",
-          "contribution_pct": 0.221
-        },
-        {
-          "idea_id": 2,
-          "idea_theme": "AI 에이전트 — Agentic AI 본격 상용화",
-          "intensity": "direct",
-          "contribution_pct": 2.081
-        }
-      ]
-    },
-    {
-      "ticker": "105560",
-      "name": "KB금융",
-      "sector": "금융",
-      "weight_pct": 2.266,
-      "capital_weight_pct": 2.084,
-      "attractiveness": 57.56,
-      "macro_beta": null,
-      "matched_ideas": [
-        11,
-        12
-      ],
-      "is_default_pick": false,
-      "mcap_eok": 586493.765715,
-      "size_tier": "large",
-      "size_cap_pct": 13,
-      "sources": [
-        {
-          "idea_id": 11,
-          "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
-          "intensity": "direct",
-          "contribution_pct": 0.523
-        },
-        {
-          "idea_id": 12,
-          "idea_theme": "한국 내수·유통·면세·K-뷰티 회복 (자동 발굴)",
-          "intensity": "perception",
-          "contribution_pct": 1.742
+          "contribution_pct": 0.396
         }
       ]
     },
@@ -644,9 +315,9 @@
       "ticker": "298040",
       "name": "효성중공업",
       "sector": "전기장비",
-      "weight_pct": 2.104,
-      "capital_weight_pct": 1.936,
-      "attractiveness": 63.84,
+      "weight_pct": 2.87,
+      "capital_weight_pct": 2.641,
+      "attractiveness": 59.84,
       "macro_beta": null,
       "matched_ideas": [
         4,
@@ -661,13 +332,298 @@
           "idea_id": 4,
           "idea_theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
           "intensity": "direct",
-          "contribution_pct": 1.753
+          "contribution_pct": 2.516
         },
         {
           "idea_id": 11,
           "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
           "intensity": "indirect",
-          "contribution_pct": 0.351
+          "contribution_pct": 0.354
+        }
+      ]
+    },
+    {
+      "ticker": "028050",
+      "name": "삼성E&A",
+      "sector": "전문서비스",
+      "weight_pct": 2.711,
+      "capital_weight_pct": 2.494,
+      "attractiveness": 61.65,
+      "macro_beta": null,
+      "matched_ideas": [
+        3,
+        4
+      ],
+      "is_default_pick": false,
+      "mcap_eok": 107016.0,
+      "size_tier": "large",
+      "size_cap_pct": 13,
+      "sources": [
+        {
+          "idea_id": 3,
+          "idea_theme": "SMR·소형원전 — AI 데이터센터 전용 전력원",
+          "intensity": "direct",
+          "contribution_pct": 1.64
+        },
+        {
+          "idea_id": 4,
+          "idea_theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
+          "intensity": "indirect",
+          "contribution_pct": 1.071
+        }
+      ]
+    },
+    {
+      "ticker": "005380",
+      "name": "현대차",
+      "sector": "자동차",
+      "weight_pct": 2.698,
+      "capital_weight_pct": 2.482,
+      "attractiveness": 55.4,
+      "macro_beta": null,
+      "matched_ideas": [
+        6,
+        11
+      ],
+      "is_default_pick": false,
+      "mcap_eok": 1410781.00774,
+      "size_tier": "large",
+      "size_cap_pct": 13,
+      "sources": [
+        {
+          "idea_id": 6,
+          "idea_theme": "자율주행 — Robotaxi 본격화 (한국 신호 강함)",
+          "intensity": "direct",
+          "contribution_pct": 1.914
+        },
+        {
+          "idea_id": 11,
+          "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
+          "intensity": "indirect",
+          "contribution_pct": 0.783
+        }
+      ]
+    },
+    {
+      "ticker": "009900",
+      "name": "명신산업(주)",
+      "sector": "자동차",
+      "weight_pct": 2.598,
+      "capital_weight_pct": 2.391,
+      "attractiveness": 58.17,
+      "macro_beta": null,
+      "matched_ideas": [
+        5,
+        6
+      ],
+      "is_default_pick": false,
+      "mcap_eok": 5682.5154039,
+      "size_tier": "mid",
+      "size_cap_pct": 10,
+      "sources": [
+        {
+          "idea_id": 5,
+          "idea_theme": "휴머노이드 로봇 — 양산 진입 단계",
+          "intensity": "perception",
+          "contribution_pct": 2.537
+        },
+        {
+          "idea_id": 6,
+          "idea_theme": "자율주행 — Robotaxi 본격화 (한국 신호 강함)",
+          "intensity": "indirect",
+          "contribution_pct": 0.062
+        }
+      ]
+    },
+    {
+      "ticker": "000660",
+      "name": "에스케이하이닉스(주)",
+      "sector": "전자반도체",
+      "weight_pct": 2.555,
+      "capital_weight_pct": 2.35,
+      "attractiveness": 56.76,
+      "macro_beta": null,
+      "matched_ideas": [
+        1
+      ],
+      "is_default_pick": false,
+      "mcap_eok": 14624652.5298,
+      "size_tier": "large",
+      "size_cap_pct": 13,
+      "sources": [
+        {
+          "idea_id": 1,
+          "idea_theme": "AI 인프라 — HBM·메모리·하이퍼스케일러 Capex",
+          "intensity": "direct",
+          "contribution_pct": 2.555
+        }
+      ]
+    },
+    {
+      "ticker": "032830",
+      "name": "삼성생명",
+      "sector": "보험",
+      "weight_pct": 2.552,
+      "capital_weight_pct": 2.348,
+      "attractiveness": 54.7,
+      "macro_beta": null,
+      "matched_ideas": [
+        11,
+        12
+      ],
+      "is_default_pick": false,
+      "mcap_eok": 696000.0,
+      "size_tier": "large",
+      "size_cap_pct": 13,
+      "sources": [
+        {
+          "idea_id": 11,
+          "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
+          "intensity": "direct",
+          "contribution_pct": 0.588
+        },
+        {
+          "idea_id": 12,
+          "idea_theme": "한국 내수·유통·면세·K-뷰티 회복 (자동 발굴)",
+          "intensity": "perception",
+          "contribution_pct": 1.964
+        }
+      ]
+    },
+    {
+      "ticker": "005880",
+      "name": "대한해운(주)",
+      "sector": "운송물류",
+      "weight_pct": 2.5,
+      "capital_weight_pct": 2.3,
+      "attractiveness": 54.76,
+      "macro_beta": 0.005,
+      "matched_ideas": [],
+      "is_default_pick": true,
+      "mcap_eok": 8100.958234,
+      "size_tier": "mid",
+      "size_cap_pct": 10,
+      "sources": [
+        {
+          "source": "default_picks",
+          "macro_beta": 0.005,
+          "catalyst": "news_growth None% / DART pos+contract pts 0.0",
+          "contribution_pct": 2.5
+        }
+      ]
+    },
+    {
+      "ticker": "108670",
+      "name": "(주)엘엑스하우시스",
+      "sector": "고무플라스틱",
+      "weight_pct": 2.5,
+      "capital_weight_pct": 2.3,
+      "attractiveness": 53.5,
+      "macro_beta": 0.666,
+      "matched_ideas": [],
+      "is_default_pick": true,
+      "mcap_eok": 3291.13489,
+      "size_tier": "mid",
+      "size_cap_pct": 10,
+      "sources": [
+        {
+          "source": "default_picks",
+          "macro_beta": 0.666,
+          "catalyst": "news_growth None% / DART pos+contract pts 0.0",
+          "contribution_pct": 2.5
+        }
+      ]
+    },
+    {
+      "ticker": "047810",
+      "name": "한국항공우주",
+      "sector": "운송장비",
+      "weight_pct": 2.439,
+      "capital_weight_pct": 2.244,
+      "attractiveness": 57.29,
+      "macro_beta": null,
+      "matched_ideas": [
+        10,
+        13
+      ],
+      "is_default_pick": false,
+      "mcap_eok": 165610.206793,
+      "size_tier": "large",
+      "size_cap_pct": 13,
+      "sources": [
+        {
+          "idea_id": 10,
+          "idea_theme": "위성통신·LEO — 글로벌 인터넷 인프라",
+          "intensity": "direct",
+          "contribution_pct": 1.934
+        },
+        {
+          "idea_id": 13,
+          "idea_theme": "K-방산·K-조선 수출 사이클",
+          "intensity": "direct",
+          "contribution_pct": 0.505
+        }
+      ]
+    },
+    {
+      "ticker": "035420",
+      "name": "NAVER",
+      "sector": "IT서비스",
+      "weight_pct": 2.305,
+      "capital_weight_pct": 2.121,
+      "attractiveness": 56.11,
+      "macro_beta": null,
+      "matched_ideas": [
+        1,
+        2
+      ],
+      "is_default_pick": false,
+      "mcap_eok": 313747.552,
+      "size_tier": "large",
+      "size_cap_pct": 13,
+      "sources": [
+        {
+          "idea_id": 1,
+          "idea_theme": "AI 인프라 — HBM·메모리·하이퍼스케일러 Capex",
+          "intensity": "indirect",
+          "contribution_pct": 0.22
+        },
+        {
+          "idea_id": 2,
+          "idea_theme": "AI 에이전트 — Agentic AI 본격 상용화",
+          "intensity": "direct",
+          "contribution_pct": 2.085
+        }
+      ]
+    },
+    {
+      "ticker": "105560",
+      "name": "KB금융",
+      "sector": "금융",
+      "weight_pct": 2.263,
+      "capital_weight_pct": 2.082,
+      "attractiveness": 52.36,
+      "macro_beta": null,
+      "matched_ideas": [
+        11,
+        12
+      ],
+      "is_default_pick": false,
+      "mcap_eok": 586493.765715,
+      "size_tier": "large",
+      "size_cap_pct": 13,
+      "sources": [
+        {
+          "idea_id": 11,
+          "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
+          "intensity": "direct",
+          "contribution_pct": 0.522
+        },
+        {
+          "idea_id": 12,
+          "idea_theme": "한국 내수·유통·면세·K-뷰티 회복 (자동 발굴)",
+          "intensity": "perception",
+          "contribution_pct": 1.741
         }
       ]
     },
@@ -675,9 +631,9 @@
       "ticker": "055550",
       "name": "신한지주",
       "sector": "금융",
-      "weight_pct": 1.946,
-      "capital_weight_pct": 1.79,
-      "attractiveness": 57.43,
+      "weight_pct": 1.943,
+      "capital_weight_pct": 1.787,
+      "attractiveness": 52.23,
       "macro_beta": null,
       "matched_ideas": [
         11,
@@ -692,13 +648,13 @@
           "idea_id": 11,
           "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
           "intensity": "direct",
-          "contribution_pct": 0.449
+          "contribution_pct": 0.448
         },
         {
           "idea_id": 12,
           "idea_theme": "한국 내수·유통·면세·K-뷰티 회복 (자동 발굴)",
           "intensity": "perception",
-          "contribution_pct": 1.496
+          "contribution_pct": 1.495
         }
       ]
     },
@@ -706,9 +662,9 @@
       "ticker": "373220",
       "name": "LG에너지솔루션",
       "sector": "전기장비",
-      "weight_pct": 1.829,
-      "capital_weight_pct": 1.683,
-      "attractiveness": 54.56,
+      "weight_pct": 1.828,
+      "capital_weight_pct": 1.682,
+      "attractiveness": 49.72,
       "macro_beta": null,
       "matched_ideas": [
         6,
@@ -729,7 +685,38 @@
           "idea_id": 11,
           "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
           "intensity": "indirect",
-          "contribution_pct": 0.588
+          "contribution_pct": 0.586
+        }
+      ]
+    },
+    {
+      "ticker": "006260",
+      "name": "(주)LS",
+      "sector": "금융",
+      "weight_pct": 1.677,
+      "capital_weight_pct": 1.542,
+      "attractiveness": 60.16,
+      "macro_beta": null,
+      "matched_ideas": [
+        4,
+        11
+      ],
+      "is_default_pick": false,
+      "mcap_eok": 172536.0,
+      "size_tier": "large",
+      "size_cap_pct": 13,
+      "sources": [
+        {
+          "idea_id": 4,
+          "idea_theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
+          "intensity": "indirect",
+          "contribution_pct": 1.412
+        },
+        {
+          "idea_id": 11,
+          "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
+          "intensity": "direct",
+          "contribution_pct": 0.265
         }
       ]
     },
@@ -737,9 +724,9 @@
       "ticker": "402340",
       "name": "에스케이스퀘어 주식회사",
       "sector": "금융",
-      "weight_pct": 1.616,
-      "capital_weight_pct": 1.486,
-      "attractiveness": 68.75,
+      "weight_pct": 1.627,
+      "capital_weight_pct": 1.497,
+      "attractiveness": 64.48,
       "macro_beta": null,
       "matched_ideas": [
         1,
@@ -754,13 +741,13 @@
           "idea_id": 1,
           "idea_theme": "AI 인프라 — HBM·메모리·하이퍼스케일러 Capex",
           "intensity": "indirect",
-          "contribution_pct": 0.605
+          "contribution_pct": 0.608
         },
         {
           "idea_id": 11,
           "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
           "intensity": "direct",
-          "contribution_pct": 1.01
+          "contribution_pct": 1.019
         }
       ]
     },
@@ -768,9 +755,9 @@
       "ticker": "018260",
       "name": "삼성에스디에스(주)",
       "sector": "IT서비스",
-      "weight_pct": 1.565,
-      "capital_weight_pct": 1.44,
-      "attractiveness": 66.6,
+      "weight_pct": 1.572,
+      "capital_weight_pct": 1.446,
+      "attractiveness": 61.5,
       "macro_beta": null,
       "matched_ideas": [
         1,
@@ -791,7 +778,7 @@
           "idea_id": 2,
           "idea_theme": "AI 에이전트 — Agentic AI 본격 상용화",
           "intensity": "direct",
-          "contribution_pct": 1.415
+          "contribution_pct": 1.422
         }
       ]
     },
@@ -799,9 +786,9 @@
       "ticker": "082740",
       "name": "한화엔진(주)",
       "sector": "기계",
-      "weight_pct": 1.363,
-      "capital_weight_pct": 1.254,
-      "attractiveness": 68.21,
+      "weight_pct": 1.359,
+      "capital_weight_pct": 1.251,
+      "attractiveness": 61.98,
       "macro_beta": null,
       "matched_ideas": [
         3,
@@ -816,13 +803,13 @@
           "idea_id": 3,
           "idea_theme": "SMR·소형원전 — AI 데이터센터 전용 전력원",
           "intensity": "indirect",
-          "contribution_pct": 1.066
+          "contribution_pct": 1.061
         },
         {
           "idea_id": 13,
           "idea_theme": "K-방산·K-조선 수출 사이클",
           "intensity": "direct",
-          "contribution_pct": 0.297
+          "contribution_pct": 0.299
         }
       ]
     },
@@ -830,9 +817,9 @@
       "ticker": "237690",
       "name": "에스티팜(주)",
       "sector": "제약바이오",
-      "weight_pct": 1.314,
-      "capital_weight_pct": 1.209,
-      "attractiveness": 65.21,
+      "weight_pct": 1.316,
+      "capital_weight_pct": 1.21,
+      "attractiveness": 60.14,
       "macro_beta": null,
       "matched_ideas": [
         7,
@@ -847,13 +834,13 @@
           "idea_id": 7,
           "idea_theme": "GLP-1 비만약 — 시장 폭증 지속",
           "intensity": "direct",
-          "contribution_pct": 0.713
+          "contribution_pct": 0.714
         },
         {
           "idea_id": 8,
           "idea_theme": "유전자 치료(CRISPR) — CASGEVY 이후 상용화",
           "intensity": "direct",
-          "contribution_pct": 0.601
+          "contribution_pct": 0.602
         }
       ]
     },
@@ -861,9 +848,9 @@
       "ticker": "329180",
       "name": "에이치디현대중공업(주)",
       "sector": "운송장비",
-      "weight_pct": 1.306,
-      "capital_weight_pct": 1.201,
-      "attractiveness": 66.85,
+      "weight_pct": 1.299,
+      "capital_weight_pct": 1.195,
+      "attractiveness": 59.17,
       "macro_beta": null,
       "matched_ideas": [
         13
@@ -877,38 +864,31 @@
           "idea_id": 13,
           "idea_theme": "K-방산·K-조선 수출 사이클",
           "intensity": "direct",
-          "contribution_pct": 1.306
+          "contribution_pct": 1.299
         }
       ]
     },
     {
-      "ticker": "006260",
-      "name": "(주)LS",
-      "sector": "금융",
-      "weight_pct": 1.261,
-      "capital_weight_pct": 1.16,
-      "attractiveness": 66.16,
+      "ticker": "001440",
+      "name": "대한전선(주)",
+      "sector": "전기장비",
+      "weight_pct": 1.232,
+      "capital_weight_pct": 1.133,
+      "attractiveness": 63.52,
       "macro_beta": null,
       "matched_ideas": [
-        4,
-        11
+        4
       ],
       "is_default_pick": false,
-      "mcap_eok": 172536.0,
+      "mcap_eok": 104464.053668,
       "size_tier": "large",
       "size_cap_pct": 13,
       "sources": [
         {
           "idea_id": 4,
           "idea_theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
-          "intensity": "indirect",
-          "contribution_pct": 0.996
-        },
-        {
-          "idea_id": 11,
-          "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
           "intensity": "direct",
-          "contribution_pct": 0.266
+          "contribution_pct": 1.232
         }
       ]
     },
@@ -918,7 +898,7 @@
       "sector": "자동차",
       "weight_pct": 1.2,
       "capital_weight_pct": 1.104,
-      "attractiveness": 60.26,
+      "attractiveness": 54.82,
       "macro_beta": null,
       "matched_ideas": [
         6
@@ -940,9 +920,9 @@
       "ticker": "012330",
       "name": "현대모비스(주)",
       "sector": "자동차",
-      "weight_pct": 1.146,
-      "capital_weight_pct": 1.054,
-      "attractiveness": 60.43,
+      "weight_pct": 1.152,
+      "capital_weight_pct": 1.06,
+      "attractiveness": 55.79,
       "macro_beta": null,
       "matched_ideas": [
         6
@@ -956,7 +936,7 @@
           "idea_id": 6,
           "idea_theme": "자율주행 — Robotaxi 본격화 (한국 신호 강함)",
           "intensity": "direct",
-          "contribution_pct": 1.146
+          "contribution_pct": 1.152
         }
       ]
     },
@@ -964,9 +944,9 @@
       "ticker": "005490",
       "name": "POSCO홀딩스",
       "sector": "철강금속",
-      "weight_pct": 1.082,
-      "capital_weight_pct": 0.995,
-      "attractiveness": 63.11,
+      "weight_pct": 1.088,
+      "capital_weight_pct": 1.001,
+      "attractiveness": 57.88,
       "macro_beta": null,
       "matched_ideas": [
         11,
@@ -981,13 +961,37 @@
           "idea_id": 11,
           "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
           "intensity": "direct",
-          "contribution_pct": 0.399
+          "contribution_pct": 0.398
         },
         {
           "idea_id": 13,
           "idea_theme": "K-방산·K-조선 수출 사이클",
           "intensity": "indirect",
-          "contribution_pct": 0.683
+          "contribution_pct": 0.69
+        }
+      ]
+    },
+    {
+      "ticker": "062040",
+      "name": "산일전기(주)",
+      "sector": "전기장비",
+      "weight_pct": 1.087,
+      "capital_weight_pct": 1.0,
+      "attractiveness": 64.56,
+      "macro_beta": null,
+      "matched_ideas": [
+        4
+      ],
+      "is_default_pick": false,
+      "mcap_eok": 83887.429,
+      "size_tier": "large",
+      "size_cap_pct": 13,
+      "sources": [
+        {
+          "idea_id": 4,
+          "idea_theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
+          "intensity": "direct",
+          "contribution_pct": 1.087
         }
       ]
     },
@@ -995,9 +999,9 @@
       "ticker": "009540",
       "name": "HD한국조선해양",
       "sector": "금융",
-      "weight_pct": 1.073,
-      "capital_weight_pct": 0.987,
-      "attractiveness": 64.47,
+      "weight_pct": 1.058,
+      "capital_weight_pct": 0.974,
+      "attractiveness": 56.24,
       "macro_beta": null,
       "matched_ideas": [
         11,
@@ -1012,37 +1016,13 @@
           "idea_id": 11,
           "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
           "intensity": "indirect",
-          "contribution_pct": 0.327
+          "contribution_pct": 0.32
         },
         {
           "idea_id": 13,
           "idea_theme": "K-방산·K-조선 수출 사이클",
           "intensity": "direct",
-          "contribution_pct": 0.746
-        }
-      ]
-    },
-    {
-      "ticker": "001440",
-      "name": "대한전선(주)",
-      "sector": "전기장비",
-      "weight_pct": 0.853,
-      "capital_weight_pct": 0.784,
-      "attractiveness": 66.72,
-      "macro_beta": null,
-      "matched_ideas": [
-        4
-      ],
-      "is_default_pick": false,
-      "mcap_eok": 104464.053668,
-      "size_tier": "large",
-      "size_cap_pct": 13,
-      "sources": [
-        {
-          "idea_id": 4,
-          "idea_theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
-          "intensity": "direct",
-          "contribution_pct": 0.853
+          "contribution_pct": 0.738
         }
       ]
     },
@@ -1050,9 +1030,9 @@
       "ticker": "042660",
       "name": "한화오션",
       "sector": "운송장비",
-      "weight_pct": 0.845,
-      "capital_weight_pct": 0.777,
-      "attractiveness": 58.67,
+      "weight_pct": 0.834,
+      "capital_weight_pct": 0.768,
+      "attractiveness": 50.99,
       "macro_beta": null,
       "matched_ideas": [
         13
@@ -1066,7 +1046,7 @@
           "idea_id": 13,
           "idea_theme": "K-방산·K-조선 수출 사이클",
           "intensity": "direct",
-          "contribution_pct": 0.845
+          "contribution_pct": 0.834
         }
       ]
     },
@@ -1074,9 +1054,9 @@
       "ticker": "039200",
       "name": "(주)오스코텍",
       "sector": "제약바이오",
-      "weight_pct": 0.792,
-      "capital_weight_pct": 0.728,
-      "attractiveness": 62.88,
+      "weight_pct": 0.799,
+      "capital_weight_pct": 0.735,
+      "attractiveness": 59.11,
       "macro_beta": null,
       "matched_ideas": [
         7,
@@ -1091,13 +1071,13 @@
           "idea_id": 7,
           "idea_theme": "GLP-1 비만약 — 시장 폭증 지속",
           "intensity": "indirect",
-          "contribution_pct": 0.43
+          "contribution_pct": 0.433
         },
         {
           "idea_id": 8,
           "idea_theme": "유전자 치료(CRISPR) — CASGEVY 이후 상용화",
           "intensity": "indirect",
-          "contribution_pct": 0.362
+          "contribution_pct": 0.365
         }
       ]
     },
@@ -1105,9 +1085,9 @@
       "ticker": "034730",
       "name": "SK(주)",
       "sector": "금융",
-      "weight_pct": 0.777,
-      "capital_weight_pct": 0.714,
-      "attractiveness": 65.31,
+      "weight_pct": 0.791,
+      "capital_weight_pct": 0.728,
+      "attractiveness": 63.04,
       "macro_beta": null,
       "matched_ideas": [
         1,
@@ -1122,37 +1102,13 @@
           "idea_id": 1,
           "idea_theme": "AI 인프라 — HBM·메모리·하이퍼스케일러 Capex",
           "intensity": "indirect",
-          "contribution_pct": 0.291
+          "contribution_pct": 0.296
         },
         {
           "idea_id": 11,
           "idea_theme": "한국 거버넌스·밸류업·지주사 모멘텀 (자동 발굴)",
           "intensity": "direct",
-          "contribution_pct": 0.486
-        }
-      ]
-    },
-    {
-      "ticker": "062040",
-      "name": "산일전기(주)",
-      "sector": "전기장비",
-      "weight_pct": 0.757,
-      "capital_weight_pct": 0.696,
-      "attractiveness": 68.76,
-      "macro_beta": null,
-      "matched_ideas": [
-        4
-      ],
-      "is_default_pick": false,
-      "mcap_eok": 83887.429,
-      "size_tier": "large",
-      "size_cap_pct": 13,
-      "sources": [
-        {
-          "idea_id": 4,
-          "idea_theme": "데이터센터 전력·전력기기 — AI Capex 직접 수혜",
-          "intensity": "direct",
-          "contribution_pct": 0.757
+          "contribution_pct": 0.495
         }
       ]
     },
@@ -1160,9 +1116,9 @@
       "ticker": "010140",
       "name": "삼성중공업(주)",
       "sector": "운송장비",
-      "weight_pct": 0.655,
-      "capital_weight_pct": 0.602,
-      "attractiveness": 59.31,
+      "weight_pct": 0.658,
+      "capital_weight_pct": 0.606,
+      "attractiveness": 53.88,
       "macro_beta": null,
       "matched_ideas": [
         13
@@ -1176,7 +1132,7 @@
           "idea_id": 13,
           "idea_theme": "K-방산·K-조선 수출 사이클",
           "intensity": "direct",
-          "contribution_pct": 0.655
+          "contribution_pct": 0.658
         }
       ]
     },
@@ -1184,9 +1140,9 @@
       "ticker": "077970",
       "name": "STX엔진(주)",
       "sector": "기계",
-      "weight_pct": 0.635,
-      "capital_weight_pct": 0.584,
-      "attractiveness": 63.76,
+      "weight_pct": 0.651,
+      "capital_weight_pct": 0.599,
+      "attractiveness": 61.97,
       "macro_beta": null,
       "matched_ideas": [
         3,
@@ -1201,13 +1157,13 @@
           "idea_id": 3,
           "idea_theme": "SMR·소형원전 — AI 데이터센터 전용 전력원",
           "intensity": "indirect",
-          "contribution_pct": 0.497
+          "contribution_pct": 0.508
         },
         {
           "idea_id": 13,
           "idea_theme": "K-방산·K-조선 수출 사이클",
           "intensity": "direct",
-          "contribution_pct": 0.138
+          "contribution_pct": 0.143
         }
       ]
     },
@@ -1215,9 +1171,9 @@
       "ticker": "066570",
       "name": "LG전자",
       "sector": "전자반도체",
-      "weight_pct": 0.605,
-      "capital_weight_pct": 0.557,
-      "attractiveness": 58.57,
+      "weight_pct": 0.604,
+      "capital_weight_pct": 0.556,
+      "attractiveness": 53.67,
       "macro_beta": null,
       "matched_ideas": [
         1,
@@ -1232,7 +1188,7 @@
           "idea_id": 1,
           "idea_theme": "AI 인프라 — HBM·메모리·하이퍼스케일러 Capex",
           "intensity": "indirect",
-          "contribution_pct": 0.247
+          "contribution_pct": 0.246
         },
         {
           "idea_id": 11,
@@ -1246,7 +1202,7 @@
   "constraint_checks": {
     "max_single_stock": {
       "limit": 13,
-      "actual_max": 7.57,
+      "actual_max": 8.68,
       "passed": true
     },
     "size_based_cap": {
@@ -1256,31 +1212,29 @@
     },
     "max_sector": {
       "limit": 30,
-      "actual_max_pct": 12.99,
-      "actual_max_sector": "제약바이오",
+      "actual_max_pct": 13.46,
+      "actual_max_sector": "전기장비",
       "by_sector_pct": {
-        "기계": 9.57,
+        "기계": 10.69,
         "제약바이오": 12.99,
-        "전자반도체": 12.94,
-        "운송장비": 10.76,
+        "전자반도체": 12.92,
+        "운송장비": 10.75,
         "유통": 3.56,
-        "자동차": 11.06,
+        "자동차": 11.05,
+        "전기장비": 13.46,
+        "전문서비스": 2.71,
         "보험": 2.55,
         "운송물류": 2.5,
-        "건설": 2.5,
-        "의료정밀": 2.5,
-        "화학": 2.5,
-        "전기장비": 10.3,
-        "전문서비스": 2.39,
-        "IT서비스": 3.87,
-        "금융": 8.94,
-        "철강금속": 1.08
+        "고무플라스틱": 2.5,
+        "IT서비스": 3.88,
+        "금융": 9.36,
+        "철강금속": 1.09
       },
       "passed": true
     },
     "max_annual_volatility": {
       "limit": 25,
-      "estimated_pct": 8.27,
+      "estimated_pct": 6.04,
       "method": "β-weighted KOSPI σ (단순화, idiosyncratic 무시)",
       "passed": true
     },
@@ -1288,25 +1242,23 @@
     "excluded_sectors_applied": []
   },
   "diversification": {
-    "n_holdings": 43,
-    "hhi": 348.2,
+    "n_holdings": 41,
+    "hhi": 371.0,
     "sector_distribution_pct": {
-      "기계": 9.57,
+      "기계": 10.69,
       "제약바이오": 12.99,
-      "전자반도체": 12.94,
-      "운송장비": 10.76,
+      "전자반도체": 12.92,
+      "운송장비": 10.75,
       "유통": 3.56,
-      "자동차": 11.06,
+      "자동차": 11.05,
+      "전기장비": 13.46,
+      "전문서비스": 2.71,
       "보험": 2.55,
       "운송물류": 2.5,
-      "건설": 2.5,
-      "의료정밀": 2.5,
-      "화학": 2.5,
-      "전기장비": 10.3,
-      "전문서비스": 2.39,
-      "IT서비스": 3.87,
-      "금융": 8.94,
-      "철강금속": 1.08
+      "고무플라스틱": 2.5,
+      "IT서비스": 3.88,
+      "금융": 9.36,
+      "철강금속": 1.09
     }
   }
 }

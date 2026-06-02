@@ -191,7 +191,7 @@
         "원자재(구리·강판) 가격 변동",
         "AI Capex 사이클 둔화 시 첫 번째 타격"
       ],
-      "allocation_pct": 11.69
+      "allocation_pct": 16.69
     },
     {
       "idea_id": 5,
@@ -566,7 +566,7 @@
     "next_action": "핵심 후보 4건 → 5단계 idea-stock-matching 재실행 + 6단계 company-research → default_single_pick 확정"
   },
   "allocation_weights": {
-    "computed_at": "2026-05-29T19:29:51+00:00",
+    "computed_at": "2026-06-02T09:08:41+09:00",
     "method": "카테고리 차등 가중치 적용. 매칭 0건은 0%. uncovered_pool 고정 비중.",
     "category_multipliers": {
       "핵심 장기 테마 후보": 1.5,
@@ -574,15 +574,15 @@
       "검증 부족": 0.5,
       "아직 약한 아이디어": 0.0
     },
-    "allocatable_total_pct": 90.0,
-    "uncovered_fixed_pct": 10.0,
+    "allocatable_total_pct": 95.0,
+    "uncovered_fixed_pct": 5.0,
     "weighted_score_sum": 242.5,
-    "formula": "allocation_pct = (idea.total_score × category_multiplier) / Σ(weighted_scores) × 90.0",
+    "formula": "allocation_pct = (idea.total_score × category_multiplier) / Σ(weighted_scores) × 95.0",
     "by_idea": {
       "1": 7.42,
       "2": 6.31,
       "3": 11.13,
-      "4": 11.69,
+      "4": 16.69,
       "5": 5.94,
       "6": 5.57,
       "7": 7.05,
@@ -593,7 +593,7 @@
       "12": 5.2,
       "13": 6.31
     },
-    "uncovered_pool_pct": 10.0,
+    "uncovered_pool_pct": 5.0,
     "sanity_check_sum": 100.0
   },
   "default_picks": {
@@ -607,38 +607,22 @@
       "회사 고유 catalyst 명시 가능 (임상·M&A·턴어라운드·자사주 소각·신제품 등)"
     ],
     "filled_by": "06_research/company-research",
-    "allocation_pct": 10.0,
+    "allocation_pct": 5.0,
     "picks": [
       {
         "ticker": "005880",
         "name": "대한해운",
-        "attractiveness": 58.4,
-        "macro_beta": 0.086,
-        "catalyst": "news_growth 284.0% / DART pos+contract pts 0.0",
+        "attractiveness": 54.8,
+        "macro_beta": 0.005,
+        "catalyst": "news_growth None% / DART pos+contract pts 0.0",
         "weight_pct": 2.5
       },
       {
-        "ticker": "375500",
-        "name": "DL이앤씨",
-        "attractiveness": 58.0,
-        "macro_beta": 0.643,
-        "catalyst": "news_growth 500.0% / DART pos+contract pts 3.0",
-        "weight_pct": 2.5
-      },
-      {
-        "ticker": "041830",
-        "name": "인바디",
-        "attractiveness": 55.4,
-        "macro_beta": 0.622,
-        "catalyst": "news_growth 500.0% / DART pos+contract pts 0.0",
-        "weight_pct": 2.5
-      },
-      {
-        "ticker": "009830",
-        "name": "한화솔루션",
-        "attractiveness": 54.5,
-        "macro_beta": 0.486,
-        "catalyst": "news_growth 500.0% / DART pos+contract pts 0.0",
+        "ticker": "108670",
+        "name": "LX하우시스",
+        "attractiveness": 53.5,
+        "macro_beta": 0.666,
+        "catalyst": "news_growth None% / DART pos+contract pts 0.0",
         "weight_pct": 2.5
       }
     ]

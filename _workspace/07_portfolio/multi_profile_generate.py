@@ -24,19 +24,19 @@ PROFILES = [
     # v18: e_max를 한국 증권사 기준으로 현실화 (안정형 60%, 안정추구형 80%, 위험중립형 100%, 적극 125%, 공격 150%)
     # equity_pct는 min(매크로 allocation, constraints.e_max)로 cap → 유형별 실제 차별화
     {'name': '안정형', 'score': 30, 'e_min': 30, 'e_max': 60, 'single': 10, 'sector': 25, 'vol': 15,
-     'min_mcap_eok': 5000, 'n_themes': 6, 'default_pct': 25, 'max_tech_vol': 70, 'mcap_blend': 0.8,
+     'min_mcap_eok': 5000, 'n_themes': 6, 'default_pct': 20, 'max_tech_vol': 70, 'mcap_blend': 0.8,
      'axis_weights': 'fundamental=0.45,risk_inv=0.25,theme=0.10,catalyst=0.10,momentum=0.05,tech=0.05',
      'dividend_boost': 0.20, 'overheating_penalty': 0.6, 'momentum_boost': 0.0},
     {'name': '안정추구형', 'score': 50, 'e_min': 50, 'e_max': 80, 'single': 12, 'sector': 28, 'vol': 20,
-     'min_mcap_eok': 3000, 'n_themes': 7, 'default_pct': 20, 'max_tech_vol': 85, 'mcap_blend': 0.7,
+     'min_mcap_eok': 3000, 'n_themes': 7, 'default_pct': 15, 'max_tech_vol': 85, 'mcap_blend': 0.7,
      'axis_weights': 'fundamental=0.35,risk_inv=0.15,theme=0.15,catalyst=0.10,momentum=0.10,tech=0.15',
      'dividend_boost': 0.12, 'overheating_penalty': 0.3, 'momentum_boost': 0.0},
     {'name': '위험중립형', 'score': 65, 'e_min': 70, 'e_max': 100, 'single': 13, 'sector': 30, 'vol': 25,
-     'min_mcap_eok': 1500, 'n_themes': 8, 'default_pct': 15, 'max_tech_vol': 100, 'mcap_blend': 0.6,
+     'min_mcap_eok': 1500, 'n_themes': 8, 'default_pct': 10, 'max_tech_vol': 100, 'mcap_blend': 0.6,
      'axis_weights': 'fundamental=0.25,risk_inv=0.10,theme=0.15,catalyst=0.10,momentum=0.20,tech=0.20',
      'dividend_boost': 0.05, 'overheating_penalty': 0.0, 'momentum_boost': 0.0},
     {'name': '적극투자형', 'score': 80, 'e_min': 100, 'e_max': 125, 'single': 15, 'sector': 30, 'vol': 30,
-     'min_mcap_eok': 500, 'n_themes': 8, 'default_pct': 10, 'max_tech_vol': 0, 'mcap_blend': 0.5,
+     'min_mcap_eok': 500, 'n_themes': 8, 'default_pct': 5, 'max_tech_vol': 0, 'mcap_blend': 0.5,
      'axis_weights': 'fundamental=0.15,risk_inv=0.05,theme=0.20,catalyst=0.10,momentum=0.25,tech=0.25',
      'dividend_boost': 0.0, 'overheating_penalty': 0.0, 'momentum_boost': 0.15},
     {'name': '공격투자형', 'score': 95, 'e_min': 125, 'e_max': 150, 'single': 20, 'sector': 35, 'vol': 40,
@@ -80,7 +80,7 @@ def main():
         print(f'  ✅ constraints_{name}.json 생성')
 
         # 2. 7단계 portfolio 생성 (유형별 mcap_blend 적용)
-        cmd = ['python3', os.path.join(WS, '07_portfolio', 'compose_portfolio.py'),
+        cmd = [sys.executable, os.path.join(WS, '07_portfolio', 'compose_portfolio.py'),
                '--constraints-file', cpath,
                '--output-suffix', suffix,
                '--weighting', 'hybrid', '--mcap-blend', str(p['mcap_blend'])]
@@ -92,9 +92,9 @@ def main():
         if os.path.exists(pf_path):
             pf = json.load(open(pf_path, encoding='utf-8'))
             print(f'  ✅ portfolio{suffix}.json — {pf["n_holdings"]}종, 단일 최대 {pf["constraint_checks"]["max_single_stock"]["actual_max"]:.2f}%')
-
+ 
         # 3. 8단계 theme_portfolio 생성 (유형별 시총·변동성·테마수·default 비중 적용)
-        cmd2 = ['python3', os.path.join(WS, '08_signals', 'build_theme_portfolio.py'),
+        cmd2 = [sys.executable, os.path.join(WS, '08_signals', 'build_theme_portfolio.py'),
                 '--pf-file', pf_path,
                 '--output-suffix', suffix,
                 '--n-themes', str(p['n_themes']),

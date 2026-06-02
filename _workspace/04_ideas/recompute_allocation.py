@@ -32,7 +32,7 @@ MATRIX_PATH = os.path.join(WS, "05_matching", "matching_matrix.json")
 
 # 기본 설정
 DEFAULTS = {
-    "uncovered_pct": 10.0,
+    "uncovered_pct": 5.0,
     "core_weight": 1.5,
     "watch_weight": 1.0,
     "unverified_weight": 0.5,
@@ -101,14 +101,24 @@ def main():
                   "검증 부족": "검증부족", "아직 약한 아이디어": "약함"}
     print(f"{'ID':>3s} {'테마':30s} {'분류':<6s} {'매칭':>4s} {'점수':>4s} {'가중':>5s} {'비중%':>7s}")
     print("-" * 85)
+    # 90.0 is the baseline theme weight. Remainder of reduced uncovered_pct goes to the main theme.
+    baseline_allocatable = 90.0
+    for r in rows:
+        r["allocation_pct"] = (r["weighted_score"] / wsum) * baseline_allocatable if wsum > 0 else 0
+
+    if rows:
+        main_theme_row = max(rows, key=lambda x: x["weighted_score"])
+        remainder = max(0.0, 10.0 - uncovered_pct)
+        main_theme_row["allocation_pct"] += remainder
+
     total_pct = 0
     for r in sorted(rows, key=lambda x: -x["weighted_score"]):
-        pct = (r["weighted_score"] / wsum) * allocatable if wsum > 0 else 0
+        pct = r["allocation_pct"]
         r["allocation_pct"] = round(pct, 2)
-        total_pct += pct
+        total_pct += r["allocation_pct"]
         flag = "" if r["n_matched"] > 0 else "  ★매칭0"
         cs = cat_short.get(r["cat"], "?")
-        print(f"{r['id']:>3d} {r['theme'][:28]:<30s} {cs:<6s} {r['n_matched']:>4d} {r['total']:>4d} ×{r['cat_weight']:<4.1f} {pct:>6.2f}%{flag}")
+        print(f"{r['id']:>3d} {r['theme'][:28]:<30s} {cs:<6s} {r['n_matched']:>4d} {r['total']:>4d} ×{r['cat_weight']:<4.1f} {r['allocation_pct']:>6.2f}%{flag}")
     print(f"\n   default_picks (uncovered pool)            —     —      —    {uncovered_pct:>5.2f}%  [고정]")
     print(f"\n합계: {round(total_pct + uncovered_pct, 2)}%")
 

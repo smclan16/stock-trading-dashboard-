@@ -3,8 +3,11 @@ import streamlit as st
 import pandas as pd
 import datetime
 import os, sys
+import requests
+import urllib.parse
+import re
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from lib import db, perf, loader, costs, auth, theme
+from lib import db, perf, loader, costs, auth, theme, config
 st.set_page_config(page_title='수익률 관리', page_icon='📈', layout='wide')
 auth.require_login()
 auth.logout_button()
@@ -211,6 +214,194 @@ with col2:
                      '손익': st.column_config.NumberColumn(format='%d원'),
                      '수익률(%)': st.column_config.NumberColumn(format='%+.2f%%'),
                  })
+
+# ─── 보유 종목 상세 지표 & 관련 뉴스 ──────────────────────────────
+st.divider()
+st.subheader('🔍 보유 종목 상세 지표 & 관련 뉴스')
+
+# 뉴스 가져오기용 함수 캐싱 (최대 10분)
+@st.cache_data(ttl=600, show_spinner='📰 실시간 뉴스 수집 중…')
+def fetch_naver_news(keyword: str, display: int = 5):
+    client_id = config.get("NAVER_CLIENT_ID")
+    client_secret = config.get("NAVER_CLIENT_SECRET")
+    if not client_id or not client_secret:
+        return []
+    url = f"https://openapi.naver.com/v1/search/news.json?query={urllib.parse.quote(keyword)}&display={display}&sort=sim"
+    headers = {
+        "X-Naver-Client-Id": client_id,
+        "X-Naver-Client-Secret": client_secret,
+        "User-Agent": "Mozilla/5.0"
+    }
+    try:
+        res = requests.get(url, headers=headers, timeout=5)
+        if res.status_code == 200:
+            return res.json().get("items", [])
+    except Exception:
+        pass
+    return []
+
+def clean_html(text: str) -> str:
+    text = re.sub(r'<[^>]*>', '', text)
+    text = text.replace("&quot;", '"').replace("&lt;", '<').replace("&gt;", '>').replace("&amp;", '&').replace("&apos;", "'")
+    return text
+
+# 종목 선택 dropdown
+ticker_options = {f"{positions[t]['ticker']} {positions[t]['name']}": t for t in tickers}
+selected_stock = st.selectbox(
+    '상세 분석할 보유 종목 선택',
+    options=['(선택하세요)'] + list(ticker_options.keys()),
+    key='holding_detail_select',
+)
+
+if selected_stock != '(선택하세요)':
+    sel_ticker = ticker_options[selected_stock]
+    stock_name = positions[sel_ticker]['name']
+    
+    # 데이터 로드
+    univ_data = loader.load('universe')
+    research_data = loader.load('research_scores')
+    tech_data = loader.load('technical_scores')
+    
+    univ_list = univ_data.get('universe', []) if univ_data else []
+    research_rows = research_data.get('rows', []) if research_data else []
+    tech_scores = tech_data.get('scores', {}) if tech_data else {}
+    
+    # 해당 종목 찾기
+    u_stock = next((x for x in univ_list if x['ticker'] == sel_ticker), None)
+    r_stock = next((x for x in research_rows if x['ticker'] == sel_ticker), None)
+    t_stock = tech_scores.get(sel_ticker)
+    
+    st.markdown(f"### {stock_name} ({sel_ticker})")
+    
+    tab_fund, tab_tech, tab_res, tab_news = st.tabs([
+        '📊 기본 및 펀더멘털', 
+        '📐 기술적 분석 지표', 
+        '🎯 리서치 매력도', 
+        '📰 실시간 관련 뉴스'
+    ])
+    
+    with tab_fund:
+        if u_stock:
+            metrics = u_stock.get('metrics') or {}
+            scores = u_stock.get('scores') or {}
+            
+            st.markdown('#### 📊 펀더멘털 기본 지표')
+            c1, c2, c3, c4 = st.columns(4)
+            c1.metric('시가총액', f"{metrics.get('mcap_eok', 0):,.0f}억원")
+            c2.metric('PER', f"{metrics.get('per', 0):.1f}배" if metrics.get('per') else '-')
+            c3.metric('PBR', f"{metrics.get('pbr', 0):.2f}배" if metrics.get('pbr') else '-')
+            c4.metric('EV/EBITDA', f"{metrics.get('ev_ebitda', 0):.1f}" if metrics.get('ev_ebitda') else '-')
+            
+            c5, c6, c7, c8 = st.columns(4)
+            c5.metric('ROE', f"{metrics.get('roe', 0):.1f}%" if metrics.get('roe') else '-')
+            c6.metric('ROA', f"{metrics.get('roa', 0):.1f}%" if metrics.get('roa') else '-')
+            c7.metric('영업이익률', f"{metrics.get('opm', 0):.1f}%" if metrics.get('opm') else '-')
+            c8.metric('20일 평균 거래대금', f"{metrics.get('turnover20_eok', 0):,.0f}억원" if metrics.get('turnover20_eok') else '-')
+            
+            st.markdown('#### 🧮 유니버스 5팩터 점수 (섹터중립 z-score)')
+            sc1, sc2, sc3, sc4, sc5 = st.columns(5)
+            sc1.metric('밸류', f"{scores.get('value', 0):.3f}")
+            sc2.metric('퀄리티', f"{scores.get('quality', 0):.3f}")
+            sc3.metric('목표가 리비전', f"{scores.get('tp_rev', 0):.3f}")
+            sc4.metric('ROE 리비전', f"{scores.get('roe_rev', 0):.3f}")
+            sc5.metric('거래대금', f"{scores.get('turnover', 0):.3f}")
+        else:
+            st.warning('유니버스에 해당 종목 데이터가 없습니다. (최근 스크리닝 제외 종목일 수 있음)')
+
+    with tab_tech:
+        if t_stock:
+            indicators = t_stock.get('indicators') or {}
+            
+            st.markdown('#### 📐 주요 기술 지표')
+            col_ts, col_signal = st.columns(2)
+            col_ts.metric('종합 기술 점수', f"{t_stock.get('tech_score', 0)} / 100")
+            if t_stock.get('ma60_exit_signal'):
+                col_signal.error('🚨 MA60 하향 돌파 (청산 시그널 발생)')
+            else:
+                col_signal.success('🟢 MA60 상향 보유 상태')
+                
+            pc1, pc2, pc3, pc4, pc5 = st.columns(5)
+            pc1.metric('현재가', f"{indicators.get('close', 0):,.0f}원")
+            pc2.metric('MA5', f"{indicators.get('ma5', 0):,.0f}원")
+            pc3.metric('MA20', f"{indicators.get('ma20', 0):,.0f}원")
+            pc4.metric('MA60', f"{indicators.get('ma60', 0):,.0f}원")
+            pc5.metric('MA120', f"{indicators.get('ma120', 0):,.0f}원")
+            
+            pm1, pm2, pm3, pm4, pm5 = st.columns(5)
+            pm1.metric('MA60 이격', f"{indicators.get('ma60_margin_pct', 0):+.1f}%")
+            pm2.metric('6M 수익률', f"{indicators.get('ret_6m_pct', 0):+.1f}%")
+            pm3.metric('RSI(14)', f"{indicators.get('rsi14', 0):.1f}")
+            pm4.metric('52주 위치', f"{indicators.get('pos_52w_pct', 0):.1f}%")
+            pm5.metric('연간 변동성', f"{indicators.get('sigma_annual_pct', 0):.1f}%")
+        else:
+            st.warning('기술 지표 데이터가 없습니다.')
+
+    with tab_res:
+        if r_stock:
+            st.markdown('#### 🎯 6축 매력도 점수')
+            rc1, rc2, rc3, rc4, rc5, rc6 = st.columns(6)
+            rc1.metric('펀더(35)', f"{r_stock.get('fundamental', 0):.1f}")
+            rc2.metric('모멘(25)', f"{r_stock.get('momentum', 0):.1f}")
+            rc3.metric('테마(15)', f"{r_stock.get('theme', 0):.1f}")
+            rc4.metric('Catalyst(15)', f"{r_stock.get('catalyst', 0):.1f}")
+            rc5.metric('리스크역(10)', f"{r_stock.get('risk_inv', 0):.1f}")
+            rc6.metric('🏆 총합', f"{r_stock.get('total_score', 0):.1f}")
+            
+            with st.expander('점수 세부 구성'):
+                detail_rows = [
+                    {'영역': '밸류 점수', '값': r_stock.get('val_pts', '-')},
+                    {'영역': '퀄리티 점수', '값': r_stock.get('qual_pts', '-')},
+                    {'영역': '성장 점수', '값': r_stock.get('growth_pts', '-')},
+                    {'영역': '목표가↑ 점수', '값': r_stock.get('tp_pts', '-')},
+                    {'영역': 'ROE리비전 점수', '값': r_stock.get('roe_rev_pts', '-')},
+                    {'영역': '거래대금↑ 점수', '값': r_stock.get('tov_pts', '-')},
+                    {'영역': '테마 raw', '값': r_stock.get('theme_raw', '-')},
+                    {'영역': '뉴스 성장(30d vs 180d)', '값': f"{r_stock.get('news_growth_pct', 0):.0f}%" if r_stock.get('news_growth_pct') is not None else '-'},
+                    {'영역': '뉴스 점수', '값': r_stock.get('news_pts', '-')},
+                    {'영역': 'DART 긍정', '값': r_stock.get('dart_pos_pts', '-')},
+                    {'영역': 'DART 수주', '값': r_stock.get('dart_contract_pts', '-')},
+                    {'영역': '리스크 점수', '값': r_stock.get('risk_score', '-')},
+                    {'영역': '매크로 베타', '값': r_stock.get('macro_beta', '-')},
+                ]
+                st.dataframe(pd.DataFrame(detail_rows), hide_index=True, use_container_width=True)
+                
+            if r_stock.get('risk_triggered'):
+                st.warning(f"⚠️ 리스크 트리거: {', '.join(r_stock['risk_triggered'])}")
+        else:
+            st.warning('기업 리서치 점수 데이터가 없습니다.')
+
+    with tab_news:
+        st.markdown(f"#### 📰 '{stock_name}' 관련 실시간 뉴스")
+        news_items = fetch_naver_news(stock_name)
+        if not news_items:
+            news_items = fetch_naver_news(f"{stock_name} 주식")
+            
+        if news_items:
+            for item in news_items:
+                title = clean_html(item.get('title', ''))
+                desc = clean_html(item.get('description', ''))
+                link = item.get('link', '')
+                pub_date = item.get('pubDate', '')
+                
+                try:
+                    import email.utils
+                    parsed_date = email.utils.parsedate_to_datetime(pub_date)
+                    date_str = parsed_date.strftime('%Y-%m-%d %H:%M')
+                except Exception:
+                    date_str = pub_date
+                
+                st.markdown(
+                    f"""
+                    <div style="background-color: {theme.BG_CARD}; padding: 1.05rem; border-radius: 4px; border: 1px solid {theme.GRID}; border-left: 4px solid {theme.AMBER}; margin-bottom: 0.75rem;">
+                        <span style="color: #8c9ba5; font-size: 0.8rem;">{date_str}</span>
+                        <h4 style="margin: 0.25rem 0;"><a href="{link}" target="_blank" style="color: {theme.AMBER}; text-decoration: none; font-weight: bold;">{title}</a></h4>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; color: {theme.TEXT}; line-height: 1.40;">{desc}</p>
+                    </div>
+                    """, 
+                    unsafe_allow_html=True
+                )
+        else:
+            st.info('실시간 관련 뉴스를 찾을 수 없거나 Naver API 연동 오류입니다.')
 
 st.divider()
 st.caption('💡 매일 종가 후 자동으로 KRX 가격을 수집해 평가 갱신. 첫 로딩은 5~10초 소요.')

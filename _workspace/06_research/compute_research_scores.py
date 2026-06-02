@@ -181,7 +181,7 @@ def main():
     ap.add_argument("--skip-news", action="store_true", help="네이버 뉴스 catalyst 건너뜀(시간 절약)")
     ap.add_argument("--skip-dart", action="store_true", help="DART 공시 catalyst 건너뜀")
     ap.add_argument("--skip-beta", action="store_true", help="매크로 베타 건너뜀(uncovered 후보 미산출)")
-    ap.add_argument("--default-picks-n", type=int, default=4, help="default_picks 선정 종목 수")
+    ap.add_argument("--default-picks-n", type=int, default=2, help="default_picks 선정 종목 수")
     ap.add_argument("--top-n", type=int, default=15, help="ranking.json 상위 N")
     args = ap.parse_args()
 
