@@ -228,24 +228,65 @@ st.subheader('🔍 보유 종목 상세 지표 & 관련 뉴스')
 
 # 뉴스 가져오기용 함수 캐싱 (최대 10분)
 @st.cache_data(ttl=600, show_spinner='📰 실시간 뉴스 수집 중…')
-def fetch_naver_news(keyword: str, display: int = 5):
+def fetch_news(keyword: str, display: int = 5):
+    items = []
+    
+    # 1. 네이버 뉴스 API 시도 (API 키 존재 시)
     client_id = config.get("NAVER_CLIENT_ID")
     client_secret = config.get("NAVER_CLIENT_SECRET")
-    if not client_id or not client_secret:
-        return []
-    url = f"https://openapi.naver.com/v1/search/news.json?query={urllib.parse.quote(keyword)}&display={display}&sort=sim"
-    headers = {
-        "X-Naver-Client-Id": client_id,
-        "X-Naver-Client-Secret": client_secret,
-        "User-Agent": "Mozilla/5.0"
-    }
-    try:
-        res = requests.get(url, headers=headers, timeout=5)
-        if res.status_code == 200:
-            return res.json().get("items", [])
-    except Exception:
-        pass
-    return []
+    if client_id and client_secret:
+        url = f"https://openapi.naver.com/v1/search/news.json?query={urllib.parse.quote(keyword)}&display={display}&sort=sim"
+        headers = {
+            "X-Naver-Client-Id": client_id,
+            "X-Naver-Client-Secret": client_secret,
+            "User-Agent": "Mozilla/5.0"
+        }
+        try:
+            res = requests.get(url, headers=headers, timeout=5)
+            if res.status_code == 200:
+                raw_items = res.json().get("items", [])
+                for rit in raw_items:
+                    items.append({
+                        "title": clean_html(rit.get("title", "")),
+                        "link": rit.get("link", ""),
+                        "pubDate": rit.get("pubDate", ""),
+                        "description": clean_html(rit.get("description", ""))
+                    })
+        except Exception:
+            pass
+            
+    # 2. 키가 없거나 실패 시 구글 뉴스 RSS 피드로 폴백 (API 키 불필요)
+    if not items:
+        import xml.etree.ElementTree as ET
+        url = f"https://news.google.com/rss/search?q={urllib.parse.quote(keyword)}&hl=ko&gl=KR&ceid=KR:ko"
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+        }
+        try:
+            res = requests.get(url, headers=headers, timeout=5)
+            if res.status_code == 200:
+                root = ET.fromstring(res.text)
+                for item in root.findall(".//item")[:display]:
+                    title = item.findtext("title", "")
+                    link = item.findtext("link", "")
+                    pub_date = item.findtext("pubDate", "")
+                    
+                    source = ""
+                    if " - " in title:
+                        parts = title.rsplit(" - ", 1)
+                        title = parts[0]
+                        source = parts[1]
+                    
+                    items.append({
+                        "title": title,
+                        "link": link,
+                        "pubDate": pub_date,
+                        "description": f"출처: {source}" if source else ""
+                    })
+        except Exception:
+            pass
+            
+    return items
 
 def clean_html(text: str) -> str:
     text = re.sub(r'<[^>]*>', '', text)
@@ -379,14 +420,14 @@ if selected_stock != '(선택하세요)':
 
     with tab_news:
         st.markdown(f"#### 📰 '{stock_name}' 관련 실시간 뉴스")
-        news_items = fetch_naver_news(stock_name)
+        news_items = fetch_news(stock_name)
         if not news_items:
-            news_items = fetch_naver_news(f"{stock_name} 주식")
+            news_items = fetch_news(f"{stock_name} 주식")
             
         if news_items:
             for item in news_items:
-                title = clean_html(item.get('title', ''))
-                desc = clean_html(item.get('description', ''))
+                title = item.get('title', '')
+                desc = item.get('description', '')
                 link = item.get('link', '')
                 pub_date = item.get('pubDate', '')
                 
@@ -408,7 +449,7 @@ if selected_stock != '(선택하세요)':
                     unsafe_allow_html=True
                 )
         else:
-            st.info('실시간 관련 뉴스를 찾을 수 없거나 Naver API 연동 오류입니다.')
+            st.info('실시간 관련 뉴스를 찾을 수 없습니다.')
 
 st.divider()
 st.caption('💡 매일 종가 후 자동으로 KRX 가격을 수집해 평가 갱신. 첫 로딩은 5~10초 소요.')
