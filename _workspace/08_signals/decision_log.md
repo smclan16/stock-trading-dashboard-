@@ -425,3 +425,55 @@
 - watch              329180 에이치디현대중공업(  entry_conditions_failing  | 
 - exit               055550 신한지주        trend_break_full 청산 100% | 종가 92800 < MA(60) 95120
 - watch              055550 신한지주        entry_conditions_failing  | 
+
+## 2026-06-05 19:06 사이클
+
+- exit               034020 두산에너빌리티     trend_break_full 청산 100% | 종가 99200 < MA(60) 109013
+- watch              034020 두산에너빌리티     entry_conditions_failing  | 
+- exit               207940 삼성바이오로직스    trend_break_full 청산 100% | 종가 1350000 < MA(60) 1512533
+- watch              207940 삼성바이오로직스    entry_conditions_failing  | 
+- watch              000270 기아(주)       entry_conditions_failing  | 
+- exit               375500 디엘이앤씨 주식회사  trend_break_full 청산 100% | 종가 71500 < MA(60) 78784
+- watch              375500 디엘이앤씨 주식회사  entry_conditions_failing  | 
+- exit               009900 명신산업(주)     trend_break_full 청산 100% | 종가 8960 < MA(60) 10726
+- watch              009900 명신산업(주)     entry_conditions_failing  | 
+- exit               006260 (주)LS       drawdown_warn 경고만 | 진입가 553000 대비 -20% 이하 (참고)
+- watch              373220 LG에너지솔루션    entry_conditions_failing  | 
+- exit               068270 셀트리온        trend_break_full 청산 100% | 종가 176500 < MA(60) 198498
+- watch              068270 셀트리온        entry_conditions_failing  | 
+- entry_rebalance    062040 산일전기(주)     stage_3  | 1차 대비 -18.8% (≤-12%)
+- exit               009830             trend_break_full 청산 100% | 종가 39900 < MA(60) 44123
+- exit               012450 한화에어로스페이스   trend_break_full 청산 100% | 종가 1068000 < MA(60) 1362750
+- watch              012450 한화에어로스페이스   entry_conditions_failing  | 
+- exit               009540 HD한국조선해양    trend_break_full 청산 100% | 종가 379500 < MA(60) 414775
+- watch              009540 HD한국조선해양    entry_conditions_failing  | 
+- watch              005490 POSCO홀딩스    entry_conditions_failing  | 
+- exit               082740 한화엔진(주)     trend_break_full 청산 100% | 종가 57300 < MA(60) 60511
+- exit               010140 삼성중공업(주)    trend_break_full 청산 100% | 종가 28400 < MA(60) 29230
+- watch              010140 삼성중공업(주)    entry_conditions_failing  | 
+- exit               039200 (주)오스코텍     trend_break_full 청산 100% | 종가 41600 < MA(60) 49919
+- watch              039200 (주)오스코텍     entry_conditions_failing  | 
+- exit               001440 대한전선(주)     drawdown_warn 경고만 | 진입가 53300 대비 -20% 이하 (참고)
+- entry_rebalance    001440 대한전선(주)     stage_3  | 1차 대비 -20.5% (≤-12%)
+- entry_rebalance    298040 효성중공업       stage_2  | 1차 대비 -9.0% (≤-7%)
+- exit               267260 HD현대일렉트릭    trend_break_full 청산 100% | 종가 999000 < MA(60) 1068283
+- watch              267260 HD현대일렉트릭    entry_conditions_failing  | 
+- watch              018260 삼성에스디에스(주)  entry_conditions_failing  | 
+- exit               010120 LS ELECTRI  trend_break_full 청산 100% | 종가 239500 < MA(60) 471863
+- watch              010120 LS ELECTRI  entry_conditions_failing  | 
+- exit               042660 한화오션        trend_break_full 청산 100% | 종가 115100 < MA(60) 126053
+- watch              042660 한화오션        entry_conditions_failing  | 
+- entry_rebalance    028050 삼성E&A       stage_2  | 1차 대비 -9.3% (≤-7%)
+- watch              105560 KB금융        entry_conditions_failing  | 
+- exit               047810 한국항공우주      trend_break_full 청산 100% | 종가 141500 < MA(60) 176863
+- watch              047810 한국항공우주      entry_conditions_failing  | 
+- watch              055550 신한지주        entry_conditions_failing  | 
+- watch              329180 에이치디현대중공업(  entry_conditions_failing  | 
+- exit               005880 대한해운(주)     trend_break_full 청산 100% | 종가 2045 < MA(60) 2458
+- watch              005880 대한해운(주)     entry_conditions_failing  | 
+- watch              003550 (주)LG       entry_conditions_failing  | 
+- exit               237690 에스티팜(주)     trend_break_full 청산 100% | 종가 123500 < MA(60) 145622
+- watch              237690 에스티팜(주)     entry_conditions_failing  | 
+- exit               077970 STX엔진(주)    trend_break_full 청산 100% | 종가 35550 < MA(60) 41902
+- watch              077970 STX엔진(주)    entry_conditions_failing  | 
+- watch              035420 NAVER       entry_conditions_failing  | 
