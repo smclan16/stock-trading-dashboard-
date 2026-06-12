@@ -1,221 +1,221 @@
 {
-  "as_of": "20260604",
+  "as_of": "20260611",
   "method": "7-indicator trend-following affinity (0~100)",
-  "kospi_6m_pct": 106.73,
-  "universe_sigma_median_pct": 64.4,
+  "kospi_6m_pct": 95.83,
+  "universe_sigma_median_pct": 66.3,
   "scores": {
     "034020": {
-      "tech_score": 55,
-      "breakdown": {
-        "alignment(20)": 12,
-        "ma60_margin(15)": 0,
-        "momentum(15)": 8,
-        "volume(10)": 6,
-        "pos_52w(15)": 15,
-        "rsi(10)": 2,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 99200.0,
-        "ma5": 103520.0,
-        "ma20": 113630.0,
-        "ma60": 109013.3,
-        "ma120": 98455.0,
-        "ma60_margin_pct": -9.0,
-        "ret_6m_pct": 26.53,
-        "rsi14": 28.6,
-        "vol_5d_to_20d_ratio": 0.95,
-        "pos_52w_pct": 49.7,
-        "sigma_annual_pct": 66.2
-      },
-      "name": "두산에너빌리티",
-      "ma60_exit_signal": true
-    },
-    "207940": {
-      "tech_score": 36,
-      "breakdown": {
-        "alignment(20)": 0,
-        "ma60_margin(15)": 0,
-        "momentum(15)": 0,
-        "volume(10)": 10,
-        "pos_52w(15)": 8,
-        "rsi(10)": 6,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 1350000.0,
-        "ma5": 1366000.0,
-        "ma20": 1405850.0,
-        "ma60": 1512533.3,
-        "ma120": 1630358.3,
-        "ma60_margin_pct": -10.75,
-        "ret_6m_pct": -18.38,
-        "rsi14": 41.2,
-        "vol_5d_to_20d_ratio": 1.07,
-        "pos_52w_pct": 36.5,
-        "sigma_annual_pct": 59.6
-      },
-      "name": "삼성바이오로직스",
-      "ma60_exit_signal": true
-    },
-    "005930": {
-      "tech_score": 79,
-      "breakdown": {
-        "alignment(20)": 20,
-        "ma60_margin(15)": 6,
-        "momentum(15)": 15,
-        "volume(10)": 10,
-        "pos_52w(15)": 6,
-        "rsi(10)": 10,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 351500.0,
-        "ma5": 335500.0,
-        "ma20": 296450.0,
-        "ma60": 232465.0,
-        "ma120": 190189.2,
-        "ma60_margin_pct": 51.21,
-        "ret_6m_pct": 236.36,
-        "rsi14": 69.1,
-        "vol_5d_to_20d_ratio": 1.07,
-        "pos_52w_pct": 96.8,
-        "sigma_annual_pct": 62.2
-      },
-      "name": "삼성전자",
-      "ma60_exit_signal": false
-    },
-    "012450": {
       "tech_score": 46,
       "breakdown": {
         "alignment(20)": 6,
         "ma60_margin(15)": 0,
         "momentum(15)": 8,
-        "volume(10)": 10,
+        "volume(10)": 6,
+        "pos_52w(15)": 8,
+        "rsi(10)": 6,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 88600.0,
+        "ma5": 90680.0,
+        "ma20": 103970.0,
+        "ma60": 108075.0,
+        "ma120": 98984.2,
+        "ma60_margin_pct": -18.02,
+        "ret_6m_pct": 15.36,
+        "rsi14": 37.5,
+        "vol_5d_to_20d_ratio": 0.88,
+        "pos_52w_pct": 35.1,
+        "sigma_annual_pct": 68.1
+      },
+      "name": "두산에너빌리티",
+      "ma60_exit_signal": true
+    },
+    "207940": {
+      "tech_score": 32,
+      "breakdown": {
+        "alignment(20)": 0,
+        "ma60_margin(15)": 0,
+        "momentum(15)": 0,
+        "volume(10)": 6,
+        "pos_52w(15)": 8,
+        "rsi(10)": 6,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 1286000.0,
+        "ma5": 1292600.0,
+        "ma20": 1362950.0,
+        "ma60": 1486166.7,
+        "ma120": 1615258.3,
+        "ma60_margin_pct": -13.47,
+        "ret_6m_pct": -22.76,
+        "rsi14": 43.0,
+        "vol_5d_to_20d_ratio": 0.9,
+        "pos_52w_pct": 29.9,
+        "sigma_annual_pct": 60.5
+      },
+      "name": "삼성바이오로직스",
+      "ma60_exit_signal": true
+    },
+    "005930": {
+      "tech_score": 93,
+      "breakdown": {
+        "alignment(20)": 20,
+        "ma60_margin(15)": 15,
+        "momentum(15)": 15,
+        "volume(10)": 6,
+        "pos_52w(15)": 15,
+        "rsi(10)": 10,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 299000.0,
+        "ma5": 309600.0,
+        "ma20": 305325.0,
+        "ma60": 242885.0,
+        "ma120": 198594.2,
+        "ma60_margin_pct": 23.1,
+        "ret_6m_pct": 176.85,
+        "rsi14": 55.0,
+        "vol_5d_to_20d_ratio": 0.95,
+        "pos_52w_pct": 77.8,
+        "sigma_annual_pct": 65.6
+      },
+      "name": "삼성전자",
+      "ma60_exit_signal": false
+    },
+    "012450": {
+      "tech_score": 42,
+      "breakdown": {
+        "alignment(20)": 6,
+        "ma60_margin(15)": 0,
+        "momentum(15)": 8,
+        "volume(10)": 6,
         "pos_52w(15)": 8,
         "rsi(10)": 2,
         "volatility(15)": 12
       },
       "indicators": {
-        "close": 1068000.0,
-        "ma5": 1129800.0,
-        "ma20": 1243950.0,
-        "ma60": 1362750.0,
-        "ma120": 1246675.0,
-        "ma60_margin_pct": -21.63,
-        "ret_6m_pct": 23.33,
-        "rsi14": 24.3,
-        "vol_5d_to_20d_ratio": 1.31,
-        "pos_52w_pct": 35.2,
+        "close": 1014000.0,
+        "ma5": 1023200.0,
+        "ma20": 1166950.0,
+        "ma60": 1327150.0,
+        "ma120": 1251225.0,
+        "ma60_margin_pct": -23.6,
+        "ret_6m_pct": 9.86,
+        "rsi14": 12.2,
+        "vol_5d_to_20d_ratio": 0.87,
+        "pos_52w_pct": 27.8,
         "sigma_annual_pct": 60.7
       },
       "name": "한화에어로스페이스",
       "ma60_exit_signal": true
     },
     "085910": {
-      "tech_score": 71.12,
+      "tech_score": 71,
       "breakdown": {
-        "alignment(20)": 20,
-        "ma60_margin(15)": 7.1,
+        "alignment(20)": 12,
+        "ma60_margin(15)": 15,
         "momentum(15)": 15,
-        "volume(10)": 10,
-        "pos_52w(15)": 6,
+        "volume(10)": 6,
+        "pos_52w(15)": 10,
         "rsi(10)": 10,
         "volatility(15)": 3
       },
       "indicators": {
-        "close": 33750.0,
-        "ma5": 31470.0,
-        "ma20": 29157.5,
-        "ma60": 24432.7,
-        "ma120": 17967.2,
-        "ma60_margin_pct": 38.13,
-        "ret_6m_pct": 445.23,
-        "rsi14": 56.1,
-        "vol_5d_to_20d_ratio": 1.32,
-        "pos_52w_pct": 100.0,
-        "sigma_annual_pct": 100.3
+        "close": 29600.0,
+        "ma5": 28730.0,
+        "ma20": 29360.0,
+        "ma60": 25342.7,
+        "ma120": 18853.2,
+        "ma60_margin_pct": 16.8,
+        "ret_6m_pct": 282.43,
+        "rsi14": 56.9,
+        "vol_5d_to_20d_ratio": 0.84,
+        "pos_52w_pct": 86.1,
+        "sigma_annual_pct": 102.0
       },
       "name": "(주)네오티스",
       "ma60_exit_signal": false
     },
     "068270": {
-      "tech_score": 33,
+      "tech_score": 29,
       "breakdown": {
         "alignment(20)": 0,
         "ma60_margin(15)": 0,
         "momentum(15)": 0,
-        "volume(10)": 10,
+        "volume(10)": 6,
         "pos_52w(15)": 2,
         "rsi(10)": 6,
         "volatility(15)": 15
       },
       "indicators": {
-        "close": 176500.0,
-        "ma5": 187800.0,
-        "ma20": 190825.0,
-        "ma60": 198498.3,
-        "ma120": 203754.2,
-        "ma60_margin_pct": -11.08,
-        "ret_6m_pct": -3.71,
-        "rsi14": 39.6,
-        "vol_5d_to_20d_ratio": 1.02,
-        "pos_52w_pct": 9.3,
-        "sigma_annual_pct": 43.8
+        "close": 166200.0,
+        "ma5": 166860.0,
+        "ma20": 183530.0,
+        "ma60": 195228.3,
+        "ma120": 202990.0,
+        "ma60_margin_pct": -14.87,
+        "ret_6m_pct": -10.5,
+        "rsi14": 41.6,
+        "vol_5d_to_20d_ratio": 0.89,
+        "pos_52w_pct": 7.6,
+        "sigma_annual_pct": 44.1
       },
       "name": "셀트리온",
       "ma60_exit_signal": true
     },
     "010120": {
-      "tech_score": 21,
+      "tech_score": 17,
       "breakdown": {
         "alignment(20)": 0,
         "ma60_margin(15)": 0,
         "momentum(15)": 0,
-        "volume(10)": 10,
+        "volume(10)": 6,
         "pos_52w(15)": 2,
         "rsi(10)": 6,
         "volatility(15)": 3
       },
       "indicators": {
-        "close": 239500.0,
-        "ma5": 247200.0,
-        "ma20": 271725.0,
-        "ma60": 471863.3,
-        "ma120": 516873.3,
-        "ma60_margin_pct": -49.24,
-        "ret_6m_pct": -49.95,
-        "rsi14": 38.0,
-        "vol_5d_to_20d_ratio": 1.01,
-        "pos_52w_pct": 8.5,
-        "sigma_annual_pct": 198.3
+        "close": 229500.0,
+        "ma5": 224000.0,
+        "ma20": 250725.0,
+        "ma60": 430296.7,
+        "ma120": 505269.2,
+        "ma60_margin_pct": -46.66,
+        "ret_6m_pct": -54.19,
+        "rsi14": 47.8,
+        "vol_5d_to_20d_ratio": 0.78,
+        "pos_52w_pct": 7.1,
+        "sigma_annual_pct": 198.9
       },
       "name": "LS ELECTRIC",
       "ma60_exit_signal": true
     },
     "028260": {
-      "tech_score": 79,
+      "tech_score": 78,
       "breakdown": {
-        "alignment(20)": 20,
-        "ma60_margin(15)": 6,
-        "momentum(15)": 15,
-        "volume(10)": 10,
-        "pos_52w(15)": 6,
+        "alignment(20)": 12,
+        "ma60_margin(15)": 15,
+        "momentum(15)": 8,
+        "volume(10)": 6,
+        "pos_52w(15)": 15,
         "rsi(10)": 10,
         "volatility(15)": 12
       },
       "indicators": {
-        "close": 535000.0,
-        "ma5": 461500.0,
-        "ma20": 423775.0,
-        "ma60": 334241.7,
-        "ma120": 308975.0,
-        "ma60_margin_pct": 60.06,
-        "ret_6m_pct": 117.92,
-        "rsi14": 67.9,
-        "vol_5d_to_20d_ratio": 1.09,
-        "pos_52w_pct": 100.0,
-        "sigma_annual_pct": 65.1
+        "close": 410000.0,
+        "ma5": 423100.0,
+        "ma20": 425050.0,
+        "ma60": 346366.7,
+        "ma120": 316308.3,
+        "ma60_margin_pct": 18.37,
+        "ret_6m_pct": 65.66,
+        "rsi14": 55.2,
+        "vol_5d_to_20d_ratio": 0.92,
+        "pos_52w_pct": 64.3,
+        "sigma_annual_pct": 70.0
       },
       "name": "삼성물산",
       "ma60_exit_signal": false
@@ -226,190 +226,28 @@
         "alignment(20)": 12,
         "ma60_margin(15)": 0,
         "momentum(15)": 8,
-        "volume(10)": 10,
+        "volume(10)": 6,
         "pos_52w(15)": 15,
-        "rsi(10)": 2,
+        "rsi(10)": 6,
         "volatility(15)": 12
       },
       "indicators": {
-        "close": 999000.0,
-        "ma5": 1032000.0,
-        "ma20": 1181400.0,
-        "ma60": 1068283.3,
-        "ma120": 979550.0,
-        "ma60_margin_pct": -6.49,
-        "ret_6m_pct": 21.83,
-        "rsi14": 24.0,
-        "vol_5d_to_20d_ratio": 1.29,
-        "pos_52w_pct": 50.5,
-        "sigma_annual_pct": 63.2
+        "close": 1033000.0,
+        "ma5": 961600.0,
+        "ma20": 1077650.0,
+        "ma60": 1070750.0,
+        "ma120": 984875.0,
+        "ma60_margin_pct": -3.53,
+        "ret_6m_pct": 21.67,
+        "rsi14": 47.2,
+        "vol_5d_to_20d_ratio": 0.96,
+        "pos_52w_pct": 54.0,
+        "sigma_annual_pct": 64.7
       },
       "name": "HD현대일렉트릭",
       "ma60_exit_signal": true
     },
     "028050": {
-      "tech_score": 70,
-      "breakdown": {
-        "alignment(20)": 12,
-        "ma60_margin(15)": 15,
-        "momentum(15)": 8,
-        "volume(10)": 2,
-        "pos_52w(15)": 15,
-        "rsi(10)": 6,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 49500.0,
-        "ma5": 50560.0,
-        "ma20": 53057.5,
-        "ma60": 46090.8,
-        "ma120": 37348.3,
-        "ma60_margin_pct": 7.4,
-        "ret_6m_pct": 90.38,
-        "rsi14": 43.2,
-        "vol_5d_to_20d_ratio": 0.6,
-        "pos_52w_pct": 63.8,
-        "sigma_annual_pct": 61.4
-      },
-      "name": "삼성E&A",
-      "ma60_exit_signal": false
-    },
-    "009150": {
-      "tech_score": 84,
-      "breakdown": {
-        "alignment(20)": 20,
-        "ma60_margin(15)": 6,
-        "momentum(15)": 15,
-        "volume(10)": 10,
-        "pos_52w(15)": 15,
-        "rsi(10)": 6,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 1716000.0,
-        "ma5": 1902000.0,
-        "ma20": 1299950.0,
-        "ma60": 804241.7,
-        "ma120": 553116.7,
-        "ma60_margin_pct": 113.37,
-        "ret_6m_pct": 557.47,
-        "rsi14": 71.0,
-        "vol_5d_to_20d_ratio": 1.43,
-        "pos_52w_pct": 78.8,
-        "sigma_annual_pct": 75.2
-      },
-      "name": "삼성전기",
-      "ma60_exit_signal": false
-    },
-    "298040": {
-      "tech_score": 74,
-      "breakdown": {
-        "alignment(20)": 12,
-        "ma60_margin(15)": 15,
-        "momentum(15)": 8,
-        "volume(10)": 6,
-        "pos_52w(15)": 15,
-        "rsi(10)": 6,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 3488000.0,
-        "ma5": 3636200.0,
-        "ma20": 3930200.0,
-        "ma60": 3265716.7,
-        "ma120": 2735850.0,
-        "ma60_margin_pct": 6.81,
-        "ret_6m_pct": 84.06,
-        "rsi14": 31.4,
-        "vol_5d_to_20d_ratio": 0.98,
-        "pos_52w_pct": 66.0,
-        "sigma_annual_pct": 67.2
-      },
-      "name": "효성중공업",
-      "ma60_exit_signal": false
-    },
-    "047810": {
-      "tech_score": 57,
-      "breakdown": {
-        "alignment(20)": 6,
-        "ma60_margin(15)": 0,
-        "momentum(15)": 8,
-        "volume(10)": 10,
-        "pos_52w(15)": 15,
-        "rsi(10)": 6,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 141500.0,
-        "ma5": 157540.0,
-        "ma20": 164255.0,
-        "ma60": 176863.3,
-        "ma120": 162426.7,
-        "ma60_margin_pct": -19.99,
-        "ret_6m_pct": 31.87,
-        "rsi14": 34.2,
-        "vol_5d_to_20d_ratio": 1.14,
-        "pos_52w_pct": 43.1,
-        "sigma_annual_pct": 62.5
-      },
-      "name": "한국항공우주",
-      "ma60_exit_signal": true
-    },
-    "005380": {
-      "tech_score": 84,
-      "breakdown": {
-        "alignment(20)": 20,
-        "ma60_margin(15)": 15,
-        "momentum(15)": 15,
-        "volume(10)": 6,
-        "pos_52w(15)": 10,
-        "rsi(10)": 6,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 700000.0,
-        "ma5": 715800.0,
-        "ma20": 663900.0,
-        "ma60": 560591.7,
-        "ma120": 491604.2,
-        "ma60_margin_pct": 24.87,
-        "ret_6m_pct": 162.66,
-        "rsi14": 48.7,
-        "vol_5d_to_20d_ratio": 0.89,
-        "pos_52w_pct": 90.7,
-        "sigma_annual_pct": 70.7
-      },
-      "name": "현대차",
-      "ma60_exit_signal": false
-    },
-    "035420": {
-      "tech_score": 71.74,
-      "breakdown": {
-        "alignment(20)": 11,
-        "ma60_margin(15)": 14.7,
-        "momentum(15)": 8,
-        "volume(10)": 5,
-        "pos_52w(15)": 15,
-        "rsi(10)": 6,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 267500.0,
-        "ma5": 251700.0,
-        "ma20": 215670.0,
-        "ma60": 213256.7,
-        "ma120": 231495.0,
-        "ma60_margin_pct": 25.44,
-        "ret_6m_pct": 8.52,
-        "rsi14": 73.0,
-        "vol_5d_to_20d_ratio": 2.86,
-        "pos_52w_pct": 79.6,
-        "sigma_annual_pct": 53.0
-      },
-      "name": "NAVER",
-      "ma60_exit_signal": false
-    },
-    "375500": {
       "tech_score": 59,
       "breakdown": {
         "alignment(20)": 12,
@@ -421,184 +259,76 @@
         "volatility(15)": 12
       },
       "indicators": {
-        "close": 71500.0,
-        "ma5": 73360.0,
-        "ma20": 81830.0,
-        "ma60": 78784.2,
-        "ma120": 61600.4,
-        "ma60_margin_pct": -9.25,
-        "ret_6m_pct": 76.98,
-        "rsi14": 32.4,
-        "vol_5d_to_20d_ratio": 0.83,
-        "pos_52w_pct": 51.4,
-        "sigma_annual_pct": 71.6
+        "close": 45550.0,
+        "ma5": 46420.0,
+        "ma20": 49997.5,
+        "ma60": 47282.5,
+        "ma120": 38228.8,
+        "ma60_margin_pct": -3.66,
+        "ret_6m_pct": 84.41,
+        "rsi14": 46.5,
+        "vol_5d_to_20d_ratio": 0.79,
+        "pos_52w_pct": 54.2,
+        "sigma_annual_pct": 62.7
       },
-      "name": "디엘이앤씨 주식회사",
+      "name": "삼성E&A",
       "ma60_exit_signal": true
     },
-    "005880": {
-      "tech_score": 42,
-      "breakdown": {
-        "alignment(20)": 6,
-        "ma60_margin(15)": 0,
-        "momentum(15)": 8,
-        "volume(10)": 2,
-        "pos_52w(15)": 8,
-        "rsi(10)": 6,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 2045.0,
-        "ma5": 2158.0,
-        "ma20": 2417.5,
-        "ma60": 2458.0,
-        "ma120": 2217.6,
-        "ma60_margin_pct": -16.8,
-        "ret_6m_pct": 7.52,
-        "rsi14": 32.3,
-        "vol_5d_to_20d_ratio": 0.61,
-        "pos_52w_pct": 27.2,
-        "sigma_annual_pct": 74.3
-      },
-      "name": "대한해운(주)",
-      "ma60_exit_signal": true
-    },
-    "009900": {
-      "tech_score": 30,
-      "breakdown": {
-        "alignment(20)": 12,
-        "ma60_margin(15)": 0,
-        "momentum(15)": 0,
-        "volume(10)": 2,
-        "pos_52w(15)": 2,
-        "rsi(10)": 2,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 8960.0,
-        "ma5": 9370.0,
-        "ma20": 10925.0,
-        "ma60": 10725.5,
-        "ma120": 10001.8,
-        "ma60_margin_pct": -16.46,
-        "ret_6m_pct": 0.0,
-        "rsi14": 21.0,
-        "vol_5d_to_20d_ratio": 0.66,
-        "pos_52w_pct": 12.4,
-        "sigma_annual_pct": 62.5
-      },
-      "name": "명신산업(주)",
-      "ma60_exit_signal": true
-    },
-    "000660": {
-      "tech_score": 75,
+    "009150": {
+      "tech_score": 84,
       "breakdown": {
         "alignment(20)": 20,
         "ma60_margin(15)": 6,
         "momentum(15)": 15,
         "volume(10)": 6,
-        "pos_52w(15)": 6,
-        "rsi(10)": 10,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 2298000.0,
-        "ma5": 2328600.0,
-        "ma20": 1978500.0,
-        "ma60": 1355116.7,
-        "ma120": 1058041.7,
-        "ma60_margin_pct": 69.58,
-        "ret_6m_pct": 316.3,
-        "rsi14": 66.8,
-        "vol_5d_to_20d_ratio": 0.99,
-        "pos_52w_pct": 96.8,
-        "sigma_annual_pct": 75.3
-      },
-      "name": "에스케이하이닉스(주)",
-      "ma60_exit_signal": false
-    },
-    "032830": {
-      "tech_score": 79,
-      "breakdown": {
-        "alignment(20)": 20,
-        "ma60_margin(15)": 6,
-        "momentum(15)": 15,
-        "volume(10)": 10,
-        "pos_52w(15)": 10,
-        "rsi(10)": 6,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 438000.0,
-        "ma5": 414800.0,
-        "ma20": 343575.0,
-        "ma60": 270075.0,
-        "ma120": 225071.7,
-        "ma60_margin_pct": 62.18,
-        "ret_6m_pct": 179.87,
-        "rsi14": 72.6,
-        "vol_5d_to_20d_ratio": 1.32,
-        "pos_52w_pct": 87.5,
-        "sigma_annual_pct": 59.9
-      },
-      "name": "삼성생명",
-      "ma60_exit_signal": false
-    },
-    "105560": {
-      "tech_score": 80,
-      "breakdown": {
-        "alignment(20)": 12,
-        "ma60_margin(15)": 15,
-        "momentum(15)": 8,
-        "volume(10)": 10,
-        "pos_52w(15)": 10,
-        "rsi(10)": 10,
-        "volatility(15)": 15
-      },
-      "indicators": {
-        "close": 164200.0,
-        "ma5": 154640.0,
-        "ma20": 155770.0,
-        "ma60": 154035.0,
-        "ma120": 146019.2,
-        "ma60_margin_pct": 6.6,
-        "ret_6m_pct": 24.68,
-        "rsi14": 64.7,
-        "vol_5d_to_20d_ratio": 1.23,
-        "pos_52w_pct": 92.1,
-        "sigma_annual_pct": 37.4
-      },
-      "name": "KB금융",
-      "ma60_exit_signal": false
-    },
-    "018260": {
-      "tech_score": 79,
-      "breakdown": {
-        "alignment(20)": 20,
-        "ma60_margin(15)": 6,
-        "momentum(15)": 8,
-        "volume(10)": 8,
         "pos_52w(15)": 15,
         "rsi(10)": 10,
         "volatility(15)": 12
       },
       "indicators": {
-        "close": 268000.0,
-        "ma5": 295600.0,
-        "ma20": 213180.0,
-        "ma60": 179476.7,
-        "ma120": 176787.5,
-        "ma60_margin_pct": 49.32,
-        "ret_6m_pct": 55.72,
-        "rsi14": 62.6,
-        "vol_5d_to_20d_ratio": 1.94,
-        "pos_52w_pct": 56.0,
-        "sigma_annual_pct": 73.5
+        "close": 1805000.0,
+        "ma5": 1800200.0,
+        "ma20": 1519950.0,
+        "ma60": 921091.7,
+        "ma120": 617058.3,
+        "ma60_margin_pct": 95.96,
+        "ret_6m_pct": 572.25,
+        "rsi14": 67.9,
+        "vol_5d_to_20d_ratio": 0.9,
+        "pos_52w_pct": 83.3,
+        "sigma_annual_pct": 78.6
       },
-      "name": "삼성에스디에스(주)",
+      "name": "삼성전기",
       "ma60_exit_signal": false
     },
-    "237690": {
+    "298040": {
+      "tech_score": 59,
+      "breakdown": {
+        "alignment(20)": 12,
+        "ma60_margin(15)": 0,
+        "momentum(15)": 8,
+        "volume(10)": 6,
+        "pos_52w(15)": 15,
+        "rsi(10)": 6,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 3246000.0,
+        "ma5": 3345200.0,
+        "ma20": 3660200.0,
+        "ma60": 3334050.0,
+        "ma120": 2794066.7,
+        "ma60_margin_pct": -2.64,
+        "ret_6m_pct": 66.89,
+        "rsi14": 42.1,
+        "vol_5d_to_20d_ratio": 0.91,
+        "pos_52w_pct": 58.5,
+        "sigma_annual_pct": 68.6
+      },
+      "name": "효성중공업",
+      "ma60_exit_signal": true
+    },
+    "047810": {
       "tech_score": 53,
       "breakdown": {
         "alignment(20)": 6,
@@ -610,80 +340,350 @@
         "volatility(15)": 12
       },
       "indicators": {
-        "close": 123500.0,
-        "ma5": 129180.0,
-        "ma20": 136860.0,
-        "ma60": 145621.7,
-        "ma120": 140948.3,
-        "ma60_margin_pct": -15.19,
-        "ret_6m_pct": 3.87,
-        "rsi14": 33.6,
-        "vol_5d_to_20d_ratio": 0.97,
-        "pos_52w_pct": 43.6,
-        "sigma_annual_pct": 63.1
+        "close": 141900.0,
+        "ma5": 134240.0,
+        "ma20": 155285.0,
+        "ma60": 173281.7,
+        "ma120": 163521.7,
+        "ma60_margin_pct": -18.11,
+        "ret_6m_pct": 30.06,
+        "rsi14": 39.8,
+        "vol_5d_to_20d_ratio": 1.0,
+        "pos_52w_pct": 43.5,
+        "sigma_annual_pct": 64.5
+      },
+      "name": "한국항공우주",
+      "ma60_exit_signal": true
+    },
+    "005380": {
+      "tech_score": 84.1,
+      "breakdown": {
+        "alignment(20)": 12,
+        "ma60_margin(15)": 14.1,
+        "momentum(15)": 15,
+        "volume(10)": 6,
+        "pos_52w(15)": 15,
+        "rsi(10)": 10,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 597000.0,
+        "ma5": 635400.0,
+        "ma20": 671400.0,
+        "ma60": 570208.3,
+        "ma120": 505383.3,
+        "ma60_margin_pct": 4.7,
+        "ret_6m_pct": 97.36,
+        "rsi14": 50.7,
+        "vol_5d_to_20d_ratio": 0.71,
+        "pos_52w_pct": 71.4,
+        "sigma_annual_pct": 72.2
+      },
+      "name": "현대차",
+      "ma60_exit_signal": false
+    },
+    "035420": {
+      "tech_score": 62.79,
+      "breakdown": {
+        "alignment(20)": 11,
+        "ma60_margin(15)": 11.8,
+        "momentum(15)": 0,
+        "volume(10)": 10,
+        "pos_52w(15)": 8,
+        "rsi(10)": 10,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 224000.0,
+        "ma5": 248500.0,
+        "ma20": 225495.0,
+        "ma60": 215531.7,
+        "ma120": 231532.5,
+        "ma60_margin_pct": 3.93,
+        "ret_6m_pct": -8.38,
+        "rsi14": 58.1,
+        "vol_5d_to_20d_ratio": 1.44,
+        "pos_52w_pct": 34.0,
+        "sigma_annual_pct": 55.1
+      },
+      "name": "NAVER",
+      "ma60_exit_signal": false
+    },
+    "375500": {
+      "tech_score": 53,
+      "breakdown": {
+        "alignment(20)": 6,
+        "ma60_margin(15)": 0,
+        "momentum(15)": 8,
+        "volume(10)": 6,
+        "pos_52w(15)": 15,
+        "rsi(10)": 6,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 70200.0,
+        "ma5": 69920.0,
+        "ma20": 76010.0,
+        "ma60": 80679.2,
+        "ma120": 62795.0,
+        "ma60_margin_pct": -12.99,
+        "ret_6m_pct": 66.35,
+        "rsi14": 42.7,
+        "vol_5d_to_20d_ratio": 0.73,
+        "pos_52w_pct": 49.4,
+        "sigma_annual_pct": 72.0
+      },
+      "name": "디엘이앤씨 주식회사",
+      "ma60_exit_signal": true
+    },
+    "005880": {
+      "tech_score": 38,
+      "breakdown": {
+        "alignment(20)": 6,
+        "ma60_margin(15)": 0,
+        "momentum(15)": 8,
+        "volume(10)": 2,
+        "pos_52w(15)": 8,
+        "rsi(10)": 2,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 1946.0,
+        "ma5": 1944.6,
+        "ma20": 2266.4,
+        "ma60": 2437.0,
+        "ma120": 2219.4,
+        "ma60_margin_pct": -20.15,
+        "ret_6m_pct": 5.59,
+        "rsi14": 22.7,
+        "vol_5d_to_20d_ratio": 0.67,
+        "pos_52w_pct": 20.3,
+        "sigma_annual_pct": 74.8
+      },
+      "name": "대한해운(주)",
+      "ma60_exit_signal": true
+    },
+    "009900": {
+      "tech_score": 24,
+      "breakdown": {
+        "alignment(20)": 6,
+        "ma60_margin(15)": 0,
+        "momentum(15)": 0,
+        "volume(10)": 2,
+        "pos_52w(15)": 2,
+        "rsi(10)": 2,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 7970.0,
+        "ma5": 8206.0,
+        "ma20": 9861.5,
+        "ma60": 10577.7,
+        "ma120": 9965.1,
+        "ma60_margin_pct": -24.65,
+        "ret_6m_pct": -11.64,
+        "rsi14": 28.6,
+        "vol_5d_to_20d_ratio": 0.66,
+        "pos_52w_pct": 0.0,
+        "sigma_annual_pct": 63.6
+      },
+      "name": "명신산업(주)",
+      "ma60_exit_signal": true
+    },
+    "000660": {
+      "tech_score": 83,
+      "breakdown": {
+        "alignment(20)": 20,
+        "ma60_margin(15)": 6,
+        "momentum(15)": 15,
+        "volume(10)": 10,
+        "pos_52w(15)": 10,
+        "rsi(10)": 10,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 2101000.0,
+        "ma5": 2069000.0,
+        "ma20": 2062950.0,
+        "ma60": 1451383.3,
+        "ma120": 1120783.3,
+        "ma60_margin_pct": 44.76,
+        "ret_6m_pct": 257.92,
+        "rsi14": 61.2,
+        "vol_5d_to_20d_ratio": 1.01,
+        "pos_52w_pct": 87.0,
+        "sigma_annual_pct": 79.4
+      },
+      "name": "에스케이하이닉스(주)",
+      "ma60_exit_signal": false
+    },
+    "032830": {
+      "tech_score": 94.91,
+      "breakdown": {
+        "alignment(20)": 20,
+        "ma60_margin(15)": 12.9,
+        "momentum(15)": 15,
+        "volume(10)": 10,
+        "pos_52w(15)": 15,
+        "rsi(10)": 10,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 365000.0,
+        "ma5": 382800.0,
+        "ma20": 364675.0,
+        "ma60": 284091.7,
+        "ma120": 234497.5,
+        "ma60_margin_pct": 28.48,
+        "ret_6m_pct": 136.4,
+        "rsi14": 57.5,
+        "vol_5d_to_20d_ratio": 1.04,
+        "pos_52w_pct": 65.7,
+        "sigma_annual_pct": 62.2
+      },
+      "name": "삼성생명",
+      "ma60_exit_signal": false
+    },
+    "105560": {
+      "tech_score": 74,
+      "breakdown": {
+        "alignment(20)": 20,
+        "ma60_margin(15)": 0,
+        "momentum(15)": 8,
+        "volume(10)": 10,
+        "pos_52w(15)": 15,
+        "rsi(10)": 6,
+        "volatility(15)": 15
+      },
+      "indicators": {
+        "close": 151500.0,
+        "ma5": 156680.0,
+        "ma20": 155230.0,
+        "ma60": 154768.3,
+        "ma120": 147231.7,
+        "ma60_margin_pct": -2.11,
+        "ret_6m_pct": 21.69,
+        "rsi14": 49.9,
+        "vol_5d_to_20d_ratio": 1.34,
+        "pos_52w_pct": 66.9,
+        "sigma_annual_pct": 40.8
+      },
+      "name": "KB금융",
+      "ma60_exit_signal": true
+    },
+    "018260": {
+      "tech_score": 75,
+      "breakdown": {
+        "alignment(20)": 20,
+        "ma60_margin(15)": 15,
+        "momentum(15)": 8,
+        "volume(10)": 2,
+        "pos_52w(15)": 8,
+        "rsi(10)": 10,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 229500.0,
+        "ma5": 239100.0,
+        "ma20": 229205.0,
+        "ma60": 185943.3,
+        "ma120": 179429.2,
+        "ma60_margin_pct": 23.42,
+        "ret_6m_pct": 32.28,
+        "rsi14": 58.1,
+        "vol_5d_to_20d_ratio": 0.61,
+        "pos_52w_pct": 38.0,
+        "sigma_annual_pct": 76.1
+      },
+      "name": "삼성에스디에스(주)",
+      "ma60_exit_signal": false
+    },
+    "373220": {
+      "tech_score": 38,
+      "breakdown": {
+        "alignment(20)": 6,
+        "ma60_margin(15)": 0,
+        "momentum(15)": 0,
+        "volume(10)": 2,
+        "pos_52w(15)": 8,
+        "rsi(10)": 10,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 384500.0,
+        "ma5": 393800.0,
+        "ma20": 412625.0,
+        "ma60": 420025.0,
+        "ma120": 407037.5,
+        "ma60_margin_pct": -8.46,
+        "ret_6m_pct": -12.91,
+        "rsi14": 50.0,
+        "vol_5d_to_20d_ratio": 0.68,
+        "pos_52w_pct": 22.2,
+        "sigma_annual_pct": 60.8
+      },
+      "name": "LG에너지솔루션",
+      "ma60_exit_signal": true
+    },
+    "237690": {
+      "tech_score": 45,
+      "breakdown": {
+        "alignment(20)": 6,
+        "ma60_margin(15)": 0,
+        "momentum(15)": 0,
+        "volume(10)": 6,
+        "pos_52w(15)": 15,
+        "rsi(10)": 6,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 123200.0,
+        "ma5": 117620.0,
+        "ma20": 128670.0,
+        "ma60": 142111.7,
+        "ma120": 140737.5,
+        "ma60_margin_pct": -13.31,
+        "ret_6m_pct": -1.44,
+        "rsi14": 48.7,
+        "vol_5d_to_20d_ratio": 0.93,
+        "pos_52w_pct": 43.3,
+        "sigma_annual_pct": 64.8
       },
       "name": "에스티팜(주)",
       "ma60_exit_signal": true
     },
-    "373220": {
-      "tech_score": 71.85,
-      "breakdown": {
-        "alignment(20)": 20,
-        "ma60_margin(15)": 2.9,
-        "momentum(15)": 8,
-        "volume(10)": 8,
-        "pos_52w(15)": 15,
-        "rsi(10)": 6,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 422000.0,
-        "ma5": 443900.0,
-        "ma20": 431800.0,
-        "ma60": 418025.0,
-        "ma120": 408733.3,
-        "ma60_margin_pct": 0.95,
-        "ret_6m_pct": 0.96,
-        "rsi14": 48.1,
-        "vol_5d_to_20d_ratio": 1.87,
-        "pos_52w_pct": 44.7,
-        "sigma_annual_pct": 60.6
-      },
-      "name": "LG에너지솔루션",
-      "ma60_exit_signal": false
-    },
     "006260": {
-      "tech_score": 85,
+      "tech_score": 62,
       "breakdown": {
         "alignment(20)": 12,
-        "ma60_margin(15)": 15,
+        "ma60_margin(15)": 0,
         "momentum(15)": 15,
-        "volume(10)": 10,
+        "volume(10)": 2,
         "pos_52w(15)": 15,
         "rsi(10)": 6,
         "volatility(15)": 12
       },
       "indicators": {
-        "close": 435500.0,
-        "ma5": 449700.0,
-        "ma20": 503500.0,
-        "ma60": 373475.0,
-        "ma120": 296545.8,
-        "ma60_margin_pct": 16.61,
-        "ret_6m_pct": 141.68,
-        "rsi14": 39.4,
-        "vol_5d_to_20d_ratio": 1.09,
-        "pos_52w_pct": 69.9,
-        "sigma_annual_pct": 74.8
+        "close": 373500.0,
+        "ma5": 386500.0,
+        "ma20": 468525.0,
+        "ma60": 385200.0,
+        "ma120": 304834.2,
+        "ma60_margin_pct": -3.04,
+        "ret_6m_pct": 101.57,
+        "rsi14": 30.9,
+        "vol_5d_to_20d_ratio": 0.62,
+        "pos_52w_pct": 54.1,
+        "sigma_annual_pct": 75.9
       },
       "name": "(주)LS",
       "ma60_exit_signal": true
     },
     "055550": {
-      "tech_score": 85,
+      "tech_score": 80.33,
       "breakdown": {
-        "alignment(20)": 12,
-        "ma60_margin(15)": 15,
+        "alignment(20)": 20,
+        "ma60_margin(15)": 2.3,
         "momentum(15)": 8,
         "volume(10)": 10,
         "pos_52w(15)": 15,
@@ -691,17 +691,17 @@
         "volatility(15)": 15
       },
       "indicators": {
-        "close": 100100.0,
-        "ma5": 95100.0,
-        "ma20": 95785.0,
-        "ma60": 95328.3,
-        "ma120": 90240.8,
-        "ma60_margin_pct": 5.01,
-        "ret_6m_pct": 25.28,
-        "rsi14": 59.8,
-        "vol_5d_to_20d_ratio": 1.26,
-        "pos_52w_pct": 84.3,
-        "sigma_annual_pct": 35.2
+        "close": 96900.0,
+        "ma5": 100180.0,
+        "ma20": 96425.0,
+        "ma60": 96151.7,
+        "ma120": 91143.3,
+        "ma60_margin_pct": 0.78,
+        "ret_6m_pct": 25.36,
+        "rsi14": 53.2,
+        "vol_5d_to_20d_ratio": 1.4,
+        "pos_52w_pct": 72.9,
+        "sigma_annual_pct": 38.8
       },
       "name": "신한지주",
       "ma60_exit_signal": false
@@ -712,298 +712,55 @@
         "alignment(20)": 20,
         "ma60_margin(15)": 6,
         "momentum(15)": 15,
-        "volume(10)": 10,
-        "pos_52w(15)": 6,
+        "volume(10)": 6,
+        "pos_52w(15)": 10,
         "rsi(10)": 10,
         "volatility(15)": 7
       },
       "indicators": {
-        "close": 1361000.0,
-        "ma5": 1286600.0,
-        "ma20": 1172700.0,
-        "ma60": 804333.3,
-        "ma120": 627087.5,
-        "ma60_margin_pct": 69.21,
-        "ret_6m_pct": 338.33,
-        "rsi14": 64.1,
-        "vol_5d_to_20d_ratio": 1.02,
-        "pos_52w_pct": 100.0,
-        "sigma_annual_pct": 83.0
+        "close": 1228000.0,
+        "ma5": 1211200.0,
+        "ma20": 1195550.0,
+        "ma60": 860000.0,
+        "ma120": 664358.3,
+        "ma60_margin_pct": 42.79,
+        "ret_6m_pct": 279.01,
+        "rsi14": 60.5,
+        "vol_5d_to_20d_ratio": 0.97,
+        "pos_52w_pct": 88.6,
+        "sigma_annual_pct": 86.2
       },
       "name": "에스케이스퀘어 주식회사",
       "ma60_exit_signal": false
     },
     "082740": {
-      "tech_score": 48,
+      "tech_score": 44,
       "breakdown": {
         "alignment(20)": 12,
         "ma60_margin(15)": 0,
         "momentum(15)": 8,
-        "volume(10)": 6,
+        "volume(10)": 2,
         "pos_52w(15)": 8,
         "rsi(10)": 2,
         "volatility(15)": 12
       },
       "indicators": {
-        "close": 57300.0,
-        "ma5": 61740.0,
-        "ma20": 72200.0,
-        "ma60": 60510.8,
-        "ma120": 55202.1,
-        "ma60_margin_pct": -5.31,
-        "ret_6m_pct": 31.42,
-        "rsi14": 26.5,
-        "vol_5d_to_20d_ratio": 0.86,
-        "pos_52w_pct": 35.1,
-        "sigma_annual_pct": 71.2
+        "close": 50100.0,
+        "ma5": 52620.0,
+        "ma20": 65085.0,
+        "ma60": 60798.3,
+        "ma120": 55548.8,
+        "ma60_margin_pct": -17.6,
+        "ret_6m_pct": 10.11,
+        "rsi14": 25.7,
+        "vol_5d_to_20d_ratio": 0.66,
+        "pos_52w_pct": 20.6,
+        "sigma_annual_pct": 72.2
       },
       "name": "한화엔진(주)",
       "ma60_exit_signal": true
     },
     "001440": {
-      "tech_score": 47.9,
-      "breakdown": {
-        "alignment(20)": 12,
-        "ma60_margin(15)": 1.9,
-        "momentum(15)": 8,
-        "volume(10)": 2,
-        "pos_52w(15)": 15,
-        "rsi(10)": 2,
-        "volatility(15)": 7
-      },
-      "indicators": {
-        "close": 42350.0,
-        "ma5": 45140.0,
-        "ma20": 56842.5,
-        "ma60": 42084.2,
-        "ma120": 34700.8,
-        "ma60_margin_pct": 0.63,
-        "ret_6m_pct": 84.53,
-        "rsi14": 17.6,
-        "vol_5d_to_20d_ratio": 0.66,
-        "pos_52w_pct": 47.7,
-        "sigma_annual_pct": 86.2
-      },
-      "name": "대한전선(주)",
-      "ma60_exit_signal": true
-    },
-    "000270": {
-      "tech_score": 75.34,
-      "breakdown": {
-        "alignment(20)": 20,
-        "ma60_margin(15)": 8.3,
-        "momentum(15)": 8,
-        "volume(10)": 6,
-        "pos_52w(15)": 15,
-        "rsi(10)": 6,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 164300.0,
-        "ma5": 167300.0,
-        "ma20": 165650.0,
-        "ma60": 159855.0,
-        "ma120": 153230.0,
-        "ma60_margin_pct": 2.78,
-        "ret_6m_pct": 38.53,
-        "rsi14": 38.8,
-        "vol_5d_to_20d_ratio": 0.9,
-        "pos_52w_pct": 60.6,
-        "sigma_annual_pct": 55.2
-      },
-      "name": "기아(주)",
-      "ma60_exit_signal": false
-    },
-    "329180": {
-      "tech_score": 82,
-      "breakdown": {
-        "alignment(20)": 20,
-        "ma60_margin(15)": 15,
-        "momentum(15)": 8,
-        "volume(10)": 6,
-        "pos_52w(15)": 15,
-        "rsi(10)": 6,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 651000.0,
-        "ma5": 681600.0,
-        "ma20": 676650.0,
-        "ma60": 591275.0,
-        "ma120": 579179.2,
-        "ma60_margin_pct": 10.1,
-        "ret_6m_pct": 21.91,
-        "rsi14": 39.1,
-        "vol_5d_to_20d_ratio": 0.95,
-        "pos_52w_pct": 69.3,
-        "sigma_annual_pct": 60.1
-      },
-      "name": "에이치디현대중공업(주)",
-      "ma60_exit_signal": false
-    },
-    "062040": {
-      "tech_score": 65,
-      "breakdown": {
-        "alignment(20)": 12,
-        "ma60_margin(15)": 15,
-        "momentum(15)": 8,
-        "volume(10)": 6,
-        "pos_52w(15)": 15,
-        "rsi(10)": 2,
-        "volatility(15)": 7
-      },
-      "indicators": {
-        "close": 222500.0,
-        "ma5": 239000.0,
-        "ma20": 276025.0,
-        "ma60": 207160.0,
-        "ma120": 176173.3,
-        "ma60_margin_pct": 7.4,
-        "ret_6m_pct": 50.54,
-        "rsi14": 24.2,
-        "vol_5d_to_20d_ratio": 0.89,
-        "pos_52w_pct": 51.1,
-        "sigma_annual_pct": 84.4
-      },
-      "name": "산일전기(주)",
-      "ma60_exit_signal": false
-    },
-    "012330": {
-      "tech_score": 79,
-      "breakdown": {
-        "alignment(20)": 20,
-        "ma60_margin(15)": 6,
-        "momentum(15)": 15,
-        "volume(10)": 10,
-        "pos_52w(15)": 6,
-        "rsi(10)": 10,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 748000.0,
-        "ma5": 744400.0,
-        "ma20": 621650.0,
-        "ma60": 482133.3,
-        "ma120": 449420.8,
-        "ma60_margin_pct": 55.14,
-        "ret_6m_pct": 134.12,
-        "rsi14": 61.2,
-        "vol_5d_to_20d_ratio": 1.26,
-        "pos_52w_pct": 95.8,
-        "sigma_annual_pct": 70.1
-      },
-      "name": "현대모비스(주)",
-      "ma60_exit_signal": false
-    },
-    "009540": {
-      "tech_score": 38,
-      "breakdown": {
-        "alignment(20)": 6,
-        "ma60_margin(15)": 0,
-        "momentum(15)": 0,
-        "volume(10)": 10,
-        "pos_52w(15)": 8,
-        "rsi(10)": 2,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 379500.0,
-        "ma5": 401100.0,
-        "ma20": 428025.0,
-        "ma60": 414775.0,
-        "ma120": 419729.2,
-        "ma60_margin_pct": -8.5,
-        "ret_6m_pct": -10.28,
-        "rsi14": 28.6,
-        "vol_5d_to_20d_ratio": 1.18,
-        "pos_52w_pct": 26.2,
-        "sigma_annual_pct": 52.6
-      },
-      "name": "HD한국조선해양",
-      "ma60_exit_signal": true
-    },
-    "005490": {
-      "tech_score": 57.11,
-      "breakdown": {
-        "alignment(20)": 12,
-        "ma60_margin(15)": 2.1,
-        "momentum(15)": 8,
-        "volume(10)": 6,
-        "pos_52w(15)": 15,
-        "rsi(10)": 2,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 402000.0,
-        "ma5": 411500.0,
-        "ma20": 456200.0,
-        "ma60": 399191.7,
-        "ma120": 370758.3,
-        "ma60_margin_pct": 0.7,
-        "ret_6m_pct": 30.31,
-        "rsi14": 27.0,
-        "vol_5d_to_20d_ratio": 0.97,
-        "pos_52w_pct": 51.1,
-        "sigma_annual_pct": 52.4
-      },
-      "name": "POSCO홀딩스",
-      "ma60_exit_signal": false
-    },
-    "039200": {
-      "tech_score": 30,
-      "breakdown": {
-        "alignment(20)": 0,
-        "ma60_margin(15)": 0,
-        "momentum(15)": 0,
-        "volume(10)": 10,
-        "pos_52w(15)": 2,
-        "rsi(10)": 6,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 41600.0,
-        "ma5": 41620.0,
-        "ma20": 44285.0,
-        "ma60": 49919.2,
-        "ma120": 50007.1,
-        "ma60_margin_pct": -16.67,
-        "ret_6m_pct": -32.14,
-        "rsi14": 34.9,
-        "vol_5d_to_20d_ratio": 1.25,
-        "pos_52w_pct": 15.4,
-        "sigma_annual_pct": 76.9
-      },
-      "name": "(주)오스코텍",
-      "ma60_exit_signal": true
-    },
-    "034730": {
-      "tech_score": 75,
-      "breakdown": {
-        "alignment(20)": 20,
-        "ma60_margin(15)": 6,
-        "momentum(15)": 15,
-        "volume(10)": 6,
-        "pos_52w(15)": 6,
-        "rsi(10)": 10,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 668000.0,
-        "ma5": 666600.0,
-        "ma20": 589050.0,
-        "ma60": 434100.0,
-        "ma120": 369004.2,
-        "ma60_margin_pct": 53.88,
-        "ret_6m_pct": 150.19,
-        "rsi14": 69.4,
-        "vol_5d_to_20d_ratio": 0.89,
-        "pos_52w_pct": 97.5,
-        "sigma_annual_pct": 62.1
-      },
-      "name": "SK(주)",
-      "ma60_exit_signal": false
-    },
-    "077970": {
       "tech_score": 43,
       "breakdown": {
         "alignment(20)": 12,
@@ -1015,179 +772,422 @@
         "volatility(15)": 7
       },
       "indicators": {
-        "close": 35550.0,
-        "ma5": 38620.0,
-        "ma20": 46430.0,
-        "ma60": 41901.7,
-        "ma120": 38550.4,
-        "ma60_margin_pct": -15.16,
-        "ret_6m_pct": 3.04,
-        "rsi14": 27.2,
+        "close": 36950.0,
+        "ma5": 38060.0,
+        "ma20": 49192.5,
+        "ma60": 42774.2,
+        "ma120": 35336.2,
+        "ma60_margin_pct": -13.62,
+        "ret_6m_pct": 64.22,
+        "rsi14": 25.1,
+        "vol_5d_to_20d_ratio": 0.88,
+        "pos_52w_pct": 38.2,
+        "sigma_annual_pct": 87.2
+      },
+      "name": "대한전선(주)",
+      "ma60_exit_signal": true
+    },
+    "000270": {
+      "tech_score": 63,
+      "breakdown": {
+        "alignment(20)": 12,
+        "ma60_margin(15)": 0,
+        "momentum(15)": 8,
+        "volume(10)": 6,
+        "pos_52w(15)": 15,
+        "rsi(10)": 10,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 156000.0,
+        "ma5": 158500.0,
+        "ma20": 164290.0,
+        "ma60": 159601.7,
+        "ma120": 154695.0,
+        "ma60_margin_pct": -2.26,
+        "ret_6m_pct": 26.42,
+        "rsi14": 54.6,
+        "vol_5d_to_20d_ratio": 0.96,
+        "pos_52w_pct": 52.6,
+        "sigma_annual_pct": 56.8
+      },
+      "name": "기아(주)",
+      "ma60_exit_signal": true
+    },
+    "329180": {
+      "tech_score": 78,
+      "breakdown": {
+        "alignment(20)": 12,
+        "ma60_margin(15)": 15,
+        "momentum(15)": 8,
+        "volume(10)": 6,
+        "pos_52w(15)": 15,
+        "rsi(10)": 10,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 646000.0,
+        "ma5": 636800.0,
+        "ma20": 666300.0,
+        "ma60": 595191.7,
+        "ma120": 582779.2,
+        "ma60_margin_pct": 8.54,
+        "ret_6m_pct": 13.13,
+        "rsi14": 51.7,
+        "vol_5d_to_20d_ratio": 0.83,
+        "pos_52w_pct": 67.6,
+        "sigma_annual_pct": 60.9
+      },
+      "name": "에이치디현대중공업(주)",
+      "ma60_exit_signal": false
+    },
+    "062040": {
+      "tech_score": 54,
+      "breakdown": {
+        "alignment(20)": 12,
+        "ma60_margin(15)": 0,
+        "momentum(15)": 8,
+        "volume(10)": 6,
+        "pos_52w(15)": 15,
+        "rsi(10)": 6,
+        "volatility(15)": 7
+      },
+      "indicators": {
+        "close": 213000.0,
+        "ma5": 218200.0,
+        "ma20": 250125.0,
+        "ma60": 213463.3,
+        "ma120": 179132.5,
+        "ma60_margin_pct": -0.22,
+        "ret_6m_pct": 43.53,
+        "rsi14": 37.5,
+        "vol_5d_to_20d_ratio": 0.75,
+        "pos_52w_pct": 47.0,
+        "sigma_annual_pct": 84.4
+      },
+      "name": "산일전기(주)",
+      "ma60_exit_signal": true
+    },
+    "012330": {
+      "tech_score": 78,
+      "breakdown": {
+        "alignment(20)": 12,
+        "ma60_margin(15)": 15,
+        "momentum(15)": 8,
+        "volume(10)": 6,
+        "pos_52w(15)": 15,
+        "rsi(10)": 10,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 576000.0,
+        "ma5": 610000.0,
+        "ma20": 649950.0,
+        "ma60": 498408.3,
+        "ma120": 459891.7,
+        "ma60_margin_pct": 15.57,
+        "ret_6m_pct": 59.12,
+        "rsi14": 54.2,
         "vol_5d_to_20d_ratio": 0.73,
-        "pos_52w_pct": 23.4,
-        "sigma_annual_pct": 78.1
+        "pos_52w_pct": 60.0,
+        "sigma_annual_pct": 72.8
+      },
+      "name": "현대모비스(주)",
+      "ma60_exit_signal": false
+    },
+    "009540": {
+      "tech_score": 36,
+      "breakdown": {
+        "alignment(20)": 0,
+        "ma60_margin(15)": 0,
+        "momentum(15)": 0,
+        "volume(10)": 10,
+        "pos_52w(15)": 8,
+        "rsi(10)": 6,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 375500.0,
+        "ma5": 372200.0,
+        "ma20": 405550.0,
+        "ma60": 411375.0,
+        "ma120": 417075.0,
+        "ma60_margin_pct": -8.72,
+        "ret_6m_pct": -15.05,
+        "rsi14": 43.7,
+        "vol_5d_to_20d_ratio": 1.06,
+        "pos_52w_pct": 23.2,
+        "sigma_annual_pct": 53.6
+      },
+      "name": "HD한국조선해양",
+      "ma60_exit_signal": true
+    },
+    "005490": {
+      "tech_score": 48,
+      "breakdown": {
+        "alignment(20)": 12,
+        "ma60_margin(15)": 0,
+        "momentum(15)": 8,
+        "volume(10)": 6,
+        "pos_52w(15)": 8,
+        "rsi(10)": 2,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 358000.0,
+        "ma5": 366900.0,
+        "ma20": 420075.0,
+        "ma60": 401283.3,
+        "ma120": 372995.8,
+        "ma60_margin_pct": -10.79,
+        "ret_6m_pct": 13.83,
+        "rsi14": 29.5,
+        "vol_5d_to_20d_ratio": 0.81,
+        "pos_52w_pct": 34.9,
+        "sigma_annual_pct": 53.5
+      },
+      "name": "POSCO홀딩스",
+      "ma60_exit_signal": true
+    },
+    "039200": {
+      "tech_score": 34,
+      "breakdown": {
+        "alignment(20)": 0,
+        "ma60_margin(15)": 0,
+        "momentum(15)": 0,
+        "volume(10)": 10,
+        "pos_52w(15)": 2,
+        "rsi(10)": 10,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 40600.0,
+        "ma5": 40260.0,
+        "ma20": 41997.5,
+        "ma60": 49067.5,
+        "ma120": 49297.9,
+        "ma60_margin_pct": -17.26,
+        "ret_6m_pct": -31.88,
+        "rsi14": 55.7,
+        "vol_5d_to_20d_ratio": 1.15,
+        "pos_52w_pct": 11.2,
+        "sigma_annual_pct": 76.0
+      },
+      "name": "(주)오스코텍",
+      "ma60_exit_signal": true
+    },
+    "034730": {
+      "tech_score": 84.13,
+      "breakdown": {
+        "alignment(20)": 12,
+        "ma60_margin(15)": 14.1,
+        "momentum(15)": 15,
+        "volume(10)": 6,
+        "pos_52w(15)": 15,
+        "rsi(10)": 10,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 575000.0,
+        "ma5": 589000.0,
+        "ma20": 600050.0,
+        "ma60": 454741.7,
+        "ma120": 382416.7,
+        "ma60_margin_pct": 26.45,
+        "ret_6m_pct": 116.98,
+        "rsi14": 57.0,
+        "vol_5d_to_20d_ratio": 0.9,
+        "pos_52w_pct": 77.7,
+        "sigma_annual_pct": 63.5
+      },
+      "name": "SK(주)",
+      "ma60_exit_signal": false
+    },
+    "077970": {
+      "tech_score": 23,
+      "breakdown": {
+        "alignment(20)": 6,
+        "ma60_margin(15)": 0,
+        "momentum(15)": 0,
+        "volume(10)": 2,
+        "pos_52w(15)": 2,
+        "rsi(10)": 6,
+        "volatility(15)": 7
+      },
+      "indicators": {
+        "close": 31650.0,
+        "ma5": 31820.0,
+        "ma20": 40570.0,
+        "ma60": 41771.7,
+        "ma120": 38373.3,
+        "ma60_margin_pct": -24.23,
+        "ret_6m_pct": -15.15,
+        "rsi14": 34.2,
+        "vol_5d_to_20d_ratio": 0.57,
+        "pos_52w_pct": 13.7,
+        "sigma_annual_pct": 79.7
       },
       "name": "STX엔진(주)",
       "ma60_exit_signal": true
     },
     "042660": {
-      "tech_score": 40,
+      "tech_score": 26,
       "breakdown": {
         "alignment(20)": 0,
         "ma60_margin(15)": 0,
-        "momentum(15)": 8,
+        "momentum(15)": 0,
+        "volume(10)": 6,
+        "pos_52w(15)": 2,
+        "rsi(10)": 6,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 104500.0,
+        "ma5": 106440.0,
+        "ma20": 116960.0,
+        "ma60": 124001.7,
+        "ma120": 127430.8,
+        "ma60_margin_pct": -15.73,
+        "ret_6m_pct": -7.11,
+        "rsi14": 45.9,
+        "vol_5d_to_20d_ratio": 0.77,
+        "pos_52w_pct": 4.8,
+        "sigma_annual_pct": 66.3
+      },
+      "name": "한화오션",
+      "ma60_exit_signal": true
+    },
+    "023530": {
+      "tech_score": 75,
+      "breakdown": {
+        "alignment(20)": 20,
+        "ma60_margin(15)": 6,
+        "momentum(15)": 15,
+        "volume(10)": 10,
+        "pos_52w(15)": 6,
+        "rsi(10)": 6,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 202000.0,
+        "ma5": 184000.0,
+        "ma20": 165410.0,
+        "ma60": 133196.7,
+        "ma120": 109698.3,
+        "ma60_margin_pct": 51.66,
+        "ret_6m_pct": 182.52,
+        "rsi14": 76.7,
+        "vol_5d_to_20d_ratio": 1.33,
+        "pos_52w_pct": 100.0,
+        "sigma_annual_pct": 57.0
+      },
+      "name": "롯데쇼핑(주)",
+      "ma60_exit_signal": false
+    },
+    "066570": {
+      "tech_score": 82.21,
+      "breakdown": {
+        "alignment(20)": 20,
+        "ma60_margin(15)": 9.2,
+        "momentum(15)": 15,
+        "volume(10)": 6,
+        "pos_52w(15)": 15,
+        "rsi(10)": 10,
+        "volatility(15)": 7
+      },
+      "indicators": {
+        "close": 226000.0,
+        "ma5": 253800.0,
+        "ma20": 253680.0,
+        "ma60": 167840.0,
+        "ma120": 136623.3,
+        "ma60_margin_pct": 34.65,
+        "ret_6m_pct": 139.15,
+        "rsi14": 55.5,
+        "vol_5d_to_20d_ratio": 0.93,
+        "pos_52w_pct": 47.5,
+        "sigma_annual_pct": 93.3
+      },
+      "name": "LG전자",
+      "ma60_exit_signal": false
+    },
+    "010140": {
+      "tech_score": 38,
+      "breakdown": {
+        "alignment(20)": 6,
+        "ma60_margin(15)": 0,
+        "momentum(15)": 0,
         "volume(10)": 6,
         "pos_52w(15)": 8,
         "rsi(10)": 6,
         "volatility(15)": 12
       },
       "indicators": {
-        "close": 115100.0,
-        "ma5": 120700.0,
-        "ma20": 122285.0,
-        "ma60": 126053.3,
-        "ma120": 127635.0,
-        "ma60_margin_pct": -8.69,
-        "ret_6m_pct": 6.38,
-        "rsi14": 44.6,
-        "vol_5d_to_20d_ratio": 0.98,
-        "pos_52w_pct": 25.6,
-        "sigma_annual_pct": 64.4
-      },
-      "name": "한화오션",
-      "ma60_exit_signal": true
-    },
-    "023530": {
-      "tech_score": 72.98,
-      "breakdown": {
-        "alignment(20)": 12,
-        "ma60_margin(15)": 8.0,
-        "momentum(15)": 15,
-        "volume(10)": 10,
-        "pos_52w(15)": 6,
-        "rsi(10)": 10,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 172000.0,
-        "ma5": 154520.0,
-        "ma20": 154545.0,
-        "ma60": 125818.3,
-        "ma120": 105071.7,
-        "ma60_margin_pct": 36.71,
-        "ret_6m_pct": 126.91,
-        "rsi14": 56.3,
-        "vol_5d_to_20d_ratio": 1.06,
-        "pos_52w_pct": 96.7,
-        "sigma_annual_pct": 55.5
-      },
-      "name": "롯데쇼핑(주)",
-      "ma60_exit_signal": false
-    },
-    "066570": {
-      "tech_score": 83,
-      "breakdown": {
-        "alignment(20)": 20,
-        "ma60_margin(15)": 6,
-        "momentum(15)": 15,
-        "volume(10)": 10,
-        "pos_52w(15)": 15,
-        "rsi(10)": 10,
-        "volatility(15)": 7
-      },
-      "indicators": {
-        "close": 328000.0,
-        "ma5": 323900.0,
-        "ma20": 230195.0,
-        "ma60": 156261.7,
-        "ma120": 130061.7,
-        "ma60_margin_pct": 109.9,
-        "ret_6m_pct": 266.48,
-        "rsi14": 66.6,
-        "vol_5d_to_20d_ratio": 1.37,
-        "pos_52w_pct": 79.7,
-        "sigma_annual_pct": 89.8
-      },
-      "name": "LG전자",
-      "ma60_exit_signal": false
-    },
-    "010140": {
-      "tech_score": 63,
-      "breakdown": {
-        "alignment(20)": 12,
-        "ma60_margin(15)": 0,
-        "momentum(15)": 8,
-        "volume(10)": 10,
-        "pos_52w(15)": 15,
-        "rsi(10)": 6,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 28400.0,
-        "ma5": 28000.0,
-        "ma20": 29857.5,
-        "ma60": 29230.0,
-        "ma120": 28326.7,
-        "ma60_margin_pct": -2.84,
-        "ret_6m_pct": 14.98,
-        "rsi14": 37.3,
-        "vol_5d_to_20d_ratio": 1.03,
-        "pos_52w_pct": 55.7,
-        "sigma_annual_pct": 60.1
+        "close": 25300.0,
+        "ma5": 26200.0,
+        "ma20": 28265.0,
+        "ma60": 28967.5,
+        "ma120": 28340.8,
+        "ma60_margin_pct": -12.66,
+        "ret_6m_pct": -3.62,
+        "rsi14": 38.2,
+        "vol_5d_to_20d_ratio": 0.83,
+        "pos_52w_pct": 31.1,
+        "sigma_annual_pct": 60.3
       },
       "name": "삼성중공업(주)",
       "ma60_exit_signal": true
     },
     "018670": {
-      "tech_score": 34,
+      "tech_score": 31,
       "breakdown": {
-        "alignment(20)": 12,
+        "alignment(20)": 6,
         "ma60_margin(15)": 0,
         "momentum(15)": 0,
         "volume(10)": 2,
         "pos_52w(15)": 2,
         "rsi(10)": 6,
-        "volatility(15)": 12
+        "volatility(15)": 15
       },
       "indicators": {
-        "close": 223500.0,
-        "ma5": 230900.0,
-        "ma20": 252825.0,
-        "ma60": 250516.7,
-        "ma120": 240966.7,
-        "ma60_margin_pct": -10.78,
-        "ret_6m_pct": -8.4,
-        "rsi14": 31.9,
-        "vol_5d_to_20d_ratio": 0.53,
-        "pos_52w_pct": 8.3,
-        "sigma_annual_pct": 51.8
+        "close": 224500.0,
+        "ma5": 217200.0,
+        "ma20": 240875.0,
+        "ma60": 249116.7,
+        "ma120": 240020.8,
+        "ma60_margin_pct": -9.88,
+        "ret_6m_pct": -5.07,
+        "rsi14": 41.6,
+        "vol_5d_to_20d_ratio": 0.6,
+        "pos_52w_pct": 16.0,
+        "sigma_annual_pct": 52.2
       },
       "name": "SK가스(주)",
-      "ma60_exit_signal": false
+      "ma60_exit_signal": true
     },
     "003550": {
-      "tech_score": 85.82,
+      "tech_score": 65.88,
       "breakdown": {
-        "alignment(20)": 20,
-        "ma60_margin(15)": 12.8,
+        "alignment(20)": 12,
+        "ma60_margin(15)": 13.9,
         "momentum(15)": 8,
-        "volume(10)": 8,
-        "pos_52w(15)": 15,
+        "volume(10)": 2,
+        "pos_52w(15)": 8,
         "rsi(10)": 10,
         "volatility(15)": 12
       },
       "indicators": {
-        "close": 129900.0,
-        "ma5": 139620.0,
-        "ma20": 119400.0,
-        "ma60": 100978.3,
-        "ma120": 94815.0,
-        "ma60_margin_pct": 28.64,
-        "ret_6m_pct": 59.58,
-        "rsi14": 56.6,
-        "vol_5d_to_20d_ratio": 2.14,
-        "pos_52w_pct": 62.0,
-        "sigma_annual_pct": 65.4
+        "close": 107500.0,
+        "ma5": 113120.0,
+        "ma20": 121080.0,
+        "ma60": 102746.7,
+        "ma120": 96060.0,
+        "ma60_margin_pct": 4.63,
+        "ret_6m_pct": 30.3,
+        "rsi14": 51.5,
+        "vol_5d_to_20d_ratio": 0.63,
+        "pos_52w_pct": 38.3,
+        "sigma_annual_pct": 66.6
       },
       "name": "(주)LG",
       "ma60_exit_signal": false
