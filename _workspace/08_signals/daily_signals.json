@@ -1,93 +1,114 @@
 {
-  "as_of": "20260615",
-  "generated_at": "2026-06-15T15:29:08.843255",
+  "as_of": "20260616",
+  "generated_at": "2026-06-16T14:31:47.871608",
   "counts": {
-    "WATCH": 9,
-    "ENTRY_1ST": 1
+    "ENTRY_1ST": 8,
+    "WATCH": 2
   },
   "signals": [
     {
       "ticker": "028260",
       "name": "삼성물산",
-      "signal": "WATCH",
-      "close": NaN,
-      "ma60": NaN,
-      "reason": "MA60 아래, 추세 대기 (nan < MA60 nan)"
+      "signal": "ENTRY_1ST",
+      "action": "1차 75% 진입 (지정가 권장)",
+      "close": 407500.0,
+      "ma60": 323375.0,
+      "weight_pct": 15.0,
+      "capital_weight_pct": 18.75,
+      "reason": "MA60 위 첫 진입 (종가 407,500 > MA60 323,375)"
     },
     {
       "ticker": "032830",
       "name": "삼성생명",
-      "signal": "WATCH",
-      "close": NaN,
-      "ma60": NaN,
-      "reason": "MA60 아래, 추세 대기 (nan < MA60 nan)"
+      "signal": "ENTRY_1ST",
+      "action": "1차 75% 진입 (지정가 권장)",
+      "close": 368000.0,
+      "ma60": 257958.3,
+      "weight_pct": 11.283,
+      "capital_weight_pct": 14.104,
+      "reason": "MA60 위 첫 진입 (종가 368,000 > MA60 257,958)"
     },
     {
       "ticker": "034730",
       "name": "SK",
-      "signal": "WATCH",
-      "close": NaN,
-      "ma60": NaN,
-      "reason": "MA60 아래, 추세 대기 (nan < MA60 nan)"
+      "signal": "ENTRY_1ST",
+      "action": "1차 75% 진입 (지정가 권장)",
+      "close": 579000.0,
+      "ma60": 416733.3,
+      "weight_pct": 10.635,
+      "capital_weight_pct": 13.294,
+      "reason": "MA60 위 첫 진입 (종가 579,000 > MA60 416,733)"
     },
     {
       "ticker": "005930",
       "name": "삼성전자",
-      "signal": "WATCH",
-      "close": NaN,
-      "ma60": NaN,
-      "reason": "MA60 아래, 추세 대기 (nan < MA60 nan)"
+      "signal": "ENTRY_1ST",
+      "action": "1차 75% 진입 (지정가 권장)",
+      "close": 302500.0,
+      "ma60": 223740.0,
+      "weight_pct": 7.69,
+      "capital_weight_pct": 9.613,
+      "reason": "MA60 위 첫 진입 (종가 302,500 > MA60 223,740)"
     },
     {
       "ticker": "000660",
       "name": "SK하이닉스",
-      "signal": "WATCH",
-      "close": NaN,
-      "ma60": NaN,
-      "reason": "MA60 아래, 추세 대기 (nan < MA60 nan)"
+      "signal": "ENTRY_1ST",
+      "action": "1차 75% 진입 (지정가 권장)",
+      "close": 2048000.0,
+      "ma60": 1278583.3,
+      "weight_pct": 6.923,
+      "capital_weight_pct": 8.654,
+      "reason": "MA60 위 첫 진입 (종가 2,048,000 > MA60 1,278,583)"
     },
     {
       "ticker": "018260",
       "name": "삼성에스디에스",
-      "signal": "WATCH",
-      "close": NaN,
-      "ma60": NaN,
-      "reason": "MA60 아래, 추세 대기 (nan < MA60 nan)"
+      "signal": "ENTRY_1ST",
+      "action": "1차 75% 진입 (지정가 권장)",
+      "close": 225000.0,
+      "ma60": 170851.7,
+      "weight_pct": 12.427,
+      "capital_weight_pct": 15.534,
+      "reason": "MA60 위 첫 진입 (종가 225,000 > MA60 170,852)"
     },
     {
       "ticker": "329180",
       "name": "HD현대중공업",
-      "signal": "WATCH",
-      "close": NaN,
-      "ma60": NaN,
-      "reason": "MA60 아래, 추세 대기 (nan < MA60 nan)"
+      "signal": "ENTRY_1ST",
+      "action": "1차 75% 진입 (지정가 권장)",
+      "close": 641000.0,
+      "ma60": 583958.3,
+      "weight_pct": 12.427,
+      "capital_weight_pct": 15.534,
+      "reason": "MA60 위 첫 진입 (종가 641,000 > MA60 583,958)"
     },
     {
       "ticker": "085910",
       "name": "네오티스",
       "signal": "ENTRY_1ST",
       "action": "1차 75% 진입 (지정가 권장)",
-      "close": 28950.0,
-      "ma60": 23896.3,
+      "close": 27550.0,
+      "ma60": 23873.0,
       "weight_pct": 10.0,
       "capital_weight_pct": 12.5,
-      "reason": "MA60 위 첫 진입 (종가 28,950 > MA60 23,896)"
+      "reason": "MA60 위 첫 진입 (종가 27,550 > MA60 23,873)"
     },
     {
       "ticker": "375500",
       "name": "DL이앤씨",
       "signal": "WATCH",
-      "close": NaN,
-      "ma60": NaN,
-      "reason": "MA60 아래, 추세 대기 (nan < MA60 nan)"
+      "close": 70400.0,
+      "ma60": 77320.0,
+      "reason": "MA60 아래, 추세 대기 (70,400 < MA60 77,320)"
     },
     {
       "ticker": "005880",
       "name": "대한해운",
       "signal": "WATCH",
-      "close": NaN,
-      "ma60": NaN,
-      "reason": "MA60 아래, 추세 대기 (nan < MA60 nan)"
+      "close": 1920.0,
+      "ma60": 2464.3,
+      "reason": "MA60 아래, 추세 대기 (1,920 < MA60 2,464)"
     }
   ]
 }
