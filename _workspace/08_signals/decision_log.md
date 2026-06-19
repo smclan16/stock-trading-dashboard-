@@ -537,3 +537,59 @@
 - watch              035420 NAVER       entry_conditions_failing  | 
 - exit               039200 (주)오스코텍     trend_break_full 청산 100% | 종가 40600 < MA(60) 49068
 - watch              039200 (주)오스코텍     entry_conditions_failing  | 
+
+## 2026-06-19 18:39 사이클
+
+- exit               010120 LS ELECTRI  trend_break_full 청산 100% | 종가 242000 < MA(60) 382755
+- watch              010120 LS ELECTRI  entry_conditions_failing  | 
+- entry_rebalance    005380 현대차         stage_3  | 1차 대비 -12.8% (≤-12%)
+- exit               068270 셀트리온        trend_break_full 청산 100% | 종가 173600 < MA(60) 192748
+- watch              068270 셀트리온        entry_conditions_failing  | 
+- exit               077970 STX엔진(주)    trend_break_full 청산 100% | 종가 34400 < MA(60) 41865
+- watch              077970 STX엔진(주)    entry_conditions_failing  | 
+- watch              105560 KB금융        entry_conditions_failing  | 
+- exit               082740 한화엔진(주)     trend_break_full 청산 100% | 종가 59300 < MA(60) 61670
+- watch              082740 한화엔진(주)     entry_conditions_failing  | 
+- watch              028050 삼성E&A       entry_conditions_failing  | 
+- exit               039200 (주)오스코텍     trend_break_full 청산 100% | 종가 39650 < MA(60) 47609
+- watch              039200 (주)오스코텍     entry_conditions_failing  | 
+- exit               012450 한화에어로스페이스   trend_break_full 청산 100% | 종가 1189000 < MA(60) 1307167
+- watch              012450 한화에어로스페이스   entry_conditions_failing  | 
+- watch              055550 신한지주        entry_conditions_failing  | 
+- watch              042660 한화오션        entry_conditions_failing  | 
+- exit               018670 SK가스(주)     trend_break_full 청산 100% | 종가 216000 < MA(60) 247792
+- watch              018670 SK가스(주)     entry_conditions_failing  | 
+- watch              035420 NAVER       entry_conditions_failing  | 
+- exit               000270 기아(주)       trend_break_full 청산 100% | 종가 158800 < MA(60) 159372
+- watch              000270 기아(주)       entry_conditions_failing  | 
+- exit               005880 대한해운(주)     trend_break_full 청산 100% | 종가 2060 < MA(60) 2415
+- watch              005880 대한해운(주)     entry_conditions_failing  | 
+- exit               034020 두산에너빌리티     trend_break_full 청산 100% | 종가 99600 < MA(60) 107503
+- watch              034020 두산에너빌리티     entry_conditions_failing  | 
+- exit               373220 LG에너지솔루션    trend_break_full 청산 100% | 종가 400000 < MA(60) 422867
+- watch              373220 LG에너지솔루션    entry_conditions_failing  | 
+- exit               047810 한국항공우주      trend_break_full 청산 100% | 종가 152000 < MA(60) 169738
+- watch              047810 한국항공우주      entry_conditions_failing  | 
+- exit               207940 삼성바이오로직스    trend_break_full 청산 100% | 종가 1430000 < MA(60) 1466050
+- watch              207940 삼성바이오로직스    entry_conditions_failing  | 
+- watch              003550 (주)LG       entry_conditions_failing  | 
+- watch              298040 효성중공업       entry_conditions_failing  | 
+- exit               005490 POSCO홀딩스    trend_break_full 청산 100% | 종가 367000 < MA(60) 404725
+- watch              005490 POSCO홀딩스    entry_conditions_failing  | 
+- watch              267260 HD현대일렉트릭    entry_conditions_failing  | 
+- watch              009540 HD한국조선해양    entry_conditions_failing  | 
+- exit               009900 명신산업(주)     trend_break_full 청산 100% | 종가 8420 < MA(60) 10423
+- watch              009900 명신산업(주)     entry_conditions_failing  | 
+- watch              329180 에이치디현대중공업(  entry_conditions_failing  | 
+- watch              062040 산일전기(주)     entry_conditions_failing  | 
+- entry_rebalance    085910 (주)네오티스     stage_2  | 1차 대비 -10.8% (≤-7%)
+- exit               001440 대한전선(주)     trend_break_full 청산 100% | 종가 39500 < MA(60) 43585
+- watch              001440 대한전선(주)     entry_conditions_failing  | 
+- exit               375500 디엘이앤씨 주식회사  trend_break_full 청산 100% | 종가 79200 < MA(60) 83035
+- watch              375500 디엘이앤씨 주식회사  entry_conditions_failing  | 
+- watch              006260 (주)LS       entry_conditions_failing  | 
+- exit               237690 에스티팜(주)     trend_break_full 청산 100% | 종가 127000 < MA(60) 139867
+- watch              237690 에스티팜(주)     entry_conditions_failing  | 
+- watch              018260 삼성에스디에스(주)  entry_conditions_failing  | 
+- exit               010140 삼성중공업(주)    trend_break_full 청산 100% | 종가 27700 < MA(60) 28905
+- watch              010140 삼성중공업(주)    entry_conditions_failing  | 
