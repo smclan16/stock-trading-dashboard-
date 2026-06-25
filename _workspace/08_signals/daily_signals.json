@@ -1,99 +1,93 @@
 {
-  "as_of": "20260624",
-  "generated_at": "2026-06-24T12:06:34.953829",
+  "as_of": "20260625",
+  "generated_at": "2026-06-25T12:02:45.607505",
   "counts": {
-    "WATCH": 13,
-    "ENTRY_1ST": 1
+    "WATCH": 14
   },
   "signals": [
     {
       "ticker": "062040",
       "name": "산일전기",
       "signal": "WATCH",
-      "reason": "시계열 부족 59일"
+      "reason": "시계열 부족 58일"
     },
     {
       "ticker": "298040",
       "name": "효성중공업",
       "signal": "WATCH",
-      "reason": "시계열 부족 59일"
+      "reason": "시계열 부족 58일"
     },
     {
       "ticker": "028050",
       "name": "삼성E&A",
       "signal": "WATCH",
-      "reason": "시계열 부족 59일"
+      "reason": "시계열 부족 58일"
     },
     {
       "ticker": "006260",
       "name": "LS",
       "signal": "WATCH",
-      "reason": "시계열 부족 59일"
+      "reason": "시계열 부족 58일"
     },
     {
       "ticker": "034730",
       "name": "SK",
       "signal": "WATCH",
-      "reason": "시계열 부족 59일"
+      "reason": "시계열 부족 58일"
     },
     {
       "ticker": "032830",
       "name": "삼성생명",
       "signal": "WATCH",
-      "reason": "시계열 부족 59일"
+      "reason": "시계열 부족 58일"
     },
     {
       "ticker": "005930",
       "name": "삼성전자",
       "signal": "WATCH",
-      "reason": "시계열 부족 59일"
+      "reason": "시계열 부족 58일"
     },
     {
       "ticker": "000660",
       "name": "SK하이닉스",
       "signal": "WATCH",
-      "reason": "시계열 부족 59일"
+      "reason": "시계열 부족 58일"
     },
     {
       "ticker": "018260",
       "name": "삼성에스디에스",
       "signal": "WATCH",
-      "reason": "시계열 부족 59일"
+      "reason": "시계열 부족 58일"
     },
     {
       "ticker": "035420",
       "name": "NAVER",
       "signal": "WATCH",
-      "reason": "시계열 부족 59일"
+      "reason": "시계열 부족 58일"
     },
     {
       "ticker": "329180",
       "name": "HD현대중공업",
       "signal": "WATCH",
-      "reason": "시계열 부족 59일"
+      "reason": "시계열 부족 58일"
     },
     {
       "ticker": "085910",
       "name": "네오티스",
-      "signal": "ENTRY_1ST",
-      "action": "1차 75% 진입 (지정가 권장)",
-      "close": 27550.0,
-      "ma60": 23873.0,
-      "weight_pct": 8.692,
-      "capital_weight_pct": 10.865,
-      "reason": "MA60 위 첫 진입 (종가 27,550 > MA60 23,873)"
+      "signal": "WATCH",
+      "reason": "시계열 부족 59일"
     },
     {
       "ticker": "375500",
       "name": "DL이앤씨",
       "signal": "WATCH",
-      "reason": "시계열 부족 59일"
+      "reason": "시계열 부족 58일"
     },
     {
       "ticker": "005880",
       "name": "대한해운",
       "signal": "WATCH",
-      "reason": "시계열 부족 59일"
+      "reason": "시계열 부족 58일"
     }
   ]
 }
