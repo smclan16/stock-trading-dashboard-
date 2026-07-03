@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-06-26T18:30:18+00:00",
+  "as_of": "2026-07-03T18:16:19+00:00",
   "overall": "WARN",
   "n_fail": 0,
   "n_warn": 3,
@@ -14,7 +14,7 @@
       "id": "B-1",
       "name": "단일 종목 한도",
       "verdict": "PASS",
-      "detail": "최대 8.09% / 한도 13%"
+      "detail": "최대 8.12% / 한도 13%"
     },
     {
       "id": "B-2",
@@ -32,7 +32,7 @@
       "id": "B-4",
       "name": "포트폴리오 변동성 한도",
       "verdict": "PASS",
-      "detail": "추정 5.71% / 한도 25% (β 단순화 한계)"
+      "detail": "추정 6.98% / 한도 25% (β 단순화 한계)"
     },
     {
       "id": "C",
@@ -62,13 +62,13 @@
       "id": "F",
       "name": "매력도-비중 상관",
       "verdict": "WARN",
-      "detail": "Spearman ρ = -0.097 / 임계 0.3"
+      "detail": "Spearman ρ = -0.036 / 임계 0.3"
     },
     {
       "id": "G",
       "name": "데이터 신선도",
       "verdict": "WARN",
-      "detail": "universe=31d (한도 30d)"
+      "detail": "universe=38d (한도 30d) / matching=37d (한도 30d)"
     },
     {
       "id": "H",

@@ -1,99 +1,99 @@
 {
-  "as_of": "2026-06-26T18:35:17+00:00",
-  "rebalance_basis": "20260625",
+  "as_of": "2026-07-03T18:20:51+00:00",
+  "rebalance_basis": "20260702",
   "target_vol_pct": 25,
   "kospi_6m_pct": null,
   "holdings": [
-    "267260",
-    "402340",
-    "005880",
-    "018670",
-    "005380",
-    "001440",
-    "085910",
-    "034730",
-    "068270",
+    "012330",
     "005490",
-    "207940",
-    "000270",
-    "108670",
-    "009540",
-    "010140",
-    "062040",
-    "010120",
-    "082740",
-    "034020",
-    "373220",
-    "028050",
-    "018260",
-    "055550",
-    "009900",
-    "329180",
-    "005930",
-    "035420",
-    "237690",
+    "032830",
+    "005380",
+    "267260",
     "012450",
-    "047810",
+    "018670",
+    "003550",
+    "108670",
+    "005930",
+    "028050",
+    "009540",
+    "034730",
+    "010120",
     "298040",
+    "035420",
+    "001440",
+    "077970",
+    "062040",
     "028260",
     "006260",
-    "000660",
+    "010140",
     "066570",
     "009150",
+    "207940",
+    "329180",
     "105560",
+    "068270",
+    "005880",
     "039200",
+    "034020",
+    "047810",
     "023530",
+    "009900",
+    "000270",
+    "373220",
+    "085910",
+    "000660",
+    "402340",
+    "082740",
+    "018260",
+    "055550",
     "042660",
-    "012330",
-    "003550",
-    "032830",
-    "077970"
+    "237690"
   ],
   "prior_holdings": [
-    "267260",
-    "402340",
-    "005880",
-    "018670",
-    "005380",
-    "001440",
-    "034730",
-    "085910",
-    "068270",
+    "012330",
     "005490",
-    "207940",
-    "000270",
-    "009540",
-    "010140",
-    "062040",
-    "010120",
-    "082740",
-    "034020",
-    "373220",
-    "028050",
-    "055550",
-    "018260",
-    "009900",
-    "329180",
-    "005930",
-    "035420",
-    "237690",
+    "032830",
+    "005380",
+    "267260",
     "012450",
-    "047810",
+    "018670",
+    "003550",
+    "108670",
+    "005930",
+    "009540",
+    "028050",
+    "034730",
+    "010120",
     "298040",
-    "375500",
+    "035420",
+    "001440",
+    "077970",
+    "062040",
     "028260",
     "006260",
-    "000660",
+    "010140",
     "066570",
     "009150",
+    "207940",
+    "329180",
     "105560",
+    "068270",
+    "005880",
     "039200",
+    "034020",
+    "047810",
     "023530",
+    "009900",
+    "000270",
+    "373220",
+    "085910",
+    "082740",
+    "402340",
+    "000660",
+    "018260",
+    "055550",
     "042660",
-    "012330",
-    "003550",
-    "032830",
-    "077970"
+    "237690"
   ],
   "entry_states": {
     "402340": {
@@ -124,14 +124,6 @@
         1
       ],
       "last_signal_date": "20260526"
-    },
-    "066570": {
-      "stage_1_price": 239500.0,
-      "completed_stages": [
-        1,
-        2
-      ],
-      "last_signal_date": "20260625"
     },
     "028260": {
       "stage_1_price": 411000.0,
@@ -164,20 +156,20 @@
   },
   "signals": [
     {
-      "ticker": "267260",
-      "name": "HD현대일렉트릭",
-      "sector": "전기장비",
+      "ticker": "005490",
+      "name": "POSCO홀딩스",
+      "sector": "철강금속",
       "signal_type": "exit",
       "subtype": "trend_break_full",
       "severity": "high",
       "action": "청산 100%",
-      "reason": "종가 950000 < MA(60) 1090000",
-      "current_close": 950000.0,
-      "ma60": 1090000.0
+      "reason": "종가 317500 < MA(60) 402475",
+      "current_close": 317500.0,
+      "ma60": 402475.0
     },
     {
-      "ticker": "267260",
-      "name": "HD현대일렉트릭",
+      "ticker": "005490",
+      "name": "POSCO홀딩스",
       "signal_type": "watch",
       "subtype": "entry_conditions_failing",
       "failing_filters": [
@@ -185,449 +177,7 @@
         "mom_6m_abs",
         "rel_strength"
       ],
-      "current_close": 950000.0
-    },
-    {
-      "ticker": "085910",
-      "name": "(주)네오티스",
-      "sector": "자동차",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 19910 < MA(60) 26366",
-      "current_close": 19910.0,
-      "ma60": 26366.0
-    },
-    {
-      "ticker": "207940",
-      "name": "삼성바이오로직스",
-      "sector": "제약바이오",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 1386000 < MA(60) 1447167",
-      "current_close": 1386000.0,
-      "ma60": 1447166.6666666667
-    },
-    {
-      "ticker": "207940",
-      "name": "삼성바이오로직스",
-      "signal_type": "watch",
-      "subtype": "entry_conditions_failing",
-      "failing_filters": [
-        "trend",
-        "mom_6m_abs",
-        "rel_strength"
-      ],
-      "current_close": 1386000.0
-    },
-    {
-      "ticker": "000270",
-      "name": "기아(주)",
-      "sector": "자동차",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 139500 < MA(60) 158273",
-      "current_close": 139500.0,
-      "ma60": 158273.33333333334
-    },
-    {
-      "ticker": "000270",
-      "name": "기아(주)",
-      "signal_type": "watch",
-      "subtype": "entry_conditions_failing",
-      "failing_filters": [
-        "trend",
-        "mom_6m_abs",
-        "rel_strength"
-      ],
-      "current_close": 139500.0
-    },
-    {
-      "ticker": "009540",
-      "name": "HD한국조선해양",
-      "sector": "금융",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 366000 < MA(60) 412767",
-      "current_close": 366000.0,
-      "ma60": 412766.6666666667
-    },
-    {
-      "ticker": "009540",
-      "name": "HD한국조선해양",
-      "signal_type": "watch",
-      "subtype": "entry_conditions_failing",
-      "failing_filters": [
-        "trend",
-        "mom_6m_abs",
-        "rel_strength"
-      ],
-      "current_close": 366000.0
-    },
-    {
-      "ticker": "010140",
-      "name": "삼성중공업(주)",
-      "sector": "운송장비",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 23800 < MA(60) 28819",
-      "current_close": 23800.0,
-      "ma60": 28819.166666666668
-    },
-    {
-      "ticker": "010140",
-      "name": "삼성중공업(주)",
-      "signal_type": "watch",
-      "subtype": "entry_conditions_failing",
-      "failing_filters": [
-        "trend",
-        "mom_6m_abs",
-        "rel_strength"
-      ],
-      "current_close": 23800.0
-    },
-    {
-      "ticker": "062040",
-      "name": "산일전기(주)",
-      "signal_type": "watch",
-      "subtype": "entry_conditions_failing",
-      "failing_filters": [
-        "mom_6m_abs",
-        "rel_strength"
-      ],
-      "current_close": 229500.0
-    },
-    {
-      "ticker": "082740",
-      "name": "한화엔진(주)",
-      "sector": "기계",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 50200 < MA(60) 62260",
-      "current_close": 50200.0,
-      "ma60": 62260.0
-    },
-    {
-      "ticker": "082740",
-      "name": "한화엔진(주)",
-      "signal_type": "watch",
-      "subtype": "entry_conditions_failing",
-      "failing_filters": [
-        "trend",
-        "mom_6m_abs",
-        "rel_strength"
-      ],
-      "current_close": 50200.0
-    },
-    {
-      "ticker": "034020",
-      "name": "두산에너빌리티",
-      "sector": "기계",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 87800 < MA(60) 106792",
-      "current_close": 87800.0,
-      "ma60": 106791.66666666667
-    },
-    {
-      "ticker": "034020",
-      "name": "두산에너빌리티",
-      "signal_type": "watch",
-      "subtype": "entry_conditions_failing",
-      "failing_filters": [
-        "trend",
-        "mom_6m_abs",
-        "rel_strength"
-      ],
-      "current_close": 87800.0
-    },
-    {
-      "ticker": "373220",
-      "name": "LG에너지솔루션",
-      "sector": "전기장비",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 352000 < MA(60) 422000",
-      "current_close": 352000.0,
-      "ma60": 422000.0
-    },
-    {
-      "ticker": "373220",
-      "name": "LG에너지솔루션",
-      "signal_type": "watch",
-      "subtype": "entry_conditions_failing",
-      "failing_filters": [
-        "trend",
-        "mom_6m_abs",
-        "rel_strength"
-      ],
-      "current_close": 352000.0
-    },
-    {
-      "ticker": "028050",
-      "name": "삼성E&A",
-      "sector": "전문서비스",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 43200 < MA(60) 49874",
-      "current_close": 43200.0,
-      "ma60": 49874.166666666664
-    },
-    {
-      "ticker": "028050",
-      "name": "삼성E&A",
-      "signal_type": "watch",
-      "subtype": "entry_conditions_failing",
-      "failing_filters": [
-        "trend",
-        "mom_6m_abs",
-        "rel_strength"
-      ],
-      "current_close": 43200.0
-    },
-    {
-      "ticker": "055550",
-      "name": "신한지주",
-      "sector": "금융",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 94500 < MA(60) 97362",
-      "current_close": 94500.0,
-      "ma60": 97361.66666666667
-    },
-    {
-      "ticker": "055550",
-      "name": "신한지주",
-      "signal_type": "watch",
-      "subtype": "entry_conditions_failing",
-      "failing_filters": [
-        "trend",
-        "mom_6m_abs",
-        "rel_strength"
-      ],
-      "current_close": 94500.0
-    },
-    {
-      "ticker": "237690",
-      "name": "에스티팜(주)",
-      "sector": "제약바이오",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 122500 < MA(60) 137077",
-      "current_close": 122500.0,
-      "ma60": 137076.66666666666
-    },
-    {
-      "ticker": "237690",
-      "name": "에스티팜(주)",
-      "signal_type": "watch",
-      "subtype": "entry_conditions_failing",
-      "failing_filters": [
-        "trend",
-        "mom_6m_abs",
-        "rel_strength"
-      ],
-      "current_close": 122500.0
-    },
-    {
-      "ticker": "047810",
-      "name": "한국항공우주",
-      "sector": "운송장비",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 142200 < MA(60) 166657",
-      "current_close": 142200.0,
-      "ma60": 166656.66666666666
-    },
-    {
-      "ticker": "047810",
-      "name": "한국항공우주",
-      "signal_type": "watch",
-      "subtype": "entry_conditions_failing",
-      "failing_filters": [
-        "trend",
-        "mom_6m_abs",
-        "rel_strength"
-      ],
-      "current_close": 142200.0
-    },
-    {
-      "ticker": "375500",
-      "name": null,
-      "sector": null,
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 61900 < MA(60) 83082",
-      "current_close": 61900.0,
-      "ma60": 83081.66666666667
-    },
-    {
-      "ticker": "066570",
-      "name": "LG전자",
-      "sector": "전자반도체",
-      "signal_type": "entry_rebalance",
-      "subtype": "stage_2",
-      "entry_ratio": 0.15,
-      "trigger": "1차 대비 -15.2% (≤-7%)",
-      "entry_price_estimate": 203000.0,
-      "drawdown_pct": -15.24008350730689,
-      "base_weight_pct": 0.698,
-      "current_close": 203000.0,
-      "ma60": 185643.33333333334,
-      "ret_3m_pct": 77.60279965004375,
-      "ret_6m_pct": null,
-      "sigma_annual_pct": 134.42763752367424,
-      "checks": {
-        "trend": true,
-        "mom_6m_abs": false,
-        "rel_strength": false,
-        "vol_relative": true
-      }
-    },
-    {
-      "ticker": "105560",
-      "name": "KB금융",
-      "sector": "금융",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 151900 < MA(60) 156285",
-      "current_close": 151900.0,
-      "ma60": 156285.0
-    },
-    {
-      "ticker": "105560",
-      "name": "KB금융",
-      "signal_type": "watch",
-      "subtype": "entry_conditions_failing",
-      "failing_filters": [
-        "trend",
-        "mom_6m_abs",
-        "rel_strength"
-      ],
-      "current_close": 151900.0
-    },
-    {
-      "ticker": "039200",
-      "name": "(주)오스코텍",
-      "sector": "제약바이오",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 36500 < MA(60) 46237",
-      "current_close": 36500.0,
-      "ma60": 46236.666666666664
-    },
-    {
-      "ticker": "039200",
-      "name": "(주)오스코텍",
-      "signal_type": "watch",
-      "subtype": "entry_conditions_failing",
-      "failing_filters": [
-        "trend",
-        "mom_6m_abs",
-        "rel_strength"
-      ],
-      "current_close": 36500.0
-    },
-    {
-      "ticker": "042660",
-      "name": "한화오션",
-      "sector": "운송장비",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 105600 < MA(60) 122553",
-      "current_close": 105600.0,
-      "ma60": 122553.33333333333
-    },
-    {
-      "ticker": "042660",
-      "name": "한화오션",
-      "signal_type": "watch",
-      "subtype": "entry_conditions_failing",
-      "failing_filters": [
-        "trend",
-        "mom_6m_abs",
-        "rel_strength"
-      ],
-      "current_close": 105600.0
-    },
-    {
-      "ticker": "077970",
-      "name": "STX엔진(주)",
-      "sector": "기계",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 29050 < MA(60) 41597",
-      "current_close": 29050.0,
-      "ma60": 41596.666666666664
-    },
-    {
-      "ticker": "077970",
-      "name": "STX엔진(주)",
-      "signal_type": "watch",
-      "subtype": "entry_conditions_failing",
-      "failing_filters": [
-        "trend",
-        "mom_6m_abs",
-        "rel_strength"
-      ],
-      "current_close": 29050.0
-    },
-    {
-      "ticker": "005880",
-      "name": "대한해운(주)",
-      "sector": "운송물류",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 1880 < MA(60) 2380",
-      "current_close": 1880.0,
-      "ma60": 2379.516666666667
-    },
-    {
-      "ticker": "005880",
-      "name": "대한해운(주)",
-      "signal_type": "watch",
-      "subtype": "entry_conditions_failing",
-      "failing_filters": [
-        "trend",
-        "mom_6m_abs",
-        "rel_strength"
-      ],
-      "current_close": 1880.0
+      "current_close": 317500.0
     },
     {
       "ticker": "018670",
@@ -637,9 +187,9 @@
       "subtype": "trend_break_full",
       "severity": "high",
       "action": "청산 100%",
-      "reason": "종가 203500 < MA(60) 244633",
-      "current_close": 203500.0,
-      "ma60": 244633.33333333334
+      "reason": "종가 216000 < MA(60) 240483",
+      "current_close": 216000.0,
+      "ma60": 240483.33333333334
     },
     {
       "ticker": "018670",
@@ -651,35 +201,23 @@
         "mom_6m_abs",
         "rel_strength"
       ],
-      "current_close": 203500.0
+      "current_close": 216000.0
     },
     {
-      "ticker": "005380",
-      "name": "현대차",
-      "sector": "자동차",
+      "ticker": "003550",
+      "name": "(주)LG",
+      "sector": "금융",
       "signal_type": "exit",
       "subtype": "trend_break_full",
       "severity": "high",
       "action": "청산 100%",
-      "reason": "종가 503000 < MA(60) 582792",
-      "current_close": 503000.0,
-      "ma60": 582791.6666666666
+      "reason": "종가 99000 < MA(60) 106833",
+      "current_close": 99000.0,
+      "ma60": 106833.33333333333
     },
     {
-      "ticker": "001440",
-      "name": "대한전선(주)",
-      "sector": "전기장비",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 33250 < MA(60) 44134",
-      "current_close": 33250.0,
-      "ma60": 44134.166666666664
-    },
-    {
-      "ticker": "001440",
-      "name": "대한전선(주)",
+      "ticker": "003550",
+      "name": "(주)LG",
       "signal_type": "watch",
       "subtype": "entry_conditions_failing",
       "failing_filters": [
@@ -687,23 +225,23 @@
         "mom_6m_abs",
         "rel_strength"
       ],
-      "current_close": 33250.0
+      "current_close": 99000.0
     },
     {
-      "ticker": "068270",
-      "name": "셀트리온",
+      "ticker": "237690",
+      "name": "에스티팜(주)",
       "sector": "제약바이오",
       "signal_type": "exit",
       "subtype": "trend_break_full",
       "severity": "high",
       "action": "청산 100%",
-      "reason": "종가 173100 < MA(60) 190160",
-      "current_close": 173100.0,
-      "ma60": 190160.0
+      "reason": "종가 129700 < MA(60) 135717",
+      "current_close": 129700.0,
+      "ma60": 135716.66666666666
     },
     {
-      "ticker": "068270",
-      "name": "셀트리온",
+      "ticker": "237690",
+      "name": "에스티팜(주)",
       "signal_type": "watch",
       "subtype": "entry_conditions_failing",
       "failing_filters": [
@@ -711,23 +249,23 @@
         "mom_6m_abs",
         "rel_strength"
       ],
-      "current_close": 173100.0
+      "current_close": 129700.0
     },
     {
-      "ticker": "005490",
-      "name": "POSCO홀딩스",
-      "sector": "철강금속",
+      "ticker": "009540",
+      "name": "HD한국조선해양",
+      "sector": "금융",
       "signal_type": "exit",
       "subtype": "trend_break_full",
       "severity": "high",
       "action": "청산 100%",
-      "reason": "종가 323000 < MA(60) 404517",
-      "current_close": 323000.0,
-      "ma60": 404516.6666666667
+      "reason": "종가 362500 < MA(60) 412617",
+      "current_close": 362500.0,
+      "ma60": 412616.6666666667
     },
     {
-      "ticker": "005490",
-      "name": "POSCO홀딩스",
+      "ticker": "009540",
+      "name": "HD한국조선해양",
       "signal_type": "watch",
       "subtype": "entry_conditions_failing",
       "failing_filters": [
@@ -735,7 +273,7 @@
         "mom_6m_abs",
         "rel_strength"
       ],
-      "current_close": 323000.0
+      "current_close": 362500.0
     },
     {
       "ticker": "010120",
@@ -745,9 +283,9 @@
       "subtype": "trend_break_full",
       "severity": "high",
       "action": "청산 100%",
-      "reason": "종가 219000 < MA(60) 333838",
-      "current_close": 219000.0,
-      "ma60": 333838.3333333333
+      "reason": "종가 236500 < MA(60) 289672",
+      "current_close": 236500.0,
+      "ma60": 289671.6666666667
     },
     {
       "ticker": "010120",
@@ -760,23 +298,23 @@
         "rel_strength",
         "vol_relative"
       ],
-      "current_close": 219000.0
+      "current_close": 236500.0
     },
     {
-      "ticker": "018260",
-      "name": "삼성에스디에스(주)",
-      "sector": "IT서비스",
+      "ticker": "006260",
+      "name": "(주)LS",
+      "sector": "금융",
       "signal_type": "exit",
       "subtype": "trend_break_full",
       "severity": "high",
       "action": "청산 100%",
-      "reason": "종가 190600 < MA(60) 195380",
-      "current_close": 190600.0,
-      "ma60": 195380.0
+      "reason": "종가 381000 < MA(60) 413292",
+      "current_close": 381000.0,
+      "ma60": 413291.6666666667
     },
     {
-      "ticker": "018260",
-      "name": "삼성에스디에스(주)",
+      "ticker": "006260",
+      "name": "(주)LS",
       "signal_type": "watch",
       "subtype": "entry_conditions_failing",
       "failing_filters": [
@@ -784,23 +322,107 @@
         "mom_6m_abs",
         "rel_strength"
       ],
-      "current_close": 190600.0
+      "current_close": 381000.0
     },
     {
-      "ticker": "009900",
-      "name": "명신산업(주)",
+      "ticker": "010140",
+      "name": "삼성중공업(주)",
+      "sector": "운송장비",
+      "signal_type": "exit",
+      "subtype": "trend_break_full",
+      "severity": "high",
+      "action": "청산 100%",
+      "reason": "종가 22950 < MA(60) 28598",
+      "current_close": 22950.0,
+      "ma60": 28597.5
+    },
+    {
+      "ticker": "010140",
+      "name": "삼성중공업(주)",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "trend",
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 22950.0
+    },
+    {
+      "ticker": "066570",
+      "name": "LG전자",
+      "sector": "전자반도체",
+      "signal_type": "exit",
+      "subtype": "trend_break_full",
+      "severity": "high",
+      "action": "청산 100%",
+      "reason": "종가 192300 < MA(60) 192938",
+      "current_close": 192300.0,
+      "ma60": 192938.33333333334
+    },
+    {
+      "ticker": "005880",
+      "name": "대한해운(주)",
+      "sector": "운송물류",
+      "signal_type": "exit",
+      "subtype": "trend_break_full",
+      "severity": "high",
+      "action": "청산 100%",
+      "reason": "종가 1855 < MA(60) 2337",
+      "current_close": 1855.0,
+      "ma60": 2337.483333333333
+    },
+    {
+      "ticker": "005880",
+      "name": "대한해운(주)",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "trend",
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 1855.0
+    },
+    {
+      "ticker": "047810",
+      "name": "한국항공우주",
+      "sector": "운송장비",
+      "signal_type": "exit",
+      "subtype": "trend_break_full",
+      "severity": "high",
+      "action": "청산 100%",
+      "reason": "종가 154200 < MA(60) 164210",
+      "current_close": 154200.0,
+      "ma60": 164210.0
+    },
+    {
+      "ticker": "047810",
+      "name": "한국항공우주",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "trend",
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 154200.0
+    },
+    {
+      "ticker": "000270",
+      "name": "기아(주)",
       "sector": "자동차",
       "signal_type": "exit",
       "subtype": "trend_break_full",
       "severity": "high",
       "action": "청산 100%",
-      "reason": "종가 7220 < MA(60) 10231",
-      "current_close": 7220.0,
-      "ma60": 10231.0
+      "reason": "종가 145200 < MA(60) 157403",
+      "current_close": 145200.0,
+      "ma60": 157403.33333333334
     },
     {
-      "ticker": "009900",
-      "name": "명신산업(주)",
+      "ticker": "000270",
+      "name": "기아(주)",
       "signal_type": "watch",
       "subtype": "entry_conditions_failing",
       "failing_filters": [
@@ -808,23 +430,23 @@
         "mom_6m_abs",
         "rel_strength"
       ],
-      "current_close": 7220.0
+      "current_close": 145200.0
     },
     {
-      "ticker": "329180",
-      "name": "에이치디현대중공업(주)",
-      "sector": "운송장비",
+      "ticker": "085910",
+      "name": "(주)네오티스",
+      "sector": "자동차",
       "signal_type": "exit",
       "subtype": "trend_break_full",
       "severity": "high",
       "action": "청산 100%",
-      "reason": "종가 582000 < MA(60) 613133",
-      "current_close": 582000.0,
-      "ma60": 613133.3333333334
+      "reason": "종가 18820 < MA(60) 26281",
+      "current_close": 18820.0,
+      "ma60": 26281.0
     },
     {
-      "ticker": "329180",
-      "name": "에이치디현대중공업(주)",
+      "ticker": "085910",
+      "name": "(주)네오티스",
       "signal_type": "watch",
       "subtype": "entry_conditions_failing",
       "failing_filters": [
@@ -832,23 +454,34 @@
         "mom_6m_abs",
         "rel_strength"
       ],
-      "current_close": 582000.0
+      "current_close": 18820.0
     },
     {
-      "ticker": "035420",
-      "name": "NAVER",
-      "sector": "IT서비스",
+      "ticker": "055550",
+      "name": "신한지주",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 102200.0
+    },
+    {
+      "ticker": "012330",
+      "name": "현대모비스(주)",
+      "sector": "자동차",
       "signal_type": "exit",
       "subtype": "trend_break_full",
       "severity": "high",
       "action": "청산 100%",
-      "reason": "종가 199700 < MA(60) 217133",
-      "current_close": 199700.0,
-      "ma60": 217133.33333333334
+      "reason": "종가 492000 < MA(60) 537175",
+      "current_close": 492000.0,
+      "ma60": 537175.0
     },
     {
-      "ticker": "035420",
-      "name": "NAVER",
+      "ticker": "012330",
+      "name": "현대모비스(주)",
       "signal_type": "watch",
       "subtype": "entry_conditions_failing",
       "failing_filters": [
@@ -856,7 +489,55 @@
         "mom_6m_abs",
         "rel_strength"
       ],
-      "current_close": 199700.0
+      "current_close": 492000.0
+    },
+    {
+      "ticker": "005380",
+      "name": "현대차",
+      "sector": "자동차",
+      "signal_type": "exit",
+      "subtype": "trend_break_full",
+      "severity": "high",
+      "action": "청산 100%",
+      "reason": "종가 482000 < MA(60) 584500",
+      "current_close": 482000.0,
+      "ma60": 584500.0
+    },
+    {
+      "ticker": "005380",
+      "name": "현대차",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "trend",
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 482000.0
+    },
+    {
+      "ticker": "267260",
+      "name": "HD현대일렉트릭",
+      "sector": "전기장비",
+      "signal_type": "exit",
+      "subtype": "trend_break_full",
+      "severity": "high",
+      "action": "청산 100%",
+      "reason": "종가 969000 < MA(60) 1096700",
+      "current_close": 969000.0,
+      "ma60": 1096700.0
+    },
+    {
+      "ticker": "267260",
+      "name": "HD현대일렉트릭",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "trend",
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 969000.0
     },
     {
       "ticker": "012450",
@@ -866,9 +547,9 @@
       "subtype": "trend_break_full",
       "severity": "high",
       "action": "청산 100%",
-      "reason": "종가 1069000 < MA(60) 1286600",
-      "current_close": 1069000.0,
-      "ma60": 1286600.0
+      "reason": "종가 1116000 < MA(60) 1261217",
+      "current_close": 1116000.0,
+      "ma60": 1261216.6666666667
     },
     {
       "ticker": "012450",
@@ -880,7 +561,55 @@
         "mom_6m_abs",
         "rel_strength"
       ],
-      "current_close": 1069000.0
+      "current_close": 1116000.0
+    },
+    {
+      "ticker": "108670",
+      "name": "(주)엘엑스하우시스",
+      "sector": "고무플라스틱",
+      "signal_type": "exit",
+      "subtype": "trend_break_full",
+      "severity": "high",
+      "action": "청산 100%",
+      "reason": "종가 33050 < MA(60) 33562",
+      "current_close": 33050.0,
+      "ma60": 33562.5
+    },
+    {
+      "ticker": "108670",
+      "name": "(주)엘엑스하우시스",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "trend",
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 33050.0
+    },
+    {
+      "ticker": "028050",
+      "name": "삼성E&A",
+      "sector": "전문서비스",
+      "signal_type": "exit",
+      "subtype": "trend_break_full",
+      "severity": "high",
+      "action": "청산 100%",
+      "reason": "종가 49000 < MA(60) 50789",
+      "current_close": 49000.0,
+      "ma60": 50789.166666666664
+    },
+    {
+      "ticker": "028050",
+      "name": "삼성E&A",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "trend",
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 49000.0
     },
     {
       "ticker": "298040",
@@ -890,9 +619,9 @@
       "subtype": "trend_break_full",
       "severity": "high",
       "action": "청산 100%",
-      "reason": "종가 3280000 < MA(60) 3491850",
-      "current_close": 3280000.0,
-      "ma60": 3491850.0
+      "reason": "종가 3432000 < MA(60) 3563100",
+      "current_close": 3432000.0,
+      "ma60": 3563100.0
     },
     {
       "ticker": "298040",
@@ -904,23 +633,23 @@
         "mom_6m_abs",
         "rel_strength"
       ],
-      "current_close": 3280000.0
+      "current_close": 3432000.0
     },
     {
-      "ticker": "006260",
-      "name": "(주)LS",
-      "sector": "금융",
+      "ticker": "035420",
+      "name": "NAVER",
+      "sector": "IT서비스",
       "signal_type": "exit",
       "subtype": "trend_break_full",
       "severity": "high",
       "action": "청산 100%",
-      "reason": "종가 359500 < MA(60) 404792",
-      "current_close": 359500.0,
-      "ma60": 404791.6666666667
+      "reason": "종가 199900 < MA(60) 216882",
+      "current_close": 199900.0,
+      "ma60": 216881.66666666666
     },
     {
-      "ticker": "006260",
-      "name": "(주)LS",
+      "ticker": "035420",
+      "name": "NAVER",
       "signal_type": "watch",
       "subtype": "entry_conditions_failing",
       "failing_filters": [
@@ -928,35 +657,189 @@
         "mom_6m_abs",
         "rel_strength"
       ],
-      "current_close": 359500.0
+      "current_close": 199900.0
     },
     {
-      "ticker": "012330",
-      "name": "현대모비스(주)",
+      "ticker": "001440",
+      "name": "대한전선(주)",
+      "sector": "전기장비",
+      "signal_type": "exit",
+      "subtype": "trend_break_full",
+      "severity": "high",
+      "action": "청산 100%",
+      "reason": "종가 33700 < MA(60) 44592",
+      "current_close": 33700.0,
+      "ma60": 44591.666666666664
+    },
+    {
+      "ticker": "001440",
+      "name": "대한전선(주)",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "trend",
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 33700.0
+    },
+    {
+      "ticker": "077970",
+      "name": "STX엔진(주)",
+      "sector": "기계",
+      "signal_type": "exit",
+      "subtype": "trend_break_full",
+      "severity": "high",
+      "action": "청산 100%",
+      "reason": "종가 28300 < MA(60) 41308",
+      "current_close": 28300.0,
+      "ma60": 41308.333333333336
+    },
+    {
+      "ticker": "077970",
+      "name": "STX엔진(주)",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "trend",
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 28300.0
+    },
+    {
+      "ticker": "062040",
+      "name": "산일전기(주)",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 238000.0
+    },
+    {
+      "ticker": "207940",
+      "name": "삼성바이오로직스",
+      "sector": "제약바이오",
+      "signal_type": "exit",
+      "subtype": "trend_break_full",
+      "severity": "high",
+      "action": "청산 100%",
+      "reason": "종가 1406000 < MA(60) 1434483",
+      "current_close": 1406000.0,
+      "ma60": 1434483.3333333333
+    },
+    {
+      "ticker": "207940",
+      "name": "삼성바이오로직스",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "trend",
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 1406000.0
+    },
+    {
+      "ticker": "329180",
+      "name": "에이치디현대중공업(주)",
+      "sector": "운송장비",
+      "signal_type": "exit",
+      "subtype": "trend_break_full",
+      "severity": "high",
+      "action": "청산 100%",
+      "reason": "종가 590000 < MA(60) 623767",
+      "current_close": 590000.0,
+      "ma60": 623766.6666666666
+    },
+    {
+      "ticker": "329180",
+      "name": "에이치디현대중공업(주)",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "trend",
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 590000.0
+    },
+    {
+      "ticker": "105560",
+      "name": "KB금융",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 165000.0
+    },
+    {
+      "ticker": "068270",
+      "name": "셀트리온",
+      "sector": "제약바이오",
+      "signal_type": "exit",
+      "subtype": "trend_break_full",
+      "severity": "high",
+      "action": "청산 100%",
+      "reason": "종가 176600 < MA(60) 188040",
+      "current_close": 176600.0,
+      "ma60": 188040.0
+    },
+    {
+      "ticker": "068270",
+      "name": "셀트리온",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "trend",
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 176600.0
+    },
+    {
+      "ticker": "034020",
+      "name": "두산에너빌리티",
+      "sector": "기계",
+      "signal_type": "exit",
+      "subtype": "trend_break_full",
+      "severity": "high",
+      "action": "청산 100%",
+      "reason": "종가 86000 < MA(60) 106035",
+      "current_close": 86000.0,
+      "ma60": 106035.0
+    },
+    {
+      "ticker": "034020",
+      "name": "두산에너빌리티",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "trend",
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 86000.0
+    },
+    {
+      "ticker": "009900",
+      "name": "명신산업(주)",
       "sector": "자동차",
       "signal_type": "exit",
       "subtype": "trend_break_full",
       "severity": "high",
       "action": "청산 100%",
-      "reason": "종가 513000 < MA(60) 528650",
-      "current_close": 513000.0,
-      "ma60": 528650.0
+      "reason": "종가 7350 < MA(60) 10044",
+      "current_close": 7350.0,
+      "ma60": 10043.5
     },
     {
-      "ticker": "003550",
-      "name": "(주)LG",
-      "sector": "금융",
-      "signal_type": "exit",
-      "subtype": "trend_break_full",
-      "severity": "high",
-      "action": "청산 100%",
-      "reason": "종가 99400 < MA(60) 105730",
-      "current_close": 99400.0,
-      "ma60": 105730.0
-    },
-    {
-      "ticker": "003550",
-      "name": "(주)LG",
+      "ticker": "009900",
+      "name": "명신산업(주)",
       "signal_type": "watch",
       "subtype": "entry_conditions_failing",
       "failing_filters": [
@@ -964,358 +847,447 @@
         "mom_6m_abs",
         "rel_strength"
       ],
-      "current_close": 99400.0
+      "current_close": 7350.0
+    },
+    {
+      "ticker": "373220",
+      "name": "LG에너지솔루션",
+      "sector": "전기장비",
+      "signal_type": "exit",
+      "subtype": "trend_break_full",
+      "severity": "high",
+      "action": "청산 100%",
+      "reason": "종가 354000 < MA(60) 418358",
+      "current_close": 354000.0,
+      "ma60": 418358.3333333333
+    },
+    {
+      "ticker": "373220",
+      "name": "LG에너지솔루션",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "trend",
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 354000.0
+    },
+    {
+      "ticker": "082740",
+      "name": "한화엔진(주)",
+      "sector": "기계",
+      "signal_type": "exit",
+      "subtype": "trend_break_full",
+      "severity": "high",
+      "action": "청산 100%",
+      "reason": "종가 52300 < MA(60) 62836",
+      "current_close": 52300.0,
+      "ma60": 62835.833333333336
+    },
+    {
+      "ticker": "082740",
+      "name": "한화엔진(주)",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "trend",
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 52300.0
+    },
+    {
+      "ticker": "018260",
+      "name": "삼성에스디에스(주)",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 201500.0
+    },
+    {
+      "ticker": "042660",
+      "name": "한화오션",
+      "sector": "운송장비",
+      "signal_type": "exit",
+      "subtype": "trend_break_full",
+      "severity": "high",
+      "action": "청산 100%",
+      "reason": "종가 104500 < MA(60) 120868",
+      "current_close": 104500.0,
+      "ma60": 120868.33333333333
+    },
+    {
+      "ticker": "042660",
+      "name": "한화오션",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "trend",
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 104500.0
+    },
+    {
+      "ticker": "039200",
+      "name": "(주)오스코텍",
+      "sector": "제약바이오",
+      "signal_type": "exit",
+      "subtype": "trend_break_full",
+      "severity": "high",
+      "action": "청산 100%",
+      "reason": "종가 35000 < MA(60) 45041",
+      "current_close": 35000.0,
+      "ma60": 45040.833333333336
+    },
+    {
+      "ticker": "039200",
+      "name": "(주)오스코텍",
+      "signal_type": "watch",
+      "subtype": "entry_conditions_failing",
+      "failing_filters": [
+        "trend",
+        "mom_6m_abs",
+        "rel_strength"
+      ],
+      "current_close": 35000.0
     }
   ],
   "vol_cap_adjustments": [
     {
       "ticker": "207940",
       "name": "삼성바이오로직스",
-      "old_pct": 6.71,
-      "new_pct": 11.41,
-      "diff_pct": 4.7,
-      "sigma_pct": 40.9,
-      "scale": 0.611
+      "old_pct": 6.8,
+      "new_pct": 11.22,
+      "diff_pct": 4.42,
+      "sigma_pct": 42.7,
+      "scale": 0.586
     },
     {
       "ticker": "010120",
       "name": "LS ELECTRIC",
-      "old_pct": 3.14,
+      "old_pct": 3.16,
       "new_pct": 0.7,
       "diff_pct": -2.45,
-      "sigma_pct": 314.1,
-      "scale": 0.08
+      "sigma_pct": 315.9,
+      "scale": 0.079
     },
     {
       "ticker": "068270",
       "name": "셀트리온",
-      "old_pct": 3.4,
-      "new_pct": 5.21,
-      "diff_pct": 1.82,
-      "sigma_pct": 45.3,
-      "scale": 0.551
+      "old_pct": 3.35,
+      "new_pct": 4.99,
+      "diff_pct": 1.64,
+      "sigma_pct": 47.3,
+      "scale": 0.528
     },
     {
       "ticker": "012450",
       "name": "한화에어로스페이스",
-      "old_pct": 5.27,
-      "new_pct": 6.66,
-      "diff_pct": 1.39,
-      "sigma_pct": 55.1,
-      "scale": 0.454
-    },
-    {
-      "ticker": "085910",
-      "name": "(주)네오티스",
-      "old_pct": 3.62,
-      "new_pct": 2.55,
-      "diff_pct": -1.06,
-      "sigma_pct": 98.6,
-      "scale": 0.253
-    },
-    {
-      "ticker": "055550",
-      "name": "신한지주",
-      "old_pct": 1.74,
-      "new_pct": 2.79,
-      "diff_pct": 1.05,
-      "sigma_pct": 43.4,
-      "scale": 0.577
+      "old_pct": 5.25,
+      "new_pct": 6.65,
+      "diff_pct": 1.4,
+      "sigma_pct": 55.7,
+      "scale": 0.449
     },
     {
       "ticker": "105560",
       "name": "KB금융",
       "old_pct": 1.97,
-      "new_pct": 3.01,
-      "diff_pct": 1.04,
-      "sigma_pct": 45.5,
-      "scale": 0.549
+      "new_pct": 3.08,
+      "diff_pct": 1.11,
+      "sigma_pct": 45.0,
+      "scale": 0.555
+    },
+    {
+      "ticker": "055550",
+      "name": "신한지주",
+      "old_pct": 1.73,
+      "new_pct": 2.8,
+      "diff_pct": 1.06,
+      "sigma_pct": 43.7,
+      "scale": 0.572
+    },
+    {
+      "ticker": "085910",
+      "name": "(주)네오티스",
+      "old_pct": 3.62,
+      "new_pct": 2.64,
+      "diff_pct": -0.97,
+      "sigma_pct": 96.4,
+      "scale": 0.259
     },
     {
       "ticker": "009150",
       "name": "삼성전기",
-      "old_pct": 2.9,
-      "new_pct": 1.93,
+      "old_pct": 2.92,
+      "new_pct": 1.95,
       "diff_pct": -0.97,
-      "sigma_pct": 104.5,
-      "scale": 0.239
+      "sigma_pct": 105.6,
+      "scale": 0.237
     },
     {
       "ticker": "028260",
       "name": "삼성물산",
-      "old_pct": 3.19,
-      "new_pct": 2.31,
-      "diff_pct": -0.88,
-      "sigma_pct": 96.1,
-      "scale": 0.26
+      "old_pct": 3.17,
+      "new_pct": 2.27,
+      "diff_pct": -0.9,
+      "sigma_pct": 98.3,
+      "scale": 0.254
+    },
+    {
+      "ticker": "034020",
+      "name": "두산에너빌리티",
+      "old_pct": 8.12,
+      "new_pct": 8.88,
+      "diff_pct": 0.77,
+      "sigma_pct": 64.4,
+      "scale": 0.388
     },
     {
       "ticker": "005930",
       "name": "삼성전자",
-      "old_pct": 5.26,
-      "new_pct": 4.49,
-      "diff_pct": -0.77,
-      "sigma_pct": 81.5,
+      "old_pct": 5.25,
+      "new_pct": 4.55,
+      "diff_pct": -0.7,
+      "sigma_pct": 81.4,
       "scale": 0.307
     },
     {
       "ticker": "018260",
       "name": "삼성에스디에스(주)",
-      "old_pct": 1.88,
-      "new_pct": 1.16,
-      "diff_pct": -0.71,
-      "sigma_pct": 112.2,
-      "scale": 0.223
+      "old_pct": 1.87,
+      "new_pct": 1.17,
+      "diff_pct": -0.7,
+      "sigma_pct": 112.4,
+      "scale": 0.222
     },
     {
       "ticker": "028050",
       "name": "삼성E&A",
-      "old_pct": 3.04,
-      "new_pct": 2.34,
-      "diff_pct": -0.7,
-      "sigma_pct": 90.5,
-      "scale": 0.276
+      "old_pct": 3.07,
+      "new_pct": 2.42,
+      "diff_pct": -0.66,
+      "sigma_pct": 89.6,
+      "scale": 0.279
     },
     {
-      "ticker": "034020",
-      "name": "두산에너빌리티",
-      "old_pct": 8.09,
-      "new_pct": 8.77,
-      "diff_pct": 0.68,
-      "sigma_pct": 64.2,
-      "scale": 0.389
+      "ticker": "047810",
+      "name": "한국항공우주",
+      "old_pct": 2.68,
+      "new_pct": 3.32,
+      "diff_pct": 0.63,
+      "sigma_pct": 57.0,
+      "scale": 0.439
     },
     {
       "ticker": "000660",
       "name": "에스케이하이닉스(주)",
       "old_pct": 2.3,
-      "new_pct": 1.71,
-      "diff_pct": -0.59,
-      "sigma_pct": 93.4,
-      "scale": 0.268
+      "new_pct": 1.68,
+      "diff_pct": -0.62,
+      "sigma_pct": 96.6,
+      "scale": 0.259
     },
     {
       "ticker": "402340",
       "name": "에스케이스퀘어 주식회사",
       "old_pct": 1.69,
-      "new_pct": 1.23,
-      "diff_pct": -0.46,
-      "sigma_pct": 95.5,
-      "scale": 0.262
-    },
-    {
-      "ticker": "001440",
-      "name": "대한전선(주)",
-      "old_pct": 1.35,
-      "new_pct": 0.92,
-      "diff_pct": -0.43,
-      "sigma_pct": 102.1,
-      "scale": 0.245
+      "new_pct": 1.2,
+      "diff_pct": -0.49,
+      "sigma_pct": 99.0,
+      "scale": 0.252
     },
     {
       "ticker": "082740",
       "name": "한화엔진(주)",
       "old_pct": 1.61,
-      "new_pct": 1.19,
-      "diff_pct": -0.42,
-      "sigma_pct": 94.1,
-      "scale": 0.266
+      "new_pct": 1.16,
+      "diff_pct": -0.45,
+      "sigma_pct": 97.7,
+      "scale": 0.256
+    },
+    {
+      "ticker": "001440",
+      "name": "대한전선(주)",
+      "old_pct": 1.36,
+      "new_pct": 0.92,
+      "diff_pct": -0.44,
+      "sigma_pct": 104.6,
+      "scale": 0.239
     },
     {
       "ticker": "006260",
       "name": "(주)LS",
-      "old_pct": 1.75,
-      "new_pct": 1.39,
-      "diff_pct": -0.36,
-      "sigma_pct": 87.7,
-      "scale": 0.285
-    },
-    {
-      "ticker": "108670",
-      "name": "(주)엘엑스하우시스",
-      "old_pct": 2.5,
-      "new_pct": 2.86,
-      "diff_pct": 0.36,
-      "sigma_pct": 60.9,
-      "scale": 0.411
-    },
-    {
-      "ticker": "032830",
-      "name": "삼성생명",
-      "old_pct": 2.19,
-      "new_pct": 1.85,
-      "diff_pct": -0.35,
-      "sigma_pct": 82.6,
-      "scale": 0.303
-    },
-    {
-      "ticker": "066570",
-      "name": "LG전자",
-      "old_pct": 0.7,
-      "new_pct": 0.36,
-      "diff_pct": -0.34,
-      "sigma_pct": 134.4,
-      "scale": 0.186
-    },
-    {
-      "ticker": "012330",
-      "name": "현대모비스(주)",
-      "old_pct": 1.21,
-      "new_pct": 0.87,
-      "diff_pct": -0.34,
-      "sigma_pct": 96.4,
-      "scale": 0.259
+      "old_pct": 1.73,
+      "new_pct": 1.36,
+      "diff_pct": -0.37,
+      "sigma_pct": 89.8,
+      "scale": 0.278
     },
     {
       "ticker": "062040",
       "name": "산일전기(주)",
       "old_pct": 1.22,
-      "new_pct": 0.9,
+      "new_pct": 0.88,
+      "diff_pct": -0.34,
+      "sigma_pct": 97.9,
+      "scale": 0.255
+    },
+    {
+      "ticker": "066570",
+      "name": "LG전자",
+      "old_pct": 0.7,
+      "new_pct": 0.37,
       "diff_pct": -0.33,
-      "sigma_pct": 95.1,
-      "scale": 0.263
+      "sigma_pct": 134.1,
+      "scale": 0.186
     },
     {
-      "ticker": "373220",
-      "name": "LG에너지솔루션",
-      "old_pct": 1.78,
-      "new_pct": 2.06,
-      "diff_pct": 0.28,
-      "sigma_pct": 60.0,
-      "scale": 0.417
+      "ticker": "032830",
+      "name": "삼성생명",
+      "old_pct": 2.19,
+      "new_pct": 1.86,
+      "diff_pct": -0.33,
+      "sigma_pct": 83.0,
+      "scale": 0.301
     },
     {
-      "ticker": "077970",
-      "name": "STX엔진(주)",
-      "old_pct": 0.86,
-      "new_pct": 0.58,
-      "diff_pct": -0.28,
-      "sigma_pct": 102.9,
-      "scale": 0.243
+      "ticker": "012330",
+      "name": "현대모비스(주)",
+      "old_pct": 1.21,
+      "new_pct": 0.9,
+      "diff_pct": -0.31,
+      "sigma_pct": 94.6,
+      "scale": 0.264
     },
     {
-      "ticker": "047810",
-      "name": "한국항공우주",
-      "old_pct": 2.67,
-      "new_pct": 2.94,
-      "diff_pct": 0.27,
-      "sigma_pct": 63.2,
-      "scale": 0.396
+      "ticker": "009540",
+      "name": "HD한국조선해양",
+      "old_pct": 1.13,
+      "new_pct": 1.41,
+      "diff_pct": 0.29,
+      "sigma_pct": 56.2,
+      "scale": 0.445
     },
     {
       "ticker": "298040",
       "name": "효성중공업",
-      "old_pct": 2.83,
-      "new_pct": 2.58,
-      "diff_pct": -0.25,
-      "sigma_pct": 76.5,
-      "scale": 0.327
+      "old_pct": 2.85,
+      "new_pct": 2.57,
+      "diff_pct": -0.28,
+      "sigma_pct": 78.2,
+      "scale": 0.32
     },
     {
-      "ticker": "005880",
-      "name": "대한해운(주)",
+      "ticker": "077970",
+      "name": "STX엔진(주)",
+      "old_pct": 0.85,
+      "new_pct": 0.57,
+      "diff_pct": -0.27,
+      "sigma_pct": 103.7,
+      "scale": 0.241
+    },
+    {
+      "ticker": "108670",
+      "name": "(주)엘엑스하우시스",
       "old_pct": 2.5,
-      "new_pct": 2.29,
-      "diff_pct": -0.21,
-      "sigma_pct": 76.0,
-      "scale": 0.329
-    },
-    {
-      "ticker": "005490",
-      "name": "POSCO홀딩스",
-      "old_pct": 1.13,
-      "new_pct": 1.34,
-      "diff_pct": 0.2,
-      "sigma_pct": 58.9,
-      "scale": 0.424
+      "new_pct": 2.75,
+      "diff_pct": 0.25,
+      "sigma_pct": 64.0,
+      "scale": 0.391
     },
     {
       "ticker": "000270",
       "name": "기아(주)",
       "old_pct": 1.24,
-      "new_pct": 1.44,
-      "diff_pct": 0.2,
-      "sigma_pct": 60.0,
-      "scale": 0.417
+      "new_pct": 1.49,
+      "diff_pct": 0.25,
+      "sigma_pct": 58.6,
+      "scale": 0.426
     },
     {
-      "ticker": "009540",
-      "name": "HD한국조선해양",
-      "old_pct": 1.11,
-      "new_pct": 1.29,
-      "diff_pct": 0.18,
-      "sigma_pct": 59.7,
-      "scale": 0.419
+      "ticker": "009900",
+      "name": "명신산업(주)",
+      "old_pct": 2.42,
+      "new_pct": 2.22,
+      "diff_pct": -0.2,
+      "sigma_pct": 76.9,
+      "scale": 0.325
     },
     {
       "ticker": "018670",
       "name": "SK가스(주)",
       "old_pct": 0.66,
-      "new_pct": 0.83,
-      "diff_pct": 0.17,
-      "sigma_pct": 55.3,
-      "scale": 0.452
+      "new_pct": 0.85,
+      "diff_pct": 0.19,
+      "sigma_pct": 54.4,
+      "scale": 0.459
     },
     {
-      "ticker": "005380",
-      "name": "현대차",
-      "old_pct": 2.59,
-      "new_pct": 2.43,
-      "diff_pct": -0.16,
-      "sigma_pct": 74.2,
-      "scale": 0.337
+      "ticker": "005880",
+      "name": "대한해운(주)",
+      "old_pct": 2.5,
+      "new_pct": 2.31,
+      "diff_pct": -0.19,
+      "sigma_pct": 76.1,
+      "scale": 0.329
+    },
+    {
+      "ticker": "010140",
+      "name": "삼성중공업(주)",
+      "old_pct": 0.68,
+      "new_pct": 0.83,
+      "diff_pct": 0.15,
+      "sigma_pct": 57.5,
+      "scale": 0.435
     },
     {
       "ticker": "003550",
       "name": "(주)LG",
       "old_pct": 0.56,
       "new_pct": 0.41,
-      "diff_pct": -0.16,
-      "sigma_pct": 96.9,
-      "scale": 0.258
+      "diff_pct": -0.15,
+      "sigma_pct": 96.0,
+      "scale": 0.26
     },
     {
-      "ticker": "009900",
-      "name": "명신산업(주)",
-      "old_pct": 2.42,
-      "new_pct": 2.26,
-      "diff_pct": -0.16,
-      "sigma_pct": 74.4,
-      "scale": 0.336
+      "ticker": "005490",
+      "name": "POSCO홀딩스",
+      "old_pct": 1.12,
+      "new_pct": 1.26,
+      "diff_pct": 0.14,
+      "sigma_pct": 62.5,
+      "scale": 0.4
     },
     {
-      "ticker": "010140",
-      "name": "삼성중공업(주)",
-      "old_pct": 0.68,
-      "new_pct": 0.79,
-      "diff_pct": 0.11,
-      "sigma_pct": 59.8,
-      "scale": 0.418
+      "ticker": "034730",
+      "name": "SK(주)",
+      "old_pct": 0.91,
+      "new_pct": 0.78,
+      "diff_pct": -0.13,
+      "sigma_pct": 82.2,
+      "scale": 0.304
     },
     {
-      "ticker": "035420",
-      "name": "NAVER",
-      "old_pct": 2.55,
-      "new_pct": 2.45,
-      "diff_pct": -0.11,
-      "sigma_pct": 72.6,
-      "scale": 0.344
-    },
-    {
-      "ticker": "237690",
-      "name": "에스티팜(주)",
-      "old_pct": 1.78,
-      "new_pct": 1.88,
-      "diff_pct": 0.1,
-      "sigma_pct": 65.8,
-      "scale": 0.38
+      "ticker": "373220",
+      "name": "LG에너지솔루션",
+      "old_pct": 1.77,
+      "new_pct": 1.67,
+      "diff_pct": -0.1,
+      "sigma_pct": 74.7,
+      "scale": 0.335
     }
   ],
   "summary": {
     "n_entry_new": 0,
-    "n_entry_rebalance": 1,
-    "n_exit_full": 34,
+    "n_entry_rebalance": 0,
+    "n_exit_full": 32,
     "n_exit_partial": 0,
-    "n_watch": 31
+    "n_watch": 35
   }
 }
