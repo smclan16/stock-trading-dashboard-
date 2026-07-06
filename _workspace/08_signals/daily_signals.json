@@ -1,92 +1,57 @@
 {
-  "as_of": "20260703",
-  "generated_at": "2026-07-03T18:23:10.493484",
+  "as_of": "20260706",
+  "generated_at": "2026-07-06T13:05:11.480842",
   "counts": {
-    "ENTRY_1ST": 6,
-    "WATCH": 2
+    "WATCH": 8
   },
   "signals": [
     {
       "ticker": "062040",
       "name": "산일전기",
-      "signal": "ENTRY_1ST",
-      "action": "1차 75% 진입 (지정가 권장)",
-      "close": 238000.0,
-      "ma60": 235540.0,
-      "weight_pct": 15,
-      "capital_weight_pct": 18.75,
-      "reason": "MA60 위 첫 진입 (종가 238,000 > MA60 235,540)"
+      "signal": "WATCH",
+      "reason": "시계열 부족 51일"
     },
     {
       "ticker": "028260",
       "name": "삼성물산",
-      "signal": "ENTRY_1ST",
-      "action": "1차 75% 진입 (지정가 권장)",
-      "close": 406500.0,
-      "ma60": 396208.3,
-      "weight_pct": 15.0,
-      "capital_weight_pct": 18.75,
-      "reason": "MA60 위 첫 진입 (종가 406,500 > MA60 396,208)"
+      "signal": "WATCH",
+      "reason": "시계열 부족 51일"
     },
     {
       "ticker": "034730",
       "name": "SK",
-      "signal": "ENTRY_1ST",
-      "action": "1차 75% 진입 (지정가 권장)",
-      "close": 683000.0,
-      "ma60": 553591.7,
-      "weight_pct": 11.26,
-      "capital_weight_pct": 14.075,
-      "reason": "MA60 위 첫 진입 (종가 683,000 > MA60 553,592)"
+      "signal": "WATCH",
+      "reason": "시계열 부족 51일"
     },
     {
       "ticker": "402340",
       "name": "SK스퀘어",
-      "signal": "ENTRY_1ST",
-      "action": "1차 75% 진입 (지정가 권장)",
-      "close": 1525000.0,
-      "ma60": 1141666.7,
-      "weight_pct": 10.192,
-      "capital_weight_pct": 12.74,
-      "reason": "MA60 위 첫 진입 (종가 1,525,000 > MA60 1,141,667)"
+      "signal": "WATCH",
+      "reason": "시계열 부족 51일"
     },
     {
       "ticker": "000660",
       "name": "SK하이닉스",
-      "signal": "ENTRY_1ST",
-      "action": "1차 75% 진입 (지정가 권장)",
-      "close": 2187000.0,
-      "ma60": 1857900.0,
-      "weight_pct": 14.302,
-      "capital_weight_pct": 17.878,
-      "reason": "MA60 위 첫 진입 (종가 2,187,000 > MA60 1,857,900)"
+      "signal": "WATCH",
+      "reason": "시계열 부족 51일"
     },
     {
       "ticker": "018260",
       "name": "삼성에스디에스",
-      "signal": "ENTRY_1ST",
-      "action": "1차 75% 진입 (지정가 권장)",
-      "close": 201500.0,
-      "ma60": 198980.0,
-      "weight_pct": 12.162,
-      "capital_weight_pct": 15.203,
-      "reason": "MA60 위 첫 진입 (종가 201,500 > MA60 198,980)"
+      "signal": "WATCH",
+      "reason": "시계열 부족 51일"
     },
     {
       "ticker": "108670",
       "name": "LX하우시스",
       "signal": "WATCH",
-      "close": 33050.0,
-      "ma60": 33562.5,
-      "reason": "MA60 아래, 추세 대기 (33,050 < MA60 33,562)"
+      "reason": "시계열 부족 51일"
     },
     {
       "ticker": "005880",
       "name": "대한해운",
       "signal": "WATCH",
-      "close": 1855.0,
-      "ma60": 2337.5,
-      "reason": "MA60 아래, 추세 대기 (1,855 < MA60 2,337)"
+      "reason": "시계열 부족 51일"
     }
   ]
 }
