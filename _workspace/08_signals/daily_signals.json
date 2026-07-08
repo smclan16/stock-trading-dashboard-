@@ -1,6 +1,6 @@
 {
-  "as_of": "20260707",
-  "generated_at": "2026-07-07T12:15:42.517362",
+  "as_of": "20260708",
+  "generated_at": "2026-07-08T11:23:46.142972",
   "counts": {
     "WATCH": 8
   },
@@ -9,49 +9,49 @@
       "ticker": "062040",
       "name": "산일전기",
       "signal": "WATCH",
-      "reason": "시계열 부족 50일"
+      "reason": "시계열 부족 49일"
     },
     {
       "ticker": "028260",
       "name": "삼성물산",
       "signal": "WATCH",
-      "reason": "시계열 부족 50일"
+      "reason": "시계열 부족 49일"
     },
     {
       "ticker": "034730",
       "name": "SK",
       "signal": "WATCH",
-      "reason": "시계열 부족 50일"
+      "reason": "시계열 부족 49일"
     },
     {
       "ticker": "402340",
       "name": "SK스퀘어",
       "signal": "WATCH",
-      "reason": "시계열 부족 50일"
+      "reason": "시계열 부족 49일"
     },
     {
       "ticker": "000660",
       "name": "SK하이닉스",
       "signal": "WATCH",
-      "reason": "시계열 부족 50일"
+      "reason": "시계열 부족 49일"
     },
     {
       "ticker": "018260",
       "name": "삼성에스디에스",
       "signal": "WATCH",
-      "reason": "시계열 부족 50일"
+      "reason": "시계열 부족 49일"
     },
     {
       "ticker": "108670",
       "name": "LX하우시스",
       "signal": "WATCH",
-      "reason": "시계열 부족 50일"
+      "reason": "시계열 부족 49일"
     },
     {
       "ticker": "005880",
       "name": "대한해운",
       "signal": "WATCH",
-      "reason": "시계열 부족 50일"
+      "reason": "시계열 부족 49일"
     }
   ]
 }
