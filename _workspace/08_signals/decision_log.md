@@ -732,3 +732,78 @@
 - watch              042660 한화오션        entry_conditions_failing  | 
 - exit               039200 (주)오스코텍     trend_break_full 청산 100% | 종가 35000 < MA(60) 45041
 - watch              039200 (주)오스코텍     entry_conditions_failing  | 
+
+## 2026-07-09 23:08 사이클
+
+- exit               267260 HD현대일렉트릭    trend_break_full 청산 100% | 종가 815000 < MA(60) 1091000
+- watch              267260 HD현대일렉트릭    entry_conditions_failing  | 
+- exit               207940 삼성바이오로직스    trend_break_full 청산 100% | 종가 1325000 < MA(60) 1418583
+- watch              207940 삼성바이오로직스    entry_conditions_failing  | 
+- exit               047810 한국항공우주      trend_break_full 청산 100% | 종가 150000 < MA(60) 161048
+- watch              047810 한국항공우주      entry_conditions_failing  | 
+- exit               082740 한화엔진(주)     trend_break_full 청산 100% | 종가 42600 < MA(60) 63086
+- watch              082740 한화엔진(주)     entry_conditions_failing  | 
+- exit               003550 (주)LG       trend_break_full 청산 100% | 종가 101300 < MA(60) 107783
+- watch              003550 (주)LG       entry_conditions_failing  | 
+- exit               329180 에이치디현대중공업(  trend_break_full 청산 100% | 종가 507000 < MA(60) 629850
+- watch              329180 에이치디현대중공업(  entry_conditions_failing  | 
+- exit               005880 대한해운(주)     trend_break_full 청산 100% | 종가 1842 < MA(60) 2288
+- watch              005880 대한해운(주)     entry_conditions_failing  | 
+- exit               085910 (주)네오티스     trend_break_full 청산 100% | 종가 15070 < MA(60) 25802
+- watch              085910 (주)네오티스     entry_conditions_failing  | 
+- exit               298040 효성중공업       trend_break_full 청산 100% | 종가 2770000 < MA(60) 3576533
+- watch              298040 효성중공업       entry_conditions_failing  | 
+- exit               066570 LG전자        trend_break_full 청산 100% | 종가 178000 < MA(60) 199118
+- watch              066570 LG전자        entry_conditions_failing  | 
+- exit               005380 현대차         trend_break_full 청산 100% | 종가 445500 < MA(60) 583708
+- watch              005380 현대차         entry_conditions_failing  | 
+- exit               034020 두산에너빌리티     trend_break_full 청산 100% | 종가 73200 < MA(60) 104510
+- watch              034020 두산에너빌리티     entry_conditions_failing  | 
+- exit               018670 SK가스(주)     trend_break_full 청산 100% | 종가 211500 < MA(60) 238025
+- watch              018670 SK가스(주)     entry_conditions_failing  | 
+- watch              055550 신한지주        entry_conditions_failing  | 
+- exit               042660 한화오션        trend_break_full 청산 100% | 종가 78600 < MA(60) 118467
+- watch              042660 한화오션        entry_conditions_failing  | 
+- exit               237690 에스티팜(주)     trend_break_full 청산 100% | 종가 119200 < MA(60) 134465
+- watch              237690 에스티팜(주)     entry_conditions_failing  | 
+- exit               108670             trend_break_full 청산 100% | 종가 31100 < MA(60) 33882
+- exit               010140 삼성중공업(주)    trend_break_full 청산 100% | 종가 20950 < MA(60) 28147
+- watch              010140 삼성중공업(주)    entry_conditions_failing  | 
+- exit               010120 LS ELECTRI  trend_break_full 청산 100% | 종가 189400 < MA(60) 240937
+- watch              010120 LS ELECTRI  entry_conditions_failing  | 
+- exit               012450 한화에어로스페이스   trend_break_full 청산 100% | 종가 953000 < MA(60) 1228233
+- watch              012450 한화에어로스페이스   entry_conditions_failing  | 
+- exit               012330 현대모비스(주)    trend_break_full 청산 100% | 종가 465000 < MA(60) 544975
+- watch              012330 현대모비스(주)    entry_conditions_failing  | 
+- exit               028260 삼성물산        trend_break_full 청산 100% | 종가 378500 < MA(60) 406642
+- exit               077970 STX엔진(주)    trend_break_full 청산 100% | 종가 24750 < MA(60) 40655
+- watch              077970 STX엔진(주)    entry_conditions_failing  | 
+- exit               005930 삼성전자        trend_break_full 청산 100% | 종가 278000 < MA(60) 287558
+- exit               005490 POSCO홀딩스    trend_break_full 청산 100% | 종가 297000 < MA(60) 398558
+- watch              005490 POSCO홀딩스    entry_conditions_failing  | 
+- exit               001440 대한전선(주)     trend_break_full 청산 100% | 종가 27800 < MA(60) 44611
+- watch              001440 대한전선(주)     entry_conditions_failing  | 
+- exit               032830 삼성생명        trend_break_full 청산 100% | 종가 326000 < MA(60) 346542
+- watch              105560 KB금융        entry_conditions_failing  | 
+- exit               006260 (주)LS       trend_break_full 청산 100% | 종가 313500 < MA(60) 418292
+- watch              006260 (주)LS       entry_conditions_failing  | 
+- exit               000270 기아(주)       trend_break_full 청산 100% | 종가 144800 < MA(60) 157518
+- watch              000270 기아(주)       entry_conditions_failing  | 
+- exit               028050 삼성E&A       trend_break_full 청산 100% | 종가 42050 < MA(60) 50507
+- watch              028050 삼성E&A       entry_conditions_failing  | 
+- exit               039200 (주)오스코텍     trend_break_full 청산 100% | 종가 31200 < MA(60) 43628
+- watch              039200 (주)오스코텍     entry_conditions_failing  | 
+- exit               035420 NAVER       trend_break_full 청산 100% | 종가 184400 < MA(60) 216365
+- watch              035420 NAVER       entry_conditions_failing  | 
+- exit               009540 HD한국조선해양    trend_break_full 청산 100% | 종가 327500 < MA(60) 409792
+- watch              009540 HD한국조선해양    entry_conditions_failing  | 
+- exit               009900 명신산업(주)     trend_break_full 청산 100% | 종가 6930 < MA(60) 9859
+- watch              009900 명신산업(주)     entry_conditions_failing  | 
+- exit               018260 삼성에스디에스(주)  trend_break_full 청산 100% | 종가 188300 < MA(60) 202673
+- watch              018260 삼성에스디에스(주)  entry_conditions_failing  | 
+- exit               373220 LG에너지솔루션    trend_break_full 청산 100% | 종가 313500 < MA(60) 411992
+- watch              373220 LG에너지솔루션    entry_conditions_failing  | 
+- exit               062040 산일전기(주)     trend_break_full 청산 100% | 종가 179600 < MA(60) 239952
+- watch              062040 산일전기(주)     entry_conditions_failing  | 
+- exit               068270 셀트리온        trend_break_full 청산 100% | 종가 173100 < MA(60) 186288
+- watch              068270 셀트리온        entry_conditions_failing  | 

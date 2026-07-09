@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-07-03T18:16:19+00:00",
+  "as_of": "2026-07-09T23:03:39+00:00",
   "top_n": 15,
   "ranking": [
     {
@@ -36,15 +36,15 @@
     },
     {
       "rank": 3,
-      "ticker": "001440",
-      "name": "대한전선",
-      "sector": "전기장비",
-      "total_score": 69.52,
+      "ticker": "082740",
+      "name": "한화엔진",
+      "sector": "기계",
+      "total_score": 68.98,
       "breakdown": {
-        "fundamental": 19.45,
-        "momentum": 19.51,
-        "theme": 10.56,
-        "catalyst": 10.0,
+        "fundamental": 20.03,
+        "momentum": 16.07,
+        "theme": 11.88,
+        "catalyst": 11.0,
         "risk_inv": 10.0
       },
       "is_uncovered": false,
@@ -52,15 +52,15 @@
     },
     {
       "rank": 4,
-      "ticker": "028050",
-      "name": "삼성E&A",
-      "sector": "전문서비스",
-      "total_score": 68.65,
+      "ticker": "001440",
+      "name": "대한전선",
+      "sector": "전기장비",
+      "total_score": 68.52,
       "breakdown": {
-        "fundamental": 19.67,
-        "momentum": 12.98,
-        "theme": 15.0,
-        "catalyst": 11.0,
+        "fundamental": 19.45,
+        "momentum": 19.51,
+        "theme": 10.56,
+        "catalyst": 9.0,
         "risk_inv": 10.0
       },
       "is_uncovered": false,
@@ -84,14 +84,14 @@
     },
     {
       "rank": 6,
-      "ticker": "082740",
-      "name": "한화엔진",
-      "sector": "기계",
-      "total_score": 67.98,
+      "ticker": "028050",
+      "name": "삼성E&A",
+      "sector": "전문서비스",
+      "total_score": 67.65,
       "breakdown": {
-        "fundamental": 20.03,
-        "momentum": 16.07,
-        "theme": 11.88,
+        "fundamental": 19.67,
+        "momentum": 12.98,
+        "theme": 15.0,
         "catalyst": 10.0,
         "risk_inv": 10.0
       },
@@ -100,15 +100,15 @@
     },
     {
       "rank": 7,
-      "ticker": "010120",
-      "name": "LS ELECTRIC",
-      "sector": "전기장비",
-      "total_score": 67.74,
+      "ticker": "420770",
+      "name": "기가비스",
+      "sector": "기계",
+      "total_score": 67.6,
       "breakdown": {
-        "fundamental": 19.05,
-        "momentum": 13.69,
-        "theme": 15.0,
-        "catalyst": 10.0,
+        "fundamental": 19.11,
+        "momentum": 20.45,
+        "theme": 7.04,
+        "catalyst": 11.0,
         "risk_inv": 10.0
       },
       "is_uncovered": false,
@@ -132,22 +132,6 @@
     },
     {
       "rank": 9,
-      "ticker": "420770",
-      "name": "기가비스",
-      "sector": "기계",
-      "total_score": 66.6,
-      "breakdown": {
-        "fundamental": 19.11,
-        "momentum": 20.45,
-        "theme": 7.04,
-        "catalyst": 10.0,
-        "risk_inv": 10.0
-      },
-      "is_uncovered": false,
-      "macro_beta": null
-    },
-    {
-      "rank": 10,
       "ticker": "329180",
       "name": "HD현대중공업",
       "sector": "운송장비",
@@ -163,7 +147,7 @@
       "macro_beta": null
     },
     {
-      "rank": 11,
+      "rank": 10,
       "ticker": "298040",
       "name": "효성중공업",
       "sector": "전기장비",
@@ -173,6 +157,22 @@
         "momentum": 10.31,
         "theme": 15.0,
         "catalyst": 10.0,
+        "risk_inv": 10.0
+      },
+      "is_uncovered": false,
+      "macro_beta": null
+    },
+    {
+      "rank": 11,
+      "ticker": "010120",
+      "name": "LS ELECTRIC",
+      "sector": "전기장비",
+      "total_score": 65.74,
+      "breakdown": {
+        "fundamental": 19.05,
+        "momentum": 13.69,
+        "theme": 15.0,
+        "catalyst": 8.0,
         "risk_inv": 10.0
       },
       "is_uncovered": false,
@@ -228,15 +228,15 @@
     },
     {
       "rank": 15,
-      "ticker": "098070",
-      "name": "한텍",
-      "sector": "금속가공",
-      "total_score": 65.01,
+      "ticker": "077970",
+      "name": "STX엔진",
+      "sector": "기계",
+      "total_score": 64.21,
       "breakdown": {
-        "fundamental": 25.25,
-        "momentum": 13.4,
-        "theme": 10.5,
-        "catalyst": 5.86,
+        "fundamental": 19.24,
+        "momentum": 16.85,
+        "theme": 11.88,
+        "catalyst": 6.24,
         "risk_inv": 10.0
       },
       "is_uncovered": false,

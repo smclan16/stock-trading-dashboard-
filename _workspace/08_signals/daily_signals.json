@@ -1,57 +1,70 @@
 {
   "as_of": "20260709",
-  "generated_at": "2026-07-09T22:56:56.778435",
+  "generated_at": "2026-07-09T23:10:58.369110",
   "counts": {
-    "WATCH": 8
+    "ENTRY_1ST": 4,
+    "WATCH": 2
   },
   "signals": [
     {
-      "ticker": "062040",
-      "name": "산일전기",
-      "signal": "WATCH",
-      "reason": "시계열 부족 48일"
-    },
-    {
-      "ticker": "028260",
-      "name": "삼성물산",
-      "signal": "WATCH",
-      "reason": "시계열 부족 48일"
-    },
-    {
       "ticker": "034730",
       "name": "SK",
-      "signal": "WATCH",
-      "reason": "시계열 부족 48일"
+      "signal": "ENTRY_1ST",
+      "action": "1차 75% 진입 (지정가 권장)",
+      "close": 610000.0,
+      "ma60": 579041.7,
+      "weight_pct": 15.0,
+      "capital_weight_pct": 18.75,
+      "reason": "MA60 위 첫 진입 (종가 610,000 > MA60 579,042)"
     },
     {
       "ticker": "402340",
       "name": "SK스퀘어",
-      "signal": "WATCH",
-      "reason": "시계열 부족 48일"
+      "signal": "ENTRY_1ST",
+      "action": "1차 75% 진입 (지정가 권장)",
+      "close": 1327000.0,
+      "ma60": 1214083.3,
+      "weight_pct": 15.0,
+      "capital_weight_pct": 18.75,
+      "reason": "MA60 위 첫 진입 (종가 1,327,000 > MA60 1,214,083)"
     },
     {
       "ticker": "000660",
       "name": "SK하이닉스",
-      "signal": "WATCH",
-      "reason": "시계열 부족 48일"
+      "signal": "ENTRY_1ST",
+      "action": "1차 75% 진입 (지정가 권장)",
+      "close": 2186000.0,
+      "ma60": 1964083.3,
+      "weight_pct": 15.0,
+      "capital_weight_pct": 18.75,
+      "reason": "MA60 위 첫 진입 (종가 2,186,000 > MA60 1,964,083)"
     },
     {
-      "ticker": "018260",
-      "name": "삼성에스디에스",
-      "signal": "WATCH",
-      "reason": "시계열 부족 48일"
-    },
-    {
-      "ticker": "108670",
-      "name": "LX하우시스",
-      "signal": "WATCH",
-      "reason": "시계열 부족 48일"
+      "ticker": "009150",
+      "name": "삼성전기",
+      "signal": "ENTRY_1ST",
+      "action": "1차 75% 진입 (지정가 권장)",
+      "close": 1493000.0,
+      "ma60": 1422416.7,
+      "weight_pct": 15.0,
+      "capital_weight_pct": 18.75,
+      "reason": "MA60 위 첫 진입 (종가 1,493,000 > MA60 1,422,417)"
     },
     {
       "ticker": "005880",
       "name": "대한해운",
       "signal": "WATCH",
-      "reason": "시계열 부족 48일"
+      "close": 1842.0,
+      "ma60": 2288.3,
+      "reason": "MA60 아래, 추세 대기 (1,842 < MA60 2,288)"
+    },
+    {
+      "ticker": "375500",
+      "name": "DL이앤씨",
+      "signal": "WATCH",
+      "close": 61900.0,
+      "ma60": 80565.0,
+      "reason": "MA60 아래, 추세 대기 (61,900 < MA60 80,565)"
     }
   ]
 }
