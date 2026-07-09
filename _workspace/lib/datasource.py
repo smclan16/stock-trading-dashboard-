@@ -309,7 +309,7 @@ class KRXMarket:
                 time.sleep(sleep_sec)
             try:
                 r = requests.get(url, params={"basDd": basDd},
-                                 headers={"AUTH_KEY": self.key}, timeout=5)  # 5초 timeout
+                                 headers={"AUTH_KEY": self.key}, timeout=self.timeout)  # timeout 증가
                 if r.status_code == 429:
                     last_err = requests.exceptions.HTTPError(f"429 (try {attempt}/1)")
                     continue
@@ -473,12 +473,15 @@ class KRXMarket:
                         "sect": (self._field(row, "SECT_TP_NM") or "").strip(),
                     }
         except Exception as e:
-            print(f"  ⚠ KRX daily 호출 실패 ({e}), yfinance fallback 시도")
+            print(f"  ⚠ KRX daily 호출 실패 ({e})")
             if fallback_tickers:
+                print("  ⚠ yfinance fallback 시도")
                 yf_out = self._daily_yfinance(basDd, fallback_tickers)
                 if yf_out:
                     out.update(yf_out)
                     print(f"  ✅ yfinance fallback {len(yf_out)}종 수신")
+            else:
+                raise
         return out
 
     def base_info(self, basDd):
