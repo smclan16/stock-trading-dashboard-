@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-07-09T23:03:39+00:00",
+  "as_of": "2026-07-10T18:25:58+00:00",
   "top_n": 15,
   "ranking": [
     {
@@ -228,15 +228,15 @@
     },
     {
       "rank": 15,
-      "ticker": "077970",
-      "name": "STX엔진",
-      "sector": "기계",
-      "total_score": 64.21,
+      "ticker": "098070",
+      "name": "한텍",
+      "sector": "금속가공",
+      "total_score": 64.19,
       "breakdown": {
-        "fundamental": 19.24,
-        "momentum": 16.85,
-        "theme": 11.88,
-        "catalyst": 6.24,
+        "fundamental": 25.25,
+        "momentum": 13.4,
+        "theme": 10.5,
+        "catalyst": 5.04,
         "risk_inv": 10.0
       },
       "is_uncovered": false,

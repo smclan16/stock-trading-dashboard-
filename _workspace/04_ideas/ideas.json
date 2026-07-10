@@ -566,7 +566,7 @@
     "next_action": "핵심 후보 4건 → 5단계 idea-stock-matching 재실행 + 6단계 company-research → default_single_pick 확정"
   },
   "allocation_weights": {
-    "computed_at": "2026-07-09T22:58:27+00:00",
+    "computed_at": "2026-07-10T18:18:54+00:00",
     "method": "카테고리 차등 가중치 적용. 매칭 0건은 0%. uncovered_pool 고정 비중.",
     "category_multipliers": {
       "핵심 장기 테마 후보": 1.5,
@@ -614,7 +614,7 @@
         "name": "대한해운",
         "attractiveness": 59.8,
         "macro_beta": 0.083,
-        "catalyst": "news_growth 334.99999999999994% / DART pos+contract pts 1.0",
+        "catalyst": "news_growth 344.00000000000006% / DART pos+contract pts 1.0",
         "weight_pct": 2.5
       },
       {

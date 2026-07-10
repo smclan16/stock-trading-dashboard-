@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-07-09T23:10:48+00:00",
+  "as_of": "2026-07-10T18:32:59+00:00",
   "investor_type": "안정추구형",
   "investor_score": null,
   "equity_pct": 80.0,
@@ -74,9 +74,9 @@
       "ticker": "207940",
       "name": "삼성바이오로직스",
       "sector": "제약바이오",
-      "weight_pct": 7.4,
-      "capital_weight_pct": 5.92,
-      "attractiveness": 60.37,
+      "weight_pct": 7.384,
+      "capital_weight_pct": 5.907,
+      "attractiveness": 59.37,
       "macro_beta": null,
       "matched_ideas": [
         7,
@@ -91,13 +91,13 @@
           "idea_id": 7,
           "idea_theme": "GLP-1 비만약 — 시장 폭증 지속",
           "intensity": "indirect",
-          "contribution_pct": 4.016
+          "contribution_pct": 4.008
         },
         {
           "idea_id": 8,
           "idea_theme": "유전자 치료(CRISPR) — CASGEVY 이후 상용화",
           "intensity": "indirect",
-          "contribution_pct": 3.384
+          "contribution_pct": 3.377
         }
       ]
     },
@@ -105,8 +105,8 @@
       "ticker": "012450",
       "name": "한화에어로스페이스",
       "sector": "운송장비",
-      "weight_pct": 5.762,
-      "capital_weight_pct": 4.61,
+      "weight_pct": 5.768,
+      "capital_weight_pct": 4.615,
       "attractiveness": 62.4,
       "macro_beta": null,
       "matched_ideas": [
@@ -122,7 +122,7 @@
           "idea_id": 10,
           "idea_theme": "위성통신·LEO — 글로벌 인터넷 인프라",
           "intensity": "direct",
-          "contribution_pct": 4.547
+          "contribution_pct": 4.553
         },
         {
           "idea_id": 13,
@@ -136,8 +136,8 @@
       "ticker": "068270",
       "name": "셀트리온",
       "sector": "제약바이오",
-      "weight_pct": 4.092,
-      "capital_weight_pct": 3.274,
+      "weight_pct": 4.104,
+      "capital_weight_pct": 3.283,
       "attractiveness": 52.16,
       "macro_beta": null,
       "matched_ideas": [
@@ -153,13 +153,13 @@
           "idea_id": 7,
           "idea_theme": "GLP-1 비만약 — 시장 폭증 지속",
           "intensity": "perception",
-          "contribution_pct": 2.221
+          "contribution_pct": 2.227
         },
         {
           "idea_id": 8,
           "idea_theme": "유전자 치료(CRISPR) — CASGEVY 이후 상용화",
           "intensity": "perception",
-          "contribution_pct": 1.871
+          "contribution_pct": 1.876
         }
       ]
     },
@@ -260,9 +260,9 @@
       "ticker": "085910",
       "name": "(주)네오티스",
       "sector": "자동차",
-      "weight_pct": 3.185,
-      "capital_weight_pct": 2.548,
-      "attractiveness": 53.1,
+      "weight_pct": 3.184,
+      "capital_weight_pct": 2.547,
+      "attractiveness": 53.04,
       "macro_beta": null,
       "matched_ideas": [
         5
@@ -276,7 +276,7 @@
           "idea_id": 5,
           "idea_theme": "휴머노이드 로봇 — 양산 진입 단계",
           "intensity": "direct",
-          "contribution_pct": 3.185
+          "contribution_pct": 3.184
         }
       ]
     },
@@ -346,9 +346,9 @@
       "ticker": "009900",
       "name": "명신산업(주)",
       "sector": "자동차",
-      "weight_pct": 2.791,
-      "capital_weight_pct": 2.233,
-      "attractiveness": 55.37,
+      "weight_pct": 2.793,
+      "capital_weight_pct": 2.234,
+      "attractiveness": 55.49,
       "macro_beta": null,
       "matched_ideas": [
         5,
@@ -363,7 +363,7 @@
           "idea_id": 5,
           "idea_theme": "휴머노이드 로봇 — 양산 진입 단계",
           "intensity": "perception",
-          "contribution_pct": 2.755
+          "contribution_pct": 2.756
         },
         {
           "idea_id": 6,
@@ -476,7 +476,7 @@
         {
           "source": "default_picks",
           "macro_beta": 0.083,
-          "catalyst": "news_growth 334.99999999999994% / DART pos+contract pts 1.0",
+          "catalyst": "news_growth 344.00000000000006% / DART pos+contract pts 1.0",
           "contribution_pct": 2.5
         }
       ]
@@ -538,9 +538,9 @@
       "ticker": "047810",
       "name": "한국항공우주",
       "sector": "운송장비",
-      "weight_pct": 2.234,
-      "capital_weight_pct": 1.787,
-      "attractiveness": 63.29,
+      "weight_pct": 2.226,
+      "capital_weight_pct": 1.781,
+      "attractiveness": 62.29,
       "macro_beta": null,
       "matched_ideas": [
         10,
@@ -555,13 +555,13 @@
           "idea_id": 10,
           "idea_theme": "위성통신·LEO — 글로벌 인터넷 인프라",
           "intensity": "direct",
-          "contribution_pct": 1.763
+          "contribution_pct": 1.757
         },
         {
           "idea_id": 13,
           "idea_theme": "K-방산·K-조선 수출 사이클",
           "intensity": "direct",
-          "contribution_pct": 0.471
+          "contribution_pct": 0.469
         }
       ]
     },
@@ -967,7 +967,7 @@
           "idea_id": 13,
           "idea_theme": "K-방산·K-조선 수출 사이클",
           "intensity": "direct",
-          "contribution_pct": 0.738
+          "contribution_pct": 0.739
         }
       ]
     },
@@ -975,8 +975,8 @@
       "ticker": "237690",
       "name": "에스티팜(주)",
       "sector": "제약바이오",
-      "weight_pct": 0.939,
-      "capital_weight_pct": 0.751,
+      "weight_pct": 0.942,
+      "capital_weight_pct": 0.754,
       "attractiveness": 64.14,
       "macro_beta": null,
       "matched_ideas": [
@@ -992,13 +992,13 @@
           "idea_id": 7,
           "idea_theme": "GLP-1 비만약 — 시장 폭증 지속",
           "intensity": "direct",
-          "contribution_pct": 0.51
+          "contribution_pct": 0.511
         },
         {
           "idea_id": 8,
           "idea_theme": "유전자 치료(CRISPR) — CASGEVY 이후 상용화",
           "intensity": "direct",
-          "contribution_pct": 0.43
+          "contribution_pct": 0.431
         }
       ]
     },
@@ -1109,8 +1109,8 @@
       "ticker": "039200",
       "name": "(주)오스코텍",
       "sector": "제약바이오",
-      "weight_pct": 0.559,
-      "capital_weight_pct": 0.447,
+      "weight_pct": 0.56,
+      "capital_weight_pct": 0.448,
       "attractiveness": 63.11,
       "macro_beta": null,
       "matched_ideas": [
@@ -1126,13 +1126,13 @@
           "idea_id": 7,
           "idea_theme": "GLP-1 비만약 — 시장 폭증 지속",
           "intensity": "indirect",
-          "contribution_pct": 0.303
+          "contribution_pct": 0.304
         },
         {
           "idea_id": 8,
           "idea_theme": "유전자 치료(CRISPR) — CASGEVY 이후 상용화",
           "intensity": "indirect",
-          "contribution_pct": 0.255
+          "contribution_pct": 0.256
         }
       ]
     }
@@ -1181,7 +1181,7 @@
   },
   "diversification": {
     "n_holdings": 39,
-    "hhi": 409.8,
+    "hhi": 409.7,
     "sector_distribution_pct": {
       "기계": 10.52,
       "전자반도체": 14.27,

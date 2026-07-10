@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-07-09T23:10:49.101263",
+  "as_of": "2026-07-10T18:32:59.462637",
   "method": "테마 비중 골격 + 결합점수 최고 1종 (테마 8 + default 2)",
   "investor_type": "위험중립형",
   "equity_pct": 80.0,
@@ -111,13 +111,13 @@
     "077970",
     "082740",
     "085910",
-    "108670",
     "207940",
     "237690",
     "267260",
     "298040",
     "329180",
-    "373220"
+    "373220",
+    "375500"
   ],
   "holdings": [
     {
@@ -358,7 +358,7 @@
       "tech_score": 42,
       "combined_score": null,
       "macro_beta": 0.083,
-      "catalyst": "news_growth 334.99999999999994% / DART pos+contract pts 1.0",
+      "catalyst": "news_growth 344.00000000000006% / DART pos+contract pts 1.0",
       "tech_breakdown": {
         "alignment(20)": 6,
         "ma60_margin(15)": 0,

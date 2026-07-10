@@ -1,4 +1,4 @@
-# 논리 정합성 검증 리포트 (2026-07-09 23:03)
+# 논리 정합성 검증 리포트 (2026-07-10 18:25)
 
 **종합 판정:** WARN (FAIL 0 / WARN 3)
 
@@ -13,14 +13,14 @@
 | C-default | default_picks 비중 합 | ✅ PASS | expected 5.0% / actual 5.00% (오차 0.00%p) |
 | D | default_picks 매크로 베타 | ✅ PASS | 2종목 모두 β<0.7 |
 | E | 매칭 강도-비중 일관성 | ⚠️ WARN | direct < indirect 평균 비중 위반: 3개 아이디어 |
-| F | 매력도-비중 상관 | ⚠️ WARN | Spearman ρ = -0.010 / 임계 0.3 |
-| G | 데이터 신선도 | ⚠️ WARN | universe=44d (한도 30d) / matching=43d (한도 30d) |
+| F | 매력도-비중 상관 | ⚠️ WARN | Spearman ρ = -0.021 / 임계 0.3 |
+| G | 데이터 신선도 | ⚠️ WARN | universe=45d (한도 30d) / matching=44d (한도 30d) |
 | H | 레짐 ↔ 팩터 가중치 | ✅ PASS | 레짐=중립 / 모멘텀계열 합=60% |
 
 ## 검토 권고 (WARN)
 
 - E 매칭 강도-비중 일관성: direct < indirect 평균 비중 위반: 3개 아이디어
-- F 매력도-비중 상관: Spearman ρ = -0.010 / 임계 0.3
-- G 데이터 신선도: universe=44d (한도 30d) / matching=43d (한도 30d)
+- F 매력도-비중 상관: Spearman ρ = -0.021 / 임계 0.3
+- G 데이터 신선도: universe=45d (한도 30d) / matching=44d (한도 30d)
 
 *임계: 자산배분 오차 ±1.0%p / 아이디어 비중 ±1.5%p / default_picks β<0.7*

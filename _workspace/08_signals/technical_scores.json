@@ -58,33 +58,6 @@
       "name": "삼성바이오로직스",
       "ma60_exit_signal": true
     },
-    "005930": {
-      "tech_score": 66,
-      "breakdown": {
-        "alignment(20)": 12,
-        "ma60_margin(15)": 0,
-        "momentum(15)": 15,
-        "volume(10)": 6,
-        "pos_52w(15)": 15,
-        "rsi(10)": 6,
-        "volatility(15)": 12
-      },
-      "indicators": {
-        "close": 278000.0,
-        "ma5": 295800.0,
-        "ma20": 325200.0,
-        "ma60": 287558.3,
-        "ma120": 232809.2,
-        "ma60_margin_pct": -3.32,
-        "ret_6m_pct": 100.29,
-        "rsi14": 35.4,
-        "vol_5d_to_20d_ratio": 0.95,
-        "pos_52w_pct": 68.4,
-        "sigma_annual_pct": 72.0
-      },
-      "name": "삼성전자",
-      "ma60_exit_signal": true
-    },
     "012450": {
       "tech_score": 26,
       "breakdown": {
@@ -110,6 +83,33 @@
         "sigma_annual_pct": 63.4
       },
       "name": "한화에어로스페이스",
+      "ma60_exit_signal": true
+    },
+    "005930": {
+      "tech_score": 66,
+      "breakdown": {
+        "alignment(20)": 12,
+        "ma60_margin(15)": 0,
+        "momentum(15)": 15,
+        "volume(10)": 6,
+        "pos_52w(15)": 15,
+        "rsi(10)": 6,
+        "volatility(15)": 12
+      },
+      "indicators": {
+        "close": 278000.0,
+        "ma5": 295800.0,
+        "ma20": 325200.0,
+        "ma60": 287558.3,
+        "ma120": 232809.2,
+        "ma60_margin_pct": -3.32,
+        "ret_6m_pct": 100.29,
+        "rsi14": 35.4,
+        "vol_5d_to_20d_ratio": 0.95,
+        "pos_52w_pct": 68.4,
+        "sigma_annual_pct": 72.0
+      },
+      "name": "삼성전자",
       "ma60_exit_signal": true
     },
     "085910": {
@@ -461,7 +461,7 @@
         "sigma_annual_pct": 81.2
       },
       "name": "디엘이앤씨 주식회사",
-      "ma60_exit_signal": false
+      "ma60_exit_signal": true
     },
     "009900": {
       "tech_score": 32,

@@ -3,9 +3,9 @@
   "cash_pct": 20.0,
   "regime": "중립",
   "w_macro": 0.5,
-  "updated_at": "2026-07-09T22:58:27+00:00",
+  "updated_at": "2026-07-10T18:18:54+00:00",
   "basis": {
-    "vix": 16.9,
+    "vix": 15.84,
     "us10y": 4.56,
     "fed_funds_rate": 3.63,
     "unemployment": 4.2,

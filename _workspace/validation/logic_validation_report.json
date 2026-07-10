@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-07-09T23:03:39+00:00",
+  "as_of": "2026-07-10T18:25:59+00:00",
   "overall": "WARN",
   "n_fail": 0,
   "n_warn": 3,
@@ -62,13 +62,13 @@
       "id": "F",
       "name": "매력도-비중 상관",
       "verdict": "WARN",
-      "detail": "Spearman ρ = -0.010 / 임계 0.3"
+      "detail": "Spearman ρ = -0.021 / 임계 0.3"
     },
     {
       "id": "G",
       "name": "데이터 신선도",
       "verdict": "WARN",
-      "detail": "universe=44d (한도 30d) / matching=43d (한도 30d)"
+      "detail": "universe=45d (한도 30d) / matching=44d (한도 30d)"
     },
     {
       "id": "H",
