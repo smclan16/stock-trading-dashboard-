@@ -1,6 +1,6 @@
 {
-  "as_of": "20260903",
-  "generated_at": "2026-09-03T13:47:43.117954",
+  "as_of": "20260904",
+  "generated_at": "2026-09-04T13:42:10.077645",
   "counts": {
     "WATCH": 6
   },
@@ -9,37 +9,37 @@
       "ticker": "034730",
       "name": "SK",
       "signal": "WATCH",
-      "reason": "시계열 부족 13일"
+      "reason": "시계열 부족 12일"
     },
     {
       "ticker": "402340",
       "name": "SK스퀘어",
       "signal": "WATCH",
-      "reason": "시계열 부족 13일"
+      "reason": "시계열 부족 12일"
     },
     {
       "ticker": "000660",
       "name": "SK하이닉스",
       "signal": "WATCH",
-      "reason": "시계열 부족 13일"
+      "reason": "시계열 부족 12일"
     },
     {
       "ticker": "009150",
       "name": "삼성전기",
       "signal": "WATCH",
-      "reason": "시계열 부족 13일"
+      "reason": "시계열 부족 12일"
     },
     {
       "ticker": "005880",
       "name": "대한해운",
       "signal": "WATCH",
-      "reason": "시계열 부족 13일"
+      "reason": "시계열 부족 12일"
     },
     {
       "ticker": "375500",
       "name": "DL이앤씨",
       "signal": "WATCH",
-      "reason": "시계열 부족 13일"
+      "reason": "시계열 부족 12일"
     }
   ]
 }
